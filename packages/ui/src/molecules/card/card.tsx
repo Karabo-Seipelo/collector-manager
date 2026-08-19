@@ -1,26 +1,8 @@
 import type { ReactNode } from "react";
 
 import { ImagePlaceholder } from "../../atoms/image-placeholder/image-placeholder";
-
-const cx = (...c: Array<string | false | undefined>) => c.filter(Boolean).join(" ");
-
-const META_SEPARATOR = " · ";
-
-function formatMeta(meta: string | string[] | undefined): string | null {
-  if (!meta) {
-    return null;
-  }
-
-  const items = (Array.isArray(meta) ? meta : meta.split(","))
-    .map((item) => item.trim())
-    .filter(Boolean);
-
-  if (items.length === 0) {
-    return null;
-  }
-
-  return items.join(META_SEPARATOR);
-}
+import { cn } from "../../lib/cn";
+import { formatDotList } from "../../lib/format-dot-list";
 
 export interface ItemCardProps {
   title: string;
@@ -44,11 +26,11 @@ export function ItemCard({
   className,
 }: ItemCardProps) {
   const Root = onClick ? "button" : "div";
-  const metaLabel = formatMeta(meta);
+  const metaLabel = formatDotList(meta);
 
   return (
     <Root
-      className={cx(
+      className={cn(
         "flex w-full flex-col items-stretch gap-[10px] pb-1 text-left font-body",
         onClick &&
           "cursor-pointer rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fg-strong",

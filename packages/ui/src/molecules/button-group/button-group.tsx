@@ -3,10 +3,8 @@
 import * as React from "react";
 
 import { Button } from "../../atoms/button/button";
+import type { ButtonSize, ButtonTone } from "../../lib/button-types";
 import { cn } from "../../lib/cn";
-
-type ButtonTone = "brand" | "neutral" | "destructive" | "inverse";
-type ButtonSize = "xsmall" | "small" | "medium" | "large";
 
 interface RegisteredItem {
   value: string;

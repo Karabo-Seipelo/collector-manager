@@ -1,12 +1,9 @@
-import type { Decorator, Meta, StoryObj } from "@storybook/react-vite";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
+import { withWidth } from "../../../.storybook/decorators";
 import { ItemCard } from "./card";
 
-const cardWidthDecorator: Decorator = (Story) => (
-  <div className="w-[220px]">
-    <Story />
-  </div>
-);
+const cardWidth = withWidth("220px");
 
 const meta = {
   title: "Molecules/ItemCard",
@@ -22,11 +19,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  decorators: [cardWidthDecorator],
+  decorators: [cardWidth],
 };
 
 export const TitleOnly: Story = {
-  decorators: [cardWidthDecorator],
+  decorators: [cardWidth],
   args: {
     meta: undefined,
     price: undefined,
@@ -34,7 +31,7 @@ export const TitleOnly: Story = {
 };
 
 export const WithImage: Story = {
-  decorators: [cardWidthDecorator],
+  decorators: [cardWidth],
   args: {
     title: "Leica M6",
     meta: "Mint condition, 1984, Excellent",
@@ -46,14 +43,14 @@ export const WithImage: Story = {
 };
 
 export const Clickable: Story = {
-  decorators: [cardWidthDecorator],
+  decorators: [cardWidth],
   args: {
     onClick: () => alert("ItemCard clicked"),
   },
 };
 
 export const WithOverlay: Story = {
-  decorators: [cardWidthDecorator],
+  decorators: [cardWidth],
   args: {
     imageSrc:
       "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=300&fit=crop",
@@ -67,7 +64,7 @@ export const WithOverlay: Story = {
 };
 
 export const MetaAsArray: Story = {
-  decorators: [cardWidthDecorator],
+  decorators: [cardWidth],
   args: {
     title: "Abbey Road",
     meta: ["Vinyl", "1969", "VG+"],
@@ -76,7 +73,7 @@ export const MetaAsArray: Story = {
 };
 
 export const MetaAsCommaSeparated: Story = {
-  decorators: [cardWidthDecorator],
+  decorators: [cardWidth],
   args: {
     title: "Blue Train",
     meta: "Vinyl, 1959, NM",

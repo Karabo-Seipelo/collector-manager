@@ -7,6 +7,7 @@
     "./atoms/icon": "./src/atoms/icon/icon.tsx",
     "./atoms/code": "./src/atoms/code/code.tsx",
     "./atoms/image-placeholder": "./src/atoms/image-placeholder/image-placeholder.tsx",
+    "./atoms/text-field": "./src/atoms/text-field/text-field.tsx",
     "./molecules/button-group": "./src/molecules/button-group/button-group.tsx",
     "./molecules/card": "./src/molecules/card/card.tsx",
     "./styles.css": "./src/styles.css",

@@ -2,11 +2,10 @@
 
 import * as React from "react";
 
-const cx = (...c: Array<string | false | undefined>) => c.filter(Boolean).join(" ");
+import type { ButtonSize, ButtonTone, ButtonType } from "../../lib/button-types";
+import { cn } from "../../lib/cn";
 
-type ButtonType = "primary" | "secondary" | "tertiary";
-type ButtonTone = "brand" | "neutral" | "destructive" | "inverse";
-type ButtonSize = "xsmall" | "small" | "medium" | "large";
+export type { ButtonSize, ButtonTone, ButtonType } from "../../lib/button-types";
 
 const sizes: Record<ButtonSize, { root: string, text: string; icon: string; square: string}> = {
   xsmall: {
@@ -46,12 +45,12 @@ const tones: Record<ButtonType, Record<ButtonTone, string>> = {
     brand: "bg-white text-[#4c64d9] border border-[#4c64d9] hover:bg-[#4c64d9]/5 active:bg-[#4c64d9]/10 focus-visible:ring-[#4c64d9]",
     neutral: "bg-white text-neutral-900 border border-neutral-300  hover:bg-neutral-50 active:bg-neutral-100 focus-visible:ring-neutral-900",
     destructive: "bg-white text-red-600 border border-red-600 hover:bg-red-50 active:bg-red-100 focus-visible:ring-red-600",
-    inverse: "bg-transpatent text-white border border-white/60 hover:bg-white/10 active:bg-white/2 focus-visible:ring-white"
+    inverse: "bg-transparent text-white border border-white/60 hover:bg-white/10 active:bg-white/2 focus-visible:ring-white"
   },
   tertiary: {
-    brand: "bg-transparent text-[#4c664d9] hover:bg-[#4c64d9]/8 active:bg-[#4c64d9]/15 focus-visible:ring-[#4c64d9]",
+    brand: "bg-transparent text-[#4c64d9] hover:bg-[#4c64d9]/8 active:bg-[#4c64d9]/15 focus-visible:ring-[#4c64d9]",
     neutral: "bg-transparent text-neutral-900 hover:bg-neutral-100 active:bg-neutral-200 focus-visible:ring-neutral-900",
-    destructive: "bg-transperant text-red-600 hover:bg-red-50 active:bg-red-100 focus-visible:ring-red-600",
+    destructive: "bg-transparent text-red-600 hover:bg-red-50 active:bg-red-100 focus-visible:ring-red-600",
     inverse: "bg-transparent text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white"
   },
 };
@@ -71,7 +70,7 @@ function Icon({className, children}: {className: string, children: React.ReactNo
   return (
     <span 
       aria-hidden="true"
-      className={cx("grid shrink-0 place-items-center [&>svg]:size-full", className)}
+      className={cn("grid shrink-0 place-items-center [&>svg]:size-full", className)}
       >
       {children}
     </span>
@@ -93,7 +92,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ...rest
   }, ref){
     const s = sizes[size];
-    const base = cx(
+    const base = cn(
       "inline-flex items-center justify-center rounded-lg font-semibold",
       "transition-colors outline-none",
       "focus-visible:ring-2 focus-visible:ring-offset-2",
@@ -103,7 +102,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     if (iconOnly) {
       return (
-        <button ref={ref} disabled={disabled} className={cx(base, s.square, "shrink-0", className)} {...rest}>
+        <button ref={ref} disabled={disabled} className={cn(base, s.square, "shrink-0", className)} {...rest}>
           <Icon className={s.icon}>{iconOnly}</Icon>
         </button>
       )
@@ -113,7 +112,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         disabled={disabled}
-        className={cx(base, s.root, s.text, fullWidth ? "w-full" : "w-fit", className)}      
+        className={cn(base, s.root, s.text, fullWidth ? "w-full" : "w-fit", className)}      
         {...rest}
         >
         {iconLeft && <Icon className={s.icon}>{iconLeft}</Icon>}
