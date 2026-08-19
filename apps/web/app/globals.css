@@ -1,50 +1,23 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "@repo/ui/styles.css";
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@source "../app/**/*.{js,ts,jsx,tsx}";
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.imgDark {
-  display: none;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   html {
-    color-scheme: dark;
+    @apply antialiased;
   }
 
-  .imgLight {
-    display: none;
+  body {
+    @apply bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100;
   }
-  .imgDark {
-    display: unset;
+}
+
+@layer utilities {
+  .img-light {
+    @apply block dark:hidden;
+  }
+
+  .img-dark {
+    @apply hidden dark:block;
   }
 }

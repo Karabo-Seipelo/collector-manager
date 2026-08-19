@@ -3,9 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./*": "./src/*.tsx"
+    "./atoms/button": "./src/atoms/button/button.tsx",
+    "./atoms/icon": "./src/atoms/icon/icon.tsx",
+    "./atoms/code": "./src/atoms/code/code.tsx",
+    "./molecules/button-group": "./src/molecules/button-group/button-group.tsx",
+    "./molecules/card": "./src/molecules/card/card.tsx",
+    "./styles.css": "./src/styles.css",
+    "./lib/*": "./src/lib/*.ts"
   },
   "scripts": {
+    "dev": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
     "check-types": "tsc --noEmit"
@@ -13,14 +22,25 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@storybook/addon-docs": "^10.5.9",
+    "@storybook/react-vite": "^10.5.9",
+    "@types/feather-icons": "^4.29.4",
     "@types/node": "^22.15.3",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
+    "@vitejs/plugin-react": "^6.0.5",
     "eslint": "^9.39.1",
-    "typescript": "5.9.2"
+    "storybook": "^10.5.9",
+    "typescript": "5.9.2",
+    "vite": "^8.2.1"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "clsx": "^2.0.0",
+    "feather-icons": "^4.29.2",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "tailwind-merge": "^3.6.0",
+    "tailwindcss": "^4.3.3"
   }
 }

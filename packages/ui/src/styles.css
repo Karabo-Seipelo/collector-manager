@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@source "./**/*.{js,ts,jsx,tsx}";
+
+@theme {
+    --color-primary: #4c64d9;
+    --color-primary-foreground: #ffffff;
+
+    --shadow-raised: '0 4px 8px -2px rgb(0 0 0 / 0.04), 0 2px 4px -2px rgb(0 0 0 / 0.0.8)'
+}
+
+@layer base {
+    :root {
+        --color-primary: #4c64d9;
+    }
+    .dark {
+        --color-primary: #8495eb;
+    }
+}

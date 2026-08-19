@@ -1,0 +1,22 @@
+import { type JSX } from "react";
+
+import { cn } from "../../lib/cn";
+
+export function Code({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}): JSX.Element {
+  return (
+    <code
+      className={cn(
+        "rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-sm font-semibold text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100",
+        className,
+      )}
+    >
+      {children}
+    </code>
+  );
+}

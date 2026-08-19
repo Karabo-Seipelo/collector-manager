@@ -1,19 +1,8 @@
 {
-  "extends": "@repo/typescript-config/nextjs.json",
+  "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "strictNullChecks": true
+    "baseUrl": ".",
+    "strict": true
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "next-env.d.ts",
-    "next.config.js",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": ["node_modules"]
+  "exclude": [".docusaurus", "build", "node_modules"]
 }
