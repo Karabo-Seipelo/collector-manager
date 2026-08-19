@@ -2,11 +2,28 @@
 
 @source "./**/*.{js,ts,jsx,tsx}";
 
+
 @theme {
     --color-primary: #4c64d9;
     --color-primary-foreground: #ffffff;
 
-    --shadow-raised: '0 4px 8px -2px rgb(0 0 0 / 0.04), 0 2px 4px -2px rgb(0 0 0 / 0.0.8)'
+    --shadow-raised: '0 4px 8px -2px rgb(0 0 0 / 0.04), 0 2px 4px -2px rgb(0 0 0 / 0.0.8)';
+
+    /* Colour */
+    --color-fill-weak: rgba(0, 21, 128, 0.04);   /* Figma: Fill/Weak     #0015800a */
+    --color-fg-strong: rgba(0, 6, 38, 0.9);      /* Figma: Text/Strong   #000626e5 */
+    --color-fg-weak: rgba(0, 9, 51, 0.65);       /* Figma: Text/Weak     #000933a6 */
+    --color-icon-neutral: rgba(0, 13, 77, 0.45); /* Figma: Icon/Neutral  #000d4d73 */
+    
+    /* Typography — Figma text styles Small/* and Tiny/* */
+    --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+    --text-small: 16px;
+    --text-small--line-height: 24px;
+    --text-tiny: 14px;
+    --text-tiny--line-height: 20px;
+    
+    /* Shape */
+    --radius-card: 12px;
 }
 
 @layer base {

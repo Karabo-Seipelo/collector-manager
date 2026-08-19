@@ -1,0 +1,8 @@
+{
+  "label": "Design System",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Shared UI components, design tokens, and usage guidelines."
+  }
+}

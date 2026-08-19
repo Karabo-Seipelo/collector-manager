@@ -1,32 +1,84 @@
-import { type JSX } from "react";
+import type { ReactNode } from "react";
 
-import { cn } from "../../lib/cn";
+import { ImagePlaceholder } from "../../atoms/image-placeholder/image-placeholder";
 
-export function Card({
-  className,
-  title,
-  children,
-  href,
-}: {
-  className?: string;
+const cx = (...c: Array<string | false | undefined>) => c.filter(Boolean).join(" ");
+
+const META_SEPARATOR = " · ";
+
+function formatMeta(meta: string | string[] | undefined): string | null {
+  if (!meta) {
+    return null;
+  }
+
+  const items = (Array.isArray(meta) ? meta : meta.split(","))
+    .map((item) => item.trim())
+    .filter(Boolean);
+
+  if (items.length === 0) {
+    return null;
+  }
+
+  return items.join(META_SEPARATOR);
+}
+
+export interface ItemCardProps {
   title: string;
-  children: React.ReactNode;
-  href: string;
-}): JSX.Element {
+  meta?: string | string[];
+  price?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  overlay?: ReactNode;
+  onClick?: () => void;
+  className?: string;
+}
+
+export function ItemCard({
+  title,
+  meta,
+  price,
+  imageSrc,
+  imageAlt = "",
+  overlay,
+  onClick,
+  className,
+}: ItemCardProps) {
+  const Root = onClick ? "button" : "div";
+  const metaLabel = formatMeta(meta);
+
   return (
-    <a
-      className={cn(
-        "block rounded-2xl border border-zinc-200 bg-white p-6 transition-colors hover:border-zinc-400 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-zinc-600",
+    <Root
+      className={cx(
+        "flex w-full flex-col items-stretch gap-[10px] pb-1 text-left font-body",
+        onClick &&
+          "cursor-pointer rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fg-strong",
         className,
       )}
-      href={`${href}?utm_source=create-turbo&utm_medium=basic&utm_campaign=create-turbo"`}
-      rel="noopener noreferrer"
-      target="_blank"
+      {...(onClick ? { type: "button" as const, onClick } : {})}
     >
-      <h2 className="mb-2 text-xl font-semibold">
-        {title} <span className="text-zinc-400">-&gt;</span>
-      </h2>
-      <p className="text-zinc-600 dark:text-zinc-400">{children}</p>
-    </a>
+      <div className="relative flex h-[190px] w-full shrink-0 items-center justify-center overflow-hidden rounded-card bg-fill-weak">
+        {imageSrc ? (
+          <img
+            className="block h-full w-full object-cover"
+            src={imageSrc}
+            alt={imageAlt}
+          />
+        ) : (
+          <ImagePlaceholder />
+        )}
+        {overlay}
+      </div>
+      <div className="flex w-full flex-col items-start gap-0.5 overflow-hidden [word-break:break-word]">
+        <p className="w-full text-small font-semibold text-fg-strong">{title}</p>
+        {metaLabel ? (
+          <p className="w-full text-tiny font-normal text-fg-weak">{metaLabel}</p>
+        ) : null}
+        {price ? (
+          <p className="w-full text-tiny font-semibold text-fg-strong">{price}</p>
+        ) : null}
+      </div>
+    </Root>
   );
 }
+
+export default ItemCard;

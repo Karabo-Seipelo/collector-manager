@@ -23,7 +23,7 @@ pnpm install
 pnpm dev
 ```
 
-This starts:
+This starts all persistent dev tasks via Turborepo:
 
 | App | URL |
 | --- | --- |
@@ -44,6 +44,8 @@ pnpm --filter docs dev
 pnpm storybook
 ```
 
+See the full [Scripts reference](./development/scripts) for build, lint, and type-check commands.
+
 ## Build
 
 ```bash
@@ -56,4 +58,11 @@ To build only the docs site:
 pnpm --filter docs build
 ```
 
-The static site output is written to `apps/docs/build`.
+Static output is written to `apps/docs/build`.
+
+## Next steps
+
+- [Monorepo overview](./architecture/monorepo) — understand the repo layout
+- [Apps and packages](./architecture/apps-and-packages) — what each package does
+- [Design system overview](./design-system/overview) — atoms, molecules, and Storybook
+- [Adding components](./development/adding-components) — extend `@repo/ui`
