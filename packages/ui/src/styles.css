@@ -4,9 +4,11 @@
 
 @theme {
   --color-primary: #4c64d9;
+  --color-primary-active: #37489f;
   --color-primary-foreground: #ffffff;
 
-  --shadow-raised: 0 4px 8px -2px rgb(0 0 0 / 0.04), 0 2px 4px -2px rgb(0 0 0 / 0.08);
+  --shadow-raised:
+    0 4px 8px -2px rgb(0 0 0 / 0.04), 0 2px 4px -2px rgb(0 0 0 / 0.08);
 
   /* Colour */
   --color-fill-weak: rgba(0, 21, 128, 0.04);
@@ -17,15 +19,15 @@
   /* Text field */
   --color-fill-inverse: #ffffff;
   --color-fill-hover: rgba(0, 21, 128, 0.04);
-  --color-fill-press: rgba(0, 17, 102, 0.10);
+  --color-fill-press: rgba(0, 17, 102, 0.1);
   --color-fill-error-weak: rgba(255, 74, 74, 0.05);
   --color-stroke-strong: rgba(0, 13, 77, 0.45);
   --color-stroke-focus: #4c64d9;
-  --color-stroke-disabled: rgba(0, 17, 102, 0.10);
-  --color-stroke-error-strong: rgba(199, 58, 58, 0.80);
-  --color-text-disabled: rgba(0, 17, 102, 0.10);
+  --color-stroke-disabled: rgba(0, 17, 102, 0.1);
+  --color-stroke-error-strong: rgba(199, 58, 58, 0.8);
+  --color-text-disabled: rgba(0, 17, 102, 0.1);
   --color-text-error: #c73a3a;
-  --color-icon-error: rgba(199, 58, 58, 0.80);
+  --color-icon-error: rgba(199, 58, 58, 0.8);
 
   /* Typography */
   --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
@@ -44,5 +46,6 @@
   }
   .dark {
     --color-primary: #8495eb;
+    --color-primary-active: #6b7fd4;
   }
 }

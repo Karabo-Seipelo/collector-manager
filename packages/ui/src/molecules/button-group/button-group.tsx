@@ -146,12 +146,7 @@ function ButtonGroupRoot({
     if (firstEnabled) {
       setUncontrolledValue(firstEnabled.value);
     }
-  }, [
-    defaultValue,
-    enabledItems,
-    isControlled,
-    uncontrolledValue,
-  ]);
+  }, [defaultValue, enabledItems, isControlled, uncontrolledValue]);
 
   const onSelect = React.useCallback(
     (nextValue: string) => {
@@ -218,8 +213,10 @@ function ButtonGroupRoot({
   );
 }
 
-export interface ButtonGroupItemProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "value"> {
+export interface ButtonGroupItemProps extends Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  "value"
+> {
   value: string;
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;

@@ -33,7 +33,9 @@ export function getTextFieldBoxClassName({
       !pinned &&
       cn(
         "focus-within:outline focus-within:outline-2 focus-within:outline-stroke-focus",
-        invalid ? "focus-within:outline-offset-4" : "focus-within:outline-offset-3",
+        invalid
+          ? "focus-within:outline-offset-4"
+          : "focus-within:outline-offset-3",
       ),
     state === "hover" && "before:bg-fill-hover",
     state === "press" && "before:bg-fill-press",

@@ -143,9 +143,7 @@ export function TextField(props: TextFieldProps) {
         />
       ) : null}
 
-      {invalid && error ? (
-        <FieldError id={errorId} message={error} />
-      ) : null}
+      {invalid && error ? <FieldError id={errorId} message={error} /> : null}
 
       <div className={boxClassName}>
         {leadingIcon ? (
@@ -167,7 +165,7 @@ export function TextField(props: TextFieldProps) {
         ) : (
           <input
             id={fieldId}
-            type={"type" in props ? props.type ?? "text" : "text"}
+            type={"type" in props ? (props.type ?? "text") : "text"}
             disabled={disabled}
             aria-invalid={invalid || undefined}
             aria-describedby={describedBy}

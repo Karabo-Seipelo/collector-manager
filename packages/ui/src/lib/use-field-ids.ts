@@ -10,8 +10,7 @@ export function useFieldIds(
   const fieldId = id ?? autoId;
   const hintId = options.hint ? `${fieldId}-hint` : undefined;
   const errorId = options.error ? `${fieldId}-error` : undefined;
-  const describedBy =
-    [hintId, errorId].filter(Boolean).join(" ") || undefined;
+  const describedBy = [hintId, errorId].filter(Boolean).join(" ") || undefined;
 
   return { fieldId, hintId, errorId, describedBy };
 }

@@ -28,9 +28,7 @@ export const Default: Story = {
   ),
 };
 
-function ControlledExample(
-  args: React.ComponentProps<typeof ButtonGroup>,
-) {
+function ControlledExample(args: React.ComponentProps<typeof ButtonGroup>) {
   const [value, setValue] = React.useState("week");
 
   return (
