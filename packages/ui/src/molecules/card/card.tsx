@@ -51,12 +51,18 @@ export function ItemCard({
         {overlay}
       </div>
       <div className="flex w-full flex-col items-start gap-0.5 overflow-hidden [word-break:break-word]">
-        <p className="w-full text-small font-semibold text-fg-strong">{title}</p>
+        <p className="w-full text-small font-semibold text-fg-strong">
+          {title}
+        </p>
         {metaLabel ? (
-          <p className="w-full text-tiny font-normal text-fg-weak">{metaLabel}</p>
+          <p className="w-full text-tiny font-normal text-fg-weak">
+            {metaLabel}
+          </p>
         ) : null}
         {price ? (
-          <p className="w-full text-tiny font-semibold text-fg-strong">{price}</p>
+          <p className="w-full text-tiny font-semibold text-fg-strong">
+            {price}
+          </p>
         ) : null}
       </div>
     </Root>

@@ -30,8 +30,12 @@ export function FeatherIcon({
       fill={icon.attrs.fill}
       stroke={icon.attrs.stroke}
       strokeWidth={strokeWidth}
-      strokeLinecap={icon.attrs["stroke-linecap"] as "round" | "butt" | "square" | "inherit"}
-      strokeLinejoin={icon.attrs["stroke-linejoin"] as "round" | "bevel" | "miter" | "inherit"}
+      strokeLinecap={
+        icon.attrs["stroke-linecap"] as "round" | "butt" | "square" | "inherit"
+      }
+      strokeLinejoin={
+        icon.attrs["stroke-linejoin"] as "round" | "bevel" | "miter" | "inherit"
+      }
       className={className}
       aria-hidden="true"
       dangerouslySetInnerHTML={{ __html: icon.contents }}

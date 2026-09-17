@@ -87,7 +87,11 @@ export const Grid: Story = {
   },
   render: () => (
     <div className="grid w-full max-w-[680px] grid-cols-3 gap-4">
-      <ItemCard title="Film camera" meta={["Vinyl", "1972", "NM"]} price="$85.00" />
+      <ItemCard
+        title="Film camera"
+        meta={["Vinyl", "1972", "NM"]}
+        price="$85.00"
+      />
       <ItemCard
         title="Digital SLR"
         meta="Digital, 2018, Like new"

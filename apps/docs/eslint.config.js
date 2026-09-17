@@ -4,6 +4,6 @@ import { config as reactInternalConfig } from "@repo/eslint-config/react-interna
 export default [
   ...reactInternalConfig,
   {
-    ignores: [".docusaurus/**", "build/**"],
+    ignores: [".docusaurus/**", ".next/**", "build/**"],
   },
 ];

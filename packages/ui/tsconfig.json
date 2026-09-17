@@ -4,6 +4,6 @@
     "outDir": "dist",
     "strictNullChecks": true
   },
-  "include": ["src", ".storybook"],
+  "include": ["src", ".storybook", "vitest-env.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
