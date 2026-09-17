@@ -28,6 +28,12 @@ build
 dist
 storybook-static
 
+# Tooling cache
+.vite/
+*.tsbuildinfo
+
+# Cursor IDE / agent local config
+.cursor/
 
 # Debug
 npm-debug.log*
