@@ -34,7 +34,9 @@ Defined in the root `package.json`:
 | `pnpm build-storybook` | Build static Storybook site                |
 | `pnpm lint`            | Lint all packages                          |
 | `pnpm check-types`     | Type-check all packages                    |
-| `pnpm test`            | Run tests in all packages                  |
+| `pnpm test`            | Run unit and Storybook browser tests       |
+| `pnpm test:unit`       | Run jsdom unit tests only                  |
+| `pnpm test:storybook`  | Run Storybook browser tests only           |
 | `pnpm format`          | Format files with Prettier                 |
 | `pnpm format:check`    | Check formatting without writing           |
 
@@ -50,6 +52,8 @@ See [Scripts reference](../development/scripts) for filter examples and per-pack
 | `lint`            | Depends on upstream `^lint`                                 |
 | `check-types`     | Depends on upstream `^check-types`                          |
 | `test`            | Depends on upstream `^test`                                 |
+| `test:unit`       | Depends on upstream `^test:unit`                            |
+| `test:storybook`  | Depends on upstream `^test:storybook`; not cached           |
 | `dev`             | Persistent, not cached                                      |
 | `storybook`       | Persistent, not cached                                      |
 | `build-storybook` | Outputs `storybook-static/`                                 |

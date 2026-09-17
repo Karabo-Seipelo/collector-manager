@@ -16,7 +16,9 @@ All commands run from the **repository root** unless noted.
 | `pnpm build-storybook` | Build static Storybook to `packages/ui/storybook-static` |
 | `pnpm lint`            | Run ESLint in all packages                               |
 | `pnpm check-types`     | Run TypeScript checks in all packages                    |
-| `pnpm test`            | Run tests in all packages                                |
+| `pnpm test`            | Run unit and Storybook browser tests                     |
+| `pnpm test:unit`       | Run jsdom unit tests only                                |
+| `pnpm test:storybook`  | Run Storybook browser tests only (Playwright)            |
 | `pnpm format`          | Format files with Prettier                               |
 | `pnpm format:check`    | Check formatting without writing                         |
 
@@ -40,6 +42,8 @@ pnpm --filter @repo/ui storybook
 pnpm --filter @repo/ui build-storybook
 pnpm --filter @repo/ui lint
 pnpm --filter @repo/ui test
+pnpm --filter @repo/ui test:unit
+pnpm --filter @repo/ui test:storybook
 pnpm --filter @repo/ui check-types
 ```
 
@@ -99,15 +103,17 @@ pnpm --filter @repo/ui exec npx serve storybook-static
 
 ### `@repo/ui`
 
-| Script               | Command                     |
-| -------------------- | --------------------------- |
-| `storybook`          | `storybook dev -p 6006`     |
-| `build-storybook`    | `storybook build`           |
-| `lint`               | `eslint . --max-warnings 0` |
-| `test`               | `vitest run`                |
-| `test:watch`         | `vitest`                    |
-| `check-types`        | `tsc --noEmit`              |
-| `generate:component` | `turbo gen react-component` |
+| Script               | Command                          |
+| -------------------- | -------------------------------- |
+| `storybook`          | `storybook dev -p 6006`          |
+| `build-storybook`    | `storybook build`                |
+| `lint`               | `eslint . --max-warnings 0`      |
+| `test`               | `vitest run`                     |
+| `test:unit`          | `vitest run --project unit`      |
+| `test:storybook`     | `vitest run --project storybook` |
+| `test:watch`         | `vitest`                         |
+| `check-types`        | `tsc --noEmit`                   |
+| `generate:component` | `turbo gen react-component`      |
 
 ## Related
 
