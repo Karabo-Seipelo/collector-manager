@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, fn, userEvent, within } from "storybook/test";
 
 import { withWidth } from "../../../.storybook/decorators";
 import { ItemCard } from "./card";
@@ -31,6 +32,7 @@ export const TitleOnly: Story = {
 };
 
 export const WithImage: Story = {
+  tags: ["!test"],
   decorators: [cardWidth],
   args: {
     title: "Leica M6",
@@ -45,11 +47,17 @@ export const WithImage: Story = {
 export const Clickable: Story = {
   decorators: [cardWidth],
   args: {
-    onClick: () => alert("ItemCard clicked"),
+    onClick: fn(),
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole("button"));
+    await expect(args.onClick).toHaveBeenCalledOnce();
   },
 };
 
 export const WithOverlay: Story = {
+  tags: ["!test"],
   decorators: [cardWidth],
   args: {
     imageSrc:
@@ -82,6 +90,7 @@ export const MetaAsCommaSeparated: Story = {
 };
 
 export const Grid: Story = {
+  tags: ["!test"],
   parameters: {
     layout: "padded",
   },

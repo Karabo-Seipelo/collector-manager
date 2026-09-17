@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, userEvent, within } from "storybook/test";
 
 import { FeatherIcon } from "../icon/icon";
 import { Button } from "./button";
@@ -17,7 +18,14 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: "Button label" });
+    await expect(button).toBeEnabled();
+    await userEvent.click(button);
+  },
+};
 
 export const ExtraSmall: Story = {
   args: {
@@ -68,6 +76,10 @@ export const IconOnly: Story = {
   args: {
     iconOnly: <FeatherIcon name="settings" />,
     children: undefined,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByRole("button")).toBeEnabled();
   },
 };
 

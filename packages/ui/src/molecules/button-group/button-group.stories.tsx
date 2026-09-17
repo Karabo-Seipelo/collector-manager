@@ -1,5 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, userEvent, within } from "storybook/test";
 
 import { FeatherIcon } from "../../atoms/icon/icon";
 import { ButtonGroup } from "./button-group";
@@ -26,6 +27,22 @@ export const Default: Story = {
       <ButtonGroup.Item value="board">Board</ButtonGroup.Item>
     </ButtonGroup>
   ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole("radio", { name: "Grid" }));
+    await expect(canvas.getByRole("radio", { name: "Grid" })).toHaveAttribute(
+      "aria-checked",
+      "true",
+    );
+
+    const list = canvas.getByRole("radio", { name: "List" });
+    list.focus();
+    await userEvent.keyboard("{ArrowRight}");
+    await expect(canvas.getByRole("radio", { name: "Grid" })).toHaveAttribute(
+      "aria-checked",
+      "true",
+    );
+  },
 };
 
 function ControlledExample(args: React.ComponentProps<typeof ButtonGroup>) {
