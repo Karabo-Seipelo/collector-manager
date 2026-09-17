@@ -16,6 +16,13 @@
     "test": {
       "dependsOn": ["^test"]
     },
+    "test:unit": {
+      "dependsOn": ["^test:unit"]
+    },
+    "test:storybook": {
+      "dependsOn": ["^test:storybook"],
+      "cache": false
+    },
     "dev": {
       "cache": false,
       "persistent": true
