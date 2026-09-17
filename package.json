@@ -10,6 +10,7 @@
     "test": "turbo run test",
     "test:unit": "turbo run test:unit",
     "test:storybook": "turbo run test:storybook",
+    "test:wallaby": "pnpm --filter @repo/ui test:wallaby",
     "format": "prettier --write \"**/*.{ts,tsx,md,json,css}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,md,json,css}\"",
     "check-types": "turbo run check-types"
@@ -17,7 +18,8 @@
   "devDependencies": {
     "prettier": "^3.7.4",
     "turbo": "^2.10.11",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "vitest": "^4.1.11"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {
