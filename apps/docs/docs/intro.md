@@ -10,13 +10,13 @@ This site documents the monorepo setup, shared packages, development workflows, 
 
 ## What's in the repo
 
-| Path | Description |
-| --- | --- |
-| [Web app](./apps/web) | Next.js 16 application (port 3000) |
-| [Docs site](./apps/docs-site) | This Docusaurus documentation site (port 3001) |
-| `packages/ui` | Shared React components, Tailwind styles, and Storybook |
-| `packages/eslint-config` | Shared ESLint configurations |
-| `packages/typescript-config` | Shared TypeScript configurations |
+| Path                          | Description                                             |
+| ----------------------------- | ------------------------------------------------------- |
+| [Web app](./apps/web)         | Next.js 16 application (port 3000)                      |
+| [Docs site](./apps/docs-site) | This Docusaurus documentation site (port 3001)          |
+| `packages/ui`                 | Shared React components, Tailwind styles, and Storybook |
+| `packages/eslint-config`      | Shared ESLint configurations                            |
+| `packages/typescript-config`  | Shared TypeScript configurations                        |
 
 The repo is a [Turborepo](https://turborepo.dev/) monorepo managed with [pnpm](https://pnpm.io/) workspaces. Shared UI components follow an **atoms / molecules** structure and are documented interactively in [Storybook](http://localhost:6006) (port 6006).
 

@@ -48,7 +48,7 @@ import { Button } from "@repo/ui/atoms/button";
 import { FeatherIcon } from "@repo/ui/atoms/icon";
 import { Code } from "@repo/ui/atoms/code";
 
-<Button iconLeft={<FeatherIcon name="bell" />}>Notifications</Button>
+<Button iconLeft={<FeatherIcon name="bell" />}>Notifications</Button>;
 ```
 
 ## Scripts
@@ -63,9 +63,9 @@ pnpm --filter web check-types
 
 ## Tooling
 
-| Tool | Config |
-| --- | --- |
-| ESLint | `@repo/eslint-config/next-js` |
+| Tool       | Config                                |
+| ---------- | ------------------------------------- |
+| ESLint     | `@repo/eslint-config/next-js`         |
 | TypeScript | `@repo/typescript-config/nextjs.json` |
 
 ## Related

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Code
@@ -17,15 +17,15 @@ import { Code } from "@repo/ui/atoms/code";
 
 <p>
   Edit <Code>apps/web/app/page.tsx</Code> to get started.
-</p>
+</p>;
 ```
 
 ## Props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `children` | `ReactNode` | required | Code content |
-| `className` | `string` | — | Additional CSS classes |
+| Prop        | Type        | Default  | Description            |
+| ----------- | ----------- | -------- | ---------------------- |
+| `children`  | `ReactNode` | required | Code content           |
+| `className` | `string`    | —        | Additional CSS classes |
 
 ## Styling
 

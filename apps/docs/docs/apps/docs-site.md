@@ -41,12 +41,12 @@ Content here.
 
 ## Configuration
 
-| File | Purpose |
-| --- | --- |
+| File                   | Purpose                                    |
+| ---------------------- | ------------------------------------------ |
 | `docusaurus.config.ts` | Site title, navbar, footer, preset options |
-| `sidebars.ts` | Sidebar structure |
-| `src/css/custom.css` | Theme overrides |
-| `src/pages/index.tsx` | Homepage |
+| `sidebars.ts`          | Sidebar structure                          |
+| `src/css/custom.css`   | Theme overrides                            |
+| `src/pages/index.tsx`  | Homepage                                   |
 
 ## Navbar links
 
@@ -64,10 +64,10 @@ pnpm --filter docs check-types
 
 ## Tooling
 
-| Tool | Config |
-| --- | --- |
-| ESLint | `@repo/eslint-config/react-internal` |
-| TypeScript | Extends `@docusaurus/tsconfig` |
+| Tool       | Config                               |
+| ---------- | ------------------------------------ |
+| ESLint     | `@repo/eslint-config/react-internal` |
+| TypeScript | Extends `@docusaurus/tsconfig`       |
 
 ## Related
 

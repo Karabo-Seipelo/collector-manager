@@ -17,11 +17,11 @@ Turborepo runs these in parallel across packages, respecting dependency order (`
 
 ## Per-package scripts
 
-| Package | Lint | Type check |
-| --- | --- | --- |
-| `apps/web` | `eslint --max-warnings 0` | `next typegen && tsc --noEmit` |
-| `apps/docs` | `eslint . --max-warnings 0` | `tsc --noEmit` |
-| `@repo/ui` | `eslint . --max-warnings 0` | `tsc --noEmit` |
+| Package     | Lint                        | Type check                     |
+| ----------- | --------------------------- | ------------------------------ |
+| `apps/web`  | `eslint --max-warnings 0`   | `next typegen && tsc --noEmit` |
+| `apps/docs` | `eslint . --max-warnings 0` | `tsc --noEmit`                 |
+| `@repo/ui`  | `eslint . --max-warnings 0` | `tsc --noEmit`                 |
 
 Run for a single package:
 

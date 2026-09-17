@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 # ButtonGroup
@@ -8,7 +8,7 @@ A compound component for single-select button groups with radio-group semantics 
 
 **Import:** `@repo/ui/molecules/button-group`
 
-**Storybook:** UI/ButtonGroup
+**Storybook:** Molecules/ButtonGroup
 
 ## Usage
 
@@ -33,35 +33,43 @@ With icons:
 import { FeatherIcon } from "@repo/ui/atoms/icon";
 
 <ButtonGroup defaultValue="grid" aria-label="View mode">
-  <ButtonGroup.Item value="grid" iconOnly={<FeatherIcon name="grid" />} aria-label="Grid view" />
-  <ButtonGroup.Item value="list" iconOnly={<FeatherIcon name="list" />} aria-label="List view" />
-</ButtonGroup>
+  <ButtonGroup.Item
+    value="grid"
+    iconOnly={<FeatherIcon name="grid" />}
+    aria-label="Grid view"
+  />
+  <ButtonGroup.Item
+    value="list"
+    iconOnly={<FeatherIcon name="list" />}
+    aria-label="List view"
+  />
+</ButtonGroup>;
 ```
 
 ## ButtonGroup props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `value` | `string` | — | Controlled selected value |
-| `defaultValue` | `string` | — | Initial value (uncontrolled) |
-| `onChange` | `(value: string) => void` | — | Called when selection changes |
-| `size` | Button size | `"medium"` | Passed to all items |
-| `tone` | Button tone | `"brand"` | Passed to all items |
-| `disabled` | `boolean` | `false` | Disables the entire group |
-| `aria-label` | `string` | — | Accessible name for the group |
-| `aria-labelledby` | `string` | — | ID of labelling element |
-| `className` | `string` | — | Wrapper class |
+| Prop              | Type                      | Default    | Description                                               |
+| ----------------- | ------------------------- | ---------- | --------------------------------------------------------- |
+| `value`           | `string`                  | —          | Controlled selected value                                 |
+| `defaultValue`    | `string`                  | —          | Initial value (uncontrolled)                              |
+| `onChange`        | `(value: string) => void` | —          | Called when selection changes                             |
+| `size`            | `ButtonSize`              | `"medium"` | Passed to all items — see [Shared utilities](./cn-helper) |
+| `tone`            | `ButtonTone`              | `"brand"`  | Passed to all items — see [Shared utilities](./cn-helper) |
+| `disabled`        | `boolean`                 | `false`    | Disables the entire group                                 |
+| `aria-label`      | `string`                  | —          | Accessible name for the group                             |
+| `aria-labelledby` | `string`                  | —          | ID of labelling element                                   |
+| `className`       | `string`                  | —          | Wrapper class                                             |
 
 ## ButtonGroup.Item props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `value` | `string` | required | Unique item identifier |
-| `disabled` | `boolean` | `false` | Disable this item |
-| `iconLeft` | `ReactNode` | — | Icon before label |
-| `iconRight` | `ReactNode` | — | Icon after label |
-| `iconOnly` | `ReactNode` | — | Icon-only item |
-| `children` | `ReactNode` | — | Item label |
+| Prop        | Type        | Default  | Description            |
+| ----------- | ----------- | -------- | ---------------------- |
+| `value`     | `string`    | required | Unique item identifier |
+| `disabled`  | `boolean`   | `false`  | Disable this item      |
+| `iconLeft`  | `ReactNode` | —        | Icon before label      |
+| `iconRight` | `ReactNode` | —        | Icon after label       |
+| `iconOnly`  | `ReactNode` | —        | Icon-only item         |
+| `children`  | `ReactNode` | —        | Item label             |
 
 Also accepts standard button HTML attributes except `value`.
 
@@ -75,10 +83,10 @@ Also accepts standard button HTML attributes except `value`.
 
 When focused inside the group:
 
-| Key | Action |
-| --- | --- |
-| `ArrowRight` / `ArrowDown` | Select next enabled item |
-| `ArrowLeft` / `ArrowUp` | Select previous enabled item |
+| Key                        | Action                       |
+| -------------------------- | ---------------------------- |
+| `ArrowRight` / `ArrowDown` | Select next enabled item     |
+| `ArrowLeft` / `ArrowUp`    | Select previous enabled item |
 
 ## Accessibility
 
@@ -87,3 +95,4 @@ Always provide `aria-label` or `aria-labelledby` on `ButtonGroup`. For icon-only
 ## Related
 
 - [Button](./button)
+- [Shared utilities](./cn-helper)

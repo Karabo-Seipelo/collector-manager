@@ -25,11 +25,11 @@ pnpm dev
 
 This starts all persistent dev tasks via Turborepo:
 
-| App | URL |
-| --- | --- |
-| Web (Next.js) | http://localhost:3000 |
+| App               | URL                   |
+| ----------------- | --------------------- |
+| Web (Next.js)     | http://localhost:3000 |
 | Docs (Docusaurus) | http://localhost:3001 |
-| Storybook | http://localhost:6006 |
+| Storybook         | http://localhost:6006 |
 
 ## Run individual apps
 

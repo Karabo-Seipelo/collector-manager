@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 # ItemCard
@@ -62,18 +62,18 @@ With an overlay badge:
 
 ## Props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `title` | `string` | required | Item name |
-| `meta` | `string \| string[]` | — | Secondary metadata; comma-separated string or array, displayed as `Vinyl · 1959 · NM` |
-| `price` | `string` | — | Price or value label |
-| `imageSrc` | `string` | — | Image URL; shows placeholder icon when omitted |
-| `imageAlt` | `string` | `""` | Alt text for the item image |
-| `overlay` | `ReactNode` | — | Content positioned over the image area (badges, actions) |
-| `onClick` | `() => void` | — | Makes the card interactive; renders as a `<button>` |
-| `className` | `string` | — | Additional CSS classes on the root element |
+| Prop        | Type                 | Default  | Description                                                                           |
+| ----------- | -------------------- | -------- | ------------------------------------------------------------------------------------- |
+| `title`     | `string`             | required | Item name                                                                             |
+| `meta`      | `string \| string[]` | —        | Secondary metadata; comma-separated string or array, displayed as `Vinyl · 1959 · NM` |
+| `price`     | `string`             | —        | Price or value label                                                                  |
+| `imageSrc`  | `string`             | —        | Image URL; shows placeholder icon when omitted                                        |
+| `imageAlt`  | `string`             | `""`     | Alt text for the item image                                                           |
+| `overlay`   | `ReactNode`          | —        | Content positioned over the image area (badges, actions)                              |
+| `onClick`   | `() => void`         | —        | Makes the card interactive; renders as a `<button>`                                   |
+| `className` | `string`             | —        | Additional CSS classes on the root element                                            |
 
-Set `meta` as an array or comma-separated string when generating item data. A single value without commas renders as plain text.
+Set `meta` as an array or comma-separated string when generating item data. A single value without commas renders as plain text. Formatting uses the shared [`formatDotList`](./cn-helper) helper (`@repo/ui/lib/format-dot-list`).
 
 ```tsx
 meta={["Vinyl", "1959", "NM"]}   // Vinyl · 1959 · NM
@@ -86,15 +86,15 @@ meta="Added 2 days ago"           // Added 2 days ago
 The card is a vertical stack:
 
 1. **Image area** — fixed 190px height, `rounded-card` corners, `bg-fill-weak` background
-2. **Text block** — title (`text-small`), optional meta (`text-tiny`, muted, items joined with ` · `), optional price (`text-tiny`, semibold)
+2. **Text block** — title (`text-small`), optional meta (`text-tiny`, muted, items joined with `·`), optional price (`text-tiny`, semibold)
 
 Set a width on the parent container (e.g. `w-[220px]`) — the card stretches to `w-full`.
 
 ## Behavior
 
-| Condition | Root element | Notes |
-| --- | --- | --- |
-| No `onClick` | `<div>` | Static display |
+| Condition      | Root element             | Notes                                      |
+| -------------- | ------------------------ | ------------------------------------------ |
+| No `onClick`   | `<div>`                  | Static display                             |
 | With `onClick` | `<button type="button">` | Keyboard focusable with visible focus ring |
 
 When `imageSrc` is not provided, a placeholder icon is shown in the image area via the [ImagePlaceholder](./image-placeholder) atom.
@@ -103,14 +103,14 @@ When `imageSrc` is not provided, a placeholder icon is shown in the image area v
 
 ItemCard uses semantic tokens from [Design tokens](./tokens):
 
-| Token | Usage |
-| --- | --- |
-| `bg-fill-weak` | Image placeholder background |
-| `rounded-card` | Image corner radius |
-| `text-fg-strong` | Title and price |
-| `text-fg-weak` | Meta line |
-| `text-small` / `text-tiny` | Typography scale |
-| `font-body` | Body font stack |
+| Token                      | Usage                        |
+| -------------------------- | ---------------------------- |
+| `bg-fill-weak`             | Image placeholder background |
+| `rounded-card`             | Image corner radius          |
+| `text-fg-strong`           | Title and price              |
+| `text-fg-weak`             | Meta line                    |
+| `text-small` / `text-tiny` | Typography scale             |
+| `font-body`                | Body font stack              |
 
 ## Accessibility
 
@@ -121,16 +121,19 @@ ItemCard uses semantic tokens from [Design tokens](./tokens):
 
 ## Storybook stories
 
-| Story | Description |
-| --- | --- |
-| Default | Title, meta, and price with placeholder image |
-| TitleOnly | Title without meta or price |
-| WithImage | Full card with photo |
-| Clickable | Interactive card with `onClick` |
-| WithOverlay | Badge overlay on image |
-| Grid | Three cards in a grid layout |
+| Story                | Description                                   |
+| -------------------- | --------------------------------------------- |
+| Default              | Title, meta, and price with placeholder image |
+| TitleOnly            | Title without meta or price                   |
+| WithImage            | Full card with photo                          |
+| Clickable            | Interactive card with `onClick`               |
+| WithOverlay          | Badge overlay on image                        |
+| MetaAsArray          | Meta passed as a string array                 |
+| MetaAsCommaSeparated | Meta passed as a comma-separated string       |
+| Grid                 | Three cards in a grid layout                  |
 
 ## Related
 
 - [Design tokens](./tokens)
+- [Shared utilities](./cn-helper)
 - [Design system overview](./overview)

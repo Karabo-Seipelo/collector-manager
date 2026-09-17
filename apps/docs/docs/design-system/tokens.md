@@ -14,13 +14,27 @@ The `@theme` block registers Tailwind utilities:
 @theme {
   --color-primary: #4c64d9;
   --color-primary-foreground: #ffffff;
-  --shadow-raised: 0 4px 8px -2px rgb(0 0 0 / 0.04), 0 2px 4px -2px rgb(0 0 0 / 0.08);
+  --shadow-raised:
+    0 4px 8px -2px rgb(0 0 0 / 0.04), 0 2px 4px -2px rgb(0 0 0 / 0.08);
 
   /* Semantic colours */
   --color-fill-weak: rgba(0, 21, 128, 0.04);
   --color-fg-strong: rgba(0, 6, 38, 0.9);
   --color-fg-weak: rgba(0, 9, 51, 0.65);
   --color-icon-neutral: rgba(0, 13, 77, 0.45);
+
+  /* Text field */
+  --color-fill-inverse: #ffffff;
+  --color-fill-hover: rgba(0, 21, 128, 0.04);
+  --color-fill-press: rgba(0, 17, 102, 0.1);
+  --color-fill-error-weak: rgba(255, 74, 74, 0.05);
+  --color-stroke-strong: rgba(0, 13, 77, 0.45);
+  --color-stroke-focus: #4c64d9;
+  --color-stroke-disabled: rgba(0, 17, 102, 0.1);
+  --color-stroke-error-strong: rgba(199, 58, 58, 0.8);
+  --color-text-disabled: rgba(0, 17, 102, 0.1);
+  --color-text-error: #c73a3a;
+  --color-icon-error: rgba(199, 58, 58, 0.8);
 
   /* Typography */
   --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
@@ -38,12 +52,16 @@ Components use these via Tailwind classes such as `bg-primary`, `text-fg-strong`
 
 ### Semantic tokens
 
-| Token | Utility classes | Used by |
-| --- | --- | --- |
-| Fill | `bg-fill-weak` | ItemCard image placeholder |
-| Text | `text-fg-strong`, `text-fg-weak` | ItemCard title, price, meta |
-| Shape | `rounded-card` | ItemCard image area |
-| Type | `text-small`, `text-tiny`, `font-body` | ItemCard typography |
+| Token  | Utility classes                                                                                       | Used by                                      |
+| ------ | ----------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| Fill   | `bg-fill-weak`                                                                                        | ItemCard image placeholder                   |
+| Fill   | `bg-fill-inverse`, `bg-fill-hover`, `bg-fill-press`, `bg-fill-error-weak`                             | TextField backgrounds                        |
+| Stroke | `border-stroke-strong`, `border-stroke-focus`, `border-stroke-disabled`, `border-stroke-error-strong` | TextField borders and focus                  |
+| Text   | `text-fg-strong`, `text-fg-weak`                                                                      | ItemCard title, price, meta; TextField input |
+| Text   | `text-text-disabled`, `text-text-error`                                                               | TextField disabled and error text            |
+| Icon   | `text-icon-error`                                                                                     | TextField error icon                         |
+| Shape  | `rounded-card`                                                                                        | ItemCard image area                          |
+| Type   | `text-small`, `text-tiny`, `font-body`                                                                | ItemCard typography                          |
 
 ## Dark mode
 
@@ -85,5 +103,6 @@ Keep token changes in `@repo/ui` so Storybook and apps stay in sync.
 
 ## Related
 
+- [TextField](./text-field)
 - [Tailwind setup](../development/tailwind)
 - [Design system overview](./overview)

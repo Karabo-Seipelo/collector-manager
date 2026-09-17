@@ -49,7 +49,7 @@ Storybook uses the `@tailwindcss/vite` plugin in `.storybook/main.ts` and import
 
 ## Using Tailwind in components
 
-Add utility classes directly in component JSX. For components with a `className` prop, merge classes with the [cn helper](../design-system/cn-helper):
+Add utility classes directly in component JSX. For components with a `className` prop, merge classes with [`cn`](../design-system/cn-helper):
 
 ```tsx
 import { cn } from "../../lib/cn";

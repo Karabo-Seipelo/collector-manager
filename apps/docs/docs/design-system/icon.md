@@ -22,12 +22,12 @@ import { FeatherIcon } from "@repo/ui/atoms/icon";
 
 ## Props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `name` | `FeatherIconName` | required | Icon name from the Feather set |
-| `size` | `number` | `24` | Width and height in pixels |
-| `strokeWidth` | `number` | `2` | SVG stroke width |
-| `className` | `string` | — | Additional CSS classes |
+| Prop          | Type              | Default  | Description                    |
+| ------------- | ----------------- | -------- | ------------------------------ |
+| `name`        | `FeatherIconName` | required | Icon name from the Feather set |
+| `size`        | `number`          | `24`     | Width and height in pixels     |
+| `strokeWidth` | `number`          | `2`      | SVG stroke width               |
+| `className`   | `string`          | —        | Additional CSS classes         |
 
 ## Icon names
 

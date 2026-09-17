@@ -32,7 +32,7 @@ Shared React component library with Storybook.
 packages/ui/src/
 ├── atoms/       # Single-purpose building blocks
 ├── molecules/   # Composed components
-├── lib/         # Utilities (e.g. cn)
+├── lib/         # Shared utilities (cn, types, hooks, field helpers)
 └── styles.css   # Tailwind entry + design tokens
 ```
 
@@ -76,22 +76,30 @@ pnpm resolves these to local packages — no publishing required during developm
 
 `@repo/ui` uses explicit export paths in `packages/ui/package.json`:
 
-| Import | Description |
-| --- | --- |
-| `@repo/ui/atoms/button` | Button component |
-| `@repo/ui/atoms/icon` | FeatherIcon component |
-| `@repo/ui/atoms/code` | Inline Code component |
-| `@repo/ui/atoms/image-placeholder` | ImagePlaceholder component |
-| `@repo/ui/molecules/card` | ItemCard component |
-| `@repo/ui/molecules/button-group` | ButtonGroup compound component |
-| `@repo/ui/styles.css` | Shared Tailwind stylesheet |
-| `@repo/ui/lib/cn` | Class name merge helper |
+| Import                                 | Description                       |
+| -------------------------------------- | --------------------------------- |
+| `@repo/ui/atoms/button`                | Button component                  |
+| `@repo/ui/atoms/icon`                  | FeatherIcon component             |
+| `@repo/ui/atoms/code`                  | Inline Code component             |
+| `@repo/ui/atoms/image-placeholder`     | ImagePlaceholder component        |
+| `@repo/ui/atoms/text-field`            | TextField component               |
+| `@repo/ui/molecules/card`              | ItemCard component                |
+| `@repo/ui/molecules/button-group`      | ButtonGroup compound component    |
+| `@repo/ui/styles.css`                  | Shared Tailwind stylesheet        |
+| `@repo/ui/lib/cn`                      | Class name merge helper           |
+| `@repo/ui/lib/button-types`            | Shared Button / ButtonGroup types |
+| `@repo/ui/lib/format-dot-list`         | Dot-separated list formatter      |
+| `@repo/ui/lib/use-controllable-string` | Controlled string hook            |
+| `@repo/ui/lib/use-field-ids`           | Field ID and ARIA hook            |
+| `@repo/ui/lib/text-field-styles`       | TextField class builders          |
 
 Example:
 
 ```tsx
 import { Button } from "@repo/ui/atoms/button";
+import { TextField } from "@repo/ui/atoms/text-field";
 import { FeatherIcon } from "@repo/ui/atoms/icon";
+import { cn } from "@repo/ui/lib/cn";
 import "@repo/ui/styles.css";
 ```
 

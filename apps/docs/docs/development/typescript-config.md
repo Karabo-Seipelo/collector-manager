@@ -8,11 +8,11 @@ Shared TypeScript bases live in `@repo/typescript-config` (`packages/typescript-
 
 ## Config files
 
-| File | Used by | Purpose |
-| --- | --- | --- |
-| `base.json` | Extended by others | Core compiler options |
-| `nextjs.json` | `apps/web` | Next.js app settings |
-| `react-library.json` | `@repo/ui` | React component library |
+| File                 | Used by            | Purpose                 |
+| -------------------- | ------------------ | ----------------------- |
+| `base.json`          | Extended by others | Core compiler options   |
+| `nextjs.json`        | `apps/web`         | Next.js app settings    |
+| `react-library.json` | `@repo/ui`         | React component library |
 
 ## Usage
 

@@ -8,7 +8,7 @@ Primary action component with variant, tone, size, and icon support.
 
 **Import:** `@repo/ui/atoms/button`
 
-**Storybook:** UI/Button
+**Storybook:** Atoms/Button
 
 ## Usage
 
@@ -33,35 +33,45 @@ import { FeatherIcon } from "@repo/ui/atoms/icon";
 
 Extends native `button` attributes via `React.ButtonHTMLAttributes`.
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `variant` | `"primary"` \| `"secondary"` \| `"tertiary"` | `"primary"` | Visual style |
-| `tone` | `"brand"` \| `"neutral"` \| `"destructive"` \| `"inverse"` | `"brand"` | Color intent |
-| `size` | `"xsmall"` \| `"small"` \| `"medium"` \| `"large"` | `"medium"` | Height and padding |
-| `iconLeft` | `ReactNode` | — | Icon before label |
-| `iconRight` | `ReactNode` | — | Icon after label |
-| `iconOnly` | `ReactNode` | — | Icon-only square button |
-| `fullWidth` | `boolean` | `false` | Stretch to container width |
-| `disabled` | `boolean` | `false` | Disable interaction |
+| Prop        | Type                                                       | Default     | Description                |
+| ----------- | ---------------------------------------------------------- | ----------- | -------------------------- |
+| `variant`   | `"primary"` \| `"secondary"` \| `"tertiary"`               | `"primary"` | Visual style               |
+| `tone`      | `"brand"` \| `"neutral"` \| `"destructive"` \| `"inverse"` | `"brand"`   | Color intent               |
+| `size`      | `"xsmall"` \| `"small"` \| `"medium"` \| `"large"`         | `"medium"`  | Height and padding         |
+| `iconLeft`  | `ReactNode`                                                | —           | Icon before label          |
+| `iconRight` | `ReactNode`                                                | —           | Icon after label           |
+| `iconOnly`  | `ReactNode`                                                | —           | Icon-only square button    |
+| `fullWidth` | `boolean`                                                  | `false`     | Stretch to container width |
+| `disabled`  | `boolean`                                                  | `false`     | Disable interaction        |
 
 Pass standard button props (`type`, `onClick`, `aria-*`, etc.) as usual.
 
+## Shared types
+
+`ButtonType`, `ButtonTone`, and `ButtonSize` are defined in `@repo/ui/lib/button-types` and re-exported from the Button module. [ButtonGroup](./button-group) imports the same types so size and tone props stay in sync.
+
+```ts
+import type { ButtonType, ButtonTone, ButtonSize } from "@repo/ui/atoms/button";
+// or
+import type { ButtonTone, ButtonSize } from "@repo/ui/lib/button-types";
+```
+
 ## Variants
 
-| Variant | Use case |
-| --- | --- |
-| `primary` | Main call to action |
+| Variant     | Use case                      |
+| ----------- | ----------------------------- |
+| `primary`   | Main call to action           |
 | `secondary` | Secondary actions with border |
-| `tertiary` | Low-emphasis / ghost actions |
+| `tertiary`  | Low-emphasis / ghost actions  |
 
 ## Tones
 
-| Tone | Use case |
-| --- | --- |
-| `brand` | Default brand-colored actions |
-| `neutral` | General UI actions |
+| Tone          | Use case                       |
+| ------------- | ------------------------------ |
+| `brand`       | Default brand-colored actions  |
+| `neutral`     | General UI actions             |
 | `destructive` | Delete or irreversible actions |
-| `inverse` | Actions on dark backgrounds |
+| `inverse`     | Actions on dark backgrounds    |
 
 ## Icons
 
@@ -80,3 +90,4 @@ When using `iconOnly`, always provide an **`aria-label`** so screen readers know
 
 - [FeatherIcon](./icon)
 - [ButtonGroup](./button-group)
+- [Shared utilities](./cn-helper)

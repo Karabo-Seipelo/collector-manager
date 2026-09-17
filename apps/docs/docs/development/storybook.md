@@ -26,10 +26,11 @@ Output is written to `packages/ui/storybook-static/`. Deploy this folder to any 
 
 ## Configuration
 
-| File | Purpose |
-| --- | --- |
-| `packages/ui/.storybook/main.ts` | Framework, stories glob, Vite + Tailwind plugin |
-| `packages/ui/.storybook/preview.ts` | Global styles import |
+| File                                    | Purpose                                         |
+| --------------------------------------- | ----------------------------------------------- |
+| `packages/ui/.storybook/main.ts`        | Framework, stories glob, Vite + Tailwind plugin |
+| `packages/ui/.storybook/preview.ts`     | Global styles import                            |
+| `packages/ui/.storybook/decorators.tsx` | Shared story decorators                         |
 
 Stories are co-located with components:
 
@@ -38,6 +39,28 @@ packages/ui/src/atoms/button/
 ├── button.tsx
 └── button.stories.tsx
 ```
+
+Stories are grouped under `Atoms/` and `Molecules/` titles (e.g. `Atoms/Button`, `Molecules/ItemCard`).
+
+## Shared decorators
+
+Use `withWidth` from `.storybook/decorators.tsx` when a story needs a fixed container width:
+
+```tsx
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { withWidth } from "../../../.storybook/decorators";
+import { TextField } from "./text-field";
+
+const fieldWidth = withWidth("360px");
+
+const meta = {
+  title: "Atoms/TextField",
+  component: TextField,
+  decorators: [fieldWidth],
+} satisfies Meta<typeof TextField>;
+```
+
+ItemCard stories use `withWidth("220px")`; TextField uses `withWidth("360px")`.
 
 ## Writing stories
 
@@ -48,7 +71,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "./button";
 
 const meta = {
-  title: "UI/Button",
+  title: "Atoms/Button",
   component: Button,
   args: { children: "Button label" },
 } satisfies Meta<typeof Button>;
@@ -61,11 +84,11 @@ export const Default: Story = {};
 
 ## Docs vs Storybook
 
-| Storybook | Docusaurus docs |
-| --- | --- |
-| Live visual previews | Written API reference |
-| Interactive controls | Import paths and accessibility |
-| All variants side by side | Architecture and workflows |
+| Storybook                 | Docusaurus docs                |
+| ------------------------- | ------------------------------ |
+| Live visual previews      | Written API reference          |
+| Interactive controls      | Import paths and accessibility |
+| All variants side by side | Architecture and workflows     |
 
 Link to Storybook from the docs navbar (configured in `apps/docs/docusaurus.config.ts`).
 

@@ -8,10 +8,10 @@ Shared ESLint flat configs live in `@repo/eslint-config` (`packages/eslint-confi
 
 ## Exports
 
-| Export | Used by | Purpose |
-| --- | --- | --- |
-| `@repo/eslint-config/base` | Base config | Core ESLint + TypeScript rules |
-| `@repo/eslint-config/next-js` | `apps/web` | Next.js-specific lint rules |
+| Export                               | Used by                 | Purpose                           |
+| ------------------------------------ | ----------------------- | --------------------------------- |
+| `@repo/eslint-config/base`           | Base config             | Core ESLint + TypeScript rules    |
+| `@repo/eslint-config/next-js`        | `apps/web`              | Next.js-specific lint rules       |
 | `@repo/eslint-config/react-internal` | `@repo/ui`, `apps/docs` | React library / internal packages |
 
 ## Usage

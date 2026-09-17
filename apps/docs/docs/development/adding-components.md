@@ -8,10 +8,10 @@ Guide for adding new components to `@repo/ui`.
 
 ## 1. Choose atoms or molecules
 
-| Layer | Directory | Example |
-| --- | --- | --- |
-| Atom | `packages/ui/src/atoms/` | Button, FeatherIcon |
-| Molecule | `packages/ui/src/molecules/` | ButtonGroup, ItemCard |
+| Layer    | Directory                    | Example                        |
+| -------- | ---------------------------- | ------------------------------ |
+| Atom     | `packages/ui/src/atoms/`     | Button, TextField, FeatherIcon |
+| Molecule | `packages/ui/src/molecules/` | ButtonGroup, ItemCard          |
 
 See [Design system overview](../design-system/overview) for guidance.
 
@@ -24,7 +24,7 @@ packages/ui/src/atoms/my-component/
 └── my-component.tsx
 ```
 
-Use Tailwind for styling and `cn` for class merging when accepting `className`.
+Use Tailwind for styling and [`cn`](../design-system/cn-helper) for class merging when accepting `className`. Reuse existing helpers from `packages/ui/src/lib/` (types, hooks, formatters) instead of duplicating logic — see [Shared utilities](../design-system/cn-helper).
 
 ## 3. Register the export
 

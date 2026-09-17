@@ -26,15 +26,17 @@ collection-manager/
 
 Defined in the root `package.json`:
 
-| Script | Description |
-| --- | --- |
-| `pnpm dev` | Run all dev servers (web, docs, Storybook) |
-| `pnpm build` | Build all apps and packages |
-| `pnpm storybook` | Run Storybook only |
-| `pnpm build-storybook` | Build static Storybook site |
-| `pnpm lint` | Lint all packages |
-| `pnpm check-types` | Type-check all packages |
-| `pnpm format` | Format files with Prettier |
+| Script                 | Description                                |
+| ---------------------- | ------------------------------------------ |
+| `pnpm dev`             | Run all dev servers (web, docs, Storybook) |
+| `pnpm build`           | Build all apps and packages                |
+| `pnpm storybook`       | Run Storybook only                         |
+| `pnpm build-storybook` | Build static Storybook site                |
+| `pnpm lint`            | Lint all packages                          |
+| `pnpm check-types`     | Type-check all packages                    |
+| `pnpm test`            | Run tests in all packages                  |
+| `pnpm format`          | Format files with Prettier                 |
+| `pnpm format:check`    | Check formatting without writing           |
 
 See [Scripts reference](../development/scripts) for filter examples and per-package commands.
 
@@ -42,14 +44,15 @@ See [Scripts reference](../development/scripts) for filter examples and per-pack
 
 `turbo.json` defines the task pipeline:
 
-| Task | Behavior |
-| --- | --- |
-| `build` | Depends on upstream `^build`; outputs `.next/` and `build/` |
-| `lint` | Depends on upstream `^lint` |
-| `check-types` | Depends on upstream `^check-types` |
-| `dev` | Persistent, not cached |
-| `storybook` | Persistent, not cached |
-| `build-storybook` | Outputs `storybook-static/` |
+| Task              | Behavior                                                    |
+| ----------------- | ----------------------------------------------------------- |
+| `build`           | Depends on upstream `^build`; outputs `.next/` and `build/` |
+| `lint`            | Depends on upstream `^lint`                                 |
+| `check-types`     | Depends on upstream `^check-types`                          |
+| `test`            | Depends on upstream `^test`                                 |
+| `dev`             | Persistent, not cached                                      |
+| `storybook`       | Persistent, not cached                                      |
+| `build-storybook` | Outputs `storybook-static/`                                 |
 
 Turborepo caches task outputs locally. Tasks run in parallel where dependencies allow.
 

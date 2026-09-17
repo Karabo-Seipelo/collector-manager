@@ -8,15 +8,17 @@ All commands run from the **repository root** unless noted.
 
 ## Root scripts
 
-| Command | Description |
-| --- | --- |
-| `pnpm dev` | Start web, docs, and Storybook dev servers |
-| `pnpm build` | Production build for all apps/packages |
-| `pnpm storybook` | Start Storybook on port 6006 |
+| Command                | Description                                              |
+| ---------------------- | -------------------------------------------------------- |
+| `pnpm dev`             | Start web, docs, and Storybook dev servers               |
+| `pnpm build`           | Production build for all apps/packages                   |
+| `pnpm storybook`       | Start Storybook on port 6006                             |
 | `pnpm build-storybook` | Build static Storybook to `packages/ui/storybook-static` |
-| `pnpm lint` | Run ESLint in all packages |
-| `pnpm check-types` | Run TypeScript checks in all packages |
-| `pnpm format` | Format `*.{ts,tsx,md}` with Prettier |
+| `pnpm lint`            | Run ESLint in all packages                               |
+| `pnpm check-types`     | Run TypeScript checks in all packages                    |
+| `pnpm test`            | Run tests in all packages                                |
+| `pnpm format`          | Format files with Prettier                               |
+| `pnpm format:check`    | Check formatting without writing                         |
 
 ## Filter by package
 
@@ -37,6 +39,7 @@ pnpm --filter docs build
 pnpm --filter @repo/ui storybook
 pnpm --filter @repo/ui build-storybook
 pnpm --filter @repo/ui lint
+pnpm --filter @repo/ui test
 pnpm --filter @repo/ui check-types
 ```
 
@@ -54,6 +57,7 @@ pnpm dev
 ```bash
 pnpm lint
 pnpm check-types
+pnpm test
 pnpm build
 ```
 
@@ -75,36 +79,39 @@ pnpm --filter @repo/ui exec npx serve storybook-static
 
 ### `apps/web`
 
-| Script | Command |
-| --- | --- |
-| `dev` | `next dev --port 3000` |
-| `build` | `next build` |
-| `start` | `next start` |
-| `lint` | `eslint --max-warnings 0` |
+| Script        | Command                        |
+| ------------- | ------------------------------ |
+| `dev`         | `next dev --port 3000`         |
+| `build`       | `next build`                   |
+| `start`       | `next start`                   |
+| `lint`        | `eslint --max-warnings 0`      |
 | `check-types` | `next typegen && tsc --noEmit` |
 
 ### `apps/docs`
 
-| Script | Command |
-| --- | --- |
-| `dev` | `docusaurus start --port 3001` |
-| `build` | `docusaurus build` |
-| `serve` | `docusaurus serve --port 3001` |
-| `lint` | `eslint . --max-warnings 0` |
-| `check-types` | `tsc --noEmit` |
+| Script        | Command                        |
+| ------------- | ------------------------------ |
+| `dev`         | `docusaurus start --port 3001` |
+| `build`       | `docusaurus build`             |
+| `serve`       | `docusaurus serve --port 3001` |
+| `lint`        | `eslint . --max-warnings 0`    |
+| `check-types` | `tsc --noEmit`                 |
 
 ### `@repo/ui`
 
-| Script | Command |
-| --- | --- |
-| `storybook` | `storybook dev -p 6006` |
-| `build-storybook` | `storybook build` |
-| `lint` | `eslint . --max-warnings 0` |
-| `check-types` | `tsc --noEmit` |
+| Script               | Command                     |
+| -------------------- | --------------------------- |
+| `storybook`          | `storybook dev -p 6006`     |
+| `build-storybook`    | `storybook build`           |
+| `lint`               | `eslint . --max-warnings 0` |
+| `test`               | `vitest run`                |
+| `test:watch`         | `vitest`                    |
+| `check-types`        | `tsc --noEmit`              |
 | `generate:component` | `turbo gen react-component` |
 
 ## Related
 
 - [Storybook](./storybook)
 - [Tailwind setup](./tailwind)
+- [Testing](./testing)
 - [Linting and types](./linting-and-types)

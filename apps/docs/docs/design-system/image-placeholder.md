@@ -17,15 +17,15 @@ import { ImagePlaceholder } from "@repo/ui/atoms/image-placeholder";
 
 <div className="flex h-[190px] items-center justify-center rounded-card bg-fill-weak">
   <ImagePlaceholder />
-</div>
+</div>;
 ```
 
 ## Props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `size` | `number` | `30` | Width and height in pixels |
-| `className` | `string` | — | Additional CSS classes |
+| Prop        | Type     | Default | Description                |
+| ----------- | -------- | ------- | -------------------------- |
+| `size`      | `number` | `30`    | Width and height in pixels |
+| `className` | `string` | —       | Additional CSS classes     |
 
 ## Accessibility
 
