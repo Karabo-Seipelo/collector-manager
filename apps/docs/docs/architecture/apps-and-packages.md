@@ -86,6 +86,7 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/atoms/image-placeholder`     | ImagePlaceholder component                     |
 | `@repo/ui/atoms/text-field`            | TextField component                            |
 | `@repo/ui/atoms/text-area`             | TextArea multiline component                   |
+| `@repo/ui/atoms/text-link`             | Inline text link with tone and icon slots      |
 | `@repo/ui/atoms/avatar`                | Avatar component                               |
 | `@repo/ui/atoms/tag`                   | Tag filter chip                                |
 | `@repo/ui/atoms/badge`                 | Badge status pill                              |

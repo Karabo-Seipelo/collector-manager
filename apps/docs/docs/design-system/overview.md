@@ -31,7 +31,8 @@ packages/ui/src/
 │   ├── select/
 │   ├── avatar/
 │   ├── text-area/
-│   └── text-field/
+│   ├── text-field/
+│   └── text-link/
 ├── molecules/       # Composed components built from atoms
 │   ├── button-group/
 │   ├── accordion/
@@ -155,6 +156,7 @@ import { cn } from "@repo/ui/lib/cn";
 | FeatherIcon      | Atom     | [Icon](./icon)                          |
 | IconContainer    | Atom     | [IconContainer](./icon-container)       |
 | TextField        | Atom     | [TextField](./text-field)               |
+| TextLink         | Atom     | [Text link](./text-link)                |
 | TextArea         | Atom     | [TextArea](./text-area)                 |
 | Tag              | Atom     | [Tag](./tag)                            |
 | Badge            | Atom     | [Badge](./badge)                        |
