@@ -104,6 +104,7 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/molecules/combobox`          | Select-like field that filters as you type     |
 | `@repo/ui/molecules/date-picker`       | Date field with a calendar overlay              |
 | `@repo/ui/molecules/drawer`            | Responsive side panel / bottom sheet overlay    |
+| `@repo/ui/molecules/dropdown-menu`     | Floating menu triggered by button or avatar     |
 | `@repo/ui/molecules/button-group`      | ButtonGroup primary/secondary/tertiary cluster |
 | `@repo/ui/molecules/checkbox-group`    | Labelled Checkbox collection                   |
 | `@repo/ui/molecules/radio-group`       | Labelled Radio collection                      |
