@@ -25,6 +25,7 @@ packages/ui/src/
 │   ├── checkbox/
 │   ├── radio/
 │   ├── toggle/
+│   ├── divider/
 │   ├── select/
 │   ├── avatar/
 │   ├── text-area/
@@ -53,7 +54,7 @@ packages/ui/src/
 
 | Layer        | When to use                                | Examples                                                                             |
 | ------------ | ------------------------------------------ | ------------------------------------------------------------------------------------ |
-| **Atom**     | A single, reusable UI primitive            | Button, ButtonIcon, FeatherIcon, TextField, TextArea, Toggle, Code, ImagePlaceholder |
+| **Atom**     | A single, reusable UI primitive            | Button, ButtonIcon, FeatherIcon, TextField, TextArea, Toggle, Divider, Code, ImagePlaceholder |
 | **Molecule** | Combines atoms into a higher-level pattern | ButtonGroup, ItemCard                                                                |
 
 Add new **atoms** for standalone primitives. Add **molecules** when a component orchestrates multiple atoms (e.g. a primary/secondary/tertiary button cluster).
@@ -93,6 +94,7 @@ import { Breadcrumbs } from "@repo/ui/atoms/breadcrumbs";
 import { Checkbox } from "@repo/ui/atoms/checkbox";
 import { Radio } from "@repo/ui/atoms/radio";
 import { Toggle } from "@repo/ui/atoms/toggle";
+import { Divider } from "@repo/ui/atoms/divider";
 import { Select } from "@repo/ui/atoms/select";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
@@ -123,6 +125,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Checkbox         | Atom     | [Checkbox](./checkbox)                  |
 | Radio            | Atom     | [Radio](./radio)                        |
 | Toggle           | Atom     | [Toggle](./toggle)                      |
+| Divider          | Atom     | [Divider](./divider)                    |
 | Select           | Atom     | [Select](./select)                      |
 | Avatar           | Atom     | [Avatar](./avatar)                      |
 | AvatarStack      | Molecule | [AvatarStack](./avatar-stack)           |
