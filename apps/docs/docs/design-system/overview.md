@@ -31,6 +31,7 @@ packages/ui/src/
 │   ├── drawer/
 │   ├── dropdown-menu/
 │   ├── hero/
+│   ├── modal/
 │   └── …
 ├── lib/             # Shared utilities (hooks, formatters, styles)
 │   ├── cn.ts
@@ -144,6 +145,7 @@ import { cn } from "@repo/ui/lib/cn";
 | RadioGroup       | Molecule  | [RadioGroup](./radio-group)             |
 | Date picker      | Organism  | [Date picker](./date-picker)            |
 | Drawer           | Organism  | [Drawer](./drawer)                    |
+| Modal            | Organism  | [Modal](./modal)                      |
 | Dropdown menu    | Organism  | [Dropdown menu](./dropdown-menu)      |
 | Footer           | Organism  | [Footer](./footer)                    |
 | File upload      | Organism  | [File upload](./file-upload)          |
