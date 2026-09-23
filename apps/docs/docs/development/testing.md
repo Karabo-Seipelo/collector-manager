@@ -88,6 +88,7 @@ Configuration:
 | `DatePicker` calendar   | `packages/ui/src/molecules/date-picker/calendar.test.tsx`            |
 | `Drawer`                | `packages/ui/src/molecules/drawer/drawer.test.tsx`                   |
 | `DropdownMenu`          | `packages/ui/src/molecules/dropdown-menu/dropdown-menu.test.tsx`     |
+| `EmptyState`            | `packages/ui/src/molecules/empty-state/empty-state.test.tsx`         |
 | `useControllableBoolean`| `packages/ui/src/lib/use-controllable-boolean.test.ts`               |
 | `useScrollLock`         | `packages/ui/src/lib/use-scroll-lock.test.ts`                        |
 | `useFocusTrap`          | `packages/ui/src/lib/use-focus-trap.test.tsx`                        |

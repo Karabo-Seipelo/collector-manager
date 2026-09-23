@@ -40,6 +40,7 @@ packages/ui/src/
 │   ├── date-picker/
 │   ├── drawer/
 │   ├── dropdown-menu/
+│   ├── empty-state/
 │   ├── checkbox-group/
 │   ├── radio-group/
 │   ├── avatar-stack/
@@ -122,6 +123,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@repo/ui/molecules/dropdown-menu";
+import { EmptyState } from "@repo/ui/molecules/empty-state";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
 import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
@@ -166,6 +168,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Date picker      | Molecule | [Date picker](./date-picker)            |
 | Drawer           | Molecule | [Drawer](./drawer)                    |
 | Dropdown menu    | Molecule | [Dropdown menu](./dropdown-menu)      |
+| Empty state      | Molecule | [Empty state](./empty-state)          |
 | Avatar           | Atom     | [Avatar](./avatar)                      |
 | AvatarStack      | Molecule | [AvatarStack](./avatar-stack)           |
 | AvatarLabelled   | Molecule | [AvatarLabelled](./avatar-labelled)     |
