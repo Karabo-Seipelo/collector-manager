@@ -137,6 +137,7 @@ import { Slider } from "@repo/ui/atoms/slider";
 import { Slot } from "@repo/ui/atoms/slot";
 import { Stepper } from "@repo/ui/atoms/stepper";
 import { SummaryList } from "@repo/ui/molecules/summary-list";
+import { Table } from "@repo/ui/molecules/table";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
 import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
@@ -191,6 +192,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Rating           | Molecule | [Rating](./rating)                    |
 | Segmented control | Molecule | [Segmented control](./segmented-control) |
 | Summary list      | Molecule | [Summary list](./summary-list)          |
+| Table             | Molecule | [Table](./table)                        |
 | Avatar           | Atom     | [Avatar](./avatar)                      |
 | AvatarStack      | Molecule | [AvatarStack](./avatar-stack)           |
 | AvatarLabelled   | Molecule | [AvatarLabelled](./avatar-labelled)     |
