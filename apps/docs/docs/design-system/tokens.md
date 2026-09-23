@@ -75,7 +75,8 @@ Components use these via Tailwind classes such as `bg-primary`, `text-fg-strong`
 | Fill   | `bg-fill-inverse`, `bg-fill-hover`, `bg-fill-press`, `bg-fill-error-weak`, `bg-fill-error-strong`, `bg-fill-warning-weak`, `bg-fill-warning-strong`, `bg-fill-success-weak`, `bg-fill-success-strong`, `bg-fill-information-weak`, `bg-fill-brand-weak` | TextField backgrounds; Badge fills; BadgeCount; BadgeDot |
 | Stroke | `border-stroke-weak`, `border-stroke-strong`, `border-stroke-focus`, `border-stroke-disabled`, `border-stroke-error-strong` | Tag outline; TextField borders and focus     |
 | Stroke | `border-stroke-error-weak`, `border-stroke-warning-weak`, `border-stroke-success-weak`, `border-stroke-information-weak`, `border-stroke-brand-weak` | Badge outlines |
-| Text   | `text-fg-strong`, `text-fg-weak`                                                                      | ItemCard title, price, meta; TextField input |
+| Text   | `text-fg-strong`, `text-fg-weak`                                                                      | ItemCard title, price, meta; TextField input; Breadcrumbs labels |
+| Icon   | `text-icon-neutral`                                                                                   | Breadcrumbs separators                       |
 | Text   | `text-text-disabled`, `text-text-error`, `text-text-warning`, `text-text-success`, `text-text-information` | TextField error text; Badge labels |
 | Icon   | `text-icon-error`                                                                                     | TextField error icon                         |
 | Shape  | `rounded-card`                                                                                        | ItemCard image area                          |
@@ -126,5 +127,6 @@ Keep token changes in `@repo/ui` so Storybook and apps stay in sync.
 - [Badge](./badge)
 - [BadgeCount](./badge-count)
 - [BadgeDot](./badge-dot)
+- [Breadcrumbs](./breadcrumbs)
 - [Tailwind setup](../development/tailwind)
 - [Design system overview](./overview)

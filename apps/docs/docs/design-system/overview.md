@@ -20,6 +20,7 @@ packages/ui/src/
 │   ├── badge/
 │   ├── badge-count/
 │   ├── badge-dot/
+│   ├── breadcrumbs/
 │   ├── checkbox/
 │   ├── select/
 │   ├── avatar/
@@ -80,6 +81,7 @@ import { Tag } from "@repo/ui/atoms/tag";
 import { Badge } from "@repo/ui/atoms/badge";
 import { BadgeCount } from "@repo/ui/atoms/badge-count";
 import { BadgeDot } from "@repo/ui/atoms/badge-dot";
+import { Breadcrumbs } from "@repo/ui/atoms/breadcrumbs";
 import { Checkbox } from "@repo/ui/atoms/checkbox";
 import { Select } from "@repo/ui/atoms/select";
 import { Avatar } from "@repo/ui/atoms/avatar";
@@ -103,6 +105,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Badge            | Atom     | [Badge](./badge)                        |
 | BadgeCount       | Atom     | [BadgeCount](./badge-count)             |
 | BadgeDot         | Atom     | [BadgeDot](./badge-dot)                 |
+| Breadcrumbs      | Atom     | [Breadcrumbs](./breadcrumbs)            |
 | Checkbox         | Atom     | [Checkbox](./checkbox)                  |
 | Select           | Atom     | [Select](./select)                      |
 | Avatar           | Atom     | [Avatar](./avatar)                      |

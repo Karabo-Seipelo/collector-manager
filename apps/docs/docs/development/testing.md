@@ -67,6 +67,7 @@ Configuration:
 | `Badge`                 | `packages/ui/src/atoms/badge/badge.test.tsx`                         |
 | `BadgeCount`            | `packages/ui/src/atoms/badge-count/badge-count.test.tsx`             |
 | `BadgeDot`              | `packages/ui/src/atoms/badge-dot/badge-dot.test.tsx`                 |
+| `Breadcrumbs`           | `packages/ui/src/atoms/breadcrumbs/breadcrumbs.test.tsx`             |
 | `FeatherIcon`           | `packages/ui/src/atoms/icon/icon.test.tsx`                           |
 | `Code`                  | `packages/ui/src/atoms/code/code.test.tsx`                           |
 | `ImagePlaceholder`      | `packages/ui/src/atoms/image-placeholder/image-placeholder.test.tsx` |
@@ -88,6 +89,7 @@ Interactive stories with `play` functions:
 - `Badge` — `Default`
 - `BadgeCount` — `Default`
 - `BadgeDot` — `Default`
+- `Breadcrumbs` — `Default`, `Collapsed`, `InteractiveCollapse`
 - `ButtonGroup` — `Default`
 - `ItemCard` — `Clickable`
 
