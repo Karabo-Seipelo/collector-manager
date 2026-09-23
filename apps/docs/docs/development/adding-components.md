@@ -11,7 +11,7 @@ Guide for adding new components to `@repo/ui`.
 | Layer     | Directory                       | Example |
 | --------- | ------------------------------- | ------- |
 | Atom      | `packages/ui/src/atoms/`        | Button, FeatherIcon, Input, Textarea, FieldHeader, FieldError, Avatar, Checkbox, LoadingBar |
-| Molecule  | `packages/ui/src/molecules/`    | TextField, TextArea, Select, ButtonGroup, SearchInput, Stepper, Breadcrumbs, Tabs, Rating, AvatarLabelled |
+| Molecule  | `packages/ui/src/molecules/`    | TextField, TextArea, Select, ButtonGroup, SearchInput, Stepper, Breadcrumbs, Tabs, Rating, Pagination, AvatarLabelled |
 | Organism  | `packages/ui/src/organisms/`    | Table, Footer, Hero, Modal, NavigationSide, NavigationHeader, DatePicker, Drawer, DropdownMenu, Testimonial, AvatarDropdown |
 
 See [Design system overview](../design-system/overview) for layer rules and dependency constraints.

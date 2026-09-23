@@ -91,13 +91,7 @@ Compose cells with existing atoms (`Checkbox`, `Badge`, `AvatarLabelled`, `TextL
 
 ### TablePagination
 
-| Prop            | Type                     | Description                          |
-| --------------- | ------------------------ | ------------------------------------ |
-| `currentPage`   | `number`                 | Active page (1-based)                |
-| `totalPages`    | `number`                 | Total page count                     |
-| `totalItems`    | `number`                 | Total item count                     |
-| `pageSize`      | `number`                 | Items per page                       |
-| `onPageChange`  | `(page: number) => void` | Page selection handler               |
+Thin wrapper around [`Pagination`](./pagination) with `aria-label="Table pagination"`. Accepts the same props as `Pagination`.
 
 ## Layout
 
@@ -105,7 +99,7 @@ Compose cells with existing atoms (`Checkbox`, `Badge`, `AvatarLabelled`, `TextL
 - Body cells: 80px minimum height, weak bottom border, 24px horizontal padding
 - Checkbox column: 72px width, no leading padding
 - Actions column: trailing padding removed, content right-aligned
-- Pagination: Previous/Next text links, numbered pages, range summary
+- Pagination: uses the shared [`Pagination`](./pagination) molecule
 
 ## Accessibility
 

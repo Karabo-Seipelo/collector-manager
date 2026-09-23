@@ -100,29 +100,3 @@ export function getTableActionLinksClassName() {
   return cn("inline-flex items-center gap-4");
 }
 
-export function getTablePaginationClassName(className?: string) {
-  return cn(
-    "flex w-full items-center justify-between gap-6 pt-6",
-    className,
-  );
-}
-
-export function getTablePaginationControlsClassName() {
-  return cn("flex items-center gap-2");
-}
-
-export function getTablePaginationPagesClassName() {
-  return cn("flex items-center");
-}
-
-export function getTablePaginationPageClassName(active?: boolean) {
-  return cn(
-    "inline-flex size-10 items-center justify-center rounded-lg text-tiny leading-5 text-fg-weak outline-none",
-    "focus-visible:ring-2 focus-visible:ring-stroke-focus focus-visible:ring-offset-2",
-    active && "border border-stroke-strong",
-  );
-}
-
-export function getTablePaginationSummaryClassName() {
-  return cn("shrink-0 text-tiny leading-5 text-fg-weak");
-}
