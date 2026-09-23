@@ -19,63 +19,59 @@ const sizes: Record<
   ButtonSize,
   { root: string; text: string; icon: string; square: string }
 > = {
-  xsmall: {
-    root: "h-8 px-3 gap-1",
-    text: "text-xs leading-4",
-    icon: "size-4",
-    square: "size-8",
-  },
   small: {
-    root: "h-10 px-4 gap-1",
-    text: "text-sm leading-5",
-    icon: "size-5",
-    square: "size-10",
+    root: "h-8 gap-0 rounded-lg px-3",
+    text: "text-tiny",
+    icon: "size-4",
+    square: "size-8 rounded-lg",
   },
   medium: {
-    root: "h-12 px-5 gap-1",
-    text: "text-base leading-6",
-    icon: "size-6",
-    square: "size-12",
+    root: "h-12 gap-1 rounded-lg px-4",
+    text: "text-small",
+    icon: "size-5",
+    square: "size-12 rounded-lg",
   },
   large: {
-    root: "h-14 px-6 gap-1",
-    text: "text-base  leading-6",
-    icon: "size-7",
-    square: "size-14",
+    root: "h-14 gap-1 rounded-xl px-6",
+    text: "text-heading-4",
+    icon: "size-6",
+    square: "size-14 rounded-xl",
   },
 };
 
 const tones: Record<ButtonType, Record<ButtonTone, string>> = {
   primary: {
-    brand:
-      "bg-primary text-white shadow-raised hover:bg-primary/90 active:bg-primary-active focus-visible:ring-primary",
+    brand: "bg-primary text-white shadow-raised",
     neutral:
-      "bg-neutral-900 text-white shadow-raised hover:bg-neutral-800 active:bg-neutral-700 focus-visible:ring-neutral-900",
+      "bg-fg-strong text-white shadow-raised",
     destructive:
-      "bg-red-600 text-white shadow-raised hover:bg-red-700 active:bg-red-800 focus-visible:ring-red-600",
+      "bg-text-error text-white shadow-raised",
     inverse:
-      "bg-white text-neutral-900 shadow-raised hover:bg-neutral-100 active:bg-neutral-200 focus-visible:ring-white",
+      "bg-fill-inverse text-fg-strong shadow-raised",
   },
   secondary: {
     brand:
-      "bg-white text-primary border border-primary hover:bg-primary/5 active:bg-primary/10 focus-visible:ring-primary",
+      "border border-primary/80 bg-white/[0.01] text-primary shadow-raised",
     neutral:
-      "bg-white text-neutral-900 border border-neutral-300  hover:bg-neutral-50 active:bg-neutral-100 focus-visible:ring-neutral-900",
+      "border border-stroke-strong bg-white/[0.01] text-fg-strong shadow-raised",
     destructive:
-      "bg-white text-red-600 border border-red-600 hover:bg-red-50 active:bg-red-100 focus-visible:ring-red-600",
+      "border border-stroke-error-strong bg-white/[0.01] text-text-error shadow-raised",
     inverse:
-      "bg-transparent text-white border border-white/60 hover:bg-white/10 active:bg-white/2 focus-visible:ring-white",
+      "border border-white/60 bg-transparent text-white shadow-raised",
   },
   tertiary: {
-    brand:
-      "bg-transparent text-primary hover:bg-primary/8 active:bg-primary/15 focus-visible:ring-primary",
-    neutral:
-      "bg-transparent text-neutral-900 hover:bg-neutral-100 active:bg-neutral-200 focus-visible:ring-neutral-900",
-    destructive:
-      "bg-transparent text-red-600 hover:bg-red-50 active:bg-red-100 focus-visible:ring-red-600",
-    inverse:
-      "bg-transparent text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white",
+    brand: "bg-transparent text-primary shadow-none",
+    neutral: "bg-transparent text-fg-strong shadow-none",
+    destructive: "bg-transparent text-text-error shadow-none",
+    inverse: "bg-transparent text-white shadow-none",
   },
+};
+
+const disabledStyles: Record<ButtonType, string> = {
+  primary: "disabled:bg-fill-disabled disabled:text-white",
+  secondary:
+    "disabled:border-stroke-disabled disabled:bg-transparent disabled:text-text-disabled",
+  tertiary: "disabled:bg-transparent disabled:text-text-disabled",
 };
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -99,7 +95,7 @@ function Icon({
     <span
       aria-hidden="true"
       className={cn(
-        "grid shrink-0 place-items-center [&>svg]:size-full",
+        "relative z-10 grid shrink-0 place-items-center [&>svg]:size-full",
         className,
       )}
     >
@@ -127,11 +123,14 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) {
     const s = sizes[size];
     const base = cn(
-      "inline-flex items-center justify-center rounded-lg font-semibold",
-      "transition-colors outline-none",
-      "focus-visible:ring-2 focus-visible:ring-offset-2",
-      "disabled:pointer-events-none disabled:opacity-40 disabled:shadow-none",
+      "relative isolate inline-flex items-center justify-center font-semibold",
+      "outline-none transition-colors",
+      "before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit]",
+      "hover:before:bg-fill-hover active:before:bg-fill-press",
+      "focus-visible:ring-2 focus-visible:ring-stroke-focus focus-visible:ring-offset-2",
+      "disabled:pointer-events-none disabled:shadow-none disabled:before:bg-transparent",
       tones[variant][tone],
+      disabledStyles[variant],
     );
 
     if (iconOnly) {
@@ -154,14 +153,21 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(
           base,
           s.root,
-          s.text,
           fullWidth ? "w-full" : "w-fit",
           className,
         )}
         {...rest}
       >
         {iconLeft && <Icon className={s.icon}>{iconLeft}</Icon>}
-        <span className="whitespace-nowrap px-1">{children}</span>
+        <span
+          className={cn(
+            "relative z-10 whitespace-nowrap px-1",
+            s.text,
+            variant === "tertiary" && "underline",
+          )}
+        >
+          {children}
+        </span>
         {iconRight && <Icon className={s.icon}>{iconRight}</Icon>}
       </button>
     );

@@ -41,6 +41,7 @@ TypeScript provides autocomplete via the `FeatherIconName` type.
 
 ```tsx
 import { Button } from "@repo/ui/atoms/button";
+import { ButtonIcon } from "@repo/ui/atoms/button-icon";
 import { FeatherIcon } from "@repo/ui/atoms/icon";
 
 <Button iconLeft={<FeatherIcon name="plus" />}>Add item</Button>
@@ -48,6 +49,8 @@ import { FeatherIcon } from "@repo/ui/atoms/icon";
 <Button iconRight={<FeatherIcon name="arrow-right" />}>Continue</Button>
 
 <Button iconOnly={<FeatherIcon name="menu" />} aria-label="Open menu" />
+
+<ButtonIcon icon={<FeatherIcon name="plus" />} aria-label="Add" />
 ```
 
 Icons inherit `currentColor` from parent text color, so Tailwind text utilities on the button apply automatically.
@@ -60,3 +63,4 @@ Icons inherit `currentColor` from parent text color, so Tailwind text utilities 
 ## Related
 
 - [Button](./button)
+- [ButtonIcon](./button-icon)

@@ -12,6 +12,7 @@ The design system lives in `@repo/ui` (`packages/ui`). Components are organized 
 packages/ui/src/
 ├── atoms/           # Single-purpose UI building blocks
 │   ├── button/
+│   ├── button-icon/
 │   ├── icon/
 │   ├── code/
 │   ├── image-placeholder/
@@ -42,10 +43,10 @@ packages/ui/src/
 
 | Layer        | When to use                                | Examples                                               |
 | ------------ | ------------------------------------------ | ------------------------------------------------------ |
-| **Atom**     | A single, reusable UI primitive            | Button, FeatherIcon, TextField, Code, ImagePlaceholder |
+| **Atom**     | A single, reusable UI primitive            | Button, ButtonIcon, FeatherIcon, TextField, Code, ImagePlaceholder |
 | **Molecule** | Combines atoms into a higher-level pattern | ButtonGroup, ItemCard                                  |
 
-Add new **atoms** for standalone primitives. Add **molecules** when a component orchestrates multiple atoms or manages shared state (e.g. a radio-style button group).
+Add new **atoms** for standalone primitives. Add **molecules** when a component orchestrates multiple atoms (e.g. a primary/secondary/tertiary button cluster).
 
 ## Storybook
 
@@ -69,6 +70,7 @@ Components are imported via explicit package exports:
 
 ```tsx
 import { Button } from "@repo/ui/atoms/button";
+import { ButtonIcon } from "@repo/ui/atoms/button-icon";
 import { FeatherIcon } from "@repo/ui/atoms/icon";
 import { TextField } from "@repo/ui/atoms/text-field";
 import { Tag } from "@repo/ui/atoms/tag";
@@ -88,6 +90,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Component        | Type     | Docs                                    |
 | ---------------- | -------- | --------------------------------------- |
 | Button           | Atom     | [Button](./button)                      |
+| ButtonIcon       | Atom     | [ButtonIcon](./button-icon)             |
 | FeatherIcon      | Atom     | [Icon](./icon)                          |
 | TextField        | Atom     | [TextField](./text-field)               |
 | Tag              | Atom     | [Tag](./tag)                            |

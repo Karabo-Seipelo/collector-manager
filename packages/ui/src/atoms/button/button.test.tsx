@@ -45,4 +45,49 @@ describe("Button", () => {
     render(<Button fullWidth>Save</Button>);
     expect(screen.getByRole("button", { name: "Save" })).toHaveClass("w-full");
   });
+
+  it.each([
+    ["small", "h-8", "px-3", "text-tiny", "rounded-lg"],
+    ["medium", "h-12", "px-4", "text-small", "rounded-lg"],
+    ["large", "h-14", "px-6", "text-heading-4", "rounded-xl"],
+  ] as const)(
+    "matches the Figma %s size",
+    (size, height, padding, text, radius) => {
+      render(<Button size={size}>Save</Button>);
+
+      expect(screen.getByRole("button", { name: "Save" })).toHaveClass(
+        height,
+        padding,
+        radius,
+      );
+      expect(screen.getByText("Save")).toHaveClass(text);
+    },
+  );
+
+  it("keeps the tone foreground when label typography is applied", () => {
+    render(<Button>Save</Button>);
+
+    expect(screen.getByRole("button", { name: "Save" })).toHaveClass(
+      "text-white",
+    );
+  });
+
+  it("renders tertiary buttons as underlined text actions", () => {
+    render(<Button variant="tertiary">Learn more</Button>);
+
+    const button = screen.getByRole("button", { name: "Learn more" });
+    expect(button).toHaveClass("shadow-none");
+    expect(button.querySelector("span")).toHaveClass("underline");
+  });
+
+  it("uses the disabled fill token instead of fading the live colour", () => {
+    render(<Button disabled>Save</Button>);
+
+    expect(screen.getByRole("button", { name: "Save" })).toHaveClass(
+      "disabled:bg-fill-disabled",
+    );
+    expect(screen.getByRole("button", { name: "Save" })).not.toHaveClass(
+      "disabled:opacity-40",
+    );
+  });
 });

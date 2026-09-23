@@ -63,6 +63,7 @@ Configuration:
 | `FieldHeader`           | `packages/ui/src/lib/field-header.test.tsx`                          |
 | `FieldError`            | `packages/ui/src/lib/field-error.test.tsx`                           |
 | `Button`                | `packages/ui/src/atoms/button/button.test.tsx`                       |
+| `ButtonIcon`            | `packages/ui/src/atoms/button-icon/button-icon.test.tsx`             |
 | `FeatherIcon`           | `packages/ui/src/atoms/icon/icon.test.tsx`                           |
 | `Code`                  | `packages/ui/src/atoms/code/code.test.tsx`                           |
 | `ImagePlaceholder`      | `packages/ui/src/atoms/image-placeholder/image-placeholder.test.tsx` |
@@ -80,6 +81,7 @@ Interactive stories with `play` functions:
 
 - `TextField` — `Clearable`, `WithError`
 - `Button` — `Default`, `IconOnly`
+- `ButtonIcon` — `Default`
 - `ButtonGroup` — `Default`
 - `ItemCard` — `Clickable`
 

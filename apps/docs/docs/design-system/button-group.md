@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # ButtonGroup
 
-A compound component for single-select button groups with radio-group semantics and keyboard navigation.
+A group of three [Buttons](./button) — primary, secondary, then tertiary. Place them horizontally on large screens or stack them vertically on mobile.
 
 **Import:** `@repo/ui/molecules/button-group`
 
@@ -13,84 +13,43 @@ A compound component for single-select button groups with radio-group semantics 
 ## Usage
 
 ```tsx
+import { Button } from "@repo/ui/atoms/button";
 import { ButtonGroup } from "@repo/ui/molecules/button-group";
 
-function ViewToggle() {
-  const [view, setView] = React.useState("grid");
+<ButtonGroup aria-label="Actions">
+  <Button>Save</Button>
+  <Button>Cancel</Button>
+  <Button>Skip</Button>
+</ButtonGroup>
 
-  return (
-    <ButtonGroup value={view} onChange={setView} aria-label="View mode">
-      <ButtonGroup.Item value="grid">Grid</ButtonGroup.Item>
-      <ButtonGroup.Item value="list">List</ButtonGroup.Item>
-    </ButtonGroup>
-  );
-}
+<ButtonGroup layout="vertical" size="small">
+  <Button>Save</Button>
+  <Button>Cancel</Button>
+  <Button>Skip</Button>
+</ButtonGroup>
 ```
 
-With icons:
+Children are assigned variants by index: first primary, second secondary, third tertiary. Pass icons, `onClick`, and `disabled` on each `Button`.
 
-```tsx
-import { FeatherIcon } from "@repo/ui/atoms/icon";
+## Props
 
-<ButtonGroup defaultValue="grid" aria-label="View mode">
-  <ButtonGroup.Item
-    value="grid"
-    iconOnly={<FeatherIcon name="grid" />}
-    aria-label="Grid view"
-  />
-  <ButtonGroup.Item
-    value="list"
-    iconOnly={<FeatherIcon name="list" />}
-    aria-label="List view"
-  />
-</ButtonGroup>;
-```
+| Prop              | Type                         | Default          | Description                          |
+| ----------------- | ---------------------------- | ---------------- | ------------------------------------ |
+| `layout`          | `"horizontal"` \| `"vertical"` | `"horizontal"` | Row, or a 364px full-width stack     |
+| `order`           | `"default"` \| `"reverse"`   | `"default"`      | Reverse puts tertiary first          |
+| `size`            | Button size                  | `"medium"`       | Passed to every button               |
+| `tone`            | Button tone                  | `"brand"`        | Passed to every button               |
+| `aria-label`      | `string`                     | —                | Accessible name for the group        |
+| `aria-labelledby` | `string`                     | —                | ID of labelling element              |
+| `className`       | `string`                     | —                | Wrapper class                        |
 
-## ButtonGroup props
-
-| Prop              | Type                      | Default    | Description                                               |
-| ----------------- | ------------------------- | ---------- | --------------------------------------------------------- |
-| `value`           | `string`                  | —          | Controlled selected value                                 |
-| `defaultValue`    | `string`                  | —          | Initial value (uncontrolled)                              |
-| `onChange`        | `(value: string) => void` | —          | Called when selection changes                             |
-| `size`            | `ButtonSize`              | `"medium"` | Passed to all items — see [Shared utilities](./cn-helper) |
-| `tone`            | `ButtonTone`              | `"brand"`  | Passed to all items — see [Shared utilities](./cn-helper) |
-| `disabled`        | `boolean`                 | `false`    | Disables the entire group                                 |
-| `aria-label`      | `string`                  | —          | Accessible name for the group                             |
-| `aria-labelledby` | `string`                  | —          | ID of labelling element                                   |
-| `className`       | `string`                  | —          | Wrapper class                                             |
-
-## ButtonGroup.Item props
-
-| Prop        | Type        | Default  | Description            |
-| ----------- | ----------- | -------- | ---------------------- |
-| `value`     | `string`    | required | Unique item identifier |
-| `disabled`  | `boolean`   | `false`  | Disable this item      |
-| `iconLeft`  | `ReactNode` | —        | Icon before label      |
-| `iconRight` | `ReactNode` | —        | Icon after label       |
-| `iconOnly`  | `ReactNode` | —        | Icon-only item         |
-| `children`  | `ReactNode` | —        | Item label             |
-
-Also accepts standard button HTML attributes except `value`.
-
-## Selection behavior
-
-- Selected item renders as `variant="primary"`; others as `variant="secondary"`
-- Container uses `role="radiogroup"`; items use `role="radio"` and `aria-checked`
-- Only the selected item is in the tab order (`tabIndex={0}`)
-
-## Keyboard navigation
-
-When focused inside the group:
-
-| Key                        | Action                       |
-| -------------------------- | ---------------------------- |
-| `ArrowRight` / `ArrowDown` | Select next enabled item     |
-| `ArrowLeft` / `ArrowUp`    | Select previous enabled item |
+Gap is 16px. Radii come from Button (8px small/medium, 12px large). Vertical items stretch to the group width.
 
 ## Accessibility
 
-Always provide `aria-label` or `aria-labelledby` on `ButtonGroup`. For icon-only items, add `aria-label` on each `ButtonGroup.Item`.
+- Wrapper is `role="group"`
+- Each child stays a native `<button>`
+- Reverse changes DOM order so tab order matches the visual order
 
 ## Related
 

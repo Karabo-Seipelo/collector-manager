@@ -1,88 +1,81 @@
+import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
+import { Button } from "../../atoms/button/button";
 import { ButtonGroup } from "./button-group";
 
-function renderGroup(props?: {
-  defaultValue?: string;
-  onChange?: (value: string) => void;
-}) {
+function renderGroup(
+  props?: Partial<React.ComponentProps<typeof ButtonGroup>>,
+) {
   return render(
-    <ButtonGroup
-      aria-label="View mode"
-      defaultValue={props?.defaultValue ?? "grid"}
-      onChange={props?.onChange}
-    >
-      <ButtonGroup.Item value="grid">Grid</ButtonGroup.Item>
-      <ButtonGroup.Item value="list">List</ButtonGroup.Item>
-      <ButtonGroup.Item value="table" disabled>
-        Table
-      </ButtonGroup.Item>
+    <ButtonGroup aria-label="Actions" {...props}>
+      <Button>Save</Button>
+      <Button>Cancel</Button>
+      <Button>Skip</Button>
     </ButtonGroup>,
   );
 }
 
 describe("ButtonGroup", () => {
-  it("selects an item on click", async () => {
-    const user = userEvent.setup();
-    const onChange = vi.fn();
-
-    renderGroup({ onChange });
-
-    await user.click(screen.getByRole("radio", { name: "List" }));
-
-    expect(onChange).toHaveBeenCalledWith("list");
-    expect(screen.getByRole("radio", { name: "List" })).toHaveAttribute(
-      "aria-checked",
-      "true",
-    );
-    expect(screen.getByRole("radio", { name: "Grid" })).toHaveAttribute(
-      "aria-checked",
-      "false",
-    );
-  });
-
-  it("renders items with radio semantics", () => {
+  it("renders three action buttons as primary, secondary, and tertiary", () => {
     renderGroup();
 
-    expect(
-      screen.getByRole("radiogroup", { name: "View mode" }),
-    ).toBeInTheDocument();
-    expect(screen.getAllByRole("radio")).toHaveLength(3);
-    expect(screen.getByRole("radio", { name: "Grid" })).toHaveAttribute(
-      "aria-checked",
-      "true",
-    );
+    const group = screen.getByRole("group", { name: "Actions" });
+    const [save, cancel, skip] = screen.getAllByRole("button");
+
+    expect(group).toHaveClass("gap-4");
+    expect(save).toHaveAccessibleName("Save");
+    expect(save).toHaveClass("bg-primary");
+    expect(cancel).toHaveClass("border-primary/80");
+    expect(skip!.querySelector("span")).toHaveClass("underline");
   });
 
-  it("moves selection with arrow keys and skips disabled items", async () => {
+  it("reverses visual and tab order without changing roles", () => {
+    renderGroup({ order: "reverse" });
+
+    const [skip, cancel, save] = screen.getAllByRole("button");
+
+    expect(skip).toHaveAccessibleName("Skip");
+    expect(skip!.querySelector("span")).toHaveClass("underline");
+    expect(cancel).toHaveAccessibleName("Cancel");
+    expect(save).toHaveAccessibleName("Save");
+    expect(save).toHaveClass("bg-primary");
+  });
+
+  it("stacks full-width buttons when vertical", () => {
+    renderGroup({ layout: "vertical" });
+
+    expect(screen.getByRole("group", { name: "Actions" })).toHaveClass(
+      "flex-col",
+      "w-[364px]",
+    );
+    for (const button of screen.getAllByRole("button")) {
+      expect(button).toHaveClass("w-full");
+    }
+  });
+
+  it("passes size through to each button", () => {
+    renderGroup({ size: "small" });
+
+    expect(screen.getByRole("button", { name: "Save" })).toHaveClass("h-8");
+  });
+
+  it("lets each button keep its own click handler", async () => {
     const user = userEvent.setup();
-    const onChange = vi.fn();
+    const onSave = vi.fn();
 
-    renderGroup({ onChange });
-
-    const grid = screen.getByRole("radio", { name: "Grid" });
-    grid.focus();
-
-    await user.keyboard("{ArrowRight}");
-
-    expect(onChange).toHaveBeenCalledWith("list");
-    expect(screen.getByRole("radio", { name: "List" })).toHaveAttribute(
-      "aria-checked",
-      "true",
+    render(
+      <ButtonGroup>
+        <Button onClick={onSave}>Save</Button>
+        <Button>Cancel</Button>
+        <Button>Skip</Button>
+      </ButtonGroup>,
     );
 
-    await user.keyboard("{ArrowRight}");
+    await user.click(screen.getByRole("button", { name: "Save" }));
 
-    expect(onChange).toHaveBeenLastCalledWith("grid");
-    expect(screen.getByRole("radio", { name: "Grid" })).toHaveAttribute(
-      "aria-checked",
-      "true",
-    );
-    expect(screen.getByRole("radio", { name: "Table" })).toHaveAttribute(
-      "aria-checked",
-      "false",
-    );
+    expect(onSave).toHaveBeenCalledTimes(1);
   });
 });

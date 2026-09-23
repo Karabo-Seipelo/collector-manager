@@ -2,6 +2,7 @@ import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, within } from "storybook/test";
 
+import { Button } from "../../atoms/button/button";
 import { FeatherIcon } from "../../atoms/icon/icon";
 import { ButtonGroup } from "./button-group";
 
@@ -9,143 +10,97 @@ const meta = {
   title: "Molecules/ButtonGroup",
   component: ButtonGroup,
   args: {
+    layout: "horizontal",
+    order: "default",
     size: "medium",
     tone: "brand",
-    "aria-label": "View mode",
+    "aria-label": "Actions",
     children: null,
+  },
+  argTypes: {
+    layout: { control: "select", options: ["horizontal", "vertical"] },
+    order: { control: "select", options: ["default", "reverse"] },
+    size: { control: "select", options: ["small", "medium", "large"] },
+    tone: {
+      control: "select",
+      options: ["brand", "neutral", "destructive", "inverse"],
+    },
+    children: { control: false },
+  },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "A group of three Buttons — primary, secondary, tertiary — placed horizontally for large screens or stacked vertically for mobile.",
+      },
+    },
   },
 } satisfies Meta<typeof ButtonGroup>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  render: (args) => (
-    <ButtonGroup {...args} defaultValue="list">
-      <ButtonGroup.Item value="list">List</ButtonGroup.Item>
-      <ButtonGroup.Item value="grid">Grid</ButtonGroup.Item>
-      <ButtonGroup.Item value="board">Board</ButtonGroup.Item>
+function Actions(args: React.ComponentProps<typeof ButtonGroup>) {
+  return (
+    <ButtonGroup {...args}>
+      <Button>Save</Button>
+      <Button>Cancel</Button>
+      <Button>Skip</Button>
     </ButtonGroup>
-  ),
+  );
+}
+
+export const Default: Story = {
+  render: (args) => <Actions {...args} />,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    await userEvent.click(canvas.getByRole("radio", { name: "Grid" }));
-    await expect(canvas.getByRole("radio", { name: "Grid" })).toHaveAttribute(
-      "aria-checked",
-      "true",
-    );
-
-    const list = canvas.getByRole("radio", { name: "List" });
-    list.focus();
-    await userEvent.keyboard("{ArrowRight}");
-    await expect(canvas.getByRole("radio", { name: "Grid" })).toHaveAttribute(
-      "aria-checked",
-      "true",
-    );
+    const buttons = canvas.getAllByRole("button");
+    await expect(buttons[0]).toHaveAccessibleName("Save");
+    await userEvent.click(buttons[0]!);
   },
 };
 
-function ControlledExample(args: React.ComponentProps<typeof ButtonGroup>) {
-  const [value, setValue] = React.useState("week");
+export const Vertical: Story = {
+  args: {
+    layout: "vertical",
+  },
+  render: (args) => <Actions {...args} />,
+};
 
-  return (
-    <div className="flex flex-col gap-4">
-      <ButtonGroup
-        {...args}
-        value={value}
-        onChange={setValue}
-        aria-label="Time range"
-      >
-        <ButtonGroup.Item value="day">Day</ButtonGroup.Item>
-        <ButtonGroup.Item value="week">Week</ButtonGroup.Item>
-        <ButtonGroup.Item value="month">Month</ButtonGroup.Item>
-      </ButtonGroup>
-      <p className="text-sm text-neutral-600">Selected: {value}</p>
+export const Reverse: Story = {
+  args: {
+    order: "reverse",
+  },
+  render: (args) => <Actions {...args} />,
+};
+
+export const AllSizes: Story = {
+  render: (args) => (
+    <div className="flex flex-col gap-8">
+      <Actions {...args} size="small" />
+      <Actions {...args} size="medium" />
+      <Actions {...args} size="large" />
     </div>
-  );
-}
-
-export const Controlled: Story = {
-  render: (args) => <ControlledExample {...args} />,
-};
-
-const viewOptions = [
-  { value: "list", label: "List" },
-  { value: "grid", label: "Grid" },
-  { value: "board", label: "Board" },
-] as const;
-
-function SelectedCheckIconExample(
-  args: React.ComponentProps<typeof ButtonGroup>,
-) {
-  const [value, setValue] = React.useState<string>("list");
-
-  return (
-    <ButtonGroup
-      {...args}
-      value={value}
-      onChange={setValue}
-      aria-label="View mode"
-    >
-      {viewOptions.map((option) => (
-        <ButtonGroup.Item
-          key={option.value}
-          value={option.value}
-          iconLeft={
-            value === option.value ? <FeatherIcon name="check" /> : undefined
-          }
-        >
-          {option.label}
-        </ButtonGroup.Item>
-      ))}
-    </ButtonGroup>
-  );
-}
-
-export const SelectedWithCheckIcon: Story = {
-  render: (args) => <SelectedCheckIconExample {...args} />,
-};
-
-export const IconOnly: Story = {
-  render: (args) => (
-    <ButtonGroup {...args} defaultValue="list" aria-label="Layout">
-      <ButtonGroup.Item
-        value="list"
-        iconOnly={<FeatherIcon name="list" />}
-        aria-label="List view"
-      />
-      <ButtonGroup.Item
-        value="grid"
-        iconOnly={<FeatherIcon name="grid" />}
-        aria-label="Grid view"
-      />
-      <ButtonGroup.Item
-        value="columns"
-        iconOnly={<FeatherIcon name="columns" />}
-        aria-label="Columns view"
-      />
-    </ButtonGroup>
   ),
 };
 
-export const DisabledGroup: Story = {
+export const Inverse: Story = {
+  args: {
+    tone: "inverse",
+  },
   render: (args) => (
-    <ButtonGroup {...args} defaultValue="draft" disabled>
-      <ButtonGroup.Item value="draft">Draft</ButtonGroup.Item>
-      <ButtonGroup.Item value="published">Published</ButtonGroup.Item>
-      <ButtonGroup.Item value="archived">Archived</ButtonGroup.Item>
-    </ButtonGroup>
+    <div className="w-fit rounded-xl bg-[#111119] p-6">
+      <Actions {...args} />
+    </div>
   ),
 };
 
-export const DisabledItem: Story = {
+export const WithIcons: Story = {
   render: (args) => (
-    <ButtonGroup {...args} defaultValue="list">
-      <ButtonGroup.Item value="list">List</ButtonGroup.Item>
-      <ButtonGroup.Item value="grid" disabled>
-        Grid
-      </ButtonGroup.Item>
-      <ButtonGroup.Item value="board">Board</ButtonGroup.Item>
+    <ButtonGroup {...args}>
+      <Button iconLeft={<FeatherIcon name="check" />}>Save</Button>
+      <Button>Cancel</Button>
+      <Button iconRight={<FeatherIcon name="arrow-right" />}>Skip</Button>
     </ButtonGroup>
   ),
 };

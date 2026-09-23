@@ -12,6 +12,32 @@ const meta = {
     variant: "primary",
     tone: "brand",
     size: "medium",
+    disabled: false,
+  },
+  argTypes: {
+    variant: {
+      control: "select",
+      options: ["primary", "secondary", "tertiary"],
+    },
+    tone: {
+      control: "select",
+      options: ["brand", "neutral", "destructive", "inverse"],
+    },
+    size: {
+      control: "select",
+      options: ["small", "medium", "large"],
+    },
+    iconLeft: { control: false },
+    iconRight: { control: false },
+    iconOnly: { control: false },
+  },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Used to trigger actions. The button type indicates the importance of the action. Practical UI provides three types, four tones, and three sizes.",
+      },
+    },
   },
 } satisfies Meta<typeof Button>;
 
@@ -27,18 +53,9 @@ export const Default: Story = {
   },
 };
 
-export const ExtraSmall: Story = {
-  args: {
-    size: "xsmall",
-  },
-};
-
 export const AllSizes: Story = {
   render: (args) => (
     <div className="flex flex-wrap items-center gap-3">
-      <Button {...args} size="xsmall">
-        Extra small
-      </Button>
       <Button {...args} size="small">
         Small
       </Button>
@@ -52,10 +69,43 @@ export const AllSizes: Story = {
   ),
 };
 
-export const Secondary: Story = {
-  args: {
-    variant: "secondary",
-  },
+export const AllTypes: Story = {
+  render: (args) => (
+    <div className="flex flex-wrap items-center gap-6">
+      <Button {...args} variant="primary">
+        Primary
+      </Button>
+      <Button {...args} variant="secondary">
+        Secondary
+      </Button>
+      <Button {...args} variant="tertiary">
+        Tertiary
+      </Button>
+    </div>
+  ),
+};
+
+export const AllTones: Story = {
+  render: (args) => (
+    <div className="flex flex-col gap-6">
+      <div className="flex flex-wrap items-center gap-6">
+        <Button {...args} tone="brand">
+          Brand
+        </Button>
+        <Button {...args} tone="neutral">
+          Neutral
+        </Button>
+        <Button {...args} tone="destructive">
+          Destructive
+        </Button>
+      </div>
+      <div className="dark w-fit rounded-xl bg-[#111119] p-6">
+        <Button {...args} tone="inverse">
+          Inverse
+        </Button>
+      </div>
+    </div>
+  ),
 };
 
 export const WithIconLeft: Story = {
@@ -83,10 +133,8 @@ export const IconOnly: Story = {
   },
 };
 
-export const Destructive: Story = {
+export const Disabled: Story = {
   args: {
-    tone: "destructive",
-    iconLeft: <FeatherIcon name="trash-2" />,
-    children: "Delete",
+    disabled: true,
   },
 };

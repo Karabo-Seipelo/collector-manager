@@ -18,6 +18,7 @@
 
   /* Text field */
   --color-fill-inverse: #ffffff;
+  --color-fill-disabled: rgba(0, 17, 102, 0.1);
   --color-fill-hover: rgba(0, 21, 128, 0.04);
   --color-fill-press: rgba(0, 17, 102, 0.1);
   --color-fill-error-weak: rgba(255, 74, 74, 0.05);

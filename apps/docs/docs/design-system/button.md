@@ -4,7 +4,8 @@ sidebar_position: 3
 
 # Button
 
-Primary action component with variant, tone, size, and icon support.
+Used to trigger actions. The button type indicates the importance of the
+action.
 
 **Import:** `@repo/ui/atoms/button`
 
@@ -37,7 +38,7 @@ Extends native `button` attributes via `React.ButtonHTMLAttributes`.
 | ----------- | ---------------------------------------------------------- | ----------- | -------------------------- |
 | `variant`   | `"primary"` \| `"secondary"` \| `"tertiary"`               | `"primary"` | Visual style               |
 | `tone`      | `"brand"` \| `"neutral"` \| `"destructive"` \| `"inverse"` | `"brand"`   | Color intent               |
-| `size`      | `"xsmall"` \| `"small"` \| `"medium"` \| `"large"`         | `"medium"`  | Height and padding         |
+| `size`      | `"small"` \| `"medium"` \| `"large"`                      | `"medium"`  | Height, type, radius, and icons |
 | `iconLeft`  | `ReactNode`                                                | —           | Icon before label          |
 | `iconRight` | `ReactNode`                                                | —           | Icon after label           |
 | `iconOnly`  | `ReactNode`                                                | —           | Icon-only square button    |
@@ -62,7 +63,7 @@ import type { ButtonTone, ButtonSize } from "@repo/ui/lib/button-types";
 | ----------- | ----------------------------- |
 | `primary`   | Main call to action           |
 | `secondary` | Secondary actions with border |
-| `tertiary`  | Low-emphasis / ghost actions  |
+| `tertiary`  | Underlined text action        |
 
 ## Tones
 
@@ -77,7 +78,25 @@ import type { ButtonTone, ButtonSize } from "@repo/ui/lib/button-types";
 
 Pass any `ReactNode` as an icon — typically `FeatherIcon`. The button sizes icons automatically per `size`.
 
-When using `iconOnly`, always provide an **`aria-label`** so screen readers know the button's purpose.
+When using `iconOnly`, always provide an **`aria-label`**. For the Figma icon-button component (circle shape, badges, 24px medium icon), use [ButtonIcon](./button-icon).
+
+## Sizes
+
+| Size       | Height | Horizontal padding | Type          | Radius | Icon |
+| ---------- | ------ | ------------------ | ------------- | ------ | ---- |
+| `small`    | 32px   | 12px               | Tiny 14/20    | 8px    | 16px |
+| `medium`   | 48px   | 16px               | Small 16/24   | 8px    | 20px |
+| `large`    | 56px   | 24px               | Heading 4 20/28 | 12px | 24px |
+
+The label container contributes an additional 4px inset on each side, matching
+the Figma component.
+
+## States
+
+- Hover and press use the shared `fill-hover` and `fill-press` overlays.
+- Focus uses a 2px `stroke-focus` ring offset 2px from the button.
+- Disabled primary buttons use `fill-disabled`; secondary and tertiary buttons
+  use disabled stroke/text tokens.
 
 ## Accessibility
 
@@ -89,5 +108,6 @@ When using `iconOnly`, always provide an **`aria-label`** so screen readers know
 ## Related
 
 - [FeatherIcon](./icon)
+- [ButtonIcon](./button-icon)
 - [ButtonGroup](./button-group)
 - [Shared utilities](./cn-helper)

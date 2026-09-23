@@ -24,7 +24,7 @@ Use `cn` in any component that accepts a `className` prop. Button, ItemCard, But
 
 ## button-types
 
-Shared TypeScript types for [Button](./button) and [ButtonGroup](./button-group).
+Shared TypeScript types for [Button](./button), [ButtonIcon](./button-icon), and [ButtonGroup](./button-group).
 
 **Import:** `@repo/ui/lib/button-types`
 
@@ -40,7 +40,7 @@ import type {
 | ------------ | ---------------------------------------------------------- |
 | `ButtonType` | `"primary"` \| `"secondary"` \| `"tertiary"`               |
 | `ButtonTone` | `"brand"` \| `"neutral"` \| `"destructive"` \| `"inverse"` |
-| `ButtonSize` | `"xsmall"` \| `"small"` \| `"medium"` \| `"large"`         |
+| `ButtonSize` | `"small"` \| `"medium"` \| `"large"`                      |
 
 [Button](./button) re-exports these types for convenience.
 
