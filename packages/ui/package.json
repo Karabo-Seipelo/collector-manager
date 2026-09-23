@@ -63,6 +63,7 @@
     "./organisms/modal": "./src/organisms/modal/modal.tsx",
     "./organisms/navigation-side": "./src/organisms/navigation-side/navigation-side.tsx",
     "./organisms/navigation-header": "./src/organisms/navigation-header/navigation-header.tsx",
+    "./templates/collection": "./src/templates/collection/collection-template.tsx",
     "./styles.css": "./src/styles.css",
     "./lib/*": "./src/lib/*.ts"
   },

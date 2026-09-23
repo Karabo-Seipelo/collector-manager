@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, within } from "storybook/test";
 
 import { IconContainer } from "../../atoms/icon-container/icon-container";
+import { ImagePlaceholder } from "../../atoms/image-placeholder/image-placeholder";
 import { FeatherIcon } from "../../atoms/icon/icon";
 import { Slot } from "../../atoms/slot/slot";
 import { Tag } from "../../atoms/tag/tag";
@@ -179,6 +180,25 @@ export const Horizontal: Story = {
         showTags
         showSlot
       />
+    </div>
+  ),
+};
+
+export const CompactImage: Story = {
+  render: () => (
+    <div className="w-[204px]">
+      <Card className="rounded-xl shadow-none hover:shadow-raised active:shadow-raised">
+        <CardImage className="flex aspect-[204/190] h-auto items-center justify-center border-b-0">
+          <ImagePlaceholder size={30} />
+        </CardImage>
+        <CardContent className="gap-1 p-0 pt-2.5">
+          <h3 className="truncate text-small font-semibold leading-6 text-fg-strong">
+            Kind of Blue
+          </h3>
+          <p className="truncate text-tiny leading-5 text-fg-weak">Vinyl · 1959 · NM</p>
+          <p className="truncate text-tiny leading-5 text-fg-strong">R 3 400</p>
+        </CardContent>
+      </Card>
     </div>
   ),
 };
