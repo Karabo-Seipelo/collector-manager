@@ -76,4 +76,24 @@ describe("Hero", () => {
     expect(screen.getByTestId("hero")).toHaveClass("flex-col");
     expect(screen.getByTestId("hero")).toHaveClass("items-center");
   });
+
+  it("uses mobile typography scales on the title and description", () => {
+    render(
+      <Hero
+        title={title}
+        description={description}
+        media={<HeroMedia />}
+      />,
+    );
+
+    expect(screen.getByRole("heading", { level: 1 })).toHaveClass(
+      "text-[36px]",
+      "leading-[44px]",
+      "tracking-[-0.5px]",
+    );
+    expect(screen.getByText(description)).toHaveClass(
+      "text-small",
+      "leading-6",
+    );
+  });
 });

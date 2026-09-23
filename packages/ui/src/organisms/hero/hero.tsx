@@ -9,6 +9,7 @@ import {
   getHeroEyebrowClassName,
   getHeroMediaClassName,
   getHeroMediaWrapperClassName,
+  getHeroSlotClassName,
   getHeroTextBlockClassName,
   getHeroTitleClassName,
   getHeroTopContainerClassName,
@@ -43,8 +44,6 @@ export function Hero({
   className,
   ...rest
 }: HeroProps) {
-  const isVertical = layout.startsWith("vertical");
-
   return (
     <section
       className={getHeroClassName({ layout, className })}
@@ -57,31 +56,21 @@ export function Hero({
           ) : null}
           {tag ? <div>{tag}</div> : null}
           <div className={getHeroTextBlockClassName(layout)}>
-            <h1 className={getHeroTitleClassName()}>{title}</h1>
-            <p className={getHeroDescriptionClassName()}>{description}</p>
+            <h1 className={getHeroTitleClassName(layout)}>{title}</h1>
+            <p className={getHeroDescriptionClassName(layout)}>{description}</p>
           </div>
         </div>
 
         {emailSignup ? (
-          <div className={isVertical ? "flex justify-center" : undefined}>
-            {emailSignup}
-          </div>
+          <div className={getHeroSlotClassName(layout)}>{emailSignup}</div>
         ) : null}
 
         {actions ? (
-          <div className={isVertical ? "flex justify-center" : undefined}>
-            {actions}
-          </div>
+          <div className={getHeroSlotClassName(layout)}>{actions}</div>
         ) : null}
 
         {socialProof ? (
-          <div
-            className={
-              isVertical ? "flex justify-center" : "flex items-center"
-            }
-          >
-            {socialProof}
-          </div>
+          <div className={getHeroSlotClassName(layout)}>{socialProof}</div>
         ) : null}
       </div>
 

@@ -57,7 +57,7 @@ function HeroMedia({ alt = "Hero illustration" }: { alt?: string }) {
 
 function HeroActions() {
   return (
-    <ButtonGroup size="large">
+    <ButtonGroup layout="responsive" size="large" aria-label="Hero actions">
       <Button>Buy now</Button>
       <Button>Free preview</Button>
     </ButtonGroup>
@@ -119,12 +119,22 @@ export const HorizontalMobile: Story = {
   decorators: [withWidth("375px")],
 };
 
+export const HorizontalTablet: Story = {
+  ...Horizontal,
+  decorators: [withWidth("768px")],
+};
+
 export const HorizontalPadded: Story = {
   args: {
     ...sharedArgs,
     layout: "horizontal-padded",
     emailSignup: <HeroEmailSignup />,
   },
+};
+
+export const HorizontalPaddedMobile: Story = {
+  ...HorizontalPadded,
+  decorators: [withWidth("375px")],
 };
 
 export const Vertical: Story = {
@@ -149,6 +159,11 @@ export const VerticalSmall: Story = {
     layout: "vertical-small",
     emailSignup: <HeroEmailSignup />,
   },
+};
+
+export const VerticalMobile: Story = {
+  ...Vertical,
+  decorators: [withWidth("375px")],
 };
 
 export const WithEyebrowAndTag: Story = {

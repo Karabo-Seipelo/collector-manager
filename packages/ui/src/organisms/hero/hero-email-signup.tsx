@@ -31,7 +31,10 @@ export function HeroEmailSignup({
 
   return (
     <form
-      className={cn("flex flex-wrap items-start gap-4", className)}
+      className={cn(
+        "flex w-full flex-col gap-4 md:w-auto md:flex-row md:items-start",
+        className,
+      )}
       onSubmit={handleSubmit}
       {...rest}
     >
@@ -40,10 +43,10 @@ export function HeroEmailSignup({
         placeholder={placeholder}
         value={email}
         onChange={(event) => setEmail(event.target.value)}
-        className={cn("w-full max-w-[300px]", inputClassName)}
+        className={cn("w-full md:w-[300px] md:max-w-[300px]", inputClassName)}
         aria-label={placeholder}
       />
-      <Button type="submit" size="medium">
+      <Button type="submit" size="medium" fullWidth className="md:w-auto">
         {buttonLabel}
       </Button>
     </form>

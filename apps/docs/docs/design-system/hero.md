@@ -29,7 +29,7 @@ import {
   media={<img src="/hero.jpg" alt="" className="h-full w-full object-cover" />}
   emailSignup={<HeroEmailSignup />}
   actions={
-    <ButtonGroup size="large">
+    <ButtonGroup layout="responsive" size="large" aria-label="Hero actions">
       <Button>Buy now</Button>
       <Button>Free preview</Button>
     </ButtonGroup>
@@ -52,6 +52,13 @@ import {
 | `vertical`            | Centered content, full-width media below                 |
 | `vertical-large`      | Centered content, full-width media with rounded top edge |
 | `vertical-small`      | Centered content, constrained rounded media below        |
+
+## Responsive behavior
+
+- **Horizontal layouts** stack content above media below `lg` (1024px), with 48px gap on mobile and 64px on tablet.
+- **Typography** scales from heading-1 / small on mobile to display / heading-4 from `md` (768px) upward.
+- **`HeroEmailSignup`** stacks full-width on mobile and switches to a 300px input row from `md`.
+- Use **`ButtonGroup layout="responsive"`** so hero CTAs stack on mobile and sit inline from `md`.
 
 ## Props
 
