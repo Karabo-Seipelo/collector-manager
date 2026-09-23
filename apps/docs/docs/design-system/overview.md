@@ -34,6 +34,7 @@ packages/ui/src/
 │   └── text-field/
 ├── molecules/       # Composed components built from atoms
 │   ├── button-group/
+│   ├── autocomplete/
 │   ├── checkbox-group/
 │   ├── radio-group/
 │   ├── avatar-stack/
@@ -100,6 +101,7 @@ import { Divider } from "@repo/ui/atoms/divider";
 import { Alert } from "@repo/ui/atoms/alert";
 import { AlertGlobal } from "@repo/ui/atoms/alert-global";
 import { Select } from "@repo/ui/atoms/select";
+import { Autocomplete } from "@repo/ui/molecules/autocomplete";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
 import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
@@ -133,6 +135,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Alert            | Atom     | [Alert](./alert)                        |
 | Alert global     | Atom     | [Alert global](./alert-global)          |
 | Select           | Atom     | [Select](./select)                      |
+| Autocomplete     | Molecule | [Autocomplete](./autocomplete)          |
 | Avatar           | Atom     | [Avatar](./avatar)                      |
 | AvatarStack      | Molecule | [AvatarStack](./avatar-stack)           |
 | AvatarLabelled   | Molecule | [AvatarLabelled](./avatar-labelled)     |
