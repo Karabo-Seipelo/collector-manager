@@ -43,6 +43,7 @@ packages/ui/src/
 │   ├── empty-state/
 │   ├── footer/
 │   ├── file-upload/
+│   ├── rating/
 │   ├── checkbox-group/
 │   ├── radio-group/
 │   ├── avatar-stack/
@@ -128,6 +129,7 @@ import {
 import { EmptyState } from "@repo/ui/molecules/empty-state";
 import { Footer } from "@repo/ui/molecules/footer";
 import { FileUpload } from "@repo/ui/molecules/file-upload";
+import { Rating } from "@repo/ui/molecules/rating";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
 import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
@@ -175,6 +177,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Empty state      | Molecule | [Empty state](./empty-state)          |
 | Footer           | Molecule | [Footer](./footer)                    |
 | File upload      | Molecule | [File upload](./file-upload)          |
+| Rating           | Molecule | [Rating](./rating)                    |
 | Avatar           | Atom     | [Avatar](./avatar)                      |
 | AvatarStack      | Molecule | [AvatarStack](./avatar-stack)           |
 | AvatarLabelled   | Molecule | [AvatarLabelled](./avatar-labelled)     |
