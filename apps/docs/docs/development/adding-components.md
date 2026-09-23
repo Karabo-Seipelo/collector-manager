@@ -11,7 +11,7 @@ Guide for adding new components to `@repo/ui`.
 | Layer    | Directory                    | Example                                                                                                                                |
 | -------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | Atom     | `packages/ui/src/atoms/`     | Button, ButtonIcon, Badge, BadgeCount, BadgeDot, Breadcrumbs, Checkbox, Radio, Toggle, Slider, Stepper, Divider, Alert, AlertGlobal, TextField, TextArea, TextLink, SearchInput, FeatherIcon, IconContainer, ImagePlaceholder, Slot |
-| Molecule | `packages/ui/src/molecules/` | Accordion, Autocomplete, Combobox, DatePicker, Drawer, DropdownMenu, EmptyState, Footer, FileUpload, Rating, SegmentedControl, SummaryList, Table, Tabs, ButtonGroup, Card, CheckboxGroup, RadioGroup                                  |
+| Molecule | `packages/ui/src/molecules/` | Accordion, Autocomplete, Combobox, DatePicker, Drawer, DropdownMenu, EmptyState, Footer, FileUpload, Rating, SegmentedControl, SummaryList, Table, Tabs, Testimonial, ButtonGroup, Card, CheckboxGroup, RadioGroup                                  |
 
 See [Design system overview](../design-system/overview) for guidance.
 
