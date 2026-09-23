@@ -1,118 +1,186 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, fn, userEvent, within } from "storybook/test";
+import { expect, userEvent, within } from "storybook/test";
 
-import { withWidth } from "../../../.storybook/decorators";
-import { ItemCard } from "./card";
+import { IconContainer } from "../../atoms/icon-container/icon-container";
+import { FeatherIcon } from "../../atoms/icon/icon";
+import { Tag } from "../../atoms/tag/tag";
+import { AvatarLabelled } from "../avatar-labelled/avatar-labelled";
+import { Card, CardContent, CardHeader, CardImage } from "./card";
 
-const cardWidth = withWidth("220px");
+const imageUrl =
+  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop";
+
+function TextLink() {
+  return (
+    <a
+      href="#card-details"
+      className="inline-flex items-center gap-2 text-small font-semibold text-fg-strong focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stroke-focus"
+    >
+      Label
+      <FeatherIcon name="arrow-right" size={20} />
+    </a>
+  );
+}
+
+function Tags() {
+  return (
+    <div className="flex flex-wrap gap-1">
+      <Tag size="small">Label</Tag>
+      <Tag size="small">Label</Tag>
+      <Tag size="small">Label</Tag>
+    </div>
+  );
+}
+
+function ExampleCard({
+  orientation = "vertical",
+  showImage = true,
+  showIcon = false,
+  showLink = false,
+  showAvatar = false,
+  showTags = false,
+  showSlot = false,
+}: {
+  orientation?: "vertical" | "horizontal";
+  showImage?: boolean;
+  showIcon?: boolean;
+  showLink?: boolean;
+  showAvatar?: boolean;
+  showTags?: boolean;
+  showSlot?: boolean;
+}) {
+  return (
+    <Card orientation={orientation}>
+      {showImage ? (
+        <CardImage>
+          <img src={imageUrl} alt="Dunes beside a beach" />
+        </CardImage>
+      ) : null}
+      <CardContent>
+        <CardHeader
+          icon={
+            showIcon ? (
+              <IconContainer
+                tone="brand"
+                icon={<FeatherIcon name="square" className="rotate-45" />}
+              />
+            ) : undefined
+          }
+          heading="Heading"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus blandit euismod."
+        />
+        {showLink ? <TextLink /> : null}
+        {showAvatar ? (
+          <AvatarLabelled
+            name="John Smith"
+            description="john@practical-ui.com"
+          />
+        ) : null}
+        {showTags ? <Tags /> : null}
+        {showSlot ? (
+          <div className="w-full rounded-lg border border-dashed border-stroke-strong bg-fill-weaker px-8 py-6 text-center font-mono text-tiny text-fg-weak">
+            Swap with another component
+          </div>
+        ) : null}
+      </CardContent>
+    </Card>
+  );
+}
 
 const meta = {
-  title: "Molecules/ItemCard",
-  component: ItemCard,
-  args: {
-    title: "Kind of Blue",
-    meta: ["Vinyl", "1959", "NM"],
-    price: "$120.00",
+  title: "Molecules/Card",
+  component: Card,
+  parameters: {
+    layout: "centered",
   },
-} satisfies Meta<typeof ItemCard>;
+} satisfies Meta<typeof Card>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  decorators: [cardWidth],
-};
-
-export const TitleOnly: Story = {
-  decorators: [cardWidth],
-  args: {
-    meta: undefined,
-    price: undefined,
-  },
-};
-
-export const WithImage: Story = {
   tags: ["!test"],
-  decorators: [cardWidth],
-  args: {
-    title: "Leica M6",
-    meta: "Mint condition, 1984, Excellent",
-    price: "$2,400.00",
-    imageSrc:
-      "https://images.unsplash.com/photo-1526170375881-4d8ecf77b99f?w=400&h=300&fit=crop",
-    imageAlt: "Leica M6 camera",
-  },
-};
-
-export const Clickable: Story = {
-  decorators: [cardWidth],
-  args: {
-    onClick: fn(),
-  },
-  play: async ({ canvasElement, args }) => {
-    const canvas = within(canvasElement);
-    await userEvent.click(canvas.getByRole("button"));
-    await expect(args.onClick).toHaveBeenCalledOnce();
-  },
-};
-
-export const WithOverlay: Story = {
-  tags: ["!test"],
-  decorators: [cardWidth],
-  args: {
-    imageSrc:
-      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=300&fit=crop",
-    imageAlt: "Polaroid camera",
-    overlay: (
-      <span className="absolute right-2 top-2 rounded-full bg-white/90 px-2 py-0.5 text-xs font-semibold text-fg-strong shadow-sm">
-        New
-      </span>
-    ),
-  },
-};
-
-export const MetaAsArray: Story = {
-  decorators: [cardWidth],
-  args: {
-    title: "Abbey Road",
-    meta: ["Vinyl", "1969", "VG+"],
-    price: "$85.00",
-  },
-};
-
-export const MetaAsCommaSeparated: Story = {
-  decorators: [cardWidth],
-  args: {
-    title: "Blue Train",
-    meta: "Vinyl, 1959, NM",
-    price: "$95.00",
-  },
-};
-
-export const Grid: Story = {
-  tags: ["!test"],
-  parameters: {
-    layout: "padded",
-  },
   render: () => (
-    <div className="grid w-full max-w-[680px] grid-cols-3 gap-4">
-      <ItemCard
-        title="Film camera"
-        meta={["Vinyl", "1972", "NM"]}
-        price="$85.00"
+    <div className="w-[364px]">
+      <ExampleCard
+        showIcon
+        showLink
+        showAvatar
+        showTags
+        showSlot
       />
-      <ItemCard
-        title="Digital SLR"
-        meta="Digital, 2018, Like new"
-        price="$420.00"
-        imageSrc="https://images.unsplash.com/photo-1510127034890-ba275a4ea9a4?w=400&h=300&fit=crop"
-        imageAlt="Digital SLR"
-      />
-      <ItemCard
-        title="Instant camera"
-        meta={["Instant", "1990", "Good"]}
-        price="$65.00"
-        onClick={() => undefined}
+    </div>
+  ),
+};
+
+export const TextOnly: Story = {
+  render: () => (
+    <div className="w-[364px]">
+      <ExampleCard showImage={false} />
+    </div>
+  ),
+};
+
+export const Icon: Story = {
+  render: () => (
+    <div className="w-[364px]">
+      <ExampleCard showImage={false} showIcon />
+    </div>
+  ),
+};
+
+export const IconWithTextLink: Story = {
+  render: () => (
+    <div className="w-[364px]">
+      <ExampleCard showImage={false} showIcon showLink />
+    </div>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const link = canvas.getByRole("link", { name: "Label" });
+    await userEvent.tab();
+    await expect(link).toHaveFocus();
+  },
+};
+
+export const ImageWithAvatar: Story = {
+  tags: ["!test"],
+  render: () => (
+    <div className="w-[364px]">
+      <ExampleCard showAvatar />
+    </div>
+  ),
+};
+
+export const ImageWithTags: Story = {
+  tags: ["!test"],
+  render: () => (
+    <div className="w-[364px]">
+      <ExampleCard showTags />
+    </div>
+  ),
+};
+
+export const ImageWithTextLink: Story = {
+  tags: ["!test"],
+  render: () => (
+    <div className="w-[364px]">
+      <ExampleCard showLink />
+    </div>
+  ),
+};
+
+export const Horizontal: Story = {
+  tags: ["!test"],
+  render: () => (
+    <div className="w-[600px]">
+      <ExampleCard
+        orientation="horizontal"
+        showIcon
+        showLink
+        showAvatar
+        showTags
+        showSlot
       />
     </div>
   ),

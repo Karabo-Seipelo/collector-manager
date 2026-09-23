@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # ImagePlaceholder
 
-Default placeholder graphic shown when no image is available. Used inside image slots such as [ItemCard](./card).
+Default decorative placeholder graphic shown when no image is available.
 
 **Import:** `@repo/ui/atoms/image-placeholder`
 
@@ -30,9 +30,9 @@ import { ImagePlaceholder } from "@repo/ui/atoms/image-placeholder";
 ## Accessibility
 
 - Renders with `aria-hidden="true"` — use only when the placeholder is decorative
-- When the placeholder represents meaningful content, provide context via a parent label or adjacent text (as ItemCard does with `title`)
+- When the placeholder represents meaningful content, provide context via a parent label or adjacent text
 
 ## Related
 
-- [ItemCard](./card)
+- [Card](./card)
 - [Design tokens](./tokens)

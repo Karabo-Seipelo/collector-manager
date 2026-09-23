@@ -98,9 +98,10 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/atoms/divider`               | Divider weak/strong separator                  |
 | `@repo/ui/atoms/alert`                 | Alert in-content status message                |
 | `@repo/ui/atoms/alert-global`          | Alert global page banner                       |
-| `@repo/ui/molecules/card`              | ItemCard component                             |
+| `@repo/ui/molecules/card`              | Practical UI Card content container            |
 | `@repo/ui/molecules/accordion`         | Accordion stacked expandable headings          |
 | `@repo/ui/molecules/autocomplete`      | Searchable single or multiple option picker    |
+| `@repo/ui/molecules/combobox`          | Select-like field that filters as you type     |
 | `@repo/ui/molecules/button-group`      | ButtonGroup primary/secondary/tertiary cluster |
 | `@repo/ui/molecules/checkbox-group`    | Labelled Checkbox collection                   |
 | `@repo/ui/molecules/radio-group`       | Labelled Radio collection                      |

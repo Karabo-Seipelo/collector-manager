@@ -1,64 +1,102 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 
-import { ItemCard } from "./card";
+import { Card, CardContent, CardHeader, CardImage } from "./card";
 
-describe("ItemCard", () => {
-  it("renders title, meta, and price", () => {
+describe("Card", () => {
+  it("composes image, heading, description, and custom content", () => {
     render(
-      <ItemCard
-        title="Kind of Blue"
-        meta={["Vinyl", "1959", "NM"]}
-        price="$120.00"
-      />,
+      <Card>
+        <CardImage>
+          <img src="/beach.jpg" alt="Beach" />
+        </CardImage>
+        <CardContent>
+          <CardHeader
+            label="Featured"
+            heading="Heading"
+            description="Card description"
+          />
+          <a href="/details">View details</a>
+        </CardContent>
+      </Card>,
     );
 
-    expect(screen.getByText("Kind of Blue")).toBeInTheDocument();
-    expect(screen.getByText("Vinyl · 1959 · NM")).toBeInTheDocument();
-    expect(screen.getByText("$120.00")).toBeInTheDocument();
-  });
-
-  it("formats comma-separated meta", () => {
-    render(<ItemCard title="Blue Train" meta="Vinyl, 1959, NM" />);
-    expect(screen.getByText("Vinyl · 1959 · NM")).toBeInTheDocument();
-  });
-
-  it("renders a button when clickable", async () => {
-    const user = userEvent.setup();
-    const onClick = vi.fn();
-
-    render(<ItemCard title="Abbey Road" onClick={onClick} />);
-
-    await user.click(screen.getByRole("button"));
-    expect(onClick).toHaveBeenCalledOnce();
-  });
-
-  it("renders a static div when not clickable", () => {
-    const { container } = render(<ItemCard title="Abbey Road" />);
-    expect(screen.queryByRole("button")).not.toBeInTheDocument();
-    expect(container.querySelector("div")).toBeInTheDocument();
-  });
-
-  it("shows a placeholder when no image is provided", () => {
-    const { container } = render(<ItemCard title="No image" />);
-    expect(container.querySelector('[aria-hidden="true"] img')).toHaveAttribute(
-      "alt",
-      "",
-    );
-  });
-
-  it("renders a provided image", () => {
-    render(
-      <ItemCard
-        title="With image"
-        imageSrc="/example.jpg"
-        imageAlt="Example cover"
-      />,
-    );
-    expect(screen.getByRole("img", { name: "Example cover" })).toHaveAttribute(
+    expect(screen.getByRole("img", { name: "Beach" })).toHaveAttribute(
       "src",
-      "/example.jpg",
+      "/beach.jpg",
+    );
+    expect(screen.getByText("Featured")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Heading" })).toBeInTheDocument();
+    expect(screen.getByText("Card description")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "View details" })).toBeInTheDocument();
+  });
+
+  it("renders the vertical layout by default", () => {
+    render(
+      <Card>
+        <CardContent>
+          <CardHeader heading="Heading" />
+        </CardContent>
+      </Card>,
+    );
+
+    expect(screen.getByTestId("card")).toHaveClass(
+      "flex-col",
+      "rounded-2xl",
+      "border-stroke-weak",
+      "shadow-raised",
+    );
+  });
+
+  it("supports the horizontal image and content layout", () => {
+    render(
+      <Card orientation="horizontal">
+        <CardImage>
+          <img src="/beach.jpg" alt="" />
+        </CardImage>
+        <CardContent>
+          <CardHeader heading="Heading" />
+        </CardContent>
+      </Card>,
+    );
+
+    expect(screen.getByTestId("card")).toHaveClass("flex-row");
+    expect(screen.getByTestId("card-image")).toHaveClass(
+      "w-[225px]",
+      "self-stretch",
+    );
+  });
+
+  it("renders an optional icon before the text block", () => {
+    render(
+      <Card>
+        <CardContent>
+          <CardHeader
+            icon={<span data-testid="icon">Icon</span>}
+            heading="Heading"
+          />
+        </CardContent>
+      </Card>,
+    );
+
+    expect(screen.getByTestId("icon")).toBeInTheDocument();
+    expect(screen.getByTestId("card-header")).toHaveClass(
+      "flex-col",
+      "gap-4",
+    );
+  });
+
+  it("uses the requested semantic heading level", () => {
+    render(
+      <Card>
+        <CardContent>
+          <CardHeader heading="Heading" headingLevel={2} />
+        </CardContent>
+      </Card>,
+    );
+
+    expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
+      "Heading",
     );
   });
 });

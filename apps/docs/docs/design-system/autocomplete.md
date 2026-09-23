@@ -71,7 +71,8 @@ Common props include:
 
 ## Related
 
+- [Combobox](./combobox)
+- [Select](./select)
 - [TextField](./text-field)
 - [Checkbox](./checkbox)
 - [Tag](./tag)
-- [Select](./select)

@@ -2,138 +2,96 @@
 sidebar_position: 7
 ---
 
-# ItemCard
+# Card
 
-Displays a collection item with an image area, title, optional metadata, and price. Used for grids and lists of items in the collection manager.
+Content container for information and actions about a single topic, matching Practical UI Card.
 
 **Import:** `@repo/ui/molecules/card`
 
-**Storybook:** Molecules/ItemCard
+**Storybook:** Molecules/Card
 
 ## Usage
 
 ```tsx
-import { ItemCard } from "@repo/ui/molecules/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardImage,
+} from "@repo/ui/molecules/card";
+import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
 
-<ItemCard
-  title="Kind of Blue"
-  meta={["Vinyl", "1959", "NM"]}
-  price="$120.00"
-/>
-
-<ItemCard
-  title="Blue Train"
-  meta="Vinyl, 1959, NM"
-  price="$95.00"
-/>
-
-<ItemCard
-  title="Leica M6"
-  meta="Mint condition, 1984, Excellent"
-  price="$2,400.00"
-  imageSrc="/images/leica-m6.jpg"
-  imageAlt="Leica M6 camera"
-/>
-
-<ItemCard
-  title="Polaroid camera"
-  meta="Collection A"
-  price="$65.00"
-  onClick={() => console.log("Open item")}
-/>
+<Card>
+  <CardImage>
+    <img src="/images/beach.jpg" alt="Dunes beside a beach" />
+  </CardImage>
+  <CardContent>
+    <CardHeader
+      heading="Heading"
+      description="Supporting information about this topic."
+    />
+    <a href="/details">View details</a>
+    <AvatarLabelled
+      name="John Smith"
+      description="john@example.com"
+    />
+  </CardContent>
+</Card>
 ```
 
-With an overlay badge:
+Horizontal layout:
 
 ```tsx
-<ItemCard
-  title="Instant camera"
-  meta="Collection B"
-  price="$85.00"
-  imageSrc="/images/instant.jpg"
-  imageAlt="Instant camera"
-  overlay={
-    <span className="absolute right-2 top-2 rounded-full bg-white/90 px-2 py-0.5 text-xs font-semibold text-fg-strong">
-      New
-    </span>
-  }
-/>
+<Card orientation="horizontal">
+  <CardImage>
+    <img src="/images/beach.jpg" alt="" />
+  </CardImage>
+  <CardContent>
+    <CardHeader heading="Heading" description="Supporting information." />
+  </CardContent>
+</Card>
 ```
 
-## Props
+## Components
 
-| Prop        | Type                 | Default  | Description                                                                           |
-| ----------- | -------------------- | -------- | ------------------------------------------------------------------------------------- |
-| `title`     | `string`             | required | Item name                                                                             |
-| `meta`      | `string \| string[]` | —        | Secondary metadata; comma-separated string or array, displayed as `Vinyl · 1959 · NM` |
-| `price`     | `string`             | —        | Price or value label                                                                  |
-| `imageSrc`  | `string`             | —        | Image URL; shows placeholder icon when omitted                                        |
-| `imageAlt`  | `string`             | `""`     | Alt text for the item image                                                           |
-| `overlay`   | `ReactNode`          | —        | Content positioned over the image area (badges, actions)                              |
-| `onClick`   | `() => void`         | —        | Makes the card interactive; renders as a `<button>`                                   |
-| `className` | `string`             | —        | Additional CSS classes on the root element                                            |
+| Component     | Purpose                                                                |
+| ------------- | ---------------------------------------------------------------------- |
+| `Card`        | Raised container; `orientation` is `"vertical"` or `"horizontal"`      |
+| `CardImage`   | Cropped media area: 204px high vertically or 225px wide horizontally   |
+| `CardContent` | 32px padded content stack with 24px gaps                               |
+| `CardHeader`  | Optional icon, uppercase label, heading, and supporting description    |
 
-Set `meta` as an array or comma-separated string when generating item data. A single value without commas renders as plain text. Formatting uses the shared [`formatDotList`](./cn-helper) helper (`@repo/ui/lib/format-dot-list`).
+`CardContent` accepts arbitrary children. Compose existing `IconContainer`,
+`AvatarLabelled`, `Tag`, links, buttons, or feature-specific content instead of
+adding one prop for every possible slot.
 
-```tsx
-meta={["Vinyl", "1959", "NM"]}   // Vinyl · 1959 · NM
-meta="Vinyl, 1959, NM"           // Vinyl · 1959 · NM
-meta="Added 2 days ago"           // Added 2 days ago
-```
+`CardHeader` supports `headingLevel={2 | 3 | 4 | 5 | 6}` and defaults to `3`.
 
-## Layout
+## Visual states
 
-The card is a vertical stack:
-
-1. **Image area** — fixed 190px height, `rounded-card` corners, `bg-fill-weak` background
-2. **Text block** — title (`text-small`), optional meta (`text-tiny`, muted, items joined with `·`), optional price (`text-tiny`, semibold)
-
-Set a width on the parent container (e.g. `w-[220px]`) — the card stretches to `w-full`.
-
-## Behavior
-
-| Condition      | Root element             | Notes                                      |
-| -------------- | ------------------------ | ------------------------------------------ |
-| No `onClick`   | `<div>`                  | Static display                             |
-| With `onClick` | `<button type="button">` | Keyboard focusable with visible focus ring |
-
-When `imageSrc` is not provided, a placeholder icon is shown in the image area via the [ImagePlaceholder](./image-placeholder) atom.
-
-## Design tokens
-
-ItemCard uses semantic tokens from [Design tokens](./tokens):
-
-| Token                      | Usage                        |
-| -------------------------- | ---------------------------- |
-| `bg-fill-weak`             | Image placeholder background |
-| `rounded-card`             | Image corner radius          |
-| `text-fg-strong`           | Title and price              |
-| `text-fg-weak`             | Meta line                    |
-| `text-small` / `text-tiny` | Typography scale             |
-| `font-body`                | Body font stack              |
+- Default: raised background, weak border, 16px radius, raised shadow
+- Hover: overlay shadow
+- Press: sunken shadow
+- Focus: 2px brand focus ring when the card or content inside receives focus
 
 ## Accessibility
 
-- When using `onClick`, the card becomes a button — ensure the action is clear from `title` or surrounding context
-- Always provide `imageAlt` when `imageSrc` is set
-- Place decorative overlay content with appropriate `aria-hidden` if it duplicates visible text
-- For icon-only or ambiguous actions, consider an visible label in `title` or `meta`
+- Use the heading level appropriate to the surrounding page hierarchy.
+- Give meaningful images useful alt text; use `alt=""` for decorative images.
+- The card is a container, not one large button, so links, buttons, tags, and
+  other controls remain valid interactive children.
+- The focus ring uses `:focus-within` so keyboard focus remains visible around
+  the card while a child control is active.
 
 ## Storybook stories
 
-| Story                | Description                                   |
-| -------------------- | --------------------------------------------- |
-| Default              | Title, meta, and price with placeholder image |
-| TitleOnly            | Title without meta or price                   |
-| WithImage            | Full card with photo                          |
-| Clickable            | Interactive card with `onClick`               |
-| WithOverlay          | Badge overlay on image                        |
-| MetaAsArray          | Meta passed as a string array                 |
-| MetaAsCommaSeparated | Meta passed as a comma-separated string       |
-| Grid                 | Three cards in a grid layout                  |
+Stories cover vertical and horizontal layouts plus the Practical UI recipes:
+image, image + avatar, image + tags, image + text link, icon, and text only.
 
 ## Related
 
+- [AvatarLabelled](./avatar-labelled)
+- [IconContainer](./icon-container)
+- [Tag](./tag)
 - [Design tokens](./tokens)
-- [Shared utilities](./cn-helper)
 - [Design system overview](./overview)

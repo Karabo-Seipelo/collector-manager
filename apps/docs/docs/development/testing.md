@@ -82,10 +82,11 @@ Configuration:
 | `TextArea`              | `packages/ui/src/atoms/text-area/text-area.test.tsx`                 |
 | `Accordion`             | `packages/ui/src/molecules/accordion/accordion.test.tsx`             |
 | `Autocomplete`          | `packages/ui/src/molecules/autocomplete/autocomplete.test.tsx`       |
+| `Combobox`              | `packages/ui/src/molecules/combobox/combobox.test.tsx`               |
 | `ButtonGroup`           | `packages/ui/src/molecules/button-group/button-group.test.tsx`       |
 | `CheckboxGroup`         | `packages/ui/src/molecules/checkbox-group/checkbox-group.test.tsx`   |
 | `RadioGroup`            | `packages/ui/src/molecules/radio-group/radio-group.test.tsx`         |
-| `ItemCard`              | `packages/ui/src/molecules/card/card.test.tsx`                       |
+| `Card`                  | `packages/ui/src/molecules/card/card.test.tsx`                       |
 
 Add co-located `*.test.tsx` files when introducing components with non-trivial behavior.
 
@@ -112,9 +113,10 @@ Interactive stories with `play` functions:
 - `Alert` — `Default`
 - `AlertGlobal` — `Default`
 - `Autocomplete` — `Default`, `Open`, `Multiple`
+- `Combobox` — `Default`, `Open`, `Multiple`
 - `Accordion` — `Default`
 - `ButtonGroup` — `Default`
-- `ItemCard` — `Clickable`
+- `Card` — `IconWithTextLink`
 
 Exclude stories from automated browser tests with:
 

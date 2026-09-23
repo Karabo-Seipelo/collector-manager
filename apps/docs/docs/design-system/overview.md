@@ -36,6 +36,7 @@ packages/ui/src/
 │   ├── button-group/
 │   ├── accordion/
 │   ├── autocomplete/
+│   ├── combobox/
 │   ├── checkbox-group/
 │   ├── radio-group/
 │   ├── avatar-stack/
@@ -59,7 +60,7 @@ packages/ui/src/
 | Layer        | When to use                                | Examples                                                                             |
 | ------------ | ------------------------------------------ | ------------------------------------------------------------------------------------ |
 | **Atom**     | A single, reusable UI primitive            | Button, ButtonIcon, FeatherIcon, TextField, TextArea, Toggle, Divider, Alert, AlertGlobal, Code, ImagePlaceholder |
-| **Molecule** | Combines atoms into a higher-level pattern | Accordion, ButtonGroup, ItemCard                                                     |
+| **Molecule** | Combines atoms into a higher-level pattern | Accordion, ButtonGroup, Card                                                         |
 
 Add new **atoms** for standalone primitives. Add **molecules** when a component orchestrates multiple atoms (e.g. a primary/secondary/tertiary button cluster).
 
@@ -104,6 +105,7 @@ import { AlertGlobal } from "@repo/ui/atoms/alert-global";
 import { Select } from "@repo/ui/atoms/select";
 import { Accordion, AccordionItem } from "@repo/ui/molecules/accordion";
 import { Autocomplete } from "@repo/ui/molecules/autocomplete";
+import { Combobox } from "@repo/ui/molecules/combobox";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
 import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
@@ -111,7 +113,12 @@ import { AvatarDropdown } from "@repo/ui/molecules/avatar-dropdown";
 import { ButtonGroup } from "@repo/ui/molecules/button-group";
 import { CheckboxGroup } from "@repo/ui/molecules/checkbox-group";
 import { RadioGroup } from "@repo/ui/molecules/radio-group";
-import { ItemCard } from "@repo/ui/molecules/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardImage,
+} from "@repo/ui/molecules/card";
 import { cn } from "@repo/ui/lib/cn";
 ```
 
@@ -139,13 +146,14 @@ import { cn } from "@repo/ui/lib/cn";
 | Select           | Atom     | [Select](./select)                      |
 | Accordion        | Molecule | [Accordion](./accordion)                |
 | Autocomplete     | Molecule | [Autocomplete](./autocomplete)          |
+| Combobox         | Molecule | [Combobox](./combobox)                  |
 | Avatar           | Atom     | [Avatar](./avatar)                      |
 | AvatarStack      | Molecule | [AvatarStack](./avatar-stack)           |
 | AvatarLabelled   | Molecule | [AvatarLabelled](./avatar-labelled)     |
 | AvatarDropdown   | Molecule | [AvatarDropdown](./avatar-dropdown)     |
 | ImagePlaceholder | Atom     | [ImagePlaceholder](./image-placeholder) |
 | Code             | Atom     | [Code](./code)                          |
-| ItemCard         | Molecule | [ItemCard](./card)                      |
+| Card             | Molecule | [Card](./card)                          |
 | ButtonGroup      | Molecule | [ButtonGroup](./button-group)           |
 | CheckboxGroup    | Molecule | [CheckboxGroup](./checkbox-group)       |
 | RadioGroup       | Molecule | [RadioGroup](./radio-group)             |

@@ -46,6 +46,8 @@ Pass options as children (`<option>`). This atom does not implement a custom men
 
 ## Related
 
+- [Combobox](./combobox)
+- [Autocomplete](./autocomplete)
 - [TextField](./text-field)
 - [Checkbox](./checkbox)
 - [Shared utilities](./cn-helper)

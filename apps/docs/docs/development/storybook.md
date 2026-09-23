@@ -40,7 +40,7 @@ packages/ui/src/atoms/button/
 └── button.stories.tsx
 ```
 
-Stories are grouped under `Atoms/` and `Molecules/` titles (e.g. `Atoms/Button`, `Molecules/ItemCard`).
+Stories are grouped under `Atoms/` and `Molecules/` titles (e.g. `Atoms/Button`, `Molecules/Card`).
 
 ## Shared decorators
 
@@ -60,7 +60,8 @@ const meta = {
 } satisfies Meta<typeof TextField>;
 ```
 
-ItemCard stories use `withWidth("220px")`; TextField uses `withWidth("360px")`.
+TextField uses `withWidth("360px")`; compositional stories such as Card can set
+their recipe width directly in the story render function.
 
 ## Writing stories
 

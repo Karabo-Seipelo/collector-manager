@@ -20,7 +20,7 @@ import { cn } from "@repo/ui/lib/cn";
 
 `cn` combines [clsx](https://github.com/lukeed/clsx) with [tailwind-merge](https://github.com/dcastil/tailwind-merge) so caller overrides win (e.g. `className="p-6"` replaces a default `p-4`).
 
-Use `cn` in any component that accepts a `className` prop. Button, ItemCard, ButtonGroup, and TextField all use it instead of ad-hoc class join helpers.
+Use `cn` in any component that accepts a `className` prop. Button, Card, ButtonGroup, and TextField all use it instead of ad-hoc class join helpers.
 
 ## button-types
 
@@ -58,7 +58,7 @@ formatDotList("Vinyl, 1959, NM"); // "Vinyl · 1959 · NM"
 formatDotList(undefined); // null
 ```
 
-Used by [ItemCard](./card) for the `meta` prop. Pass a custom separator as the second argument if needed.
+Pass a custom separator as the second argument if needed.
 
 ## useControllableString
 
