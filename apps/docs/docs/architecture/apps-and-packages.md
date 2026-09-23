@@ -106,6 +106,7 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/molecules/drawer`            | Responsive side panel / bottom sheet overlay    |
 | `@repo/ui/molecules/dropdown-menu`     | Floating menu triggered by button or avatar     |
 | `@repo/ui/molecules/empty-state`       | Empty page/list placeholder with optional icon  |
+| `@repo/ui/molecules/footer`            | Site footer with small and large layouts        |
 | `@repo/ui/molecules/button-group`      | ButtonGroup primary/secondary/tertiary cluster |
 | `@repo/ui/molecules/checkbox-group`    | Labelled Checkbox collection                   |
 | `@repo/ui/molecules/radio-group`       | Labelled Radio collection                      |
