@@ -60,6 +60,7 @@
     "./organisms/hero": "./src/organisms/hero/hero.tsx",
     "./organisms/modal": "./src/organisms/modal/modal.tsx",
     "./organisms/navigation-side": "./src/organisms/navigation-side/navigation-side.tsx",
+    "./organisms/navigation-header": "./src/organisms/navigation-header/navigation-header.tsx",
     "./styles.css": "./src/styles.css",
     "./lib/*": "./src/lib/*.ts"
   },

@@ -33,6 +33,7 @@ packages/ui/src/
 │   ├── hero/
 │   ├── modal/
 │   ├── navigation-side/
+│   ├── navigation-header/
 │   └── …
 ├── lib/             # Shared utilities (hooks, formatters, styles)
 │   ├── cn.ts
@@ -148,6 +149,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Drawer           | Organism  | [Drawer](./drawer)                    |
 | Modal            | Organism  | [Modal](./modal)                      |
 | Navigation side  | Organism  | [Navigation side](./navigation-side)  |
+| Navigation header | Organism | [Navigation header](./navigation-header) |
 | Dropdown menu    | Organism  | [Dropdown menu](./dropdown-menu)      |
 | Footer           | Organism  | [Footer](./footer)                    |
 | File upload      | Organism  | [File upload](./file-upload)          |
