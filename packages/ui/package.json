@@ -11,6 +11,7 @@
     "./atoms/image-placeholder": "./src/atoms/image-placeholder/image-placeholder.tsx",
     "./atoms/text-field": "./src/atoms/text-field/text-field.tsx",
     "./atoms/text-link": "./src/atoms/text-link/text-link.tsx",
+    "./atoms/search-input": "./src/atoms/search-input/search-input.tsx",
     "./atoms/text-area": "./src/atoms/text-area/text-area.tsx",
     "./atoms/tag": "./src/atoms/tag/tag.tsx",
     "./atoms/checkbox": "./src/atoms/checkbox/checkbox.tsx",

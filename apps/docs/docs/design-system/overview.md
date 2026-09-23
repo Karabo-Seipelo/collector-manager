@@ -32,7 +32,8 @@ packages/ui/src/
 │   ├── avatar/
 │   ├── text-area/
 │   ├── text-field/
-│   └── text-link/
+│   ├── text-link/
+│   └── search-input/
 ├── molecules/       # Composed components built from atoms
 │   ├── button-group/
 │   ├── accordion/
@@ -157,6 +158,7 @@ import { cn } from "@repo/ui/lib/cn";
 | IconContainer    | Atom     | [IconContainer](./icon-container)       |
 | TextField        | Atom     | [TextField](./text-field)               |
 | TextLink         | Atom     | [Text link](./text-link)                |
+| SearchInput      | Atom     | [Search input](./search-input)          |
 | TextArea         | Atom     | [TextArea](./text-area)                 |
 | Tag              | Atom     | [Tag](./tag)                            |
 | Badge            | Atom     | [Badge](./badge)                        |

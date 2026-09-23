@@ -80,6 +80,7 @@ Configuration:
 | `ImagePlaceholder`      | `packages/ui/src/atoms/image-placeholder/image-placeholder.test.tsx` |
 | `TextField`             | `packages/ui/src/atoms/text-field/text-field.test.tsx`               |
 | `TextLink`              | `packages/ui/src/atoms/text-link/text-link.test.tsx`                 |
+| `SearchInput`           | `packages/ui/src/atoms/search-input/search-input.test.tsx`           |
 | `TextArea`              | `packages/ui/src/atoms/text-area/text-area.test.tsx`                 |
 | `Accordion`             | `packages/ui/src/molecules/accordion/accordion.test.tsx`             |
 | `Autocomplete`          | `packages/ui/src/molecules/autocomplete/autocomplete.test.tsx`       |
