@@ -52,4 +52,5 @@ Use `checked` / `defaultChecked`, `value`, and `onChange` like a native radio.
 
 - [RadioGroup](./radio-group)
 - [Checkbox](./checkbox)
+- [Toggle](./toggle)
 - [Design tokens](./tokens)

@@ -55,6 +55,7 @@ Use `checked` / `defaultChecked` and `onChange` like a native checkbox. This ato
 ## Related
 
 - [CheckboxGroup](./checkbox-group)
+- [Toggle](./toggle)
 - [Tag](./tag)
 - [TextField](./text-field)
 - [FeatherIcon](./icon)

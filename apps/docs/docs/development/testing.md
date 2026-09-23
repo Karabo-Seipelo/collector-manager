@@ -70,6 +70,7 @@ Configuration:
 | `Breadcrumbs`           | `packages/ui/src/atoms/breadcrumbs/breadcrumbs.test.tsx`             |
 | `Checkbox`              | `packages/ui/src/atoms/checkbox/checkbox.test.tsx`                   |
 | `Radio`                 | `packages/ui/src/atoms/radio/radio.test.tsx`                         |
+| `Toggle`                | `packages/ui/src/atoms/toggle/toggle.test.tsx`                       |
 | `FeatherIcon`           | `packages/ui/src/atoms/icon/icon.test.tsx`                           |
 | `Code`                  | `packages/ui/src/atoms/code/code.test.tsx`                           |
 | `ImagePlaceholder`      | `packages/ui/src/atoms/image-placeholder/image-placeholder.test.tsx` |
@@ -99,6 +100,7 @@ Interactive stories with `play` functions:
 - `CheckboxGroup` — `Default`
 - `Radio` — `Default`
 - `RadioGroup` — `Default`
+- `Toggle` — `Default`
 - `ButtonGroup` — `Default`
 - `ItemCard` — `Clickable`
 
