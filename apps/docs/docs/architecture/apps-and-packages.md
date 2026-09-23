@@ -85,6 +85,10 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/atoms/image-placeholder`     | ImagePlaceholder component        |
 | `@repo/ui/atoms/text-field`            | TextField component               |
 | `@repo/ui/atoms/avatar`                | Avatar component                  |
+| `@repo/ui/atoms/tag`                   | Tag filter chip                   |
+| `@repo/ui/atoms/badge`                 | Badge status pill                 |
+| `@repo/ui/atoms/badge-count`           | BadgeCount notification number    |
+| `@repo/ui/atoms/badge-dot`             | BadgeDot presence or notification |
 | `@repo/ui/molecules/card`              | ItemCard component                |
 | `@repo/ui/molecules/button-group`      | ButtonGroup primary/secondary/tertiary cluster |
 | `@repo/ui/molecules/avatar-stack`      | AvatarStack overlapping avatars   |

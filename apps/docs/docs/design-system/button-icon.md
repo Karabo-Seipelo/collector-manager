@@ -72,10 +72,10 @@ Circle uses a full pill radius. Hover, press, focus, and disabled reuse Button t
 
 ## Badges
 
-- `badge="dot"` — 8px error-strong indicator on the top-right
-- `badge={n}` — count pill with a 2px inverse (white) stroke
+- `badge="dot"` — overlays a small [BadgeDot](./badge-dot) (`notification`)
+- `badge={n}` — overlays [BadgeCount](./badge-count) with a 2px inverse ring
 
-Include the badge in `aria-label` when it changes meaning (for example `"Cart, 8 items"`).
+Notification counts are the BadgeCount atom. Status labels are [Badge](./badge).
 
 ## Accessibility
 
@@ -88,3 +88,6 @@ Include the badge in `aria-label` when it changes meaning (for example `"Cart, 8
 - [Button](./button)
 - [FeatherIcon](./icon)
 - [ButtonGroup](./button-group)
+- [Badge](./badge)
+- [BadgeCount](./badge-count)
+- [BadgeDot](./badge-dot)

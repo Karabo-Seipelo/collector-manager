@@ -22,13 +22,28 @@
   --color-fill-hover: rgba(0, 21, 128, 0.04);
   --color-fill-press: rgba(0, 17, 102, 0.1);
   --color-fill-error-weak: rgba(255, 74, 74, 0.05);
+  --color-fill-error-strong: #c73a3a;
+  --color-fill-warning-strong: #e8b322;
+  --color-fill-success-strong: #067a57;
+  --color-fill-warning-weak: rgba(255, 192, 46, 0.05);
+  --color-fill-success-weak: rgba(10, 204, 146, 0.05);
+  --color-fill-information-weak: rgba(38, 176, 255, 0.05);
+  --color-fill-brand-weak: rgba(89, 117, 255, 0.05);
   --color-stroke-weak: rgba(0, 17, 102, 0.1);
   --color-stroke-strong: rgba(0, 13, 77, 0.45);
   --color-stroke-focus: #4c64d9;
   --color-stroke-disabled: rgba(0, 17, 102, 0.1);
   --color-stroke-error-strong: rgba(199, 58, 58, 0.8);
+  --color-stroke-error-weak: rgba(199, 58, 58, 0.14);
+  --color-stroke-warning-weak: rgba(143, 108, 26, 0.2);
+  --color-stroke-success-weak: rgba(6, 122, 87, 0.2);
+  --color-stroke-information-weak: rgba(26, 116, 168, 0.2);
+  --color-stroke-brand-weak: rgba(76, 100, 217, 0.2);
   --color-text-disabled: rgba(0, 17, 102, 0.1);
   --color-text-error: #c73a3a;
+  --color-text-warning: #8f6c1a;
+  --color-text-success: #067a57;
+  --color-text-information: #1a74a8;
   --color-icon-error: rgba(199, 58, 58, 0.8);
 
   /* Typography */

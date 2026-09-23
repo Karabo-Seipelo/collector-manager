@@ -57,7 +57,7 @@ describe("ButtonIcon", () => {
       <ButtonIcon icon={<span />} aria-label="Alerts" badge="dot" />,
     );
 
-    expect(screen.getByTestId("button-icon-badge-dot")).toBeInTheDocument();
+    expect(screen.getByTestId("badge-dot")).toBeInTheDocument();
   });
 
   it("shows a numeric badge", () => {
@@ -65,7 +65,7 @@ describe("ButtonIcon", () => {
       <ButtonIcon icon={<span />} aria-label="Cart" badge={8} />,
     );
 
-    expect(screen.getByTestId("button-icon-badge-count")).toHaveTextContent("8");
+    expect(screen.getByTestId("badge-count")).toHaveTextContent("8");
   });
 
   it("does not call onClick when disabled", async () => {

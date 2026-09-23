@@ -28,13 +28,25 @@ The `@theme` block registers Tailwind utilities:
   --color-fill-hover: rgba(0, 21, 128, 0.04);
   --color-fill-press: rgba(0, 17, 102, 0.1);
   --color-fill-error-weak: rgba(255, 74, 74, 0.05);
+  --color-fill-warning-weak: rgba(255, 192, 46, 0.05);
+  --color-fill-success-weak: rgba(10, 204, 146, 0.05);
+  --color-fill-information-weak: rgba(38, 176, 255, 0.05);
+  --color-fill-brand-weak: rgba(89, 117, 255, 0.05);
   --color-stroke-weak: rgba(0, 17, 102, 0.1);
   --color-stroke-strong: rgba(0, 13, 77, 0.45);
   --color-stroke-focus: #4c64d9;
   --color-stroke-disabled: rgba(0, 17, 102, 0.1);
   --color-stroke-error-strong: rgba(199, 58, 58, 0.8);
+  --color-stroke-error-weak: rgba(199, 58, 58, 0.14);
+  --color-stroke-warning-weak: rgba(143, 108, 26, 0.2);
+  --color-stroke-success-weak: rgba(6, 122, 87, 0.2);
+  --color-stroke-information-weak: rgba(26, 116, 168, 0.2);
+  --color-stroke-brand-weak: rgba(76, 100, 217, 0.2);
   --color-text-disabled: rgba(0, 17, 102, 0.1);
   --color-text-error: #c73a3a;
+  --color-text-warning: #8f6c1a;
+  --color-text-success: #067a57;
+  --color-text-information: #1a74a8;
   --color-icon-error: rgba(199, 58, 58, 0.8);
 
   /* Typography */
@@ -60,10 +72,11 @@ Components use these via Tailwind classes such as `bg-primary`, `text-fg-strong`
 | Token  | Utility classes                                                                                       | Used by                                      |
 | ------ | ----------------------------------------------------------------------------------------------------- | -------------------------------------------- |
 | Fill   | `bg-fill-weak`                                                                                        | ItemCard image placeholder; Tag unselected; Avatar |
-| Fill   | `bg-fill-inverse`, `bg-fill-hover`, `bg-fill-press`, `bg-fill-error-weak`                             | TextField backgrounds; AvatarStack rings     |
+| Fill   | `bg-fill-inverse`, `bg-fill-hover`, `bg-fill-press`, `bg-fill-error-weak`, `bg-fill-error-strong`, `bg-fill-warning-weak`, `bg-fill-warning-strong`, `bg-fill-success-weak`, `bg-fill-success-strong`, `bg-fill-information-weak`, `bg-fill-brand-weak` | TextField backgrounds; Badge fills; BadgeCount; BadgeDot |
 | Stroke | `border-stroke-weak`, `border-stroke-strong`, `border-stroke-focus`, `border-stroke-disabled`, `border-stroke-error-strong` | Tag outline; TextField borders and focus     |
+| Stroke | `border-stroke-error-weak`, `border-stroke-warning-weak`, `border-stroke-success-weak`, `border-stroke-information-weak`, `border-stroke-brand-weak` | Badge outlines |
 | Text   | `text-fg-strong`, `text-fg-weak`                                                                      | ItemCard title, price, meta; TextField input |
-| Text   | `text-text-disabled`, `text-text-error`                                                               | TextField disabled and error text            |
+| Text   | `text-text-disabled`, `text-text-error`, `text-text-warning`, `text-text-success`, `text-text-information` | TextField error text; Badge labels |
 | Icon   | `text-icon-error`                                                                                     | TextField error icon                         |
 | Shape  | `rounded-card`                                                                                        | ItemCard image area                          |
 | Type   | `text-small`, `text-tiny`, `text-heading-3`, `text-heading-4`, `font-body`                            | ItemCard typography; Avatar initials         |
@@ -109,5 +122,9 @@ Keep token changes in `@repo/ui` so Storybook and apps stay in sync.
 ## Related
 
 - [TextField](./text-field)
+- [Button](./button)
+- [Badge](./badge)
+- [BadgeCount](./badge-count)
+- [BadgeDot](./badge-dot)
 - [Tailwind setup](../development/tailwind)
 - [Design system overview](./overview)

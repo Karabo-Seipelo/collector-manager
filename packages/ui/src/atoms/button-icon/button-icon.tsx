@@ -2,6 +2,8 @@
 
 import * as React from "react";
 
+import { BadgeCount } from "../badge-count/badge-count";
+import { BadgeDot } from "../badge-dot/badge-dot";
 import { Button } from "../button/button";
 import type { ButtonTone, ButtonType } from "../../lib/button-types";
 import { cn } from "../../lib/cn";
@@ -56,20 +58,19 @@ export const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
           {...rest}
         />
         {badge === "dot" ? (
-          <span
-            data-testid="button-icon-badge-dot"
-            aria-hidden="true"
-            className="pointer-events-none absolute top-2 right-2 size-2 rounded-full bg-text-error"
+          <BadgeDot
+            type="notification"
+            size="small"
+            className="pointer-events-none absolute top-2 right-2"
           />
         ) : null}
         {count != null ? (
-          <span
-            data-testid="button-icon-badge-count"
+          <BadgeCount
             aria-hidden="true"
-            className="pointer-events-none absolute -top-2 left-[31px] flex h-6 min-w-6 items-center justify-center rounded-full border-2 border-white bg-text-error px-2 text-white shadow-raised"
+            className="pointer-events-none absolute -top-2 left-[31px] ring-2 ring-white shadow-raised"
           >
-            <span className="text-tiny font-normal">{count}</span>
-          </span>
+            {count}
+          </BadgeCount>
         ) : null}
       </span>
     );

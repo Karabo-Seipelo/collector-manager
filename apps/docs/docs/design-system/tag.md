@@ -47,4 +47,5 @@ Pass `onClick` to toggle selection in the parent. This atom does not own selecte
 
 - [FeatherIcon](./icon)
 - [Button](./button)
+- [Badge](./badge)
 - [Shared utilities](./cn-helper)

@@ -17,6 +17,9 @@ packages/ui/src/
 │   ├── code/
 │   ├── image-placeholder/
 │   ├── tag/
+│   ├── badge/
+│   ├── badge-count/
+│   ├── badge-dot/
 │   ├── checkbox/
 │   ├── select/
 │   ├── avatar/
@@ -74,6 +77,9 @@ import { ButtonIcon } from "@repo/ui/atoms/button-icon";
 import { FeatherIcon } from "@repo/ui/atoms/icon";
 import { TextField } from "@repo/ui/atoms/text-field";
 import { Tag } from "@repo/ui/atoms/tag";
+import { Badge } from "@repo/ui/atoms/badge";
+import { BadgeCount } from "@repo/ui/atoms/badge-count";
+import { BadgeDot } from "@repo/ui/atoms/badge-dot";
 import { Checkbox } from "@repo/ui/atoms/checkbox";
 import { Select } from "@repo/ui/atoms/select";
 import { Avatar } from "@repo/ui/atoms/avatar";
@@ -94,6 +100,9 @@ import { cn } from "@repo/ui/lib/cn";
 | FeatherIcon      | Atom     | [Icon](./icon)                          |
 | TextField        | Atom     | [TextField](./text-field)               |
 | Tag              | Atom     | [Tag](./tag)                            |
+| Badge            | Atom     | [Badge](./badge)                        |
+| BadgeCount       | Atom     | [BadgeCount](./badge-count)             |
+| BadgeDot         | Atom     | [BadgeDot](./badge-dot)                 |
 | Checkbox         | Atom     | [Checkbox](./checkbox)                  |
 | Select           | Atom     | [Select](./select)                      |
 | Avatar           | Atom     | [Avatar](./avatar)                      |
