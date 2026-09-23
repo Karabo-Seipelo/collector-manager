@@ -99,6 +99,7 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/atoms/radio`                 | Radio single-choice control                    |
 | `@repo/ui/atoms/toggle`                | Toggle immediate on/off switch                 |
 | `@repo/ui/atoms/slider`                | Range slider with optional label and readout   |
+| `@repo/ui/atoms/stepper`               | Numeric field with increment/decrement buttons |
 | `@repo/ui/atoms/divider`               | Divider weak/strong separator                  |
 | `@repo/ui/atoms/alert`                 | Alert in-content status message                |
 | `@repo/ui/atoms/alert-global`          | Alert global page banner                       |

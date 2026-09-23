@@ -25,6 +25,7 @@
     "./atoms/radio": "./src/atoms/radio/radio.tsx",
     "./atoms/toggle": "./src/atoms/toggle/toggle.tsx",
     "./atoms/slider": "./src/atoms/slider/slider.tsx",
+    "./atoms/stepper": "./src/atoms/stepper/stepper.tsx",
     "./atoms/divider": "./src/atoms/divider/divider.tsx",
     "./atoms/alert": "./src/atoms/alert/alert.tsx",
     "./atoms/alert-global": "./src/atoms/alert-global/alert-global.tsx",

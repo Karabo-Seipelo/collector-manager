@@ -135,6 +135,7 @@ import { Rating } from "@repo/ui/molecules/rating";
 import { SegmentedControl } from "@repo/ui/molecules/segmented-control";
 import { Slider } from "@repo/ui/atoms/slider";
 import { Slot } from "@repo/ui/atoms/slot";
+import { Stepper } from "@repo/ui/atoms/stepper";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
 import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
@@ -162,6 +163,7 @@ import { cn } from "@repo/ui/lib/cn";
 | TextField        | Atom     | [TextField](./text-field)               |
 | TextLink         | Atom     | [Text link](./text-link)                |
 | SearchInput      | Atom     | [Search input](./search-input)          |
+| Stepper          | Atom     | [Stepper](./stepper)                    |
 | TextArea         | Atom     | [TextArea](./text-area)                 |
 | Tag              | Atom     | [Tag](./tag)                            |
 | Badge            | Atom     | [Badge](./badge)                        |
