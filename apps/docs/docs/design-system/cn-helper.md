@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # Shared utilities
 
-Reusable helpers in `packages/ui/src/lib/`. TypeScript modules (`.ts`) are importable via `@repo/ui/lib/*`. React building blocks in `.tsx` files are internal — used by components such as TextField, not listed in package exports.
+Reusable helpers in `packages/ui/src/lib/`. TypeScript modules (`.ts`) are importable via `@repo/ui/lib/*`. Shared field atoms (`FieldHeader`, `FieldError`) live under `packages/ui/src/atoms/` and are exported as `@repo/ui/atoms/field-header` and `@repo/ui/atoms/field-error`.
 
 ## cn
 
@@ -100,17 +100,17 @@ const { fieldId, hintId, errorId, describedBy } = useFieldIds(id, {
 });
 ```
 
-## Internal field modules
+## Field atoms and styles
 
-These live in `lib/` but are not package exports. They keep form-field markup consistent inside `@repo/ui`:
+Form controls reuse shared atoms and style helpers:
 
-| Module                 | Role                                                        |
-| ---------------------- | ----------------------------------------------------------- |
-| `field-header.tsx`     | Label, required/optional markers, hint text                 |
-| `field-error.tsx`      | Error message with `FeatherIcon`                            |
-| `text-field-styles.ts` | Class builders for TextField box, control, and clear button |
+| Module / export | Role |
+| --------------- | ---- |
+| `@repo/ui/atoms/field-header` | Label, required/optional markers, hint text |
+| `@repo/ui/atoms/field-error` | Error message with `FeatherIcon` |
+| `@repo/ui/lib/text-field-styles` | Class builders for TextField box, control, and clear button |
 
-When adding a new form control, reuse these modules rather than duplicating label/error markup.
+When adding a new form control, reuse these rather than duplicating label/error markup.
 
 ## Related
 

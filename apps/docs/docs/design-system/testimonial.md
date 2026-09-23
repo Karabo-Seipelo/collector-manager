@@ -6,14 +6,14 @@ sidebar_position: 8.2
 
 Customer quote with optional author details and star rating, matching Practical UI Testimonial.
 
-**Import:** `@repo/ui/molecules/testimonial`
+**Import:** `@repo/ui/organisms/testimonial`
 
 **Storybook:** Molecules/Testimonial
 
 ## Usage
 
 ```tsx
-import { Testimonial } from "@repo/ui/molecules/testimonial";
+import { Testimonial } from "@repo/ui/organisms/testimonial";
 
 <Testimonial
   align="left"

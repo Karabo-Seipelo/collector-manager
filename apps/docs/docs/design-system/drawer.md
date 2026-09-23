@@ -6,7 +6,7 @@ sidebar_position: 7.3
 
 A panel that slides in from the side when triggered by an interactive element like a button. Similar to a modal, the drawer floats above the rest of the page and prevents interaction with the underlying content.
 
-**Import:** `@repo/ui/molecules/drawer`
+**Import:** `@repo/ui/organisms/drawer`
 
 **Storybook:** Molecules/Drawer
 
@@ -20,7 +20,7 @@ import {
   DrawerContent,
   DrawerFooter,
   DrawerHeader,
-} from "@repo/ui/molecules/drawer";
+} from "@repo/ui/organisms/drawer";
 import { ButtonGroup } from "@repo/ui/molecules/button-group";
 
 const [open, setOpen] = useState(false);

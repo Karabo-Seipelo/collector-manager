@@ -7,7 +7,7 @@ import {
   type CheckboxSize,
 } from "../../atoms/checkbox/checkbox";
 import { cn } from "../../lib/cn";
-import { FieldError } from "../../lib/field-error";
+import { FieldError } from "../../atoms/field-error/field-error";
 
 export interface CheckboxGroupProps
   extends Omit<React.FieldsetHTMLAttributes<HTMLFieldSetElement>, "children"> {

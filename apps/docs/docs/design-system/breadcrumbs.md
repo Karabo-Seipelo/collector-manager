@@ -6,14 +6,14 @@ sidebar_position: 5.9
 
 A navigational element that displays the user's path within a website or application.
 
-**Import:** `@repo/ui/atoms/breadcrumbs`
+**Import:** `@repo/ui/molecules/breadcrumbs`
 
 **Storybook:** Atoms/Breadcrumbs
 
 ## Usage
 
 ```tsx
-import { Breadcrumbs } from "@repo/ui/atoms/breadcrumbs";
+import { Breadcrumbs } from "@repo/ui/molecules/breadcrumbs";
 
 <Breadcrumbs
   items={[

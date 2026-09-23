@@ -127,15 +127,15 @@ TextField uses semantic tokens from [Design tokens](./tokens):
 
 ## Implementation notes
 
-TextField is built from shared field utilities in `packages/ui/src/lib/`:
+TextField is built from shared field atoms and utilities:
 
-| Module                       | Role                           |
-| ---------------------------- | ------------------------------ |
-| `field-header.tsx`           | Label, required/optional, hint |
-| `field-error.tsx`            | Error row with `FeatherIcon`   |
-| `text-field-styles.ts`       | Box and control class builders |
-| `use-controllable-string.ts` | Controlled/uncontrolled value  |
-| `use-field-ids.ts`           | IDs and `aria-describedby`     |
+| Module / export | Role |
+| --------------- | ---- |
+| `@repo/ui/atoms/field-header` | Label, required/optional, hint |
+| `@repo/ui/atoms/field-error` | Error row with `FeatherIcon` |
+| `@repo/ui/lib/text-field-styles` | Box and control class builders |
+| `@repo/ui/lib/use-controllable-string` | Controlled/uncontrolled value |
+| `@repo/ui/lib/use-field-ids` | IDs and `aria-describedby` |
 
 See [Shared utilities](./cn-helper) for importable helpers.
 

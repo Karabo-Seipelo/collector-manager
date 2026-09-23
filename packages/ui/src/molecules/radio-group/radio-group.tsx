@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { type RadioProps, type RadioSize } from "../../atoms/radio/radio";
 import { cn } from "../../lib/cn";
-import { FieldError } from "../../lib/field-error";
+import { FieldError } from "../../atoms/field-error/field-error";
 
 export interface RadioGroupProps
   extends Omit<

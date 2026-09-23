@@ -12,66 +12,49 @@ The design system lives in `@repo/ui` (`packages/ui`). Components are organized 
 packages/ui/src/
 ├── atoms/           # Single-purpose UI building blocks
 │   ├── button/
-│   ├── button-icon/
+│   ├── field-header/
+│   ├── field-error/
 │   ├── icon/
-│   ├── icon-container/
-│   ├── code/
-│   ├── image-placeholder/
-│   ├── tag/
-│   ├── badge/
-│   ├── badge-count/
-│   ├── badge-dot/
-│   ├── breadcrumbs/
-│   ├── checkbox/
-│   ├── radio/
-│   ├── toggle/
-│   ├── divider/
-│   ├── alert/
-│   ├── alert-global/
-│   ├── select/
-│   ├── avatar/
-│   ├── text-area/
 │   ├── text-field/
-│   ├── text-link/
-│   └── search-input/
-├── molecules/       # Composed components built from atoms
+│   └── …
+├── molecules/       # One UX pattern composed from atoms
 │   ├── button-group/
-│   ├── accordion/
-│   ├── autocomplete/
-│   ├── combobox/
+│   ├── breadcrumbs/
+│   ├── search-input/
+│   ├── stepper/
+│   ├── avatar-labelled/
+│   └── …
+├── organisms/       # Multi-part sections or systems
+│   ├── table/
+│   ├── footer/
 │   ├── date-picker/
 │   ├── drawer/
 │   ├── dropdown-menu/
-│   ├── empty-state/
-│   ├── footer/
-│   ├── file-upload/
-│   ├── rating/
-│   ├── checkbox-group/
-│   ├── radio-group/
-│   ├── avatar-stack/
-│   ├── avatar-labelled/
-│   ├── avatar-dropdown/
-│   └── card/
-├── lib/             # Shared utilities and field building blocks
+│   └── …
+├── lib/             # Shared utilities (hooks, formatters, styles)
 │   ├── cn.ts
-│   ├── button-types.ts
-│   ├── format-dot-list.ts
-│   ├── use-controllable-string.ts
 │   ├── use-field-ids.ts
-│   ├── text-field-styles.ts
-│   ├── field-header.tsx      # internal
-│   └── field-error.tsx       # internal
+│   └── text-field-styles.ts
 └── styles.css       # Tailwind + design tokens
 ```
 
-## Atoms vs molecules
+## Atoms vs molecules vs organisms
 
-| Layer        | When to use                                | Examples                                                                             |
-| ------------ | ------------------------------------------ | ------------------------------------------------------------------------------------ |
-| **Atom**     | A single, reusable UI primitive            | Button, ButtonIcon, FeatherIcon, TextField, TextArea, Toggle, Divider, Alert, AlertGlobal, Code, ImagePlaceholder |
-| **Molecule** | Combines atoms into a higher-level pattern | Accordion, ButtonGroup, Card                                                         |
+| Layer | When to use | May import | Examples |
+| ----- | ----------- | ---------- | -------- |
+| **Atom** | One visual or interaction primitive | `lib` only | Button, FeatherIcon, FieldHeader, FieldError, Avatar |
+| **Molecule** | One UX pattern from atoms | atoms + `lib` | ButtonGroup, SearchInput, Stepper, Tabs, Rating, AvatarLabelled |
+| **Organism** | Section-scale UI or multi-pattern system | atoms + molecules + `lib` | Table, Footer, DatePicker, Drawer, DropdownMenu, Testimonial |
 
-Add new **atoms** for standalone primitives. Add **molecules** when a component orchestrates multiple atoms (e.g. a primary/secondary/tertiary button cluster).
+**Dependency rules** (enforced by ESLint in `@repo/ui`):
+
+- Atoms must not import molecules or organisms.
+- Molecules must not import other molecules or organisms.
+- Organisms may compose atoms and molecules.
+
+Storybook stories and tests are exempt so demos can compose freely.
+
+Add new **atoms** for standalone primitives. Add **molecules** when a component orchestrates multiple atoms into one pattern. Add **organisms** for page sections, overlays, or systems that combine multiple molecules.
 
 ## Storybook
 
@@ -81,7 +64,7 @@ Storybook is the **interactive catalog** for visual variants. Run it at http://l
 pnpm storybook
 ```
 
-Each component has a co-located `*.stories.tsx` file. Shared layout decorators (e.g. fixed-width wrappers) live in `.storybook/decorators.tsx`. Use Storybook to preview states; use these docs for API reference, import paths, and accessibility notes.
+Each component has a co-located `*.stories.tsx` file under `Atoms/`, `Molecules/`, or `Organisms/` in Storybook. Shared layout decorators (e.g. fixed-width wrappers) live in `.storybook/decorators.tsx`. Use Storybook to preview states; use these docs for API reference, import paths, and accessibility notes.
 
 ## Styling
 
@@ -95,122 +78,75 @@ Components are imported via explicit package exports:
 
 ```tsx
 import { Button } from "@repo/ui/atoms/button";
-import { ButtonIcon } from "@repo/ui/atoms/button-icon";
-import { FeatherIcon } from "@repo/ui/atoms/icon";
-import { IconContainer } from "@repo/ui/atoms/icon-container";
-import { TextField } from "@repo/ui/atoms/text-field";
-import { TextArea } from "@repo/ui/atoms/text-area";
-import { Tag } from "@repo/ui/atoms/tag";
-import { Badge } from "@repo/ui/atoms/badge";
-import { BadgeCount } from "@repo/ui/atoms/badge-count";
-import { BadgeDot } from "@repo/ui/atoms/badge-dot";
-import { Breadcrumbs } from "@repo/ui/atoms/breadcrumbs";
-import { Checkbox } from "@repo/ui/atoms/checkbox";
-import { Radio } from "@repo/ui/atoms/radio";
-import { Toggle } from "@repo/ui/atoms/toggle";
-import { Divider } from "@repo/ui/atoms/divider";
-import { Alert } from "@repo/ui/atoms/alert";
-import { AlertGlobal } from "@repo/ui/atoms/alert-global";
-import { Select } from "@repo/ui/atoms/select";
-import { Accordion, AccordionItem } from "@repo/ui/molecules/accordion";
-import { Autocomplete } from "@repo/ui/molecules/autocomplete";
-import { Combobox } from "@repo/ui/molecules/combobox";
-import { DatePicker } from "@repo/ui/molecules/date-picker";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
-} from "@repo/ui/molecules/drawer";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@repo/ui/molecules/dropdown-menu";
-import { EmptyState } from "@repo/ui/molecules/empty-state";
-import { Footer } from "@repo/ui/molecules/footer";
-import { FileUpload } from "@repo/ui/molecules/file-upload";
-import { Rating } from "@repo/ui/molecules/rating";
-import { SegmentedControl } from "@repo/ui/molecules/segmented-control";
-import { Slider } from "@repo/ui/atoms/slider";
-import { Slot } from "@repo/ui/atoms/slot";
-import { Stepper } from "@repo/ui/atoms/stepper";
-import { SummaryList } from "@repo/ui/molecules/summary-list";
-import { Table } from "@repo/ui/molecules/table";
+import { FieldHeader } from "@repo/ui/atoms/field-header";
+import { Breadcrumbs } from "@repo/ui/molecules/breadcrumbs";
+import { SearchInput } from "@repo/ui/molecules/search-input";
+import { Stepper } from "@repo/ui/molecules/stepper";
 import { Tabs } from "@repo/ui/molecules/tabs";
-import { Testimonial } from "@repo/ui/molecules/testimonial";
 import { Tooltip } from "@repo/ui/molecules/tooltip";
-import { Avatar } from "@repo/ui/atoms/avatar";
-import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
-import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
-import { AvatarDropdown } from "@repo/ui/molecules/avatar-dropdown";
-import { ButtonGroup } from "@repo/ui/molecules/button-group";
-import { CheckboxGroup } from "@repo/ui/molecules/checkbox-group";
-import { RadioGroup } from "@repo/ui/molecules/radio-group";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardImage,
-} from "@repo/ui/molecules/card";
+import { Table } from "@repo/ui/organisms/table";
+import { Footer } from "@repo/ui/organisms/footer";
+import { DatePicker } from "@repo/ui/organisms/date-picker";
+import { Testimonial } from "@repo/ui/organisms/testimonial";
 import { cn } from "@repo/ui/lib/cn";
 ```
 
 ## Components
 
-| Component        | Type     | Docs                                    |
-| ---------------- | -------- | --------------------------------------- |
-| Button           | Atom     | [Button](./button)                      |
-| ButtonIcon       | Atom     | [ButtonIcon](./button-icon)             |
-| FeatherIcon      | Atom     | [Icon](./icon)                          |
-| IconContainer    | Atom     | [IconContainer](./icon-container)       |
-| TextField        | Atom     | [TextField](./text-field)               |
-| TextLink         | Atom     | [Text link](./text-link)                |
-| SearchInput      | Atom     | [Search input](./search-input)          |
-| Stepper          | Atom     | [Stepper](./stepper)                    |
-| TextArea         | Atom     | [TextArea](./text-area)                 |
-| Tag              | Atom     | [Tag](./tag)                            |
-| Badge            | Atom     | [Badge](./badge)                        |
-| BadgeCount       | Atom     | [BadgeCount](./badge-count)             |
-| BadgeDot         | Atom     | [BadgeDot](./badge-dot)                 |
-| Breadcrumbs      | Atom     | [Breadcrumbs](./breadcrumbs)            |
-| Checkbox         | Atom     | [Checkbox](./checkbox)                  |
-| Radio            | Atom     | [Radio](./radio)                        |
-| Toggle           | Atom     | [Toggle](./toggle)                      |
-| Slider           | Atom     | [Slider](./slider)                      |
-| Divider          | Atom     | [Divider](./divider)                    |
-| Alert            | Atom     | [Alert](./alert)                        |
-| Alert global     | Atom     | [Alert global](./alert-global)          |
-| Select           | Atom     | [Select](./select)                      |
-| Accordion        | Molecule | [Accordion](./accordion)                |
-| Autocomplete     | Molecule | [Autocomplete](./autocomplete)          |
-| Combobox         | Molecule | [Combobox](./combobox)                  |
-| Date picker      | Molecule | [Date picker](./date-picker)            |
-| Drawer           | Molecule | [Drawer](./drawer)                    |
-| Dropdown menu    | Molecule | [Dropdown menu](./dropdown-menu)      |
-| Empty state      | Molecule | [Empty state](./empty-state)          |
-| Footer           | Molecule | [Footer](./footer)                    |
-| File upload      | Molecule | [File upload](./file-upload)          |
-| Rating           | Molecule | [Rating](./rating)                    |
+| Component        | Type      | Docs                                    |
+| ---------------- | --------- | --------------------------------------- |
+| Button           | Atom      | [Button](./button)                      |
+| ButtonIcon       | Atom      | [ButtonIcon](./button-icon)             |
+| FeatherIcon      | Atom      | [Icon](./icon)                          |
+| IconContainer    | Atom      | [IconContainer](./icon-container)       |
+| FieldHeader      | Atom      | [TextField](./text-field)               |
+| FieldError       | Atom      | [TextField](./text-field)               |
+| TextField        | Atom      | [TextField](./text-field)               |
+| TextLink         | Atom      | [Text link](./text-link)                |
+| TextArea         | Atom      | [TextArea](./text-area)                 |
+| Tag              | Atom      | [Tag](./tag)                            |
+| Badge            | Atom      | [Badge](./badge)                        |
+| BadgeCount       | Atom      | [BadgeCount](./badge-count)             |
+| BadgeDot         | Atom      | [BadgeDot](./badge-dot)                 |
+| Checkbox         | Atom      | [Checkbox](./checkbox)                  |
+| Radio            | Atom      | [Radio](./radio)                        |
+| Toggle           | Atom      | [Toggle](./toggle)                      |
+| Slider           | Atom      | [Slider](./slider)                      |
+| Divider          | Atom      | [Divider](./divider)                    |
+| Alert            | Atom      | [Alert](./alert)                        |
+| Alert global     | Atom      | [Alert global](./alert-global)          |
+| Select           | Atom      | [Select](./select)                      |
+| Avatar           | Atom      | [Avatar](./avatar)                      |
+| ImagePlaceholder | Atom      | [ImagePlaceholder](./image-placeholder) |
+| Slot             | Atom      | [Slot](./slot)                          |
+| Code             | Atom      | [Code](./code)                          |
+| Breadcrumbs      | Molecule  | [Breadcrumbs](./breadcrumbs)            |
+| SearchInput      | Molecule  | [Search input](./search-input)          |
+| Stepper          | Molecule  | [Stepper](./stepper)                    |
+| Accordion        | Molecule  | [Accordion](./accordion)                |
+| Autocomplete     | Molecule  | [Autocomplete](./autocomplete)          |
+| Combobox         | Molecule  | [Combobox](./combobox)                  |
+| Empty state      | Molecule  | [Empty state](./empty-state)          |
+| Rating           | Molecule  | [Rating](./rating)                    |
 | Segmented control | Molecule | [Segmented control](./segmented-control) |
 | Summary list      | Molecule | [Summary list](./summary-list)          |
-| Table             | Molecule | [Table](./table)                        |
 | Tabs              | Molecule | [Tabs](./tabs)                          |
-| Testimonial       | Molecule | [Testimonial](./testimonial)            |
 | Tooltip           | Molecule | [Tooltip](./tooltip)                    |
-| Avatar           | Atom     | [Avatar](./avatar)                      |
-| AvatarStack      | Molecule | [AvatarStack](./avatar-stack)           |
-| AvatarLabelled   | Molecule | [AvatarLabelled](./avatar-labelled)     |
-| AvatarDropdown   | Molecule | [AvatarDropdown](./avatar-dropdown)     |
-| ImagePlaceholder | Atom     | [ImagePlaceholder](./image-placeholder) |
-| Slot             | Atom     | [Slot](./slot)                          |
-| Code             | Atom     | [Code](./code)                          |
-| Card             | Molecule | [Card](./card)                          |
-| ButtonGroup      | Molecule | [ButtonGroup](./button-group)           |
-| CheckboxGroup    | Molecule | [CheckboxGroup](./checkbox-group)       |
-| RadioGroup       | Molecule | [RadioGroup](./radio-group)             |
-| Shared utilities | Lib      | [Shared utilities](./cn-helper)         |
+| AvatarStack      | Molecule  | [AvatarStack](./avatar-stack)           |
+| AvatarLabelled   | Molecule  | [AvatarLabelled](./avatar-labelled)     |
+| Card             | Molecule  | [Card](./card)                          |
+| ButtonGroup      | Molecule  | [ButtonGroup](./button-group)           |
+| CheckboxGroup    | Molecule  | [CheckboxGroup](./checkbox-group)       |
+| RadioGroup       | Molecule  | [RadioGroup](./radio-group)             |
+| Date picker      | Organism  | [Date picker](./date-picker)            |
+| Drawer           | Organism  | [Drawer](./drawer)                    |
+| Dropdown menu    | Organism  | [Dropdown menu](./dropdown-menu)      |
+| Footer           | Organism  | [Footer](./footer)                    |
+| File upload      | Organism  | [File upload](./file-upload)          |
+| Table             | Organism  | [Table](./table)                        |
+| Testimonial       | Organism  | [Testimonial](./testimonial)            |
+| AvatarDropdown   | Organism  | [AvatarDropdown](./avatar-dropdown)     |
+| Shared utilities | Lib       | [Shared utilities](./cn-helper)         |
 
 ## Related
 

@@ -6,14 +6,14 @@ sidebar_position: 5.45
 
 Numeric field with increment and decrement controls, matching Practical UI Stepper.
 
-**Import:** `@repo/ui/atoms/stepper`
+**Import:** `@repo/ui/molecules/stepper`
 
 **Storybook:** Atoms/Stepper
 
 ## Usage
 
 ```tsx
-import { Stepper } from "@repo/ui/atoms/stepper";
+import { Stepper } from "@repo/ui/molecules/stepper";
 
 <Stepper
   label="Quantity"

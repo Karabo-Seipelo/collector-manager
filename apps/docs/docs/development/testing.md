@@ -60,14 +60,14 @@ Configuration:
 | `formatDotList`         | `packages/ui/src/lib/format-dot-list.test.ts`                        |
 | `useFieldIds`           | `packages/ui/src/lib/use-field-ids.test.ts`                          |
 | `useControllableString` | `packages/ui/src/lib/use-controllable-string.test.ts`                |
-| `FieldHeader`           | `packages/ui/src/lib/field-header.test.tsx`                          |
-| `FieldError`            | `packages/ui/src/lib/field-error.test.tsx`                           |
+| `FieldHeader`           | `packages/ui/src/atoms/field-header.test.tsx`                          |
+| `FieldError`            | `packages/ui/src/atoms/field-error.test.tsx`                           |
 | `Button`                | `packages/ui/src/atoms/button/button.test.tsx`                       |
 | `ButtonIcon`            | `packages/ui/src/atoms/button-icon/button-icon.test.tsx`             |
 | `Badge`                 | `packages/ui/src/atoms/badge/badge.test.tsx`                         |
 | `BadgeCount`            | `packages/ui/src/atoms/badge-count/badge-count.test.tsx`             |
 | `BadgeDot`              | `packages/ui/src/atoms/badge-dot/badge-dot.test.tsx`                 |
-| `Breadcrumbs`           | `packages/ui/src/atoms/breadcrumbs/breadcrumbs.test.tsx`             |
+| `Breadcrumbs`           | `packages/ui/src/molecules/breadcrumbs/breadcrumbs.test.tsx`             |
 | `Checkbox`              | `packages/ui/src/atoms/checkbox/checkbox.test.tsx`                   |
 | `Radio`                 | `packages/ui/src/atoms/radio/radio.test.tsx`                         |
 | `Toggle`                | `packages/ui/src/atoms/toggle/toggle.test.tsx`                       |
@@ -80,29 +80,29 @@ Configuration:
 | `ImagePlaceholder`      | `packages/ui/src/atoms/image-placeholder/image-placeholder.test.tsx` |
 | `TextField`             | `packages/ui/src/atoms/text-field/text-field.test.tsx`               |
 | `TextLink`              | `packages/ui/src/atoms/text-link/text-link.test.tsx`                 |
-| `SearchInput`           | `packages/ui/src/atoms/search-input/search-input.test.tsx`           |
+| `SearchInput`           | `packages/ui/src/molecules/search-input/search-input.test.tsx`           |
 | `TextArea`              | `packages/ui/src/atoms/text-area/text-area.test.tsx`                 |
 | `Accordion`             | `packages/ui/src/molecules/accordion/accordion.test.tsx`             |
 | `Autocomplete`          | `packages/ui/src/molecules/autocomplete/autocomplete.test.tsx`       |
 | `Combobox`              | `packages/ui/src/molecules/combobox/combobox.test.tsx`               |
-| `DatePicker`            | `packages/ui/src/molecules/date-picker/date-picker.test.tsx`         |
-| `DatePicker` utilities  | `packages/ui/src/molecules/date-picker/date-picker-utils.test.ts`    |
-| `DatePicker` calendar   | `packages/ui/src/molecules/date-picker/calendar.test.tsx`            |
-| `Drawer`                | `packages/ui/src/molecules/drawer/drawer.test.tsx`                   |
-| `DropdownMenu`          | `packages/ui/src/molecules/dropdown-menu/dropdown-menu.test.tsx`     |
+| `DatePicker`            | `packages/ui/src/organisms/date-picker/date-picker.test.tsx`         |
+| `DatePicker` utilities  | `packages/ui/src/organisms/date-picker/date-picker-utils.test.ts`    |
+| `DatePicker` calendar   | `packages/ui/src/organisms/date-picker/calendar.test.tsx`            |
+| `Drawer`                | `packages/ui/src/organisms/drawer/drawer.test.tsx`                   |
+| `DropdownMenu`          | `packages/ui/src/organisms/dropdown-menu/dropdown-menu.test.tsx`     |
 | `EmptyState`            | `packages/ui/src/molecules/empty-state/empty-state.test.tsx`         |
-| `Footer`                | `packages/ui/src/molecules/footer/footer.test.tsx`                   |
-| `FileUpload`            | `packages/ui/src/molecules/file-upload/file-upload.test.tsx`         |
+| `Footer`                | `packages/ui/src/organisms/footer/footer.test.tsx`                   |
+| `FileUpload`            | `packages/ui/src/organisms/file-upload/file-upload.test.tsx`         |
 | `Rating`                | `packages/ui/src/molecules/rating/rating.test.tsx`                   |
 | `Rating` utilities      | `packages/ui/src/molecules/rating/rating-utils.test.ts`              |
 | `SegmentedControl`      | `packages/ui/src/molecules/segmented-control/segmented-control.test.tsx` |
 | `Slider`                | `packages/ui/src/atoms/slider/slider.test.tsx`                           |
 | `Slot`                  | `packages/ui/src/atoms/slot/slot.test.tsx`                               |
-| `Stepper`               | `packages/ui/src/atoms/stepper/stepper.test.tsx`                         |
+| `Stepper`               | `packages/ui/src/molecules/stepper/stepper.test.tsx`                         |
 | `SummaryList`           | `packages/ui/src/molecules/summary-list/summary-list.test.tsx`           |
-| `Table`                 | `packages/ui/src/molecules/table/table.test.tsx`                         |
+| `Table`                 | `packages/ui/src/organisms/table/table.test.tsx`                         |
 | `Tabs`                  | `packages/ui/src/molecules/tabs/tabs.test.tsx`                           |
-| `Testimonial`           | `packages/ui/src/molecules/testimonial/testimonial.test.tsx`               |
+| `Testimonial`           | `packages/ui/src/organisms/testimonial/testimonial.test.tsx`               |
 | `Tooltip`               | `packages/ui/src/molecules/tooltip/tooltip.test.tsx`                       |
 | `useControllableNumber` | `packages/ui/src/lib/use-controllable-number.test.ts`                    |
 | `useControllableBoolean`| `packages/ui/src/lib/use-controllable-boolean.test.ts`               |

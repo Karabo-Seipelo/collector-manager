@@ -8,14 +8,14 @@ Trigger for a user menu: [AvatarLabelled](./avatar-labelled) plus a trailing ico
 
 This molecule does **not** render a menu. Pass `open` and `onClick`; the parent owns the panel.
 
-**Import:** `@repo/ui/molecules/avatar-dropdown`
+**Import:** `@repo/ui/organisms/avatar-dropdown`
 
 **Storybook:** Molecules/AvatarDropdown
 
 ## Usage
 
 ```tsx
-import { AvatarDropdown } from "@repo/ui/molecules/avatar-dropdown";
+import { AvatarDropdown } from "@repo/ui/organisms/avatar-dropdown";
 
 <AvatarDropdown name="John Smith" src="/john.jpg" />
 

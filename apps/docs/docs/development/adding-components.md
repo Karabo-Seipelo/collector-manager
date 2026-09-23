@@ -6,25 +6,26 @@ sidebar_position: 4
 
 Guide for adding new components to `@repo/ui`.
 
-## 1. Choose atoms or molecules
+## 1. Choose atoms, molecules, or organisms
 
-| Layer    | Directory                    | Example                                                                                                                                |
-| -------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Atom     | `packages/ui/src/atoms/`     | Button, ButtonIcon, Badge, BadgeCount, BadgeDot, Breadcrumbs, Checkbox, Radio, Toggle, Slider, Stepper, Divider, Alert, AlertGlobal, TextField, TextArea, TextLink, SearchInput, FeatherIcon, IconContainer, ImagePlaceholder, Slot |
-| Molecule | `packages/ui/src/molecules/` | Accordion, Autocomplete, Combobox, DatePicker, Drawer, DropdownMenu, EmptyState, Footer, FileUpload, Rating, SegmentedControl, SummaryList, Table, Tabs, Testimonial, Tooltip, ButtonGroup, Card, CheckboxGroup, RadioGroup                                  |
+| Layer     | Directory                       | Example |
+| --------- | ------------------------------- | ------- |
+| Atom      | `packages/ui/src/atoms/`        | Button, FeatherIcon, FieldHeader, FieldError, Avatar, Checkbox |
+| Molecule  | `packages/ui/src/molecules/`    | ButtonGroup, SearchInput, Stepper, Breadcrumbs, Tabs, Rating, AvatarLabelled |
+| Organism  | `packages/ui/src/organisms/`    | Table, Footer, DatePicker, Drawer, DropdownMenu, Testimonial, AvatarDropdown |
 
-See [Design system overview](../design-system/overview) for guidance.
+See [Design system overview](../design-system/overview) for layer rules and dependency constraints.
 
 ## 2. Create the component
 
 Add a folder with the component file:
 
 ```
-packages/ui/src/atoms/my-component/
+packages/ui/src/molecules/my-component/
 └── my-component.tsx
 ```
 
-Use Tailwind for styling and [`cn`](../design-system/cn-helper) for class merging when accepting `className`. Reuse existing helpers from `packages/ui/src/lib/` (types, hooks, formatters) instead of duplicating logic — see [Shared utilities](../design-system/cn-helper).
+Use Tailwind for styling and [`cn`](../design-system/cn-helper) for class merging when accepting `className`. Reuse existing helpers from `packages/ui/src/lib/` (types, hooks, formatters) and atoms such as `FieldHeader` / `FieldError` instead of duplicating logic — see [Shared utilities](../design-system/cn-helper).
 
 ## 3. Register the export
 
@@ -33,7 +34,7 @@ Add an entry to `packages/ui/package.json`:
 ```json
 {
   "exports": {
-    "./atoms/my-component": "./src/atoms/my-component/my-component.tsx"
+    "./molecules/my-component": "./src/molecules/my-component/my-component.tsx"
   }
 }
 ```
@@ -41,17 +42,17 @@ Add an entry to `packages/ui/package.json`:
 Consumers import via:
 
 ```tsx
-import { MyComponent } from "@repo/ui/atoms/my-component";
+import { MyComponent } from "@repo/ui/molecules/my-component";
 ```
 
 ## 4. Add a Storybook story
 
-Create a co-located story file:
+Create a co-located story file with the matching layer prefix in the title:
 
 ```
-packages/ui/src/atoms/my-component/
+packages/ui/src/molecules/my-component/
 ├── my-component.tsx
-└── my-component.stories.tsx
+└── my-component.stories.tsx   # title: "Molecules/MyComponent"
 ```
 
 Run `pnpm storybook` to preview. See [Storybook](./storybook).
@@ -76,7 +77,7 @@ The UI package includes a scaffold script:
 pnpm --filter @repo/ui generate:component
 ```
 
-This runs `turbo gen react-component`. Adjust the output to match the atoms/molecules folder convention and export paths above.
+This runs `turbo gen react-component`. Adjust the output to match the atoms/molecules/organisms folder convention and export paths above.
 
 ## Related
 

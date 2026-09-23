@@ -88,18 +88,18 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/atoms/text-field`            | TextField component                            |
 | `@repo/ui/atoms/text-area`             | TextArea multiline component                   |
 | `@repo/ui/atoms/text-link`             | Inline text link with tone and icon slots      |
-| `@repo/ui/atoms/search-input`          | Search field with clear and button variants    |
+| `@repo/ui/molecules/search-input`          | Search field with clear and button variants    |
 | `@repo/ui/atoms/avatar`                | Avatar component                               |
 | `@repo/ui/atoms/tag`                   | Tag filter chip                                |
 | `@repo/ui/atoms/badge`                 | Badge status pill                              |
 | `@repo/ui/atoms/badge-count`           | BadgeCount notification number                 |
 | `@repo/ui/atoms/badge-dot`             | BadgeDot presence or notification              |
-| `@repo/ui/atoms/breadcrumbs`           | Breadcrumbs navigation trail                   |
+| `@repo/ui/molecules/breadcrumbs`           | Breadcrumbs navigation trail                   |
 | `@repo/ui/atoms/checkbox`              | Checkbox control                               |
 | `@repo/ui/atoms/radio`                 | Radio single-choice control                    |
 | `@repo/ui/atoms/toggle`                | Toggle immediate on/off switch                 |
 | `@repo/ui/atoms/slider`                | Range slider with optional label and readout   |
-| `@repo/ui/atoms/stepper`               | Numeric field with increment/decrement buttons |
+| `@repo/ui/molecules/stepper`               | Numeric field with increment/decrement buttons |
 | `@repo/ui/atoms/divider`               | Divider weak/strong separator                  |
 | `@repo/ui/atoms/alert`                 | Alert in-content status message                |
 | `@repo/ui/atoms/alert-global`          | Alert global page banner                       |
@@ -107,25 +107,25 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/molecules/accordion`         | Accordion stacked expandable headings          |
 | `@repo/ui/molecules/autocomplete`      | Searchable single or multiple option picker    |
 | `@repo/ui/molecules/combobox`          | Select-like field that filters as you type     |
-| `@repo/ui/molecules/date-picker`       | Date field with a calendar overlay              |
-| `@repo/ui/molecules/drawer`            | Responsive side panel / bottom sheet overlay    |
-| `@repo/ui/molecules/dropdown-menu`     | Floating menu triggered by button or avatar     |
+| `@repo/ui/organisms/date-picker`       | Date field with a calendar overlay              |
+| `@repo/ui/organisms/drawer`            | Responsive side panel / bottom sheet overlay    |
+| `@repo/ui/organisms/dropdown-menu`     | Floating menu triggered by button or avatar     |
 | `@repo/ui/molecules/empty-state`       | Empty page/list placeholder with optional icon  |
-| `@repo/ui/molecules/footer`            | Site footer with small and large layouts        |
-| `@repo/ui/molecules/file-upload`       | Drag-and-drop file upload with file list        |
+| `@repo/ui/organisms/footer`            | Site footer with small and large layouts        |
+| `@repo/ui/organisms/file-upload`       | Drag-and-drop file upload with file list        |
 | `@repo/ui/molecules/rating`            | Star or heart rating display with review link   |
 | `@repo/ui/molecules/segmented-control` | Single-select segmented view/mode switcher      |
 | `@repo/ui/molecules/summary-list`      | Term/description review list with row actions   |
-| `@repo/ui/molecules/table`             | Data table with pagination and rich cell types  |
+| `@repo/ui/organisms/table`             | Data table with pagination and rich cell types  |
 | `@repo/ui/molecules/tabs`              | Tabbed navigation with panels and badge counts  |
-| `@repo/ui/molecules/testimonial`       | Customer quote with author and star rating      |
+| `@repo/ui/organisms/testimonial`       | Customer quote with author and star rating      |
 | `@repo/ui/molecules/tooltip`           | Inverse tooltip bubble with directional arrow   |
 | `@repo/ui/molecules/button-group`      | ButtonGroup primary/secondary/tertiary cluster |
 | `@repo/ui/molecules/checkbox-group`    | Labelled Checkbox collection                   |
 | `@repo/ui/molecules/radio-group`       | Labelled Radio collection                      |
 | `@repo/ui/molecules/avatar-stack`      | AvatarStack overlapping avatars                |
 | `@repo/ui/molecules/avatar-labelled`   | AvatarLabelled name + description              |
-| `@repo/ui/molecules/avatar-dropdown`   | AvatarDropdown user-menu trigger               |
+| `@repo/ui/organisms/avatar-dropdown`   | AvatarDropdown user-menu trigger               |
 | `@repo/ui/styles.css`                  | Shared Tailwind stylesheet                     |
 | `@repo/ui/lib/cn`                      | Class name merge helper                        |
 | `@repo/ui/lib/button-types`            | Shared Button / ButtonGroup types              |

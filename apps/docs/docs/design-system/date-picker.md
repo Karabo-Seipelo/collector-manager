@@ -6,14 +6,14 @@ sidebar_position: 7.2
 
 Date field with manual `dd/mm/yyyy` entry and an accessible calendar overlay, matching Practical UI Date picker.
 
-**Import:** `@repo/ui/molecules/date-picker`
+**Import:** `@repo/ui/organisms/date-picker`
 
 **Storybook:** Molecules/DatePicker
 
 ## Usage
 
 ```tsx
-import { DatePicker } from "@repo/ui/molecules/date-picker";
+import { DatePicker } from "@repo/ui/organisms/date-picker";
 
 <DatePicker
   label="Date"

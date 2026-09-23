@@ -6,7 +6,7 @@ sidebar_position: 7.6
 
 Drag-and-drop file upload field with label, hint, validation, and an optional file list showing upload progress or completed files.
 
-**Import:** `@repo/ui/molecules/file-upload`
+**Import:** `@repo/ui/organisms/file-upload`
 
 **Storybook:** Molecules/FileUpload
 
@@ -16,7 +16,7 @@ Drag-and-drop file upload field with label, hint, validation, and an optional fi
 import {
   FileUpload,
   type FileUploadItemData,
-} from "@repo/ui/molecules/file-upload";
+} from "@repo/ui/organisms/file-upload";
 
 const [files, setFiles] = useState<FileUploadItemData[]>([]);
 

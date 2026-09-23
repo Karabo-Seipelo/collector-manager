@@ -4,8 +4,8 @@ import * as React from "react";
 
 import { FeatherIcon } from "../icon/icon";
 import { cn } from "../../lib/cn";
-import { FieldError } from "../../lib/field-error";
-import { FieldHeader } from "../../lib/field-header";
+import { FieldError } from "../field-error/field-error";
+import { FieldHeader } from "../field-header/field-header";
 import {
   getTextFieldBoxClassName,
   getTextFieldControlClassName,

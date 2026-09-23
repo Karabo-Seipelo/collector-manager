@@ -6,7 +6,7 @@ sidebar_position: 7.6
 
 Site footer for navigation, brand, social links, and copyright. Supports small and large layouts with responsive stacking across desktop, tablet, and mobile.
 
-**Import:** `@repo/ui/molecules/footer`
+**Import:** `@repo/ui/organisms/footer`
 
 **Storybook:** Molecules/Footer
 
@@ -16,7 +16,7 @@ Site footer for navigation, brand, social links, and copyright. Supports small a
 
 ```tsx
 import { FeatherIcon } from "@repo/ui/atoms/icon";
-import { Footer } from "@repo/ui/molecules/footer";
+import { Footer } from "@repo/ui/organisms/footer";
 
 <Footer
   size="small"

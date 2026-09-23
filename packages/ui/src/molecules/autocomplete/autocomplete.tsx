@@ -3,8 +3,8 @@
 import * as React from "react";
 
 import { FeatherIcon } from "../../atoms/icon/icon";
-import { FieldError } from "../../lib/field-error";
-import { FieldHeader } from "../../lib/field-header";
+import { FieldError } from "../../atoms/field-error/field-error";
+import { FieldHeader } from "../../atoms/field-header/field-header";
 import { cn } from "../../lib/cn";
 import {
   getTextFieldBoxClassName,

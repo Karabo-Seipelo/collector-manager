@@ -6,7 +6,7 @@ sidebar_position: 8
 
 Data table with sortable headers, striped rows, rich cell content, and optional pagination — matching Practical UI Table.
 
-**Import:** `@repo/ui/molecules/table`
+**Import:** `@repo/ui/organisms/table`
 
 **Storybook:** Molecules/Table
 
@@ -23,7 +23,7 @@ import {
   TableHeader,
   TablePagination,
   TableRow,
-} from "@repo/ui/molecules/table";
+} from "@repo/ui/organisms/table";
 
 <Table
   aria-label="Team members"

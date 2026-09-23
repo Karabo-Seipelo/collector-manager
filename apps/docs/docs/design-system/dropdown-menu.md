@@ -6,7 +6,7 @@ sidebar_position: 7.4
 
 A floating menu of actions or options triggered by a button, icon button, or avatar trigger. The menu aligns to the trigger and supports keyboard navigation.
 
-**Import:** `@repo/ui/molecules/dropdown-menu`
+**Import:** `@repo/ui/organisms/dropdown-menu`
 
 **Storybook:** Molecules/DropdownMenu
 
@@ -23,7 +23,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@repo/ui/molecules/dropdown-menu";
+} from "@repo/ui/organisms/dropdown-menu";
 
 const [open, setOpen] = useState(false);
 

@@ -6,14 +6,14 @@ sidebar_position: 5.4
 
 Compact search field with a leading icon, optional clear control, and an optional submit-button variant.
 
-**Import:** `@repo/ui/atoms/search-input`
+**Import:** `@repo/ui/molecules/search-input`
 
 **Storybook:** Atoms/SearchInput
 
 ## Usage
 
 ```tsx
-import { SearchInput } from "@repo/ui/atoms/search-input";
+import { SearchInput } from "@repo/ui/molecules/search-input";
 
 <SearchInput
   placeholder="Search"
