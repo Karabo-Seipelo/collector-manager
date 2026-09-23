@@ -114,6 +114,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Toggle           | Atom      | [Toggle](./toggle)                      |
 | Slider           | Atom      | [Slider](./slider)                      |
 | Divider          | Atom      | [Divider](./divider)                    |
+| LoadingBar       | Atom      | [Loading bar](./loading-bar)            |
 | Alert            | Atom      | [Alert](./alert)                        |
 | Avatar           | Atom      | [Avatar](./avatar)                      |
 | ImagePlaceholder | Atom      | [ImagePlaceholder](./image-placeholder) |

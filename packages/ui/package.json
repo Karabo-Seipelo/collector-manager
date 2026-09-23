@@ -23,6 +23,7 @@
     "./atoms/toggle": "./src/atoms/toggle/toggle.tsx",
     "./atoms/slider": "./src/atoms/slider/slider.tsx",
     "./atoms/divider": "./src/atoms/divider/divider.tsx",
+    "./atoms/loading-bar": "./src/atoms/loading-bar/loading-bar.tsx",
     "./atoms/alert": "./src/atoms/alert/alert.tsx",
     "./atoms/field-header": "./src/atoms/field-header/field-header.tsx",
     "./atoms/field-error": "./src/atoms/field-error/field-error.tsx",

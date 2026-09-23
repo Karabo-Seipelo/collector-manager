@@ -94,6 +94,7 @@ Configuration:
 | `Footer`                | `packages/ui/src/organisms/footer/footer.test.tsx`                   |
 | `FileUpload`            | `packages/ui/src/organisms/file-upload/file-upload.test.tsx`         |
 | `Hero`                  | `packages/ui/src/organisms/hero/hero.test.tsx`                       |
+| `LoadingBar`            | `packages/ui/src/atoms/loading-bar/loading-bar.test.tsx`             |
 | `Rating`                | `packages/ui/src/molecules/rating/rating.test.tsx`                   |
 | `Rating` utilities      | `packages/ui/src/molecules/rating/rating-utils.test.ts`              |
 | `SegmentedControl`      | `packages/ui/src/molecules/segmented-control/segmented-control.test.tsx` |
