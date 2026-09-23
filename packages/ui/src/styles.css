@@ -21,6 +21,7 @@
   --color-fill-hover: rgba(0, 21, 128, 0.04);
   --color-fill-press: rgba(0, 17, 102, 0.1);
   --color-fill-error-weak: rgba(255, 74, 74, 0.05);
+  --color-stroke-weak: rgba(0, 17, 102, 0.1);
   --color-stroke-strong: rgba(0, 13, 77, 0.45);
   --color-stroke-focus: #4c64d9;
   --color-stroke-disabled: rgba(0, 17, 102, 0.1);

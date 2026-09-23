@@ -28,6 +28,7 @@ The `@theme` block registers Tailwind utilities:
   --color-fill-hover: rgba(0, 21, 128, 0.04);
   --color-fill-press: rgba(0, 17, 102, 0.1);
   --color-fill-error-weak: rgba(255, 74, 74, 0.05);
+  --color-stroke-weak: rgba(0, 17, 102, 0.1);
   --color-stroke-strong: rgba(0, 13, 77, 0.45);
   --color-stroke-focus: #4c64d9;
   --color-stroke-disabled: rgba(0, 17, 102, 0.1);
@@ -54,9 +55,9 @@ Components use these via Tailwind classes such as `bg-primary`, `text-fg-strong`
 
 | Token  | Utility classes                                                                                       | Used by                                      |
 | ------ | ----------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| Fill   | `bg-fill-weak`                                                                                        | ItemCard image placeholder                   |
+| Fill   | `bg-fill-weak`                                                                                        | ItemCard image placeholder; Tag unselected   |
 | Fill   | `bg-fill-inverse`, `bg-fill-hover`, `bg-fill-press`, `bg-fill-error-weak`                             | TextField backgrounds                        |
-| Stroke | `border-stroke-strong`, `border-stroke-focus`, `border-stroke-disabled`, `border-stroke-error-strong` | TextField borders and focus                  |
+| Stroke | `border-stroke-weak`, `border-stroke-strong`, `border-stroke-focus`, `border-stroke-disabled`, `border-stroke-error-strong` | Tag outline; TextField borders and focus     |
 | Text   | `text-fg-strong`, `text-fg-weak`                                                                      | ItemCard title, price, meta; TextField input |
 | Text   | `text-text-disabled`, `text-text-error`                                                               | TextField disabled and error text            |
 | Icon   | `text-icon-error`                                                                                     | TextField error icon                         |

@@ -15,6 +15,9 @@ packages/ui/src/
 │   ├── icon/
 │   ├── code/
 │   ├── image-placeholder/
+│   ├── tag/
+│   ├── checkbox/
+│   ├── select/
 │   └── text-field/
 ├── molecules/       # Composed components built from atoms
 │   ├── button-group/
@@ -64,6 +67,9 @@ Components are imported via explicit package exports:
 import { Button } from "@repo/ui/atoms/button";
 import { FeatherIcon } from "@repo/ui/atoms/icon";
 import { TextField } from "@repo/ui/atoms/text-field";
+import { Tag } from "@repo/ui/atoms/tag";
+import { Checkbox } from "@repo/ui/atoms/checkbox";
+import { Select } from "@repo/ui/atoms/select";
 import { ButtonGroup } from "@repo/ui/molecules/button-group";
 import { ItemCard } from "@repo/ui/molecules/card";
 import { cn } from "@repo/ui/lib/cn";
@@ -76,6 +82,9 @@ import { cn } from "@repo/ui/lib/cn";
 | Button           | Atom     | [Button](./button)                      |
 | FeatherIcon      | Atom     | [Icon](./icon)                          |
 | TextField        | Atom     | [TextField](./text-field)               |
+| Tag              | Atom     | [Tag](./tag)                            |
+| Checkbox         | Atom     | [Checkbox](./checkbox)                  |
+| Select           | Atom     | [Select](./select)                      |
 | ImagePlaceholder | Atom     | [ImagePlaceholder](./image-placeholder) |
 | Code             | Atom     | [Code](./code)                          |
 | ItemCard         | Molecule | [ItemCard](./card)                      |
