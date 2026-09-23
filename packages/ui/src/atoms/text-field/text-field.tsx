@@ -71,15 +71,15 @@ export function TextField(props: TextFieldProps) {
     ...rest
   } = props;
 
+  const invalid = Boolean(error) && !disabled;
   const { fieldId, hintId, errorId, describedBy } = useFieldIds(id, {
     hint,
-    error,
+    error: invalid ? error : undefined,
   });
   const { isControlled, currentValue, setCurrentValue } = useControllableString(
     value,
     defaultValue,
   );
-  const invalid = Boolean(error);
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,

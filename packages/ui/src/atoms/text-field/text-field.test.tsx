@@ -26,6 +26,33 @@ describe("TextField", () => {
     expect(screen.getByRole("alert")).toHaveTextContent(
       "An item with this name already exists.",
     );
+    expect(screen.getByRole("alert").querySelector("svg")).toHaveAttribute(
+      "width",
+      "24",
+    );
+  });
+
+  it("uses disabled styling instead of error styling when disabled with an error", () => {
+    render(
+      <TextField
+        label="Item name"
+        disabled
+        error="An item with this name already exists."
+      />,
+    );
+
+    const input = screen.getByLabelText("Item name");
+    expect(input).not.toHaveAttribute("aria-invalid");
+    expect(input).not.toHaveAttribute("aria-describedby");
+    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+    expect(input.parentElement).toHaveClass(
+      "border-stroke-disabled",
+      "bg-fill-inverse",
+    );
+    expect(input.parentElement).not.toHaveClass(
+      "border-stroke-error-strong",
+      "bg-fill-error-weak",
+    );
   });
 
   it("updates value in uncontrolled mode", async () => {

@@ -10,6 +10,8 @@ Text input and textarea for forms, search, and item metadata. Supports labels, h
 
 **Storybook:** Atoms/TextField
 
+For new multiline fields, prefer the dedicated [TextArea](./text-area) atom. The `multiline` prop remains supported for compatibility.
+
 ## Usage
 
 ```tsx
@@ -53,23 +55,23 @@ import { FeatherIcon } from "@repo/ui/atoms/icon";
 
 Extends native `input` or `textarea` attributes (depending on `multiline`), except `className`, `value`, `defaultValue`, and `onChange` which are typed explicitly.
 
-| Prop           | Type                                               | Default     | Description                                       |
-| -------------- | -------------------------------------------------- | ----------- | ------------------------------------------------- |
-| `label`        | `string`                                           | —           | Visible field label                               |
-| `required`     | `boolean`                                          | `false`     | Shows a required marker (`*`)                     |
-| `optional`     | `boolean`                                          | `false`     | Shows an `(optional)` marker                      |
-| `hint`         | `string`                                           | —           | Helper text below the label                       |
-| `error`        | `string`                                           | —           | Validation message; sets invalid styling          |
-| `leadingIcon`  | `ReactNode`                                        | —           | Icon inside the field on the left                 |
-| `clearable`    | `boolean`                                          | `false`     | Shows a clear button when the field has a value   |
-| `state`        | `"default"` \| `"hover"` \| `"press"` \| `"focus"` | `"default"` | Pin a visual state (Storybook / design review)    |
-| `multiline`    | `boolean`                                          | `false`     | Renders a `<textarea>` instead of `<input>`       |
-| `value`        | `string`                                           | —           | Controlled value                                  |
-| `defaultValue` | `string`                                           | `""`        | Initial value (uncontrolled)                      |
-| `onChange`     | `ChangeEventHandler`                               | —           | Called when the value changes                     |
-| `disabled`     | `boolean`                                          | `false`     | Disable interaction                               |
-| `className`    | `string`                                           | —           | Wrapper class                                     |
-| `id`           | `string`                                           | auto        | Links label, hint, and error via `htmlFor` / ARIA |
+| Prop           | Type                                               | Default     | Description                                              |
+| -------------- | -------------------------------------------------- | ----------- | -------------------------------------------------------- |
+| `label`        | `string`                                           | —           | Visible field label                                      |
+| `required`     | `boolean`                                          | `false`     | Shows a required marker (`*`)                            |
+| `optional`     | `boolean`                                          | `false`     | Shows an `(optional)` marker                             |
+| `hint`         | `string`                                           | —           | Helper text below the label                              |
+| `error`        | `string`                                           | —           | Validation message; sets invalid styling unless disabled |
+| `leadingIcon`  | `ReactNode`                                        | —           | Icon inside the field on the left                        |
+| `clearable`    | `boolean`                                          | `false`     | Shows a clear button when the field has a value          |
+| `state`        | `"default"` \| `"hover"` \| `"press"` \| `"focus"` | `"default"` | Pin a visual state (Storybook / design review)           |
+| `multiline`    | `boolean`                                          | `false`     | Renders a `<textarea>` instead of `<input>`              |
+| `value`        | `string`                                           | —           | Controlled value                                         |
+| `defaultValue` | `string`                                           | `""`        | Initial value (uncontrolled)                             |
+| `onChange`     | `ChangeEventHandler`                               | —           | Called when the value changes                            |
+| `disabled`     | `boolean`                                          | `false`     | Disable interaction                                      |
+| `className`    | `string`                                           | —           | Wrapper class                                            |
+| `id`           | `string`                                           | auto        | Links label, hint, and error via `htmlFor` / ARIA        |
 
 Pass standard input props (`placeholder`, `type`, `name`, `autoComplete`, etc.) or textarea props (`rows`, `maxLength`, etc.) as usual.
 
@@ -120,6 +122,7 @@ TextField uses semantic tokens from [Design tokens](./tokens):
 - Hint and error IDs are wired through `aria-describedby`
 - Invalid fields set `aria-invalid`
 - Error message uses `role="alert"`
+- Disabled fields suppress invalid styling and error announcements
 - Clear button has `aria-label="Clear"`
 
 ## Implementation notes
@@ -138,21 +141,24 @@ See [Shared utilities](./cn-helper) for importable helpers.
 
 ## Storybook stories
 
-| Story           | Description                           |
-| --------------- | ------------------------------------- |
-| Default         | Label, hint, and placeholder          |
-| WithValue       | Pre-filled uncontrolled value         |
-| Required        | Required marker                       |
-| Optional        | Optional marker                       |
-| WithLeadingIcon | Search icon                           |
-| Clearable       | Clear button                          |
-| WithError       | Validation error                      |
-| Disabled        | Disabled state                        |
-| Multiline       | Textarea                              |
-| VisualStates    | Pinned hover, press, and focus states |
+| Story               | Description                                     |
+| ------------------- | ----------------------------------------------- |
+| Default             | Label, hint, and placeholder                    |
+| WithValue           | Pre-filled uncontrolled value                   |
+| Required            | Required marker                                 |
+| Optional            | Optional marker                                 |
+| WithLeadingIcon     | Search icon                                     |
+| Clearable           | Clear button                                    |
+| WithError           | Validation error                                |
+| Disabled            | Disabled state                                  |
+| DisabledWithError   | Disabled state takes precedence over an error   |
+| Multiline           | Textarea                                        |
+| VisualStates        | Pinned hover, press, and focus states           |
+| InvalidVisualStates | Invalid default, hover, press, and focus states |
 
 ## Related
 
+- [TextArea](./text-area)
 - [FeatherIcon](./icon)
 - [Design tokens](./tokens)
 - [Shared utilities](./cn-helper)

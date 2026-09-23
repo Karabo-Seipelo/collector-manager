@@ -55,7 +55,7 @@ export function getTextFieldControlClassName(
     "w-full min-w-0 bg-transparent text-base leading-6 outline-none",
     "text-fg-strong placeholder:text-fg-weak",
     "disabled:cursor-not-allowed disabled:text-text-disabled",
-    multiline ? "resize-none px-4 py-3" : "h-full",
+    multiline ? "self-stretch resize-none px-4 py-3" : "h-full",
     !leadingIcon && !multiline && "px-4",
     leadingIcon && !multiline && "pr-4",
   );

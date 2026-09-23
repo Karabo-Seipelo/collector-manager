@@ -68,12 +68,38 @@ describe("Select", () => {
     expect(screen.getByRole("alert")).toHaveTextContent("Choose a category.");
   });
 
+  it("uses disabled styling instead of error styling when disabled with an error", () => {
+    render(
+      <Select label="Category" disabled error="Choose a category.">
+        {options}
+      </Select>,
+    );
+
+    const combobox = screen.getByRole("combobox", { name: "Category" });
+    expect(combobox).not.toHaveAttribute("aria-invalid");
+    expect(combobox).not.toHaveAttribute("aria-describedby");
+    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+    expect(combobox.parentElement).toHaveClass(
+      "border-stroke-disabled",
+      "bg-fill-inverse",
+    );
+    expect(combobox.parentElement).not.toHaveClass(
+      "border-stroke-error-strong",
+      "bg-fill-error-weak",
+    );
+  });
+
   it("does not change value when disabled", async () => {
     const user = userEvent.setup();
     const onChange = vi.fn();
 
     render(
-      <Select label="Category" disabled defaultValue="books" onChange={onChange}>
+      <Select
+        label="Category"
+        disabled
+        defaultValue="books"
+        onChange={onChange}
+      >
         {options}
       </Select>,
     );

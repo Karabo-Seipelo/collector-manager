@@ -18,7 +18,7 @@ export function FieldError({ id, message, className }: FieldErrorProps) {
       )}
     >
       <span className="text-icon-error">
-        <FeatherIcon name="alert-octagon" size={20} />
+        <FeatherIcon name="alert-octagon" size={24} />
       </span>
       {message}
     </p>

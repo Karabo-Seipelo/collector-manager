@@ -12,8 +12,10 @@ import {
 import { useFieldIds } from "../../lib/use-field-ids";
 import { FeatherIcon } from "../icon/icon";
 
-export interface SelectProps
-  extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "className"> {
+export interface SelectProps extends Omit<
+  React.SelectHTMLAttributes<HTMLSelectElement>,
+  "className"
+> {
   label: string;
   required?: boolean;
   optional?: boolean;
@@ -40,11 +42,11 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
     },
     ref,
   ) {
+    const invalid = Boolean(error) && !disabled;
     const { fieldId, hintId, errorId, describedBy } = useFieldIds(id, {
       hint,
-      error,
+      error: invalid ? error : undefined,
     });
-    const invalid = Boolean(error);
 
     return (
       <div className={cn("flex w-full flex-col gap-1 font-body", className)}>

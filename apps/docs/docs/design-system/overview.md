@@ -25,6 +25,7 @@ packages/ui/src/
 │   ├── radio/
 │   ├── select/
 │   ├── avatar/
+│   ├── text-area/
 │   └── text-field/
 ├── molecules/       # Composed components built from atoms
 │   ├── button-group/
@@ -48,10 +49,10 @@ packages/ui/src/
 
 ## Atoms vs molecules
 
-| Layer        | When to use                                | Examples                                               |
-| ------------ | ------------------------------------------ | ------------------------------------------------------ |
-| **Atom**     | A single, reusable UI primitive            | Button, ButtonIcon, FeatherIcon, TextField, Code, ImagePlaceholder |
-| **Molecule** | Combines atoms into a higher-level pattern | ButtonGroup, ItemCard                                  |
+| Layer        | When to use                                | Examples                                                                     |
+| ------------ | ------------------------------------------ | ---------------------------------------------------------------------------- |
+| **Atom**     | A single, reusable UI primitive            | Button, ButtonIcon, FeatherIcon, TextField, TextArea, Code, ImagePlaceholder |
+| **Molecule** | Combines atoms into a higher-level pattern | ButtonGroup, ItemCard                                                        |
 
 Add new **atoms** for standalone primitives. Add **molecules** when a component orchestrates multiple atoms (e.g. a primary/secondary/tertiary button cluster).
 
@@ -80,6 +81,7 @@ import { Button } from "@repo/ui/atoms/button";
 import { ButtonIcon } from "@repo/ui/atoms/button-icon";
 import { FeatherIcon } from "@repo/ui/atoms/icon";
 import { TextField } from "@repo/ui/atoms/text-field";
+import { TextArea } from "@repo/ui/atoms/text-area";
 import { Tag } from "@repo/ui/atoms/tag";
 import { Badge } from "@repo/ui/atoms/badge";
 import { BadgeCount } from "@repo/ui/atoms/badge-count";
@@ -107,6 +109,7 @@ import { cn } from "@repo/ui/lib/cn";
 | ButtonIcon       | Atom     | [ButtonIcon](./button-icon)             |
 | FeatherIcon      | Atom     | [Icon](./icon)                          |
 | TextField        | Atom     | [TextField](./text-field)               |
+| TextArea         | Atom     | [TextArea](./text-area)                 |
 | Tag              | Atom     | [Tag](./tag)                            |
 | Badge            | Atom     | [Badge](./badge)                        |
 | BadgeCount       | Atom     | [BadgeCount](./badge-count)             |

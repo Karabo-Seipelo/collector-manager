@@ -76,42 +76,44 @@ pnpm resolves these to local packages — no publishing required during developm
 
 `@repo/ui` uses explicit export paths in `packages/ui/package.json`:
 
-| Import                                 | Description                       |
-| -------------------------------------- | --------------------------------- |
-| `@repo/ui/atoms/button`                | Button component                  |
-| `@repo/ui/atoms/button-icon`           | ButtonIcon icon-only actions      |
-| `@repo/ui/atoms/icon`                  | FeatherIcon component             |
-| `@repo/ui/atoms/code`                  | Inline Code component             |
-| `@repo/ui/atoms/image-placeholder`     | ImagePlaceholder component        |
-| `@repo/ui/atoms/text-field`            | TextField component               |
-| `@repo/ui/atoms/avatar`                | Avatar component                  |
-| `@repo/ui/atoms/tag`                   | Tag filter chip                   |
-| `@repo/ui/atoms/badge`                 | Badge status pill                 |
-| `@repo/ui/atoms/badge-count`           | BadgeCount notification number    |
-| `@repo/ui/atoms/badge-dot`             | BadgeDot presence or notification |
-| `@repo/ui/atoms/breadcrumbs`           | Breadcrumbs navigation trail      |
-| `@repo/ui/atoms/checkbox`              | Checkbox control                  |
-| `@repo/ui/atoms/radio`                 | Radio single-choice control       |
-| `@repo/ui/molecules/card`              | ItemCard component                |
+| Import                                 | Description                                    |
+| -------------------------------------- | ---------------------------------------------- |
+| `@repo/ui/atoms/button`                | Button component                               |
+| `@repo/ui/atoms/button-icon`           | ButtonIcon icon-only actions                   |
+| `@repo/ui/atoms/icon`                  | FeatherIcon component                          |
+| `@repo/ui/atoms/code`                  | Inline Code component                          |
+| `@repo/ui/atoms/image-placeholder`     | ImagePlaceholder component                     |
+| `@repo/ui/atoms/text-field`            | TextField component                            |
+| `@repo/ui/atoms/text-area`             | TextArea multiline component                   |
+| `@repo/ui/atoms/avatar`                | Avatar component                               |
+| `@repo/ui/atoms/tag`                   | Tag filter chip                                |
+| `@repo/ui/atoms/badge`                 | Badge status pill                              |
+| `@repo/ui/atoms/badge-count`           | BadgeCount notification number                 |
+| `@repo/ui/atoms/badge-dot`             | BadgeDot presence or notification              |
+| `@repo/ui/atoms/breadcrumbs`           | Breadcrumbs navigation trail                   |
+| `@repo/ui/atoms/checkbox`              | Checkbox control                               |
+| `@repo/ui/atoms/radio`                 | Radio single-choice control                    |
+| `@repo/ui/molecules/card`              | ItemCard component                             |
 | `@repo/ui/molecules/button-group`      | ButtonGroup primary/secondary/tertiary cluster |
-| `@repo/ui/molecules/checkbox-group`    | Labelled Checkbox collection      |
-| `@repo/ui/molecules/radio-group`       | Labelled Radio collection         |
-| `@repo/ui/molecules/avatar-stack`      | AvatarStack overlapping avatars   |
-| `@repo/ui/molecules/avatar-labelled`   | AvatarLabelled name + description |
-| `@repo/ui/molecules/avatar-dropdown`   | AvatarDropdown user-menu trigger  |
-| `@repo/ui/styles.css`                  | Shared Tailwind stylesheet        |
-| `@repo/ui/lib/cn`                      | Class name merge helper           |
-| `@repo/ui/lib/button-types`            | Shared Button / ButtonGroup types |
-| `@repo/ui/lib/format-dot-list`         | Dot-separated list formatter      |
-| `@repo/ui/lib/use-controllable-string` | Controlled string hook            |
-| `@repo/ui/lib/use-field-ids`           | Field ID and ARIA hook            |
-| `@repo/ui/lib/text-field-styles`       | TextField class builders          |
+| `@repo/ui/molecules/checkbox-group`    | Labelled Checkbox collection                   |
+| `@repo/ui/molecules/radio-group`       | Labelled Radio collection                      |
+| `@repo/ui/molecules/avatar-stack`      | AvatarStack overlapping avatars                |
+| `@repo/ui/molecules/avatar-labelled`   | AvatarLabelled name + description              |
+| `@repo/ui/molecules/avatar-dropdown`   | AvatarDropdown user-menu trigger               |
+| `@repo/ui/styles.css`                  | Shared Tailwind stylesheet                     |
+| `@repo/ui/lib/cn`                      | Class name merge helper                        |
+| `@repo/ui/lib/button-types`            | Shared Button / ButtonGroup types              |
+| `@repo/ui/lib/format-dot-list`         | Dot-separated list formatter                   |
+| `@repo/ui/lib/use-controllable-string` | Controlled string hook                         |
+| `@repo/ui/lib/use-field-ids`           | Field ID and ARIA hook                         |
+| `@repo/ui/lib/text-field-styles`       | TextField class builders                       |
 
 Example:
 
 ```tsx
 import { Button } from "@repo/ui/atoms/button";
 import { TextField } from "@repo/ui/atoms/text-field";
+import { TextArea } from "@repo/ui/atoms/text-area";
 import { FeatherIcon } from "@repo/ui/atoms/icon";
 import { cn } from "@repo/ui/lib/cn";
 import "@repo/ui/styles.css";

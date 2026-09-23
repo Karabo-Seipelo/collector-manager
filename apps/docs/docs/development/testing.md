@@ -74,6 +74,7 @@ Configuration:
 | `Code`                  | `packages/ui/src/atoms/code/code.test.tsx`                           |
 | `ImagePlaceholder`      | `packages/ui/src/atoms/image-placeholder/image-placeholder.test.tsx` |
 | `TextField`             | `packages/ui/src/atoms/text-field/text-field.test.tsx`               |
+| `TextArea`              | `packages/ui/src/atoms/text-area/text-area.test.tsx`                 |
 | `ButtonGroup`           | `packages/ui/src/molecules/button-group/button-group.test.tsx`       |
 | `CheckboxGroup`         | `packages/ui/src/molecules/checkbox-group/checkbox-group.test.tsx`   |
 | `RadioGroup`            | `packages/ui/src/molecules/radio-group/radio-group.test.tsx`         |

@@ -84,6 +84,14 @@ export const Disabled: Story = {
   },
 };
 
+export const DisabledWithError: Story = {
+  args: {
+    defaultValue: "Abbey Road",
+    disabled: true,
+    error: "An item with this name already exists.",
+  },
+};
+
 export const Multiline: Story = {
   args: {
     label: "Notes",
@@ -101,6 +109,18 @@ export const VisualStates: Story = {
       <TextField label="Hover" placeholder="Hover state" state="hover" />
       <TextField label="Press" placeholder="Press state" state="press" />
       <TextField label="Focus" placeholder="Focus state" state="focus" />
+    </div>
+  ),
+};
+
+export const InvalidVisualStates: Story = {
+  tags: ["!test"],
+  render: () => (
+    <div className="flex flex-col gap-4">
+      <TextField label="Default" error="Error message" />
+      <TextField label="Hover" error="Error message" state="hover" />
+      <TextField label="Press" error="Error message" state="press" />
+      <TextField label="Focus" error="Error message" state="focus" />
     </div>
   ),
 };
