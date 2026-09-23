@@ -85,8 +85,8 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/atoms/code`                  | Inline Code component                          |
 | `@repo/ui/atoms/image-placeholder`     | ImagePlaceholder component                     |
 | `@repo/ui/atoms/slot`                  | Dashed placeholder for swappable content areas |
-| `@repo/ui/atoms/text-field`            | TextField component                            |
-| `@repo/ui/atoms/text-area`             | TextArea multiline component                   |
+| `@repo/ui/molecules/text-field`            | TextField component                            |
+| `@repo/ui/molecules/text-area`             | TextArea multiline component                   |
 | `@repo/ui/atoms/text-link`             | Inline text link with tone and icon slots      |
 | `@repo/ui/molecules/search-input`          | Search field with clear and button variants    |
 | `@repo/ui/atoms/avatar`                | Avatar component                               |
@@ -102,7 +102,7 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/molecules/stepper`               | Numeric field with increment/decrement buttons |
 | `@repo/ui/atoms/divider`               | Divider weak/strong separator                  |
 | `@repo/ui/atoms/alert`                 | Alert in-content status message                |
-| `@repo/ui/atoms/alert-global`          | Alert global page banner                       |
+| `@repo/ui/molecules/alert-global`          | Alert global page banner                       |
 | `@repo/ui/molecules/card`              | Practical UI Card content container            |
 | `@repo/ui/molecules/accordion`         | Accordion stacked expandable headings          |
 | `@repo/ui/molecules/autocomplete`      | Searchable single or multiple option picker    |
@@ -138,8 +138,8 @@ Example:
 
 ```tsx
 import { Button } from "@repo/ui/atoms/button";
-import { TextField } from "@repo/ui/atoms/text-field";
-import { TextArea } from "@repo/ui/atoms/text-area";
+import { TextField } from "@repo/ui/molecules/text-field";
+import { TextArea } from "@repo/ui/molecules/text-area";
 import { FeatherIcon } from "@repo/ui/atoms/icon";
 import { IconContainer } from "@repo/ui/atoms/icon-container";
 import { cn } from "@repo/ui/lib/cn";

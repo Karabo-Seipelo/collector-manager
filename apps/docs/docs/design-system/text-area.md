@@ -4,16 +4,16 @@ sidebar_position: 6
 
 # TextArea
 
-Labeled multiline text input for notes and longer free-form content. It uses the same field states and accessibility behavior as TextField with the 160px height defined by Practical UI.
+Labeled multiline text input for notes and longer free-form content. It composes the bare `Textarea` atom (`@repo/ui/atoms/textarea`) with `FieldHeader` and `FieldError`, using the same field states and accessibility behavior as TextField with the 160px height defined by Practical UI.
 
-**Import:** `@repo/ui/atoms/text-area`
+**Import:** `@repo/ui/molecules/text-area`
 
-**Storybook:** Atoms/TextArea
+**Storybook:** Molecules/TextArea
 
 ## Usage
 
 ```tsx
-import { TextArea } from "@repo/ui/atoms/text-area";
+import { TextArea } from "@repo/ui/molecules/text-area";
 
 <TextArea
   label="Notes"

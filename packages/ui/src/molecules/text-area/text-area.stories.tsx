@@ -4,7 +4,7 @@ import { withWidth } from "../../../.storybook/decorators";
 import { TextArea } from "./text-area";
 
 const meta = {
-  title: "Atoms/TextArea",
+  title: "Molecules/TextArea",
   component: TextArea,
   args: {
     label: "Notes",

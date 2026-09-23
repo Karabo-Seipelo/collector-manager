@@ -2,13 +2,13 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, within } from "storybook/test";
 
 import { withWidth } from "../../../.storybook/decorators";
-import { FeatherIcon } from "../icon/icon";
+import { FeatherIcon } from "../../atoms/icon/icon";
 import { TextField } from "./text-field";
 
 const fieldWidth = withWidth("360px");
 
 const meta = {
-  title: "Atoms/TextField",
+  title: "Molecules/TextField",
   component: TextField,
   args: {
     label: "Item name",

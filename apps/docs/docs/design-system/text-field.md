@@ -6,16 +6,18 @@ sidebar_position: 5
 
 Text input and textarea for forms, search, and item metadata. Supports labels, hints, validation errors, icons, and clear actions.
 
-**Import:** `@repo/ui/atoms/text-field`
+**Import:** `@repo/ui/molecules/text-field`
 
-**Storybook:** Atoms/TextField
+**Storybook:** Molecules/TextField
 
-For new multiline fields, prefer the dedicated [TextArea](./text-area) atom. The `multiline` prop remains supported for compatibility.
+TextField composes the bare `Input` atom (`@repo/ui/atoms/input`) with `FieldHeader` and `FieldError`. For new multiline fields, prefer the dedicated [TextArea](./text-area) molecule. The `multiline` prop remains supported for compatibility.
+
+For unlabeled controls (e.g. inside a custom field layout), use `@repo/ui/atoms/input` directly.
 
 ## Usage
 
 ```tsx
-import { TextField } from "@repo/ui/atoms/text-field";
+import { TextField } from "@repo/ui/molecules/text-field";
 
 <TextField
   label="Item name"

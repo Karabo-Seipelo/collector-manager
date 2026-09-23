@@ -6,14 +6,14 @@ sidebar_position: 5.7
 
 Labeled native select that shares TextField field chrome (48px height, label, error).
 
-**Import:** `@repo/ui/atoms/select`
+**Import:** `@repo/ui/molecules/select`
 
-**Storybook:** Atoms/Select
+**Storybook:** Molecules/Select
 
 ## Usage
 
 ```tsx
-import { Select } from "@repo/ui/atoms/select";
+import { Select } from "@repo/ui/molecules/select";
 
 <Select label="Category">
   <option value="">Select</option>

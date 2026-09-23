@@ -54,7 +54,7 @@ import { TextField } from "./text-field";
 const fieldWidth = withWidth("360px");
 
 const meta = {
-  title: "Atoms/TextField",
+  title: "Molecules/TextField",
   component: TextField,
   decorators: [fieldWidth],
 } satisfies Meta<typeof TextField>;

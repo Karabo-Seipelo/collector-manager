@@ -16,7 +16,7 @@ const categoryOptions = (
 );
 
 const meta = {
-  title: "Atoms/Select",
+  title: "Molecules/Select",
   component: Select,
   args: {
     label: "Category",

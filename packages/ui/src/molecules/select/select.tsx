@@ -2,15 +2,15 @@
 
 import * as React from "react";
 
-import { FieldError } from "../field-error/field-error";
-import { FieldHeader } from "../field-header/field-header";
+import { FieldError } from "../../atoms/field-error/field-error";
+import { FieldHeader } from "../../atoms/field-header/field-header";
 import { cn } from "../../lib/cn";
 import {
   getTextFieldBoxClassName,
   type TextFieldVisualState,
 } from "../../lib/text-field-styles";
 import { useFieldIds } from "../../lib/use-field-ids";
-import { FeatherIcon } from "../icon/icon";
+import { FeatherIcon } from "../../atoms/icon/icon";
 
 export interface SelectProps extends Omit<
   React.SelectHTMLAttributes<HTMLSelectElement>,

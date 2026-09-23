@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import { type AlertTone } from "../alert/alert";
-import { FeatherIcon, type FeatherIconName } from "../icon/icon";
+import { type AlertTone } from "../../atoms/alert/alert";
+import { FeatherIcon, type FeatherIconName } from "../../atoms/icon/icon";
 import { cn } from "../../lib/cn";
 
 export type { AlertTone };

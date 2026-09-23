@@ -6,14 +6,14 @@ sidebar_position: 6.6
 
 Full-width page banner for important system-wide messages, matching Practical UI Alert global.
 
-**Import:** `@repo/ui/atoms/alert-global`
+**Import:** `@repo/ui/molecules/alert-global`
 
-**Storybook:** Atoms/AlertGlobal
+**Storybook:** Molecules/AlertGlobal
 
 ## Usage
 
 ```tsx
-import { AlertGlobal } from "@repo/ui/atoms/alert-global";
+import { AlertGlobal } from "@repo/ui/molecules/alert-global";
 import { Button } from "@repo/ui/atoms/button";
 
 <AlertGlobal

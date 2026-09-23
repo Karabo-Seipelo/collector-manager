@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, fn, userEvent, within } from "storybook/test";
 
-import { Button } from "../button/button";
+import { Button } from "../../atoms/button/button";
 import { AlertGlobal } from "./alert-global";
 
 const meta = {
-  title: "Atoms/AlertGlobal",
+  title: "Molecules/AlertGlobal",
   component: AlertGlobal,
   args: {
     children: "Lorem ipsum dolor sit amet consec tetur adipiscing elit",

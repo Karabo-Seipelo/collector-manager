@@ -101,9 +101,9 @@ import { cn } from "@repo/ui/lib/cn";
 | IconContainer    | Atom      | [IconContainer](./icon-container)       |
 | FieldHeader      | Atom      | [TextField](./text-field)               |
 | FieldError       | Atom      | [TextField](./text-field)               |
-| TextField        | Atom      | [TextField](./text-field)               |
+| Input            | Atom      | [TextField](./text-field)               |
+| Textarea         | Atom      | [TextArea](./text-area)                 |
 | TextLink         | Atom      | [Text link](./text-link)                |
-| TextArea         | Atom      | [TextArea](./text-area)                 |
 | Tag              | Atom      | [Tag](./tag)                            |
 | Badge            | Atom      | [Badge](./badge)                        |
 | BadgeCount       | Atom      | [BadgeCount](./badge-count)             |
@@ -114,12 +114,14 @@ import { cn } from "@repo/ui/lib/cn";
 | Slider           | Atom      | [Slider](./slider)                      |
 | Divider          | Atom      | [Divider](./divider)                    |
 | Alert            | Atom      | [Alert](./alert)                        |
-| Alert global     | Atom      | [Alert global](./alert-global)          |
-| Select           | Atom      | [Select](./select)                      |
 | Avatar           | Atom      | [Avatar](./avatar)                      |
 | ImagePlaceholder | Atom      | [ImagePlaceholder](./image-placeholder) |
 | Slot             | Atom      | [Slot](./slot)                          |
 | Code             | Atom      | [Code](./code)                          |
+| TextField        | Molecule  | [TextField](./text-field)               |
+| TextArea         | Molecule  | [TextArea](./text-area)                 |
+| Select           | Molecule  | [Select](./select)                      |
+| Alert global     | Molecule  | [Alert global](./alert-global)          |
 | Breadcrumbs      | Molecule  | [Breadcrumbs](./breadcrumbs)            |
 | SearchInput      | Molecule  | [Search input](./search-input)          |
 | Stepper          | Molecule  | [Stepper](./stepper)                    |

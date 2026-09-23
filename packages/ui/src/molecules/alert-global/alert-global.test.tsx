@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
-import { Button } from "../button/button";
+import { Button } from "../../atoms/button/button";
 import { AlertGlobal } from "./alert-global";
 
 describe("AlertGlobal", () => {
