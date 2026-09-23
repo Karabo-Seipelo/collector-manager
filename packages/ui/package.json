@@ -46,6 +46,7 @@
     "./molecules/stepper": "./src/molecules/stepper/stepper.tsx",
     "./molecules/breadcrumbs": "./src/molecules/breadcrumbs/breadcrumbs.tsx",
     "./molecules/pagination": "./src/molecules/pagination/pagination.tsx",
+    "./molecules/progress-indicator": "./src/molecules/progress-indicator/progress-indicator.tsx",
     "./molecules/text-field": "./src/molecules/text-field/text-field.tsx",
     "./molecules/text-area": "./src/molecules/text-area/text-area.tsx",
     "./molecules/select": "./src/molecules/select/select.tsx",

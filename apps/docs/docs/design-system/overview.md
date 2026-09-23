@@ -129,6 +129,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Alert global     | Molecule  | [Alert global](./alert-global)          |
 | Breadcrumbs      | Molecule  | [Breadcrumbs](./breadcrumbs)            |
 | Pagination       | Molecule  | [Pagination](./pagination)              |
+| Progress indicator | Molecule | [Progress indicator](./progress-indicator) |
 | SearchInput      | Molecule  | [Search input](./search-input)          |
 | Stepper          | Molecule  | [Stepper](./stepper)                    |
 | Accordion        | Molecule  | [Accordion](./accordion)                |
