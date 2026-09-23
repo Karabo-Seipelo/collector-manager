@@ -22,6 +22,14 @@ const meta = {
     src: photoSrc,
     size: "medium",
   },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Avatar plus name, with an optional description. Small is name-only; medium and large include the second line.",
+      },
+    },
+  },
 } satisfies Meta<typeof AvatarLabelled>;
 
 export default meta;

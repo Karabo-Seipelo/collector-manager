@@ -20,6 +20,14 @@ const meta = {
     name: "Karabo Seipelo",
     size: "medium",
   },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Person or entity mark. Types are photo, icon, and initials at 32 / 48 / 64. Pass `aria-hidden` when the name is already visible beside the avatar.",
+      },
+    },
+  },
 } satisfies Meta<typeof Avatar>;
 
 export default meta;

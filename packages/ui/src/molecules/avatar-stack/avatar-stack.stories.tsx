@@ -31,6 +31,14 @@ const meta = {
     size: "medium",
     max: 5,
   },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Overlapping avatars with an overflow count (`2+`, `99+`). The group is named `{first person} and {n} others`; faces are `aria-hidden`.",
+      },
+    },
+  },
 } satisfies Meta<typeof AvatarStack>;
 
 export default meta;

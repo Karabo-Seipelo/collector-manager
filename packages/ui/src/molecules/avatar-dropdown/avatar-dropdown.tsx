@@ -11,13 +11,24 @@ export type AvatarDropdownVariant = "button" | "navigation";
 
 export interface AvatarDropdownProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "type"> {
+  /** Visible name and accessible name of the trigger. */
   name: string;
+  /** Optional second line under the name. */
   description?: string;
+  /** Photo URL. Omit to show initials (or an icon when `avatarType` is `"icon"`). */
   src?: string;
+  /** Native image `alt`. Defaults to `name`. */
   alt?: string;
+  /** Avatar treatment when not inferred from `src`. */
   avatarType?: AvatarType;
+  /** Avatar size. Spec uses `"small"` (32px). */
   size?: AvatarSize;
+  /**
+   * `"button"` hugs content with a chevron.
+   * `"navigation"` stretches to the parent width with a more-horizontal icon.
+   */
   variant?: AvatarDropdownVariant;
+  /** Sets `aria-expanded`. Button variant uses chevron-up when true. */
   open?: boolean;
 }
 
