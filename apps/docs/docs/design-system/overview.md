@@ -30,6 +30,7 @@ packages/ui/src/
 │   ├── date-picker/
 │   ├── drawer/
 │   ├── dropdown-menu/
+│   ├── hero/
 │   └── …
 ├── lib/             # Shared utilities (hooks, formatters, styles)
 │   ├── cn.ts
@@ -147,6 +148,7 @@ import { cn } from "@repo/ui/lib/cn";
 | File upload      | Organism  | [File upload](./file-upload)          |
 | Table             | Organism  | [Table](./table)                        |
 | Testimonial       | Organism  | [Testimonial](./testimonial)            |
+| Hero              | Organism  | [Hero](./hero)                          |
 | AvatarDropdown   | Organism  | [AvatarDropdown](./avatar-dropdown)     |
 | Shared utilities | Lib       | [Shared utilities](./cn-helper)         |
 
