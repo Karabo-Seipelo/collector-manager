@@ -44,6 +44,7 @@
     "./molecules/segmented-control": "./src/molecules/segmented-control/segmented-control.tsx",
     "./molecules/summary-list": "./src/molecules/summary-list/summary-list.tsx",
     "./molecules/table": "./src/molecules/table/table.tsx",
+    "./molecules/tabs": "./src/molecules/tabs/tabs.tsx",
     "./molecules/button-group": "./src/molecules/button-group/button-group.tsx",
     "./molecules/avatar-stack": "./src/molecules/avatar-stack/avatar-stack.tsx",
     "./molecules/avatar-labelled": "./src/molecules/avatar-labelled/avatar-labelled.tsx",
