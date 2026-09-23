@@ -133,6 +133,7 @@ import { Footer } from "@repo/ui/molecules/footer";
 import { FileUpload } from "@repo/ui/molecules/file-upload";
 import { Rating } from "@repo/ui/molecules/rating";
 import { SegmentedControl } from "@repo/ui/molecules/segmented-control";
+import { Slider } from "@repo/ui/atoms/slider";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
 import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
@@ -169,6 +170,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Checkbox         | Atom     | [Checkbox](./checkbox)                  |
 | Radio            | Atom     | [Radio](./radio)                        |
 | Toggle           | Atom     | [Toggle](./toggle)                      |
+| Slider           | Atom     | [Slider](./slider)                      |
 | Divider          | Atom     | [Divider](./divider)                    |
 | Alert            | Atom     | [Alert](./alert)                        |
 | Alert global     | Atom     | [Alert global](./alert-global)          |
