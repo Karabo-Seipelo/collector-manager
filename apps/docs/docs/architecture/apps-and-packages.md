@@ -115,6 +115,7 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/molecules/file-upload`       | Drag-and-drop file upload with file list        |
 | `@repo/ui/molecules/rating`            | Star or heart rating display with review link   |
 | `@repo/ui/molecules/segmented-control` | Single-select segmented view/mode switcher      |
+| `@repo/ui/molecules/summary-list`      | Term/description review list with row actions   |
 | `@repo/ui/molecules/button-group`      | ButtonGroup primary/secondary/tertiary cluster |
 | `@repo/ui/molecules/checkbox-group`    | Labelled Checkbox collection                   |
 | `@repo/ui/molecules/radio-group`       | Labelled Radio collection                      |

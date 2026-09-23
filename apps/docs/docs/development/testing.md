@@ -99,6 +99,7 @@ Configuration:
 | `Slider`                | `packages/ui/src/atoms/slider/slider.test.tsx`                           |
 | `Slot`                  | `packages/ui/src/atoms/slot/slot.test.tsx`                               |
 | `Stepper`               | `packages/ui/src/atoms/stepper/stepper.test.tsx`                         |
+| `SummaryList`           | `packages/ui/src/molecules/summary-list/summary-list.test.tsx`           |
 | `useControllableNumber` | `packages/ui/src/lib/use-controllable-number.test.ts`                    |
 | `useControllableBoolean`| `packages/ui/src/lib/use-controllable-boolean.test.ts`               |
 | `useScrollLock`         | `packages/ui/src/lib/use-scroll-lock.test.ts`                        |
