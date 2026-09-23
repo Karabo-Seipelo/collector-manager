@@ -30,6 +30,7 @@
     "./molecules/autocomplete": "./src/molecules/autocomplete/autocomplete.tsx",
     "./molecules/combobox": "./src/molecules/combobox/combobox.tsx",
     "./molecules/date-picker": "./src/molecules/date-picker/date-picker.tsx",
+    "./molecules/drawer": "./src/molecules/drawer/drawer.tsx",
     "./molecules/button-group": "./src/molecules/button-group/button-group.tsx",
     "./molecules/avatar-stack": "./src/molecules/avatar-stack/avatar-stack.tsx",
     "./molecules/avatar-labelled": "./src/molecules/avatar-labelled/avatar-labelled.tsx",

@@ -38,6 +38,7 @@ packages/ui/src/
 │   ├── autocomplete/
 │   ├── combobox/
 │   ├── date-picker/
+│   ├── drawer/
 │   ├── checkbox-group/
 │   ├── radio-group/
 │   ├── avatar-stack/
@@ -108,6 +109,12 @@ import { Accordion, AccordionItem } from "@repo/ui/molecules/accordion";
 import { Autocomplete } from "@repo/ui/molecules/autocomplete";
 import { Combobox } from "@repo/ui/molecules/combobox";
 import { DatePicker } from "@repo/ui/molecules/date-picker";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+} from "@repo/ui/molecules/drawer";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
 import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
@@ -150,6 +157,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Autocomplete     | Molecule | [Autocomplete](./autocomplete)          |
 | Combobox         | Molecule | [Combobox](./combobox)                  |
 | Date picker      | Molecule | [Date picker](./date-picker)            |
+| Drawer           | Molecule | [Drawer](./drawer)                    |
 | Avatar           | Atom     | [Avatar](./avatar)                      |
 | AvatarStack      | Molecule | [AvatarStack](./avatar-stack)           |
 | AvatarLabelled   | Molecule | [AvatarLabelled](./avatar-labelled)     |

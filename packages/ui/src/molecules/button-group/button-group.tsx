@@ -8,7 +8,7 @@ import { cn } from "../../lib/cn";
 
 const variants: ButtonType[] = ["primary", "secondary", "tertiary"];
 
-export type ButtonGroupLayout = "horizontal" | "vertical";
+export type ButtonGroupLayout = "horizontal" | "vertical" | "responsive";
 export type ButtonGroupOrder = "default" | "reverse";
 
 export interface ButtonGroupProps {
@@ -32,6 +32,7 @@ export function ButtonGroup({
   "aria-label": ariaLabel,
   "aria-labelledby": ariaLabelledBy,
 }: ButtonGroupProps) {
+  const responsive = layout === "responsive";
   const vertical = layout === "vertical";
   const buttons = React.Children.toArray(children)
     .filter(React.isValidElement)
@@ -41,6 +42,10 @@ export function ButtonGroup({
         size,
         tone,
         fullWidth: vertical,
+        className: cn(
+          responsive && "w-full md:w-auto",
+          (child as React.ReactElement<ButtonProps>).props.className,
+        ),
       }),
     );
 
@@ -51,7 +56,9 @@ export function ButtonGroup({
       aria-labelledby={ariaLabelledBy}
       className={cn(
         "inline-flex gap-4",
-        vertical ? "w-[364px] flex-col items-stretch" : "items-start",
+        vertical && "w-[364px] flex-col items-stretch",
+        responsive && "w-full flex-col items-stretch md:w-auto md:flex-row md:items-start",
+        !vertical && !responsive && "items-start",
         className,
       )}
     >

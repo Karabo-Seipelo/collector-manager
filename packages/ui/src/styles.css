@@ -16,6 +16,7 @@
   /* Colour */
   --color-fill-weak: rgba(0, 21, 128, 0.04);
   --color-fill-weaker: rgba(0, 21, 128, 0.02);
+  --color-fill-overlay: rgba(0, 13, 77, 0.45);
   --color-fill-inverse-weak: rgba(255, 255, 255, 0.06);
   --color-fill-inverse-strong: #12131a;
   --color-fg-strong: rgba(0, 6, 38, 0.9);

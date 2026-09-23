@@ -56,6 +56,17 @@ describe("ButtonGroup", () => {
     }
   });
 
+  it("supports responsive layout classes for drawer footers", () => {
+    renderGroup({ layout: "responsive" });
+
+    expect(screen.getByRole("group", { name: "Actions" })).toHaveClass(
+      "flex-col",
+      "md:flex-row",
+      "w-full",
+      "md:w-auto",
+    );
+  });
+
   it("passes size through to each button", () => {
     renderGroup({ size: "small" });
 

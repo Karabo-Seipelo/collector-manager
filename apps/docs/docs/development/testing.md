@@ -86,6 +86,10 @@ Configuration:
 | `DatePicker`            | `packages/ui/src/molecules/date-picker/date-picker.test.tsx`         |
 | `DatePicker` utilities  | `packages/ui/src/molecules/date-picker/date-picker-utils.test.ts`    |
 | `DatePicker` calendar   | `packages/ui/src/molecules/date-picker/calendar.test.tsx`            |
+| `Drawer`                | `packages/ui/src/molecules/drawer/drawer.test.tsx`                   |
+| `useControllableBoolean`| `packages/ui/src/lib/use-controllable-boolean.test.ts`               |
+| `useScrollLock`         | `packages/ui/src/lib/use-scroll-lock.test.ts`                        |
+| `useFocusTrap`          | `packages/ui/src/lib/use-focus-trap.test.tsx`                        |
 | `ButtonGroup`           | `packages/ui/src/molecules/button-group/button-group.test.tsx`       |
 | `CheckboxGroup`         | `packages/ui/src/molecules/checkbox-group/checkbox-group.test.tsx`   |
 | `RadioGroup`            | `packages/ui/src/molecules/radio-group/radio-group.test.tsx`         |
@@ -118,6 +122,7 @@ Interactive stories with `play` functions:
 - `Autocomplete` — `Default`, `Open`, `Multiple`
 - `Combobox` — `Default`, `Open`, `Multiple`
 - `DatePicker` — `Default`, `Open`
+- `Drawer` — `Default`, `Open`, `Mobile`
 - `Accordion` — `Default`
 - `ButtonGroup` — `Default`
 - `Card` — `IconWithTextLink`
