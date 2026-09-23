@@ -26,6 +26,8 @@ packages/ui/src/
 │   ├── radio/
 │   ├── toggle/
 │   ├── divider/
+│   ├── alert/
+│   ├── alert-global/
 │   ├── select/
 │   ├── avatar/
 │   ├── text-area/
@@ -54,7 +56,7 @@ packages/ui/src/
 
 | Layer        | When to use                                | Examples                                                                             |
 | ------------ | ------------------------------------------ | ------------------------------------------------------------------------------------ |
-| **Atom**     | A single, reusable UI primitive            | Button, ButtonIcon, FeatherIcon, TextField, TextArea, Toggle, Divider, Code, ImagePlaceholder |
+| **Atom**     | A single, reusable UI primitive            | Button, ButtonIcon, FeatherIcon, TextField, TextArea, Toggle, Divider, Alert, AlertGlobal, Code, ImagePlaceholder |
 | **Molecule** | Combines atoms into a higher-level pattern | ButtonGroup, ItemCard                                                                |
 
 Add new **atoms** for standalone primitives. Add **molecules** when a component orchestrates multiple atoms (e.g. a primary/secondary/tertiary button cluster).
@@ -95,6 +97,8 @@ import { Checkbox } from "@repo/ui/atoms/checkbox";
 import { Radio } from "@repo/ui/atoms/radio";
 import { Toggle } from "@repo/ui/atoms/toggle";
 import { Divider } from "@repo/ui/atoms/divider";
+import { Alert } from "@repo/ui/atoms/alert";
+import { AlertGlobal } from "@repo/ui/atoms/alert-global";
 import { Select } from "@repo/ui/atoms/select";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
@@ -126,6 +130,8 @@ import { cn } from "@repo/ui/lib/cn";
 | Radio            | Atom     | [Radio](./radio)                        |
 | Toggle           | Atom     | [Toggle](./toggle)                      |
 | Divider          | Atom     | [Divider](./divider)                    |
+| Alert            | Atom     | [Alert](./alert)                        |
+| Alert global     | Atom     | [Alert global](./alert-global)          |
 | Select           | Atom     | [Select](./select)                      |
 | Avatar           | Atom     | [Avatar](./avatar)                      |
 | AvatarStack      | Molecule | [AvatarStack](./avatar-stack)           |

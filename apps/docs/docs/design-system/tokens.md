@@ -20,7 +20,9 @@ The `@theme` block registers Tailwind utilities:
 
   /* Semantic colours */
   --color-fill-weak: rgba(0, 21, 128, 0.04);
+  --color-fill-weaker: rgba(0, 21, 128, 0.02);
   --color-fill-inverse-weak: rgba(255, 255, 255, 0.06);
+  --color-fill-inverse-strong: #12131a;
   --color-fg-strong: rgba(0, 6, 38, 0.9);
   --color-fg-weak: rgba(0, 9, 51, 0.65);
   --color-icon-neutral: rgba(0, 13, 77, 0.45);
@@ -45,11 +47,18 @@ The `@theme` block registers Tailwind utilities:
   --color-stroke-disabled: rgba(0, 17, 102, 0.1);
   --color-stroke-error-strong: rgba(199, 58, 58, 0.8);
   --color-stroke-error-weak: rgba(199, 58, 58, 0.14);
+  --color-stroke-warning-strong: rgba(143, 108, 26, 0.8);
   --color-stroke-warning-weak: rgba(143, 108, 26, 0.2);
+  --color-stroke-success-strong: rgba(6, 122, 87, 0.8);
   --color-stroke-success-weak: rgba(6, 122, 87, 0.2);
+  --color-stroke-information-strong: rgba(26, 116, 168, 0.8);
   --color-stroke-information-weak: rgba(26, 116, 168, 0.2);
+  --color-stroke-brand-strong: rgba(76, 100, 217, 0.8);
   --color-stroke-brand-weak: rgba(76, 100, 217, 0.2);
+  --color-stroke-inverse-strong: rgba(255, 255, 255, 0.6);
   --color-stroke-inverse-weak: rgba(255, 255, 255, 0.12);
+  --color-text-inverse-strong: #ffffff;
+  --color-text-inverse-weak: rgba(255, 255, 255, 0.78);
   --color-text-disabled: rgba(0, 17, 102, 0.1);
   --color-text-error: #c73a3a;
   --color-text-warning: #8f6c1a;
@@ -79,11 +88,12 @@ Components use these via Tailwind classes such as `bg-primary`, `text-fg-strong`
 
 | Token  | Utility classes                                                                                                                                                                                                                                         | Used by                                                                                               |
 | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Fill   | `bg-fill-weak`, `bg-fill-inverse-weak`                                                                                                                                                                                                                  | ItemCard image placeholder; Tag unselected; Avatar; Toggle track; IconContainer                       |
-| Fill   | `bg-fill-inverse`, `bg-fill-hover`, `bg-fill-press`, `bg-fill-error-weak`, `bg-fill-error-strong`, `bg-fill-warning-weak`, `bg-fill-warning-strong`, `bg-fill-success-weak`, `bg-fill-success-strong`, `bg-fill-information-weak`, `bg-fill-brand-weak` | TextField and TextArea backgrounds; Checkbox, Radio, and Toggle states; Badge and IconContainer fills |
+| Fill   | `bg-fill-weak`, `bg-fill-weaker`, `bg-fill-inverse-weak`, `bg-fill-inverse-strong`                                                                                                                                                                       | ItemCard image placeholder; Tag unselected; Avatar; Toggle track; IconContainer; Alert; Alert global  |
+| Fill   | `bg-fill-inverse`, `bg-fill-hover`, `bg-fill-press`, `bg-fill-error-weak`, `bg-fill-error-strong`, `bg-fill-warning-weak`, `bg-fill-warning-strong`, `bg-fill-success-weak`, `bg-fill-success-strong`, `bg-fill-information-weak`, `bg-fill-brand-weak` | TextField and TextArea backgrounds; Checkbox, Radio, and Toggle states; Badge, IconContainer, Alert fills |
 | Stroke | `border-stroke-weak`, `border-stroke-strong`, `border-stroke-focus`, `border-stroke-disabled`, `border-stroke-error-strong`                                                                                                                             | Tag outline; TextField, TextArea, Checkbox, Radio, and Toggle borders and focus; Divider fill         |
-| Stroke | `border-stroke-error-weak`, `border-stroke-warning-weak`, `border-stroke-success-weak`, `border-stroke-information-weak`, `border-stroke-brand-weak`, `border-stroke-inverse-weak`                                                                      | Badge and IconContainer outlines                                                                      |
-| Text   | `text-fg-strong`, `text-fg-weak`                                                                                                                                                                                                                        | ItemCard title, price, meta; TextField and TextArea input; Breadcrumbs labels                         |
+| Stroke | `border-stroke-error-weak`, `border-stroke-warning-weak`, `border-stroke-success-weak`, `border-stroke-information-weak`, `border-stroke-brand-weak`, `border-stroke-inverse-weak`                                                                      | Badge and IconContainer outlines; Alert borders                                                       |
+| Stroke | `bg-stroke-warning-strong`, `bg-stroke-success-strong`, `bg-stroke-information-strong`, `bg-stroke-brand-strong`, `bg-stroke-inverse-strong`                                                                                                           | Alert leading bar                                                                                     |
+| Text   | `text-fg-strong`, `text-fg-weak`, `text-text-inverse-strong`, `text-text-inverse-weak`                                                                                                                                                                 | ItemCard title, price, meta; TextField and TextArea input; Breadcrumbs labels; Alert                  |
 | Icon   | `text-icon-neutral`, `text-icon-brand`, `text-icon-inverse`, `text-icon-error`, `text-icon-warning`, `text-icon-success`, `text-icon-information`                                                                                                       | Breadcrumbs separators; IconContainer icons                                                           |
 | Text   | `text-text-disabled`, `text-text-error`, `text-text-warning`, `text-text-success`, `text-text-information`                                                                                                                                              | TextField and TextArea error text; Badge labels                                                       |
 | Icon   | `text-icon-error`                                                                                                                                                                                                                                       | TextField and TextArea error icon                                                                     |

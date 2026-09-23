@@ -22,6 +22,8 @@
     "./atoms/radio": "./src/atoms/radio/radio.tsx",
     "./atoms/toggle": "./src/atoms/toggle/toggle.tsx",
     "./atoms/divider": "./src/atoms/divider/divider.tsx",
+    "./atoms/alert": "./src/atoms/alert/alert.tsx",
+    "./atoms/alert-global": "./src/atoms/alert-global/alert-global.tsx",
     "./molecules/checkbox-group": "./src/molecules/checkbox-group/checkbox-group.tsx",
     "./molecules/radio-group": "./src/molecules/radio-group/radio-group.tsx",
     "./molecules/button-group": "./src/molecules/button-group/button-group.tsx",

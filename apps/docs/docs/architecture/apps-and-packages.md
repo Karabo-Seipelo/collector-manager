@@ -96,6 +96,8 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/atoms/radio`                 | Radio single-choice control                    |
 | `@repo/ui/atoms/toggle`                | Toggle immediate on/off switch                 |
 | `@repo/ui/atoms/divider`               | Divider weak/strong separator                  |
+| `@repo/ui/atoms/alert`                 | Alert in-content status message                |
+| `@repo/ui/atoms/alert-global`          | Alert global page banner                       |
 | `@repo/ui/molecules/card`              | ItemCard component                             |
 | `@repo/ui/molecules/button-group`      | ButtonGroup primary/secondary/tertiary cluster |
 | `@repo/ui/molecules/checkbox-group`    | Labelled Checkbox collection                   |

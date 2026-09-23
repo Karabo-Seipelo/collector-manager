@@ -72,6 +72,8 @@ Configuration:
 | `Radio`                 | `packages/ui/src/atoms/radio/radio.test.tsx`                         |
 | `Toggle`                | `packages/ui/src/atoms/toggle/toggle.test.tsx`                       |
 | `Divider`               | `packages/ui/src/atoms/divider/divider.test.tsx`                     |
+| `Alert`                 | `packages/ui/src/atoms/alert/alert.test.tsx`                         |
+| `AlertGlobal`           | `packages/ui/src/atoms/alert-global/alert-global.test.tsx`           |
 | `FeatherIcon`           | `packages/ui/src/atoms/icon/icon.test.tsx`                           |
 | `IconContainer`         | `packages/ui/src/atoms/icon-container/icon-container.test.tsx`       |
 | `Code`                  | `packages/ui/src/atoms/code/code.test.tsx`                           |
@@ -105,6 +107,8 @@ Interactive stories with `play` functions:
 - `RadioGroup` — `Default`
 - `Toggle` — `Default`
 - `Divider` — `Default`
+- `Alert` — `Default`
+- `AlertGlobal` — `Default`
 - `ButtonGroup` — `Default`
 - `ItemCard` — `Clickable`
 
