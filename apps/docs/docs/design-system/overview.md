@@ -132,6 +132,7 @@ import { EmptyState } from "@repo/ui/molecules/empty-state";
 import { Footer } from "@repo/ui/molecules/footer";
 import { FileUpload } from "@repo/ui/molecules/file-upload";
 import { Rating } from "@repo/ui/molecules/rating";
+import { SegmentedControl } from "@repo/ui/molecules/segmented-control";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
 import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
@@ -182,6 +183,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Footer           | Molecule | [Footer](./footer)                    |
 | File upload      | Molecule | [File upload](./file-upload)          |
 | Rating           | Molecule | [Rating](./rating)                    |
+| Segmented control | Molecule | [Segmented control](./segmented-control) |
 | Avatar           | Atom     | [Avatar](./avatar)                      |
 | AvatarStack      | Molecule | [AvatarStack](./avatar-stack)           |
 | AvatarLabelled   | Molecule | [AvatarLabelled](./avatar-labelled)     |

@@ -38,6 +38,7 @@
     "./molecules/footer": "./src/molecules/footer/footer.tsx",
     "./molecules/file-upload": "./src/molecules/file-upload/file-upload.tsx",
     "./molecules/rating": "./src/molecules/rating/rating.tsx",
+    "./molecules/segmented-control": "./src/molecules/segmented-control/segmented-control.tsx",
     "./molecules/button-group": "./src/molecules/button-group/button-group.tsx",
     "./molecules/avatar-stack": "./src/molecules/avatar-stack/avatar-stack.tsx",
     "./molecules/avatar-labelled": "./src/molecules/avatar-labelled/avatar-labelled.tsx",

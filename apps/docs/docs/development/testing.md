@@ -95,6 +95,7 @@ Configuration:
 | `FileUpload`            | `packages/ui/src/molecules/file-upload/file-upload.test.tsx`         |
 | `Rating`                | `packages/ui/src/molecules/rating/rating.test.tsx`                   |
 | `Rating` utilities      | `packages/ui/src/molecules/rating/rating-utils.test.ts`              |
+| `SegmentedControl`      | `packages/ui/src/molecules/segmented-control/segmented-control.test.tsx` |
 | `useControllableBoolean`| `packages/ui/src/lib/use-controllable-boolean.test.ts`               |
 | `useScrollLock`         | `packages/ui/src/lib/use-scroll-lock.test.ts`                        |
 | `useFocusTrap`          | `packages/ui/src/lib/use-focus-trap.test.tsx`                        |
