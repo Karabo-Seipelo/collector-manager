@@ -83,6 +83,9 @@ Configuration:
 | `Accordion`             | `packages/ui/src/molecules/accordion/accordion.test.tsx`             |
 | `Autocomplete`          | `packages/ui/src/molecules/autocomplete/autocomplete.test.tsx`       |
 | `Combobox`              | `packages/ui/src/molecules/combobox/combobox.test.tsx`               |
+| `DatePicker`            | `packages/ui/src/molecules/date-picker/date-picker.test.tsx`         |
+| `DatePicker` utilities  | `packages/ui/src/molecules/date-picker/date-picker-utils.test.ts`    |
+| `DatePicker` calendar   | `packages/ui/src/molecules/date-picker/calendar.test.tsx`            |
 | `ButtonGroup`           | `packages/ui/src/molecules/button-group/button-group.test.tsx`       |
 | `CheckboxGroup`         | `packages/ui/src/molecules/checkbox-group/checkbox-group.test.tsx`   |
 | `RadioGroup`            | `packages/ui/src/molecules/radio-group/radio-group.test.tsx`         |
@@ -114,6 +117,7 @@ Interactive stories with `play` functions:
 - `AlertGlobal` — `Default`
 - `Autocomplete` — `Default`, `Open`, `Multiple`
 - `Combobox` — `Default`, `Open`, `Multiple`
+- `DatePicker` — `Default`, `Open`
 - `Accordion` — `Default`
 - `ButtonGroup` — `Default`
 - `Card` — `IconWithTextLink`

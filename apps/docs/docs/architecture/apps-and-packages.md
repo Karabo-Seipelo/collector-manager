@@ -102,6 +102,7 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/molecules/accordion`         | Accordion stacked expandable headings          |
 | `@repo/ui/molecules/autocomplete`      | Searchable single or multiple option picker    |
 | `@repo/ui/molecules/combobox`          | Select-like field that filters as you type     |
+| `@repo/ui/molecules/date-picker`       | Date field with a calendar overlay              |
 | `@repo/ui/molecules/button-group`      | ButtonGroup primary/secondary/tertiary cluster |
 | `@repo/ui/molecules/checkbox-group`    | Labelled Checkbox collection                   |
 | `@repo/ui/molecules/radio-group`       | Labelled Radio collection                      |
