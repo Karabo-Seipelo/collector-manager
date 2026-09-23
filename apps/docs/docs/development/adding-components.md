@@ -8,10 +8,10 @@ Guide for adding new components to `@repo/ui`.
 
 ## 1. Choose atoms or molecules
 
-| Layer    | Directory                    | Example                                                                                                                 |
-| -------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Atom     | `packages/ui/src/atoms/`     | Button, ButtonIcon, Badge, BadgeCount, BadgeDot, Breadcrumbs, Checkbox, Radio, Toggle, TextField, TextArea, FeatherIcon |
-| Molecule | `packages/ui/src/molecules/` | ButtonGroup, CheckboxGroup, RadioGroup, ItemCard                                                                        |
+| Layer    | Directory                    | Example                                                                                                                                |
+| -------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Atom     | `packages/ui/src/atoms/`     | Button, ButtonIcon, Badge, BadgeCount, BadgeDot, Breadcrumbs, Checkbox, Radio, Toggle, TextField, TextArea, FeatherIcon, IconContainer |
+| Molecule | `packages/ui/src/molecules/` | ButtonGroup, CheckboxGroup, RadioGroup, ItemCard                                                                                       |
 
 See [Design system overview](../design-system/overview) for guidance.
 

@@ -14,6 +14,7 @@ packages/ui/src/
 │   ├── button/
 │   ├── button-icon/
 │   ├── icon/
+│   ├── icon-container/
 │   ├── code/
 │   ├── image-placeholder/
 │   ├── tag/
@@ -81,6 +82,7 @@ Components are imported via explicit package exports:
 import { Button } from "@repo/ui/atoms/button";
 import { ButtonIcon } from "@repo/ui/atoms/button-icon";
 import { FeatherIcon } from "@repo/ui/atoms/icon";
+import { IconContainer } from "@repo/ui/atoms/icon-container";
 import { TextField } from "@repo/ui/atoms/text-field";
 import { TextArea } from "@repo/ui/atoms/text-area";
 import { Tag } from "@repo/ui/atoms/tag";
@@ -110,6 +112,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Button           | Atom     | [Button](./button)                      |
 | ButtonIcon       | Atom     | [ButtonIcon](./button-icon)             |
 | FeatherIcon      | Atom     | [Icon](./icon)                          |
+| IconContainer    | Atom     | [IconContainer](./icon-container)       |
 | TextField        | Atom     | [TextField](./text-field)               |
 | TextArea         | Atom     | [TextArea](./text-area)                 |
 | Tag              | Atom     | [Tag](./tag)                            |

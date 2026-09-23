@@ -6,6 +6,7 @@
     "./atoms/button": "./src/atoms/button/button.tsx",
     "./atoms/button-icon": "./src/atoms/button-icon/button-icon.tsx",
     "./atoms/icon": "./src/atoms/icon/icon.tsx",
+    "./atoms/icon-container": "./src/atoms/icon-container/icon-container.tsx",
     "./atoms/code": "./src/atoms/code/code.tsx",
     "./atoms/image-placeholder": "./src/atoms/image-placeholder/image-placeholder.tsx",
     "./atoms/text-field": "./src/atoms/text-field/text-field.tsx",

@@ -13,9 +13,15 @@
 
   /* Colour */
   --color-fill-weak: rgba(0, 21, 128, 0.04);
+  --color-fill-inverse-weak: rgba(255, 255, 255, 0.06);
   --color-fg-strong: rgba(0, 6, 38, 0.9);
   --color-fg-weak: rgba(0, 9, 51, 0.65);
   --color-icon-neutral: rgba(0, 13, 77, 0.45);
+  --color-icon-brand: rgba(76, 100, 217, 0.8);
+  --color-icon-inverse: rgba(255, 255, 255, 0.6);
+  --color-icon-warning: rgba(143, 108, 26, 0.8);
+  --color-icon-success: rgba(6, 122, 87, 0.8);
+  --color-icon-information: rgba(26, 116, 168, 0.8);
 
   /* Text field */
   --color-fill-inverse: #ffffff;
@@ -40,6 +46,7 @@
   --color-stroke-success-weak: rgba(6, 122, 87, 0.2);
   --color-stroke-information-weak: rgba(26, 116, 168, 0.2);
   --color-stroke-brand-weak: rgba(76, 100, 217, 0.2);
+  --color-stroke-inverse-weak: rgba(255, 255, 255, 0.12);
   --color-text-disabled: rgba(0, 17, 102, 0.1);
   --color-text-error: #c73a3a;
   --color-text-warning: #8f6c1a;

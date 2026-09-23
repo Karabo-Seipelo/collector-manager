@@ -72,6 +72,7 @@ Configuration:
 | `Radio`                 | `packages/ui/src/atoms/radio/radio.test.tsx`                         |
 | `Toggle`                | `packages/ui/src/atoms/toggle/toggle.test.tsx`                       |
 | `FeatherIcon`           | `packages/ui/src/atoms/icon/icon.test.tsx`                           |
+| `IconContainer`         | `packages/ui/src/atoms/icon-container/icon-container.test.tsx`       |
 | `Code`                  | `packages/ui/src/atoms/code/code.test.tsx`                           |
 | `ImagePlaceholder`      | `packages/ui/src/atoms/image-placeholder/image-placeholder.test.tsx` |
 | `TextField`             | `packages/ui/src/atoms/text-field/text-field.test.tsx`               |
@@ -92,6 +93,7 @@ Interactive stories with `play` functions:
 - `TextField` — `Clearable`, `WithError`
 - `Button` — `Default`, `IconOnly`
 - `ButtonIcon` — `Default`
+- `IconContainer` — `Default`
 - `Badge` — `Default`
 - `BadgeCount` — `Default`
 - `BadgeDot` — `Default`

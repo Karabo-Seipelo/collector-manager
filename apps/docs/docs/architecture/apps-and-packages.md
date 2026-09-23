@@ -81,6 +81,7 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/atoms/button`                | Button component                               |
 | `@repo/ui/atoms/button-icon`           | ButtonIcon icon-only actions                   |
 | `@repo/ui/atoms/icon`                  | FeatherIcon component                          |
+| `@repo/ui/atoms/icon-container`        | IconContainer emphasis treatment               |
 | `@repo/ui/atoms/code`                  | Inline Code component                          |
 | `@repo/ui/atoms/image-placeholder`     | ImagePlaceholder component                     |
 | `@repo/ui/atoms/text-field`            | TextField component                            |
@@ -116,6 +117,7 @@ import { Button } from "@repo/ui/atoms/button";
 import { TextField } from "@repo/ui/atoms/text-field";
 import { TextArea } from "@repo/ui/atoms/text-area";
 import { FeatherIcon } from "@repo/ui/atoms/icon";
+import { IconContainer } from "@repo/ui/atoms/icon-container";
 import { cn } from "@repo/ui/lib/cn";
 import "@repo/ui/styles.css";
 ```
