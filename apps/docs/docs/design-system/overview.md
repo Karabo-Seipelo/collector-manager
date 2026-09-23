@@ -18,9 +18,13 @@ packages/ui/src/
 │   ├── tag/
 │   ├── checkbox/
 │   ├── select/
+│   ├── avatar/
 │   └── text-field/
 ├── molecules/       # Composed components built from atoms
 │   ├── button-group/
+│   ├── avatar-stack/
+│   ├── avatar-labelled/
+│   ├── avatar-dropdown/
 │   └── card/
 ├── lib/             # Shared utilities and field building blocks
 │   ├── cn.ts
@@ -70,6 +74,10 @@ import { TextField } from "@repo/ui/atoms/text-field";
 import { Tag } from "@repo/ui/atoms/tag";
 import { Checkbox } from "@repo/ui/atoms/checkbox";
 import { Select } from "@repo/ui/atoms/select";
+import { Avatar } from "@repo/ui/atoms/avatar";
+import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
+import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
+import { AvatarDropdown } from "@repo/ui/molecules/avatar-dropdown";
 import { ButtonGroup } from "@repo/ui/molecules/button-group";
 import { ItemCard } from "@repo/ui/molecules/card";
 import { cn } from "@repo/ui/lib/cn";
@@ -85,6 +93,10 @@ import { cn } from "@repo/ui/lib/cn";
 | Tag              | Atom     | [Tag](./tag)                            |
 | Checkbox         | Atom     | [Checkbox](./checkbox)                  |
 | Select           | Atom     | [Select](./select)                      |
+| Avatar           | Atom     | [Avatar](./avatar)                      |
+| AvatarStack      | Molecule | [AvatarStack](./avatar-stack)           |
+| AvatarLabelled   | Molecule | [AvatarLabelled](./avatar-labelled)     |
+| AvatarDropdown   | Molecule | [AvatarDropdown](./avatar-dropdown)     |
 | ImagePlaceholder | Atom     | [ImagePlaceholder](./image-placeholder) |
 | Code             | Atom     | [Code](./code)                          |
 | ItemCard         | Molecule | [ItemCard](./card)                      |

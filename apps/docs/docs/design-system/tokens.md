@@ -43,26 +43,30 @@ The `@theme` block registers Tailwind utilities:
   --text-small--line-height: 24px;
   --text-tiny: 14px;
   --text-tiny--line-height: 20px;
+  --text-heading-3: 24px;
+  --text-heading-3--line-height: 32px;
+  --text-heading-4: 20px;
+  --text-heading-4--line-height: 28px;
 
   /* Shape */
   --radius-card: 12px;
 }
 ```
 
-Components use these via Tailwind classes such as `bg-primary`, `text-fg-strong`, `bg-fill-weak`, `rounded-card`, `text-small`, and `text-tiny`.
+Components use these via Tailwind classes such as `bg-primary`, `text-fg-strong`, `bg-fill-weak`, `rounded-card`, `text-small`, `text-tiny`, `text-heading-3`, and `text-heading-4`.
 
 ### Semantic tokens
 
 | Token  | Utility classes                                                                                       | Used by                                      |
 | ------ | ----------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| Fill   | `bg-fill-weak`                                                                                        | ItemCard image placeholder; Tag unselected   |
-| Fill   | `bg-fill-inverse`, `bg-fill-hover`, `bg-fill-press`, `bg-fill-error-weak`                             | TextField backgrounds                        |
+| Fill   | `bg-fill-weak`                                                                                        | ItemCard image placeholder; Tag unselected; Avatar |
+| Fill   | `bg-fill-inverse`, `bg-fill-hover`, `bg-fill-press`, `bg-fill-error-weak`                             | TextField backgrounds; AvatarStack rings     |
 | Stroke | `border-stroke-weak`, `border-stroke-strong`, `border-stroke-focus`, `border-stroke-disabled`, `border-stroke-error-strong` | Tag outline; TextField borders and focus     |
 | Text   | `text-fg-strong`, `text-fg-weak`                                                                      | ItemCard title, price, meta; TextField input |
 | Text   | `text-text-disabled`, `text-text-error`                                                               | TextField disabled and error text            |
 | Icon   | `text-icon-error`                                                                                     | TextField error icon                         |
 | Shape  | `rounded-card`                                                                                        | ItemCard image area                          |
-| Type   | `text-small`, `text-tiny`, `font-body`                                                                | ItemCard typography                          |
+| Type   | `text-small`, `text-tiny`, `text-heading-3`, `text-heading-4`, `font-body`                            | ItemCard typography; Avatar initials         |
 
 ## Dark mode
 

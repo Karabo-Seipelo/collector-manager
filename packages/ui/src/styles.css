@@ -36,6 +36,10 @@
   --text-small--line-height: 24px;
   --text-tiny: 14px;
   --text-tiny--line-height: 20px;
+  --text-heading-3: 24px;
+  --text-heading-3--line-height: 32px;
+  --text-heading-4: 20px;
+  --text-heading-4--line-height: 28px;
 
   /* Shape */
   --radius-card: 12px;

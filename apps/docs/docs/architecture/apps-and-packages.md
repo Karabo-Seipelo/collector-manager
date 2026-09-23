@@ -83,8 +83,12 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/atoms/code`                  | Inline Code component             |
 | `@repo/ui/atoms/image-placeholder`     | ImagePlaceholder component        |
 | `@repo/ui/atoms/text-field`            | TextField component               |
+| `@repo/ui/atoms/avatar`                | Avatar component                  |
 | `@repo/ui/molecules/card`              | ItemCard component                |
 | `@repo/ui/molecules/button-group`      | ButtonGroup compound component    |
+| `@repo/ui/molecules/avatar-stack`      | AvatarStack overlapping avatars   |
+| `@repo/ui/molecules/avatar-labelled`   | AvatarLabelled name + description |
+| `@repo/ui/molecules/avatar-dropdown`   | AvatarDropdown user-menu trigger  |
 | `@repo/ui/styles.css`                  | Shared Tailwind stylesheet        |
 | `@repo/ui/lib/cn`                      | Class name merge helper           |
 | `@repo/ui/lib/button-types`            | Shared Button / ButtonGroup types |

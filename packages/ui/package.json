@@ -11,7 +11,11 @@
     "./atoms/tag": "./src/atoms/tag/tag.tsx",
     "./atoms/checkbox": "./src/atoms/checkbox/checkbox.tsx",
     "./atoms/select": "./src/atoms/select/select.tsx",
+    "./atoms/avatar": "./src/atoms/avatar/avatar.tsx",
     "./molecules/button-group": "./src/molecules/button-group/button-group.tsx",
+    "./molecules/avatar-stack": "./src/molecules/avatar-stack/avatar-stack.tsx",
+    "./molecules/avatar-labelled": "./src/molecules/avatar-labelled/avatar-labelled.tsx",
+    "./molecules/avatar-dropdown": "./src/molecules/avatar-dropdown/avatar-dropdown.tsx",
     "./molecules/card": "./src/molecules/card/card.tsx",
     "./styles.css": "./src/styles.css",
     "./lib/*": "./src/lib/*.ts"
