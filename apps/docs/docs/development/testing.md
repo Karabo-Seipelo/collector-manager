@@ -96,6 +96,7 @@ Configuration:
 | `Hero`                  | `packages/ui/src/organisms/hero/hero.test.tsx`                       |
 | `LoadingBar`            | `packages/ui/src/atoms/loading-bar/loading-bar.test.tsx`             |
 | `Modal`                 | `packages/ui/src/organisms/modal/modal.test.tsx`                     |
+| `NavigationSide`        | `packages/ui/src/organisms/navigation-side/navigation-side.test.tsx` |
 | `Rating`                | `packages/ui/src/molecules/rating/rating.test.tsx`                   |
 | `Rating` utilities      | `packages/ui/src/molecules/rating/rating-utils.test.ts`              |
 | `SegmentedControl`      | `packages/ui/src/molecules/segmented-control/segmented-control.test.tsx` |

@@ -59,6 +59,7 @@
     "./organisms/avatar-dropdown": "./src/organisms/avatar-dropdown/avatar-dropdown.tsx",
     "./organisms/hero": "./src/organisms/hero/hero.tsx",
     "./organisms/modal": "./src/organisms/modal/modal.tsx",
+    "./organisms/navigation-side": "./src/organisms/navigation-side/navigation-side.tsx",
     "./styles.css": "./src/styles.css",
     "./lib/*": "./src/lib/*.ts"
   },

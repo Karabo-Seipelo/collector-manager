@@ -32,6 +32,7 @@ packages/ui/src/
 │   ├── dropdown-menu/
 │   ├── hero/
 │   ├── modal/
+│   ├── navigation-side/
 │   └── …
 ├── lib/             # Shared utilities (hooks, formatters, styles)
 │   ├── cn.ts
@@ -146,6 +147,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Date picker      | Organism  | [Date picker](./date-picker)            |
 | Drawer           | Organism  | [Drawer](./drawer)                    |
 | Modal            | Organism  | [Modal](./modal)                      |
+| Navigation side  | Organism  | [Navigation side](./navigation-side)  |
 | Dropdown menu    | Organism  | [Dropdown menu](./dropdown-menu)      |
 | Footer           | Organism  | [Footer](./footer)                    |
 | File upload      | Organism  | [File upload](./file-upload)          |
