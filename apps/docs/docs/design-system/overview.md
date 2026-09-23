@@ -22,12 +22,14 @@ packages/ui/src/
 │   ├── badge-dot/
 │   ├── breadcrumbs/
 │   ├── checkbox/
+│   ├── radio/
 │   ├── select/
 │   ├── avatar/
 │   └── text-field/
 ├── molecules/       # Composed components built from atoms
 │   ├── button-group/
 │   ├── checkbox-group/
+│   ├── radio-group/
 │   ├── avatar-stack/
 │   ├── avatar-labelled/
 │   ├── avatar-dropdown/
@@ -84,6 +86,7 @@ import { BadgeCount } from "@repo/ui/atoms/badge-count";
 import { BadgeDot } from "@repo/ui/atoms/badge-dot";
 import { Breadcrumbs } from "@repo/ui/atoms/breadcrumbs";
 import { Checkbox } from "@repo/ui/atoms/checkbox";
+import { Radio } from "@repo/ui/atoms/radio";
 import { Select } from "@repo/ui/atoms/select";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
@@ -91,6 +94,7 @@ import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
 import { AvatarDropdown } from "@repo/ui/molecules/avatar-dropdown";
 import { ButtonGroup } from "@repo/ui/molecules/button-group";
 import { CheckboxGroup } from "@repo/ui/molecules/checkbox-group";
+import { RadioGroup } from "@repo/ui/molecules/radio-group";
 import { ItemCard } from "@repo/ui/molecules/card";
 import { cn } from "@repo/ui/lib/cn";
 ```
@@ -109,6 +113,7 @@ import { cn } from "@repo/ui/lib/cn";
 | BadgeDot         | Atom     | [BadgeDot](./badge-dot)                 |
 | Breadcrumbs      | Atom     | [Breadcrumbs](./breadcrumbs)            |
 | Checkbox         | Atom     | [Checkbox](./checkbox)                  |
+| Radio            | Atom     | [Radio](./radio)                        |
 | Select           | Atom     | [Select](./select)                      |
 | Avatar           | Atom     | [Avatar](./avatar)                      |
 | AvatarStack      | Molecule | [AvatarStack](./avatar-stack)           |
@@ -119,6 +124,7 @@ import { cn } from "@repo/ui/lib/cn";
 | ItemCard         | Molecule | [ItemCard](./card)                      |
 | ButtonGroup      | Molecule | [ButtonGroup](./button-group)           |
 | CheckboxGroup    | Molecule | [CheckboxGroup](./checkbox-group)       |
+| RadioGroup       | Molecule | [RadioGroup](./radio-group)             |
 | Shared utilities | Lib      | [Shared utilities](./cn-helper)         |
 
 ## Related
