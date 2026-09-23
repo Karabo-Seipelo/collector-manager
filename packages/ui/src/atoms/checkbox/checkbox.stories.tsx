@@ -8,6 +8,15 @@ const meta = {
   component: Checkbox,
   args: {
     label: "Mint",
+    size: "small",
+    indeterminate: false,
+    invalid: false,
+  },
+  argTypes: {
+    size: {
+      control: "select",
+      options: ["small", "large"],
+    },
   },
 } satisfies Meta<typeof Checkbox>;
 
@@ -30,6 +39,18 @@ export const Checked: Story = {
   },
 };
 
+export const Indeterminate: Story = {
+  args: {
+    indeterminate: true,
+  },
+};
+
+export const Invalid: Story = {
+  args: {
+    invalid: true,
+  },
+};
+
 export const Disabled: Story = {
   args: {
     disabled: true,
@@ -43,6 +64,35 @@ export const ConditionList: Story = {
       <Checkbox label="Near mint" defaultChecked />
       <Checkbox label="Very good" />
       <Checkbox label="Good" />
+    </div>
+  ),
+};
+
+export const AllTypes: Story = {
+  render: (args) => (
+    <div className="flex flex-col gap-4">
+      <Checkbox {...args} label="Unselected" />
+      <Checkbox {...args} label="Selected" defaultChecked />
+      <Checkbox {...args} label="Indeterminate" indeterminate />
+    </div>
+  ),
+};
+
+export const AllSizes: Story = {
+  render: (args) => (
+    <div className="flex flex-col gap-4">
+      <Checkbox {...args} label="Small" size="small" defaultChecked />
+      <Checkbox {...args} label="Large" size="large" defaultChecked />
+    </div>
+  ),
+};
+
+export const InvalidTypes: Story = {
+  render: (args) => (
+    <div className="flex flex-col gap-4">
+      <Checkbox {...args} label="Unselected" invalid />
+      <Checkbox {...args} label="Selected" invalid defaultChecked />
+      <Checkbox {...args} label="Indeterminate" invalid indeterminate />
     </div>
   ),
 };

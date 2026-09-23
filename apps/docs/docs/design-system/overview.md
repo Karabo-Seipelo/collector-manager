@@ -27,6 +27,7 @@ packages/ui/src/
 │   └── text-field/
 ├── molecules/       # Composed components built from atoms
 │   ├── button-group/
+│   ├── checkbox-group/
 │   ├── avatar-stack/
 │   ├── avatar-labelled/
 │   ├── avatar-dropdown/
@@ -89,6 +90,7 @@ import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
 import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
 import { AvatarDropdown } from "@repo/ui/molecules/avatar-dropdown";
 import { ButtonGroup } from "@repo/ui/molecules/button-group";
+import { CheckboxGroup } from "@repo/ui/molecules/checkbox-group";
 import { ItemCard } from "@repo/ui/molecules/card";
 import { cn } from "@repo/ui/lib/cn";
 ```
@@ -116,6 +118,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Code             | Atom     | [Code](./code)                          |
 | ItemCard         | Molecule | [ItemCard](./card)                      |
 | ButtonGroup      | Molecule | [ButtonGroup](./button-group)           |
+| CheckboxGroup    | Molecule | [CheckboxGroup](./checkbox-group)       |
 | Shared utilities | Lib      | [Shared utilities](./cn-helper)         |
 
 ## Related

@@ -23,6 +23,44 @@ describe("Checkbox", () => {
     expect(screen.getByRole("checkbox", { name: "Mint" })).toBeChecked();
   });
 
+  it("matches the small and large Figma sizes", () => {
+    const { rerender } = render(<Checkbox label="Mint" />);
+    expect(screen.getByTestId("checkbox-box")).toHaveClass(
+      "size-6",
+      "rounded",
+      "border-stroke-strong",
+      "bg-fill-inverse",
+    );
+    expect(screen.getByText("Mint")).toHaveClass("text-tiny");
+
+    rerender(<Checkbox label="Mint" size="large" />);
+    expect(screen.getByTestId("checkbox-box")).toHaveClass("size-8");
+    expect(screen.getByText("Mint")).toHaveClass("text-small");
+  });
+
+  it("sets the native mixed state and renders a minus when indeterminate", () => {
+    render(<Checkbox label="Select all" indeterminate />);
+
+    const checkbox = screen.getByRole("checkbox", { name: "Select all" });
+    expect(checkbox).toBePartiallyChecked();
+    expect(checkbox).toHaveAttribute("aria-checked", "mixed");
+    expect(screen.getByTestId("checkbox-indeterminate-icon")).toBeVisible();
+  });
+
+  it("uses error tokens and aria-invalid when invalid", () => {
+    render(<Checkbox label="Mint" invalid />);
+
+    expect(screen.getByRole("checkbox", { name: "Mint" })).toHaveAttribute(
+      "aria-invalid",
+      "true",
+    );
+    expect(screen.getByTestId("checkbox-box")).toHaveClass(
+      "border-2",
+      "border-stroke-error-strong",
+      "bg-fill-error-weak",
+    );
+  });
+
   it("toggles when the label is clicked", async () => {
     const user = userEvent.setup();
     render(<Checkbox label="Good" />);
@@ -51,6 +89,10 @@ describe("Checkbox", () => {
 
     expect(onChange).not.toHaveBeenCalled();
     expect(screen.getByRole("checkbox", { name: "Poor" })).not.toBeChecked();
+    expect(screen.getByText("Poor")).toHaveClass("text-text-disabled");
+    expect(screen.getByTestId("checkbox-box")).toHaveClass(
+      "border-stroke-disabled",
+    );
   });
 
   it("forwards ref to the input element", () => {

@@ -11,7 +11,7 @@ Guide for adding new components to `@repo/ui`.
 | Layer    | Directory                    | Example                        |
 | -------- | ---------------------------- | ------------------------------ |
 | Atom     | `packages/ui/src/atoms/`     | Button, ButtonIcon, Badge, BadgeCount, BadgeDot, Breadcrumbs, TextField, FeatherIcon |
-| Molecule | `packages/ui/src/molecules/` | ButtonGroup, ItemCard          |
+| Molecule | `packages/ui/src/molecules/` | ButtonGroup, CheckboxGroup, ItemCard |
 
 See [Design system overview](../design-system/overview) for guidance.
 

@@ -68,11 +68,13 @@ Configuration:
 | `BadgeCount`            | `packages/ui/src/atoms/badge-count/badge-count.test.tsx`             |
 | `BadgeDot`              | `packages/ui/src/atoms/badge-dot/badge-dot.test.tsx`                 |
 | `Breadcrumbs`           | `packages/ui/src/atoms/breadcrumbs/breadcrumbs.test.tsx`             |
+| `Checkbox`              | `packages/ui/src/atoms/checkbox/checkbox.test.tsx`                   |
 | `FeatherIcon`           | `packages/ui/src/atoms/icon/icon.test.tsx`                           |
 | `Code`                  | `packages/ui/src/atoms/code/code.test.tsx`                           |
 | `ImagePlaceholder`      | `packages/ui/src/atoms/image-placeholder/image-placeholder.test.tsx` |
 | `TextField`             | `packages/ui/src/atoms/text-field/text-field.test.tsx`               |
 | `ButtonGroup`           | `packages/ui/src/molecules/button-group/button-group.test.tsx`       |
+| `CheckboxGroup`         | `packages/ui/src/molecules/checkbox-group/checkbox-group.test.tsx`   |
 | `ItemCard`              | `packages/ui/src/molecules/card/card.test.tsx`                       |
 
 Add co-located `*.test.tsx` files when introducing components with non-trivial behavior.
@@ -90,6 +92,8 @@ Interactive stories with `play` functions:
 - `BadgeCount` — `Default`
 - `BadgeDot` — `Default`
 - `Breadcrumbs` — `Default`, `Collapsed`, `InteractiveCollapse`
+- `Checkbox` — `Default`
+- `CheckboxGroup` — `Default`
 - `ButtonGroup` — `Default`
 - `ItemCard` — `Clickable`
 

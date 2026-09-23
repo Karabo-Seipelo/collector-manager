@@ -90,8 +90,10 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/atoms/badge-count`           | BadgeCount notification number    |
 | `@repo/ui/atoms/badge-dot`             | BadgeDot presence or notification |
 | `@repo/ui/atoms/breadcrumbs`           | Breadcrumbs navigation trail      |
+| `@repo/ui/atoms/checkbox`              | Checkbox control                  |
 | `@repo/ui/molecules/card`              | ItemCard component                |
 | `@repo/ui/molecules/button-group`      | ButtonGroup primary/secondary/tertiary cluster |
+| `@repo/ui/molecules/checkbox-group`    | Labelled Checkbox collection      |
 | `@repo/ui/molecules/avatar-stack`      | AvatarStack overlapping avatars   |
 | `@repo/ui/molecules/avatar-labelled`   | AvatarLabelled name + description |
 | `@repo/ui/molecules/avatar-dropdown`   | AvatarDropdown user-menu trigger  |
