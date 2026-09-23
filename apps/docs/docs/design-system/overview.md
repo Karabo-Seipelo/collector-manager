@@ -34,6 +34,7 @@ packages/ui/src/
 │   └── text-field/
 ├── molecules/       # Composed components built from atoms
 │   ├── button-group/
+│   ├── accordion/
 │   ├── autocomplete/
 │   ├── checkbox-group/
 │   ├── radio-group/
@@ -58,7 +59,7 @@ packages/ui/src/
 | Layer        | When to use                                | Examples                                                                             |
 | ------------ | ------------------------------------------ | ------------------------------------------------------------------------------------ |
 | **Atom**     | A single, reusable UI primitive            | Button, ButtonIcon, FeatherIcon, TextField, TextArea, Toggle, Divider, Alert, AlertGlobal, Code, ImagePlaceholder |
-| **Molecule** | Combines atoms into a higher-level pattern | ButtonGroup, ItemCard                                                                |
+| **Molecule** | Combines atoms into a higher-level pattern | Accordion, ButtonGroup, ItemCard                                                     |
 
 Add new **atoms** for standalone primitives. Add **molecules** when a component orchestrates multiple atoms (e.g. a primary/secondary/tertiary button cluster).
 
@@ -101,6 +102,7 @@ import { Divider } from "@repo/ui/atoms/divider";
 import { Alert } from "@repo/ui/atoms/alert";
 import { AlertGlobal } from "@repo/ui/atoms/alert-global";
 import { Select } from "@repo/ui/atoms/select";
+import { Accordion, AccordionItem } from "@repo/ui/molecules/accordion";
 import { Autocomplete } from "@repo/ui/molecules/autocomplete";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
@@ -135,6 +137,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Alert            | Atom     | [Alert](./alert)                        |
 | Alert global     | Atom     | [Alert global](./alert-global)          |
 | Select           | Atom     | [Select](./select)                      |
+| Accordion        | Molecule | [Accordion](./accordion)                |
 | Autocomplete     | Molecule | [Autocomplete](./autocomplete)          |
 | Avatar           | Atom     | [Avatar](./avatar)                      |
 | AvatarStack      | Molecule | [AvatarStack](./avatar-stack)           |

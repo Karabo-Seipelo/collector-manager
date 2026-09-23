@@ -26,6 +26,7 @@
     "./atoms/alert-global": "./src/atoms/alert-global/alert-global.tsx",
     "./molecules/checkbox-group": "./src/molecules/checkbox-group/checkbox-group.tsx",
     "./molecules/radio-group": "./src/molecules/radio-group/radio-group.tsx",
+    "./molecules/accordion": "./src/molecules/accordion/accordion.tsx",
     "./molecules/autocomplete": "./src/molecules/autocomplete/autocomplete.tsx",
     "./molecules/button-group": "./src/molecules/button-group/button-group.tsx",
     "./molecules/avatar-stack": "./src/molecules/avatar-stack/avatar-stack.tsx",
