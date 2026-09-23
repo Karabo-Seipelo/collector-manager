@@ -140,6 +140,7 @@ import { SummaryList } from "@repo/ui/molecules/summary-list";
 import { Table } from "@repo/ui/molecules/table";
 import { Tabs } from "@repo/ui/molecules/tabs";
 import { Testimonial } from "@repo/ui/molecules/testimonial";
+import { Tooltip } from "@repo/ui/molecules/tooltip";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
 import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
@@ -197,6 +198,7 @@ import { cn } from "@repo/ui/lib/cn";
 | Table             | Molecule | [Table](./table)                        |
 | Tabs              | Molecule | [Tabs](./tabs)                          |
 | Testimonial       | Molecule | [Testimonial](./testimonial)            |
+| Tooltip           | Molecule | [Tooltip](./tooltip)                    |
 | Avatar           | Atom     | [Avatar](./avatar)                      |
 | AvatarStack      | Molecule | [AvatarStack](./avatar-stack)           |
 | AvatarLabelled   | Molecule | [AvatarLabelled](./avatar-labelled)     |

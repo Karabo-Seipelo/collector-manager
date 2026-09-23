@@ -103,6 +103,7 @@ Configuration:
 | `Table`                 | `packages/ui/src/molecules/table/table.test.tsx`                         |
 | `Tabs`                  | `packages/ui/src/molecules/tabs/tabs.test.tsx`                           |
 | `Testimonial`           | `packages/ui/src/molecules/testimonial/testimonial.test.tsx`               |
+| `Tooltip`               | `packages/ui/src/molecules/tooltip/tooltip.test.tsx`                       |
 | `useControllableNumber` | `packages/ui/src/lib/use-controllable-number.test.ts`                    |
 | `useControllableBoolean`| `packages/ui/src/lib/use-controllable-boolean.test.ts`               |
 | `useScrollLock`         | `packages/ui/src/lib/use-scroll-lock.test.ts`                        |

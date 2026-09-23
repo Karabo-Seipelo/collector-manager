@@ -119,6 +119,7 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/molecules/table`             | Data table with pagination and rich cell types  |
 | `@repo/ui/molecules/tabs`              | Tabbed navigation with panels and badge counts  |
 | `@repo/ui/molecules/testimonial`       | Customer quote with author and star rating      |
+| `@repo/ui/molecules/tooltip`           | Inverse tooltip bubble with directional arrow   |
 | `@repo/ui/molecules/button-group`      | ButtonGroup primary/secondary/tertiary cluster |
 | `@repo/ui/molecules/checkbox-group`    | Labelled Checkbox collection                   |
 | `@repo/ui/molecules/radio-group`       | Labelled Radio collection                      |
