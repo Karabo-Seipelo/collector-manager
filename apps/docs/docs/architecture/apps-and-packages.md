@@ -84,6 +84,7 @@ pnpm resolves these to local packages — no publishing required during developm
 | `@repo/ui/atoms/icon-container`        | IconContainer emphasis treatment               |
 | `@repo/ui/atoms/code`                  | Inline Code component                          |
 | `@repo/ui/atoms/image-placeholder`     | ImagePlaceholder component                     |
+| `@repo/ui/atoms/slot`                  | Dashed placeholder for swappable content areas |
 | `@repo/ui/atoms/text-field`            | TextField component                            |
 | `@repo/ui/atoms/text-area`             | TextArea multiline component                   |
 | `@repo/ui/atoms/text-link`             | Inline text link with tone and icon slots      |

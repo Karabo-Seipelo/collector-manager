@@ -3,6 +3,7 @@ import { expect, userEvent, within } from "storybook/test";
 
 import { IconContainer } from "../../atoms/icon-container/icon-container";
 import { FeatherIcon } from "../../atoms/icon/icon";
+import { Slot } from "../../atoms/slot/slot";
 import { Tag } from "../../atoms/tag/tag";
 import { AvatarLabelled } from "../avatar-labelled/avatar-labelled";
 import { Card, CardContent, CardHeader, CardImage } from "./card";
@@ -77,11 +78,7 @@ function ExampleCard({
           />
         ) : null}
         {showTags ? <Tags /> : null}
-        {showSlot ? (
-          <div className="w-full rounded-lg border border-dashed border-stroke-strong bg-fill-weaker px-8 py-6 text-center font-mono text-tiny text-fg-weak">
-            Swap with another component
-          </div>
-        ) : null}
+        {showSlot ? <Slot /> : null}
       </CardContent>
     </Card>
   );

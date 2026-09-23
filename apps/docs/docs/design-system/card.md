@@ -63,7 +63,8 @@ Horizontal layout:
 
 `CardContent` accepts arbitrary children. Compose existing `IconContainer`,
 `AvatarLabelled`, `Tag`, links, buttons, or feature-specific content instead of
-adding one prop for every possible slot.
+adding one prop for every possible slot. Use [`Slot`](./slot) in examples to
+mark swappable areas before real content is wired in.
 
 `CardHeader` supports `headingLevel={2 | 3 | 4 | 5 | 6}` and defaults to `3`.
 

@@ -3,6 +3,7 @@ import * as React from "react";
 import { expect, fn, within } from "storybook/test";
 
 import { Button } from "../../atoms/button/button";
+import { Slot } from "../../atoms/slot/slot";
 import { ButtonGroup } from "../button-group/button-group";
 import {
   Drawer,
@@ -53,12 +54,8 @@ function DrawerExample({
       >
         <DrawerHeader title="Heading" />
         <DrawerContent>
-          <div className="rounded-lg border border-dashed border-stroke-strong bg-fill-weaker px-8 py-6 text-center font-mono text-sm text-fg-weak">
-            Swap with another component
-          </div>
-          <div className="rounded-lg border border-dashed border-stroke-strong bg-fill-weaker px-8 py-6 text-center font-mono text-sm text-fg-weak">
-            Swap with another component
-          </div>
+          <Slot />
+          <Slot />
         </DrawerContent>
         {withFooter ? (
           <DrawerFooter>

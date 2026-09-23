@@ -134,6 +134,7 @@ import { FileUpload } from "@repo/ui/molecules/file-upload";
 import { Rating } from "@repo/ui/molecules/rating";
 import { SegmentedControl } from "@repo/ui/molecules/segmented-control";
 import { Slider } from "@repo/ui/atoms/slider";
+import { Slot } from "@repo/ui/atoms/slot";
 import { Avatar } from "@repo/ui/atoms/avatar";
 import { AvatarStack } from "@repo/ui/molecules/avatar-stack";
 import { AvatarLabelled } from "@repo/ui/molecules/avatar-labelled";
@@ -191,6 +192,7 @@ import { cn } from "@repo/ui/lib/cn";
 | AvatarLabelled   | Molecule | [AvatarLabelled](./avatar-labelled)     |
 | AvatarDropdown   | Molecule | [AvatarDropdown](./avatar-dropdown)     |
 | ImagePlaceholder | Atom     | [ImagePlaceholder](./image-placeholder) |
+| Slot             | Atom     | [Slot](./slot)                          |
 | Code             | Atom     | [Code](./code)                          |
 | Card             | Molecule | [Card](./card)                          |
 | ButtonGroup      | Molecule | [ButtonGroup](./button-group)           |

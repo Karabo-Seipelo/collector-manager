@@ -9,6 +9,7 @@
     "./atoms/icon-container": "./src/atoms/icon-container/icon-container.tsx",
     "./atoms/code": "./src/atoms/code/code.tsx",
     "./atoms/image-placeholder": "./src/atoms/image-placeholder/image-placeholder.tsx",
+    "./atoms/slot": "./src/atoms/slot/slot.tsx",
     "./atoms/text-field": "./src/atoms/text-field/text-field.tsx",
     "./atoms/text-link": "./src/atoms/text-link/text-link.tsx",
     "./atoms/search-input": "./src/atoms/search-input/search-input.tsx",
