@@ -107,6 +107,15 @@ jobs:
         run: pnpm build-storybook
         working-directory: packages/ui
 
+      - name: Check Chromatic token
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        run: |
+          if [ -z "$CHROMATIC_PROJECT_TOKEN" ]; then
+            echo "::error::CHROMATIC_PROJECT_TOKEN secret is empty or missing (Settings → Secrets and variables → Actions → Repository secrets)"
+            exit 1
+          fi
+
       - name: Publish to Chromatic
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
