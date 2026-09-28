@@ -27,9 +27,10 @@ function Example(props: { defaultSidebarOpen?: boolean }) {
 export const Desktop: Story = {
   render: () => <Example />,
   play: async () => {
-    await expect(
-      within(document.body).getByRole("table", { name: "Team members" }),
-    ).toBeVisible();
+    const body = within(document.body);
+    await expect(body.getByRole("heading", { name: "Applicants", level: 1 })).toBeVisible();
+    await expect(body.getByRole("radio", { name: "Last 7 days" })).toBeChecked();
+    await expect(body.getByRole("cell", { name: /John Smith/ })).toBeVisible();
   },
 };
 
