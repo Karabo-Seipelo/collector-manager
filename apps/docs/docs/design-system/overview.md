@@ -35,8 +35,14 @@ packages/ui/src/
 │   ├── navigation-side/
 │   ├── navigation-header/
 │   └── …
-├── templates/       # Full-page layouts for Storybook (compose organisms)
-│   └── collection/
+├── templates/       # Layout shells (slots, responsive frame; Storybook Templates/*)
+│   ├── application-shell/
+│   ├── practical-travel/
+│   └── …
+├── pages/           # Figma screens (copy + images; Storybook Pages/*)
+│   ├── collection/
+│   ├── shop/
+│   └── …
 ├── lib/             # Shared utilities (hooks, formatters, styles)
 │   ├── cn.ts
 │   ├── use-field-ids.ts
@@ -51,13 +57,15 @@ packages/ui/src/
 | **Atom** | One visual or interaction primitive | `lib` only | Button, FeatherIcon, FieldHeader, FieldError, Avatar |
 | **Molecule** | One UX pattern from atoms | atoms + `lib` | ButtonGroup, SearchInput, Stepper, Tabs, Rating, AvatarLabelled |
 | **Organism** | Section-scale UI or multi-pattern system | atoms + molecules + `lib` | Table, Footer, DatePicker, Drawer, DropdownMenu, Testimonial |
-| **Template** | Page-level wireframes in Storybook | atoms + molecules + organisms | Collection, ApplicationSidenav, Dashboard, LandingPage, Login1–4, and other `Templates/*` stories |
+| **Template** | Layout shell with slots or `children` | atoms + molecules + organisms | ApplicationShell, PracticalTravel, ShopLayout, auth layouts |
+| **Page** | Full Figma screen wired into a template | templates + atoms + molecules + organisms | Collection, Dashboard, Shop, Blog, Login1–4, and other `Pages/*` stories |
 
 **Dependency rules** (enforced by ESLint in `@repo/ui`):
 
-- Atoms must not import molecules or organisms.
-- Molecules must not import other molecules or organisms.
-- Organisms may compose atoms and molecules.
+- Atoms must not import molecules, organisms, or pages.
+- Molecules must not import other molecules, organisms, or pages.
+- Organisms may compose atoms and molecules; they must not import pages.
+- Templates must not import pages (pages fill template slots).
 
 Storybook stories and tests are exempt so demos can compose freely.
 
@@ -71,7 +79,7 @@ Storybook is the **interactive catalog** for visual variants. Run it at http://l
 pnpm storybook
 ```
 
-Each component has a co-located `*.stories.tsx` file under `Atoms/`, `Molecules/`, `Organisms/`, or `Templates/` in Storybook. Shared layout decorators (e.g. fixed-width wrappers) live in `.storybook/decorators.tsx`. Use Storybook to preview states; use these docs for API reference, import paths, and accessibility notes.
+Each component has a co-located `*.stories.tsx` file under `Atoms/`, `Molecules/`, `Organisms/`, `Templates/` (layout shells), or `Pages/` (Figma screens) in Storybook. Shared layout decorators (e.g. fixed-width wrappers) live in `.storybook/decorators.tsx`. Use Storybook to preview states; use these docs for API reference, import paths, and accessibility notes.
 
 ## Styling
 

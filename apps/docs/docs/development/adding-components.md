@@ -6,14 +6,15 @@ sidebar_position: 4
 
 Guide for adding new components to `@repo/ui`.
 
-## 1. Choose atoms, molecules, organisms, or templates
+## 1. Choose atoms, molecules, organisms, templates, or pages
 
 | Layer     | Directory                       | Example |
 | --------- | ------------------------------- | ------- |
 | Atom      | `packages/ui/src/atoms/`        | Button, FeatherIcon, Input, Textarea, FieldHeader, FieldError, Avatar, Checkbox, LoadingBar |
 | Molecule  | `packages/ui/src/molecules/`    | TextField, TextArea, Select, ButtonGroup, SearchInput, Stepper, Breadcrumbs, Tabs, Rating, Pagination, ProgressIndicator, AvatarLabelled |
 | Organism  | `packages/ui/src/organisms/`    | Table, Footer, Hero, Modal, NavigationSide, NavigationHeader, DatePicker, Drawer, DropdownMenu, Testimonial, AvatarDropdown |
-| Template  | `packages/ui/src/templates/`    | Collection page wireframe (Storybook only; composes organisms) |
+| Template  | `packages/ui/src/templates/`    | ApplicationShell, ShopLayout — layout shells with slots (`Templates/*` in Storybook) |
+| Page      | `packages/ui/src/pages/`        | ShopPage, DashboardPage — Figma screens that compose a template (`Pages/*` in Storybook) |
 
 See [Design system overview](../design-system/overview) for layer rules and dependency constraints.
 

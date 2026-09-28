@@ -407,15 +407,11 @@ export const MobileClosed: Story = {
   render: () => <DesktopWithAvatarExample />,
 };
 
-export const MobileOpen: Story = {
-  parameters: {
-    viewport: { defaultViewport: "mobile1" },
-  },
-  render: () => {
-    const [activeHref, setActiveHref] = React.useState("/home");
-    const [open, setOpen] = React.useState(true);
+function MobileOpenExample() {
+  const [activeHref, setActiveHref] = React.useState("/home");
+  const [open, setOpen] = React.useState(true);
 
-    return (
+  return (
       <div className="min-h-screen bg-fill-weaker">
         <NavigationHeader open={open} onOpenChange={setOpen}>
           <NavigationHeaderBar>
@@ -479,8 +475,14 @@ export const MobileOpen: Story = {
           </NavigationHeaderMobileDrawer>
         </NavigationHeader>
       </div>
-    );
+  );
+}
+
+export const MobileOpen: Story = {
+  parameters: {
+    viewport: { defaultViewport: "mobile1" },
   },
+  render: () => <MobileOpenExample />,
   play: async () => {
     const drawer = await within(document.body).findByTestId(
       "navigation-header-mobile-drawer",
