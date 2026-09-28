@@ -19,12 +19,26 @@ import login4AvatarSrc from "./assets/login-4-avatar.png";
 
 export type TemplateUserMenuVariant = "header" | "compact" | "navigation";
 
+export interface TemplateUser {
+  name: string;
+  email: string;
+  src: string;
+}
+
+export const defaultTemplateUser: TemplateUser = {
+  name: "John Smith",
+  email: "john@practical-ui.com",
+  src: login4AvatarSrc,
+};
+
 export function TemplateUserMenu({
   defaultOpen = false,
   variant = "header",
+  user = defaultTemplateUser,
 }: {
   defaultOpen?: boolean;
   variant?: TemplateUserMenuVariant;
+  user?: TemplateUser;
 }) {
   const [open, setOpen] = React.useState(defaultOpen);
   const [darkMode, setDarkMode] = React.useState(false);
@@ -34,19 +48,19 @@ export function TemplateUserMenu({
     trigger = (
       <button
         type="button"
-        aria-label="John Smith"
+        aria-label={user.name}
         className="inline-flex rounded-full outline-none focus-visible:ring-2 focus-visible:ring-stroke-focus focus-visible:ring-offset-2"
       >
-        <Avatar name="John Smith" src={login4AvatarSrc} alt="" size="small" />
+        <Avatar name={user.name} src={user.src} alt="" size="small" />
       </button>
     );
   } else if (variant === "navigation") {
     trigger = (
       <AvatarDropdown
         variant="navigation"
-        name="John Smith"
-        description="john@practical-ui.com"
-        src={login4AvatarSrc}
+        name={user.name}
+        description={user.email}
+        src={user.src}
         open={open}
         size="medium"
       />
@@ -54,8 +68,8 @@ export function TemplateUserMenu({
   } else {
     trigger = (
       <AvatarDropdown
-        name="John Smith"
-        src={login4AvatarSrc}
+        name={user.name}
+        src={user.src}
         open={open}
         size="small"
       />
@@ -71,9 +85,9 @@ export function TemplateUserMenu({
       <DropdownMenuTrigger>{trigger}</DropdownMenuTrigger>
       <DropdownMenuContent aria-label="Account">
         <DropdownMenuAvatarItem
-          name="John Smith"
-          description="john@practical-ui.com"
-          src={login4AvatarSrc}
+          name={user.name}
+          description={user.email}
+          src={user.src}
         />
         <DropdownMenuSeparator />
         <DropdownMenuItem icon={<FeatherIcon name="user" size={24} />}>
