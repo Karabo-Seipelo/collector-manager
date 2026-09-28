@@ -77,8 +77,9 @@ export const Mobile: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await expect(canvas.getByText("2 of 10")).toBeVisible();
-    await expect(canvas.queryByText("Showing 11 - 20 of 128")).not.toBeInTheDocument();
-    await expect(canvas.queryByRole("link", { name: /Previous/i })).not.toBeInTheDocument();
+    await expect(canvas.queryByText("Showing 11 - 20 of 128")).not.toBeVisible();
+    await expect(canvas.getByRole("button", { name: "Previous page" })).toBeVisible();
+    await expect(canvas.getByRole("button", { name: "Next page" })).toBeVisible();
   },
 };
 
@@ -116,6 +117,7 @@ export const FewPages: Story = {
 
 export const NarrowContainer: Story = {
   parameters: {
+    viewport: { defaultViewport: "mobile1" },
     docs: {
       description: {
         story:

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import * as React from "react";
-import { expect, fn, within } from "storybook/test";
+import { expect, fn, waitFor, within } from "storybook/test";
 
 import { DashboardPage } from "./dashboard-page";
 
@@ -44,7 +44,9 @@ export const UserMenuOpen: Story = {
   render: () => <Example userMenuDefaultOpen />,
   play: async () => {
     const body = within(document.body);
-    await expect(body.getByRole("menu", { name: "Account" })).toBeVisible();
+    await waitFor(async () => {
+      await expect(body.getByRole("menu", { name: "Account" })).toBeVisible();
+    });
     await expect(body.getByRole("menuitem", { name: /Profile/i })).toBeVisible();
   },
 };

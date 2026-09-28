@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import * as React from "react";
-import { expect, fn, within } from "storybook/test";
+import { expect, fn, waitFor, within } from "storybook/test";
 
 import { Button } from "../../atoms/button/button";
 import { Slot } from "../../atoms/slot/slot";
@@ -85,7 +85,9 @@ export const Open: Story = {
     const dialog = await within(document.body).findByRole("dialog", {
       name: "Heading",
     });
-    await expect(dialog).toBeVisible();
+    await waitFor(async () => {
+      await expect(dialog).toBeVisible();
+    });
   },
 };
 

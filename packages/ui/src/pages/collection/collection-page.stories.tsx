@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import * as React from "react";
-import { expect, fn, within } from "storybook/test";
+import { expect, fn, waitFor, within } from "storybook/test";
 
 import { CollectionPage } from "./collection-page";
 
@@ -58,9 +58,13 @@ export const Desktop: Story = {
     await expect(
       within(document.body).findByRole("heading", { name: "My collection" }),
     ).resolves.toBeVisible();
-    await expect(
-      within(document.body).findByText(/248 items · R 41 200 estimated value/),
-    ).resolves.toBeVisible();
+    const desktopSummary = (
+      await within(document.body).findAllByText(
+        /248 items · R 41 200 estimated value/,
+      )
+    ).find((node) => node.classList.contains("text-small"));
+    await expect(desktopSummary).toBeDefined();
+    await expect(desktopSummary!).toBeVisible();
     await expect(
       within(document.body).getByRole("button", { name: "Import" }),
     ).toBeVisible();
@@ -91,12 +95,15 @@ export const MobileSidebarOpen: Story = {
   },
   render: () => <CollectionPageExample defaultSidebarOpen />,
   play: async () => {
-    const nav = await within(document.body).findByRole("navigation", {
-      name: "Main",
+    await waitFor(async () => {
+      await expect(
+        within(document.body).getByTestId("navigation-side-panel"),
+      ).toBeVisible();
     });
-    await expect(nav).toBeVisible();
-    await expect(
-      within(document.body).getByRole("button", { name: "Close navigation" }),
-    ).toBeVisible();
+    await waitFor(async () => {
+      await expect(
+        within(document.body).getByRole("button", { name: "Close navigation" }),
+      ).toBeVisible();
+    });
   },
 };

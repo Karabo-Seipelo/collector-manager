@@ -7,7 +7,7 @@ import { SignupAuthFormPanel } from "../shared/signup-auth-form";
 export function Signup3Page() {
   return (
     <AuthSplitHeroTemplate heroSrc={templateLogin3HeroSrc}>
-      <SignupAuthFormPanel className="relative z-10" />
+      <SignupAuthFormPanel className="relative z-10" legalVariant="split" />
     </AuthSplitHeroTemplate>
   );
 }

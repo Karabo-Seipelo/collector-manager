@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "storybook/test";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import * as React from "react";
 
 import { Badge } from "../../atoms/badge/badge";
@@ -102,7 +102,9 @@ export const Default: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await userEvent.click(canvas.getByRole("button", { name: "Label" }));
-    await expect(canvas.getByRole("menu", { name: "Actions" })).toBeVisible();
+    await waitFor(async () => {
+      await expect(canvas.getByRole("menu", { name: "Actions" })).toBeVisible();
+    });
   },
 };
 

@@ -7,8 +7,12 @@ import "../src/styles.css";
 const preview: Preview = {
   tags: ["autodocs"],
   loaders: [mswLoader()],
-  beforeEach({ msw }) {
+  beforeEach({ msw, parameters }) {
     msw.use(...collectionHandlers);
+    const storyHandlers = parameters.msw?.handlers;
+    if (storyHandlers) {
+      msw.use(...(Array.isArray(storyHandlers) ? storyHandlers : [storyHandlers]));
+    }
   },
   parameters: {
     controls: {

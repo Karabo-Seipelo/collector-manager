@@ -34,7 +34,14 @@ export const Overview: Story = {
     ).toBeVisible();
     await expect(canvas.getByRole("heading", { name: "Typeface" })).toBeVisible();
     await expect(canvas.getByRole("heading", { name: "Type scale" })).toBeVisible();
-    await expect(canvas.getByRole("columnheader", { name: "Tailwind" })).toBeVisible();
-    await expect(canvas.getByText("Display")).toBeVisible();
+    const table = canvas.getByRole("table");
+    await expect(
+      within(table).getByRole("columnheader", { name: "Tailwind" }),
+    ).toBeVisible();
+    const displayRow = within(table).getAllByRole("row")[1];
+    await expect(displayRow).toBeDefined();
+    await expect(within(displayRow!).getAllByRole("cell")[0]).toHaveTextContent(
+      "Display",
+    );
   },
 };

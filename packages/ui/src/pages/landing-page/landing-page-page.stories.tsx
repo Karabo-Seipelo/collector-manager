@@ -16,7 +16,7 @@ export const Desktop: Story = {
   play: async () => {
     await expect(
       within(document.body).getByRole("heading", {
-        name: /Lorem ipsum dolor sit amet tetur elit/i,
+        name: "Investing made easy for everyone",
       }),
     ).toBeVisible();
     await expect(

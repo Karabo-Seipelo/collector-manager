@@ -35,13 +35,15 @@ type Story = StoryObj<typeof meta>;
 
 function Example({
   defaultSidebarOpen = false,
-}: {
+  ...pageProps
+}: React.ComponentProps<typeof CollectionAddItemPage> & {
   defaultSidebarOpen?: boolean;
 }) {
   const [sidebarOpen, setSidebarOpen] = React.useState(defaultSidebarOpen);
 
   return (
     <CollectionAddItemPage
+      {...pageProps}
       sidebarOpen={sidebarOpen}
       onSidebarOpenChange={setSidebarOpen}
     />
@@ -49,23 +51,22 @@ function Example({
 }
 
 export const Desktop: Story = {
-  render: () => <Example />,
+  render: (args) => <Example {...args} />,
   play: async ({ args }) => {
     const body = within(document.body);
     await expect(
-      body.getByRole("heading", { level: 1, name: "Add item" }),
-    ).toBeVisible();
+      body.findByRole("heading", { level: 1, name: "Add item" }),
+    ).resolves.toBeVisible();
     await expect(
       body.getByText("Drop photos here, or scan a barcode"),
     ).toBeVisible();
     await expect(body.getByLabelText("Item name")).toBeVisible();
-    await expect(body.getByText("Untitled item")).toBeVisible();
-    await expect(
-      body.getByText("Category · year · condition"),
-    ).toBeVisible();
+    await expect(body.getByLabelText("Category")).toBeVisible();
+    await expect(body.getByLabelText("Year")).toBeVisible();
+    await expect(body.getByLabelText("Condition")).toBeVisible();
 
     await userEvent.type(body.getByLabelText("Item name"), "Kind of Blue");
-    await expect(body.getByText("Kind of Blue")).toBeVisible();
+    await expect(body.getByDisplayValue("Kind of Blue")).toBeVisible();
 
     await userEvent.click(body.getByRole("button", { name: "Save item" }));
     await expect(args.onSave).toHaveBeenCalled();

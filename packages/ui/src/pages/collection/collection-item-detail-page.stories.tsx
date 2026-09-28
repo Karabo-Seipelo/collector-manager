@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import * as React from "react";
-import { expect, fn, within } from "storybook/test";
+import { expect, fn, userEvent, within } from "storybook/test";
 
 import { CollectionItemDetailPage } from "./collection-item-detail-page";
 
@@ -35,13 +35,15 @@ type Story = StoryObj<typeof meta>;
 
 function Example({
   defaultSidebarOpen = false,
-}: {
+  ...pageProps
+}: React.ComponentProps<typeof CollectionItemDetailPage> & {
   defaultSidebarOpen?: boolean;
 }) {
   const [sidebarOpen, setSidebarOpen] = React.useState(defaultSidebarOpen);
 
   return (
     <CollectionItemDetailPage
+      {...pageProps}
       sidebarOpen={sidebarOpen}
       onSidebarOpenChange={setSidebarOpen}
     />
@@ -49,7 +51,7 @@ function Example({
 }
 
 export const Desktop: Story = {
-  render: () => <Example />,
+  render: (args) => <Example {...args} />,
   play: async ({ args }) => {
     const body = within(document.body);
     await expect(
@@ -66,7 +68,7 @@ export const Desktop: Story = {
     await expect(body.getByText("Near mint (NM)")).toBeVisible();
     await expect(body.getByRole("heading", { name: "Notes" })).toBeVisible();
 
-    await body.getByRole("button", { name: "Edit item" }).click();
+    await userEvent.click(body.getByRole("button", { name: "Edit item" }));
     await expect(args.onEdit).toHaveBeenCalled();
   },
 };
