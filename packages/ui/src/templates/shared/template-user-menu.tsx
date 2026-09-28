@@ -17,36 +17,58 @@ import {
 } from "../../organisms/dropdown-menu/dropdown-menu";
 import login4AvatarSrc from "./assets/login-4-avatar.png";
 
+export type TemplateUserMenuVariant = "header" | "compact" | "navigation";
+
 export function TemplateUserMenu({
   defaultOpen = false,
-  compact = false,
+  variant = "header",
 }: {
   defaultOpen?: boolean;
-  compact?: boolean;
+  variant?: TemplateUserMenuVariant;
 }) {
   const [open, setOpen] = React.useState(defaultOpen);
   const [darkMode, setDarkMode] = React.useState(false);
 
+  let trigger: React.ReactElement;
+  if (variant === "compact") {
+    trigger = (
+      <button
+        type="button"
+        aria-label="John Smith"
+        className="inline-flex rounded-full outline-none focus-visible:ring-2 focus-visible:ring-stroke-focus focus-visible:ring-offset-2"
+      >
+        <Avatar name="John Smith" src={login4AvatarSrc} alt="" size="small" />
+      </button>
+    );
+  } else if (variant === "navigation") {
+    trigger = (
+      <AvatarDropdown
+        variant="navigation"
+        name="John Smith"
+        description="john@practical-ui.com"
+        src={login4AvatarSrc}
+        open={open}
+        size="medium"
+      />
+    );
+  } else {
+    trigger = (
+      <AvatarDropdown
+        name="John Smith"
+        src={login4AvatarSrc}
+        open={open}
+        size="small"
+      />
+    );
+  }
+
   return (
-    <DropdownMenu open={open} onOpenChange={setOpen} align="bottom-right">
-      <DropdownMenuTrigger>
-        {compact ? (
-          <button
-            type="button"
-            aria-label="John Smith"
-            className="inline-flex rounded-full outline-none focus-visible:ring-2 focus-visible:ring-stroke-focus focus-visible:ring-offset-2"
-          >
-            <Avatar name="John Smith" src={login4AvatarSrc} alt="" size="small" />
-          </button>
-        ) : (
-          <AvatarDropdown
-            name="John Smith"
-            src={login4AvatarSrc}
-            open={open}
-            size="small"
-          />
-        )}
-      </DropdownMenuTrigger>
+    <DropdownMenu
+      open={open}
+      onOpenChange={setOpen}
+      align={variant === "navigation" ? "top-left" : "bottom-right"}
+    >
+      <DropdownMenuTrigger>{trigger}</DropdownMenuTrigger>
       <DropdownMenuContent aria-label="Account">
         <DropdownMenuAvatarItem
           name="John Smith"

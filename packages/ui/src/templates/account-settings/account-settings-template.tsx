@@ -1,43 +1,139 @@
 "use client";
 
+import * as React from "react";
+
+import { Avatar } from "../../atoms/avatar/avatar";
 import { Button } from "../../atoms/button/button";
-import { ButtonGroup } from "../../molecules/button-group/button-group";
-import { Select } from "../../molecules/select/select";
-import { TextField } from "../../molecules/text-field/text-field";
+import { FeatherIcon } from "../../atoms/icon/icon";
+import { TextLink } from "../../atoms/text-link/text-link";
+import { Breadcrumbs } from "../../molecules/breadcrumbs/breadcrumbs";
+import {
+  SummaryList,
+  type SummaryListItem,
+} from "../../molecules/summary-list/summary-list";
+import { Tabs, TabsList, TabsTrigger } from "../../molecules/tabs/tabs";
 import { ApplicationShell } from "../shared/application-shell";
+import login4AvatarSrc from "../shared/assets/login-4-avatar.png";
 
 export interface AccountSettingsTemplateProps {
   sidebarOpen?: boolean;
   defaultSidebarOpen?: boolean;
   onSidebarOpenChange?: (open: boolean) => void;
+  userMenuDefaultOpen?: boolean;
 }
 
+const settingsTabs = [
+  { value: "profile", label: "Profile" },
+  { value: "preferences", label: "Preferences" },
+  { value: "plan", label: "Plan" },
+  { value: "notifications", label: "Notifications" },
+  { value: "security", label: "Security" },
+] as const;
+
+const personalDetails: SummaryListItem[] = [
+  { id: "first-name", term: "First name", description: "John" },
+  { id: "last-name", term: "Last name", description: "Smith" },
+  { id: "date-of-birth", term: "Date of birth", description: "08/09/1990" },
+  { id: "language", term: "Language", description: "English" },
+];
+
+const contactDetails: SummaryListItem[] = [
+  { id: "email", term: "Email", description: "john@practical-ui.com" },
+  { id: "mobile", term: "Mobile", description: "0433 123 123" },
+];
+
 export function AccountSettingsTemplate(props: AccountSettingsTemplateProps) {
+  const [tab, setTab] = React.useState<string>("profile");
+
   return (
-    <ApplicationShell {...props} pageTitle="Account settings" showMobileHeader>
-      <div className="mx-auto flex w-full max-w-2xl flex-col gap-6 p-4 md:gap-8 md:p-8">
-        <section className="flex flex-col gap-4">
-          <h2 className="text-heading-4 font-semibold text-fg-strong">Profile</h2>
-          <TextField label="Display name" defaultValue="John Smith" />
-          <TextField label="Email" type="email" defaultValue="john@practical-ui.com" />
+    <ApplicationShell
+      {...props}
+      layout="sidenav"
+      defaultActiveNav="home"
+      showMobileHeader
+    >
+      <div className="flex flex-1 flex-col gap-8 px-4 py-8 md:gap-12 md:px-16 md:py-12">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "#home" },
+            { label: "Account settings", href: "#account-settings" },
+          ]}
+        />
+
+        <div className="flex w-full max-w-[600px] flex-col gap-2">
+          <h1 className="text-heading-1 font-semibold text-fg-strong">
+            Account settings
+          </h1>
+          <p className="text-small text-fg-weak">
+            Manage your profile, preferences, plan and security in one place.
+          </p>
+        </div>
+
+        <Tabs value={tab} onValueChange={setTab} className="overflow-x-auto">
+          <TabsList aria-label="Account settings sections">
+            {settingsTabs.map((item) => (
+              <TabsTrigger key={item.value} value={item.value}>
+                {item.label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </Tabs>
+
+        <section
+          aria-labelledby="personal-details-heading"
+          className="flex w-full max-w-[600px] flex-col gap-6"
+        >
+          <h2
+            id="personal-details-heading"
+            className="text-heading-2 font-semibold text-fg-strong"
+          >
+            Personal details
+          </h2>
+          <div className="flex items-center gap-4">
+            <Avatar
+              name="John Smith"
+              src={login4AvatarSrc}
+              alt=""
+              size="large"
+            />
+            <div className="flex flex-col items-start gap-2">
+              <Button size="small" variant="secondary" tone="neutral">
+                Change photo
+              </Button>
+              <p className="text-tiny text-fg-weak">Maximum file size is 5MB</p>
+            </div>
+          </div>
+          <SummaryList aria-label="Personal details" items={personalDetails} />
+          <TextLink
+            href="#edit-personal-details"
+            size="tiny"
+            tone="brand"
+            iconLeft={<FeatherIcon name="edit" size={20} />}
+          >
+            Edit personal details
+          </TextLink>
         </section>
-        <section className="flex flex-col gap-4">
-          <h2 className="text-heading-4 font-semibold text-fg-strong">Preferences</h2>
-          <Select label="Language" defaultValue="en">
-            <option value="en">English</option>
-            <option value="fr">French</option>
-          </Select>
-          <Select label="Timezone" defaultValue="utc">
-            <option value="utc">UTC</option>
-            <option value="est">Eastern Time</option>
-          </Select>
+
+        <section
+          aria-labelledby="contact-details-heading"
+          className="flex w-full max-w-[600px] flex-col gap-6"
+        >
+          <h2
+            id="contact-details-heading"
+            className="text-heading-2 font-semibold text-fg-strong"
+          >
+            Contact details
+          </h2>
+          <SummaryList aria-label="Contact details" items={contactDetails} />
+          <TextLink
+            href="#edit-contact-details"
+            size="tiny"
+            tone="brand"
+            iconLeft={<FeatherIcon name="edit" size={20} />}
+          >
+            Edit contact details
+          </TextLink>
         </section>
-        <ButtonGroup aria-label="Save settings">
-          <Button>Save changes</Button>
-          <Button variant="secondary" tone="neutral">
-            Cancel
-          </Button>
-        </ButtonGroup>
       </div>
     </ApplicationShell>
   );
