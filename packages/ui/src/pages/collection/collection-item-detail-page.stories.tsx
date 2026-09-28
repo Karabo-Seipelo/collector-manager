@@ -76,8 +76,8 @@ export const Mobile: Story = {
   render: () => <Example />,
   play: async () => {
     await expect(
-      within(document.body).getByRole("heading", { name: "Kind of Blue" }),
-    ).toBeVisible();
+      within(document.body).findByRole("heading", { name: "Kind of Blue" }),
+    ).resolves.toBeVisible();
     await expect(
       within(document.body).getByRole("link", { name: "Back to collection" }),
     ).toBeVisible();

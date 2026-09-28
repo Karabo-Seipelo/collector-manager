@@ -69,7 +69,9 @@ export const Mobile: Story = {
   render: () => <Example />,
   play: async () => {
     const body = within(document.body);
-    await expect(body.getByRole("heading", { name: "Insights" })).toBeVisible();
+    await expect(
+      body.findByRole("heading", { name: "Insights" }),
+    ).resolves.toBeVisible();
     await expect(body.getByRole("link", { name: "Stats" })).toHaveAttribute(
       "aria-current",
       "page",

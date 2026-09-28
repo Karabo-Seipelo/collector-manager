@@ -24,6 +24,35 @@ pnpm build-storybook
 
 Output is written to `packages/ui/storybook-static/`. Deploy this folder to any static host for a hosted component catalog.
 
+## Chromatic (visual regression)
+
+[Chromatic](https://www.chromatic.com/) captures Storybook snapshots on every push and pull request. CI uses a **strict gate**: the Chromatic job fails when there are unreviewed visual changes until you accept them in the Chromatic UI.
+
+### Setup (once per repo)
+
+1. Create or open a Chromatic project linked to this repository.
+2. Rotate the project token if it was ever exposed outside GitHub Secrets.
+3. In GitHub → **Settings → Secrets and variables → Actions**, add **`CHROMATIC_PROJECT_TOKEN`** with the project token value (never commit the token to the repo).
+
+### Local publish
+
+Build static Storybook first, then publish:
+
+```bash
+pnpm build-storybook
+CHROMATIC_PROJECT_TOKEN=your-token pnpm chromatic
+```
+
+### Review workflow
+
+1. Open the Chromatic build link from the GitHub Actions log or PR checks.
+2. Review diffs story by story; accept changes that are intentional.
+3. Re-run CI or push again if needed; merge when Chromatic (and other checks) are green.
+
+On **`main`**, CI auto-accepts baselines after publish so the default branch stays the source of truth. Pull requests still require manual acceptance for any visual diff.
+
+Collection **Pages/** stories wait for MSW data in `play` functions before capture. If a snapshot shows a loading state, add `parameters.chromatic.delay` on that story (see [Chromatic delay](https://www.chromatic.com/docs/delay/)).
+
 ## Configuration
 
 | File                                    | Purpose                                         |
