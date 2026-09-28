@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, within } from "storybook/test";
+import { expect, fn, within } from "storybook/test";
 
 import { BlogTemplate } from "./blog-template";
 
@@ -7,6 +7,7 @@ const meta = {
   title: "Templates/Blog",
   component: BlogTemplate,
   parameters: { layout: "fullscreen" },
+  args: { onSubscribe: fn() },
 } satisfies Meta<typeof BlogTemplate>;
 
 export default meta;
@@ -14,7 +15,34 @@ type Story = StoryObj<typeof meta>;
 
 export const Desktop: Story = {
   play: async () => {
-    await expect(within(document.body).getByRole("heading", { name: "Blog" })).toBeVisible();
+    const body = within(document.body);
+
+    await expect(
+      body.getByRole("heading", { level: 1, name: "Never stop exploring" }),
+    ).toBeVisible();
+    await expect(
+      body.getByRole("link", { name: "Home", current: "page" }),
+    ).toBeVisible();
+    await expect(
+      body.getAllByRole("button", { name: "Subscribe" }),
+    ).toHaveLength(2);
+    await expect(
+      body.getByRole("link", { name: "223 travellers" }),
+    ).toBeVisible();
+    await expect(
+      body.getByRole("heading", { level: 2, name: "Top destinations" }),
+    ).toBeVisible();
+    await expect(
+      body.getByRole("heading", { level: 3, name: "Sightseeing in San Fran" }),
+    ).toBeVisible();
+    await expect(body.getByText("Theresa Webb")).toBeVisible();
+    await expect(
+      body.getByRole("link", { name: "View all destinations" }),
+    ).toBeVisible();
+    await expect(
+      body.getByRole("heading", { level: 2, name: "Subscribe today" }),
+    ).toBeVisible();
+    await expect(body.getByText("© 2024 Practical Travel")).toBeVisible();
   },
 };
 

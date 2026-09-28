@@ -17,6 +17,8 @@ export interface RatingProps extends React.HTMLAttributes<HTMLDivElement> {
   showReviews?: boolean;
   reviewCount?: number;
   reviewsHref?: string;
+  /** Noun shown after the count, e.g. "reviews" or "travellers". */
+  reviewsNoun?: string;
 }
 
 export function Rating({
@@ -28,6 +30,7 @@ export function Rating({
   showReviews = true,
   reviewCount = 23,
   reviewsHref = "#reviews",
+  reviewsNoun = "reviews",
   className,
   ...rest
 }: RatingProps) {
@@ -55,8 +58,8 @@ export function Rating({
 
   const reviewLinkLabel =
     layout === "horizontal"
-      ? `(${reviewCount} reviews)`
-      : `${reviewCount} reviews`;
+      ? `(${reviewCount} ${reviewsNoun})`
+      : `${reviewCount} ${reviewsNoun}`;
 
   const reviewsLink = showReviews ? (
     <a
