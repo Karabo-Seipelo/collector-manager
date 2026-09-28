@@ -125,7 +125,9 @@ describe("NavigationSide", () => {
     expect(screen.getByTestId("navigation-side-panel")).toHaveClass(
       "w-80",
       "bg-fill-inverse",
-      "md:relative",
+      "md:h-auto",
+      "md:min-h-svh",
+      "md:self-stretch",
       "md:border-r",
     );
   });

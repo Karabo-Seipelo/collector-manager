@@ -27,9 +27,11 @@ function Example() {
 export const Desktop: Story = {
   render: () => <Example />,
   play: async () => {
-    await expect(
-      within(document.body).getByRole("checkbox", { name: "Select all rows" }),
-    ).toBeVisible();
+    const body = within(document.body);
+    await expect(body.getByRole("heading", { name: "Applicants", level: 1 })).toBeVisible();
+    await expect(body.getByRole("checkbox", { name: "Select all rows" })).toBePartiallyChecked();
+    await expect(body.getByRole("checkbox", { name: "Select John Smith" })).toBeChecked();
+    await expect(body.getByText("2 items selected")).toBeVisible();
   },
 };
 

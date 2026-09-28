@@ -3,7 +3,7 @@ import { cn } from "../../lib/cn";
 export function getNavigationSideClassName(className?: string) {
   return cn(
     "flex w-80 max-w-full shrink-0 flex-col border-stroke-weak bg-fill-inverse",
-    "md:relative md:h-full md:translate-x-0 md:border-r",
+    "md:relative md:h-auto md:min-h-svh md:self-stretch md:translate-x-0 md:border-r",
     "max-md:fixed max-md:inset-y-0 max-md:left-0 max-md:z-50 max-md:h-full max-md:border-r max-md:shadow-overlay",
     "max-md:transition-transform max-md:duration-300 max-md:ease-out motion-reduce:max-md:transition-none",
     className,
@@ -51,7 +51,7 @@ export function getNavigationSideContentClassName(className?: string) {
 }
 
 export function getNavigationSideBottomClassName(className?: string) {
-  return cn("flex shrink-0 flex-col justify-end pb-3", className);
+  return cn("mt-auto flex w-full shrink-0 flex-col pb-3", className);
 }
 
 export function getNavigationSideItemClassName({

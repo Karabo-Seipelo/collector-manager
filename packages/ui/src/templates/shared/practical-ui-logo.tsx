@@ -1,7 +1,13 @@
+import practicalUiLogoSrc from "./assets/practical-ui-logo.svg";
+
 export function PracticalUiLogo() {
   return (
-    <span className="text-heading-4 font-semibold text-fg-strong">
-      Practical<span className="text-primary">UI</span>
-    </span>
+    <img
+      src={practicalUiLogoSrc}
+      alt="Practical UI"
+      width={146}
+      height={42}
+      className="block h-[42px] w-[146px] shrink-0"
+    />
   );
 }

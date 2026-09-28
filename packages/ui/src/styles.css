@@ -72,6 +72,12 @@
   --text-small--line-height: 24px;
   --text-tiny: 14px;
   --text-tiny--line-height: 20px;
+  --text-heading-1: 40px;
+  --text-heading-1--line-height: 48px;
+  --text-heading-1--letter-spacing: -0.5px;
+  --text-heading-2: 32px;
+  --text-heading-2--line-height: 40px;
+  --text-heading-2--letter-spacing: -0.5px;
   --text-heading-3: 24px;
   --text-heading-3--line-height: 32px;
   --text-heading-4: 20px;
