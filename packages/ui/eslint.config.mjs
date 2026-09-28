@@ -4,7 +4,7 @@ import { config } from "@repo/eslint-config/react-internal";
 export default [
   ...config,
   {
-    ignores: ["storybook-static/**", "dist/**"],
+    ignores: ["storybook-static/**", "dist/**", "public/mockServiceWorker.js"],
   },
   {
     files: ["src/atoms/**/*.{ts,tsx}"],

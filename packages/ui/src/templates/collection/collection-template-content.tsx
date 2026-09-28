@@ -11,12 +11,12 @@ import { cn } from "../../lib/cn";
 import { Card, CardContent, CardImage } from "../../molecules/card/card";
 import { SearchInput } from "../../molecules/search-input/search-input";
 import { Select } from "../../molecules/select/select";
+import type { CollectionItem } from "../../api/collection/types";
+import { useCollectionHome } from "../../api/collection/hooks/use-collection-home";
 import {
-  collectionFilters,
-  collectionItems,
-  collectionSummary,
-  type CollectionItem,
-} from "./mock-collection-data";
+  CollectionErrorState,
+  CollectionLoadingState,
+} from "./collection-fetch-state";
 
 function CollectionItemCard({ item }: { item: CollectionItem }) {
   return (
@@ -92,10 +92,25 @@ function ViewToggle({
 }
 
 export function CollectionTemplateContent() {
+  const { data, error, isLoading, refetch } = useCollectionHome();
   const [activeFilter, setActiveFilter] = React.useState("all");
   const [viewMode, setViewMode] = React.useState<ViewMode>("grid");
 
-  const summaryLine = `${collectionSummary.itemCount} items · ${collectionSummary.estimatedValue} estimated value · last added ${collectionSummary.lastAdded}`;
+  if (isLoading) {
+    return <CollectionLoadingState label="Loading collection…" />;
+  }
+
+  if (error || !data) {
+    return (
+      <CollectionErrorState
+        message={error?.message}
+        onRetry={() => void refetch()}
+      />
+    );
+  }
+
+  const { summary, filters: collectionFilters, items: collectionItems } = data;
+  const summaryLine = `${summary.itemCount} items · ${summary.estimatedValue} estimated value · last added ${summary.lastAdded}`;
 
   return (
     <div className="relative mx-auto w-full px-4 py-6 md:px-8 md:py-8">

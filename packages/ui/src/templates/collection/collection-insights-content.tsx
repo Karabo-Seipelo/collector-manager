@@ -2,13 +2,12 @@
 
 import { FeatherIcon } from "../../atoms/icon/icon";
 import { TextLink } from "../../atoms/text-link/text-link";
+import { getCategoryBarPercent } from "../../api/collection/fixtures/insights";
+import { useCollectionInsights } from "../../api/collection/hooks/use-collection-insights";
 import {
-  getCategoryBarPercent,
-  insightsCategoryValues,
-  insightsRecentItems,
-  insightsStatTiles,
-  insightsSummary,
-} from "./collection-insights-data";
+  CollectionErrorState,
+  CollectionLoadingState,
+} from "./collection-fetch-state";
 
 function StatTile({
   label,
@@ -32,11 +31,15 @@ function CategoryValueRow({
   label,
   value,
   amount,
+  categoryValues,
 }: {
   label: string;
   value: string;
   amount: number;
+  categoryValues: { amount: number }[];
 }) {
+  const percent = getCategoryBarPercent(amount, categoryValues);
+
   return (
     <div className="flex w-full flex-col gap-1.5">
       <div className="flex items-start justify-between gap-3 text-tiny">
@@ -46,11 +49,11 @@ function CategoryValueRow({
       <div
         className="h-2 w-full overflow-hidden rounded bg-fill-weak"
         role="img"
-        aria-label={`${label} ${getCategoryBarPercent(amount)}% of top category value`}
+        aria-label={`${label} ${percent}% of top category value`}
       >
         <div
           className="h-full rounded bg-fill-brand-strong"
-          style={{ width: `${getCategoryBarPercent(amount)}%` }}
+          style={{ width: `${percent}%` }}
         />
       </div>
     </div>
@@ -82,7 +85,22 @@ function RecentItemCard({
 }
 
 export function CollectionInsightsContent() {
-  const subtitle = `Across ${insightsSummary.itemCount} items in ${insightsSummary.collectionCount} collections`;
+  const { data, error, isLoading, refetch } = useCollectionInsights();
+
+  if (isLoading) {
+    return <CollectionLoadingState label="Loading insights…" />;
+  }
+
+  if (error || !data) {
+    return (
+      <CollectionErrorState
+        message={error?.message}
+        onRetry={() => void refetch()}
+      />
+    );
+  }
+
+  const subtitle = `Across ${data.summary.itemCount} items in ${data.summary.collectionCount} collections`;
 
   return (
     <div className="relative mx-auto w-full px-4 py-6 md:px-8 md:py-7">
@@ -107,7 +125,7 @@ export function CollectionInsightsContent() {
         aria-label="Collection summary"
         className="mb-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4"
       >
-        {insightsStatTiles.map((tile) => (
+        {data.statTiles.map((tile) => (
           <StatTile
             key={tile.id}
             label={tile.label}
@@ -139,12 +157,13 @@ export function CollectionInsightsContent() {
             Value by category
           </h2>
           <div className="flex flex-col gap-4">
-            {insightsCategoryValues.map((row) => (
+            {data.categoryValues.map((row) => (
               <CategoryValueRow
                 key={row.id}
                 label={row.label}
                 value={row.value}
                 amount={row.amount}
+                categoryValues={data.categoryValues}
               />
             ))}
           </div>
@@ -156,7 +175,7 @@ export function CollectionInsightsContent() {
           Recently added
         </h2>
         <div className="flex gap-5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] xl:grid xl:grid-cols-5 xl:overflow-visible [&::-webkit-scrollbar]:hidden">
-          {insightsRecentItems.map((item) => (
+          {data.recentItems.map((item) => (
             <RecentItemCard
               key={item.id}
               title={item.title}

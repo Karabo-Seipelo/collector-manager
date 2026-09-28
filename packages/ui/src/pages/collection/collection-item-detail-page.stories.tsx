@@ -53,11 +53,11 @@ export const Desktop: Story = {
   play: async ({ args }) => {
     const body = within(document.body);
     await expect(
-      body.getByRole("heading", { level: 1, name: "Kind of Blue" }),
-    ).toBeVisible();
+      body.findByRole("heading", { level: 1, name: "Kind of Blue" }),
+    ).resolves.toBeVisible();
     await expect(
-      body.getByText("Miles Davis · Columbia CL 1355 · six-eye pressing"),
-    ).toBeVisible();
+      body.findByText("Miles Davis · Columbia CL 1355 · six-eye pressing"),
+    ).resolves.toBeVisible();
     await expect(body.getByText("R 3 400")).toBeVisible();
     await expect(body.getByText("+183%")).toBeVisible();
     await expect(

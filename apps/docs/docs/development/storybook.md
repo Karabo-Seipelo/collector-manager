@@ -29,8 +29,9 @@ Output is written to `packages/ui/storybook-static/`. Deploy this folder to any 
 | File                                    | Purpose                                         |
 | --------------------------------------- | ----------------------------------------------- |
 | `packages/ui/.storybook/main.ts`        | Framework, stories glob, Vite + Tailwind plugin |
-| `packages/ui/.storybook/preview.ts`     | Global styles import                            |
+| `packages/ui/.storybook/preview.ts`     | Global styles, MSW loader, default API handlers |
 | `packages/ui/.storybook/decorators.tsx` | Shared story decorators                         |
+| `packages/ui/public/mockServiceWorker.js` | MSW service worker (regenerate with `pnpm msw:init` in `@repo/ui`) |
 
 Stories are co-located with components:
 
@@ -41,6 +42,12 @@ packages/ui/src/atoms/button/
 ```
 
 Stories are grouped under `Atoms/`, `Molecules/`, `Organisms/`, and `Templates/` titles (e.g. `Atoms/Button`, `Molecules/Card`, `Templates/Collection`).
+
+## Accessibility
+
+The [@storybook/addon-a11y](https://storybook.js.org/addons/@storybook/addon-a11y) addon is enabled. In the Storybook UI, open the **Accessibility** panel on any story to see automated checks (axe) and highlight issues in the preview.
+
+Per-story options via `parameters.a11y` (for example `test: "todo"` while fixing violations). See the [addon documentation](https://storybook.js.org/addons/@storybook/addon-a11y) for details.
 
 ## Shared decorators
 
@@ -81,6 +88,20 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+```
+
+## Mock API (MSW)
+
+Collection **Pages/** stories load data with `fetch` against `/api/collection/*`. In Storybook, [Mock Service Worker](https://mswjs.io/) intercepts those requests via the [msw-storybook-addon](https://storybook.js.org/addons/msw-storybook-addon).
+
+- **Handlers:** [`packages/ui/src/mocks/handlers/collection.ts`](../../../packages/ui/src/mocks/handlers/collection.ts) (fixture data in [`packages/ui/src/api/collection/fixtures/`](../../../packages/ui/src/api/collection/fixtures/))
+- **Global wiring:** [`packages/ui/.storybook/preview.ts`](../../../packages/ui/.storybook/preview.ts) registers `mswLoader()` and applies collection handlers in `beforeEach`
+- **Per-story overrides:** set `parameters.msw.handlers` (see **Pages/CollectionSearchFilter → SearchLoadError**)
+
+Regenerate the worker after upgrading MSW:
+
+```bash
+pnpm --filter @repo/ui msw:init
 ```
 
 ## Docs vs Storybook

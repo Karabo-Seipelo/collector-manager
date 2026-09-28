@@ -23,12 +23,12 @@ import {
   TablePagination,
   TableRow,
 } from "../../organisms/table/table";
+import type { CollectionSearchResponse, SearchResultRow } from "../../api/collection/types";
+import { useCollectionSearch } from "../../api/collection/hooks/use-collection-search";
 import {
-  searchCategoryFilters,
-  searchConditionFilters,
-  searchFilterMeta,
-  searchResultRows,
-} from "./collection-search-filter-data";
+  CollectionErrorState,
+  CollectionLoadingState,
+} from "./collection-fetch-state";
 
 type ViewMode = "grid" | "list";
 
@@ -91,7 +91,7 @@ function ResultThumbnail({
 }: {
   imageSrc?: string;
   imageAlt?: string;
-  icon: (typeof searchResultRows)[number]["icon"];
+  icon: SearchResultRow["icon"];
 }) {
   return (
     <div className="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-md bg-fill-weak">
@@ -110,13 +110,13 @@ function ResultThumbnail({
   );
 }
 
-function SearchResultsGrid() {
+function SearchResultsGrid({ rows }: { rows: SearchResultRow[] }) {
   return (
     <section
       aria-label="Search results grid"
       className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3"
     >
-      {searchResultRows.map((row) => (
+      {rows.map((row) => (
         <Card key={row.id} className="rounded-2xl shadow-raised">
           {row.imageSrc ? (
             <CardImage className="h-40 rounded-t-2xl border-b border-stroke-weak">
@@ -148,7 +148,7 @@ function SearchResultsGrid() {
 const searchResultsPaginationClassName =
   "flex-row-reverse gap-3 [&>div:first-child]:!flex-none [&>div:first-child]:gap-3 [&>div:first-child>div:first-child]:md:pr-0 [&>div:first-child>div:last-child]:md:pl-0";
 
-function SearchResultsTable() {
+function SearchResultsTable({ data }: { data: CollectionSearchResponse }) {
   return (
     <div className="overflow-hidden rounded-xl border border-stroke-weak bg-fill-inverse">
       <Table
@@ -168,7 +168,7 @@ function SearchResultsTable() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {searchResultRows.map((row) => (
+          {data.rows.map((row) => (
             <TableRow key={row.id}>
               <TableCell>
                 <ResultThumbnail
@@ -203,9 +203,9 @@ function SearchResultsTable() {
         <TablePagination
           className={searchResultsPaginationClassName}
           currentPage={1}
-          totalPages={searchFilterMeta.totalPages}
-          totalItems={searchFilterMeta.matchCount}
-          pageSize={searchFilterMeta.pageSize}
+          totalPages={data.totalPages}
+          totalItems={data.matchCount}
+          pageSize={data.pageSize}
         />
       </div>
     </div>
@@ -213,16 +213,32 @@ function SearchResultsTable() {
 }
 
 export interface CollectionSearchFilterContentProps {
+  query?: string;
   onResetFilters?: () => void;
 }
 
 export function CollectionSearchFilterContent({
+  query = "blue",
   onResetFilters,
 }: CollectionSearchFilterContentProps) {
+  const { data, error, isLoading, refetch } = useCollectionSearch(query);
   const [viewMode, setViewMode] = React.useState<ViewMode>("list");
   const [filterKey, setFilterKey] = React.useState(0);
 
-  const subtitle = `${searchFilterMeta.matchCount} items match “${searchFilterMeta.query}” across ${searchFilterMeta.collectionCount} collections`;
+  if (isLoading) {
+    return <CollectionLoadingState label="Loading search results…" />;
+  }
+
+  if (error || !data) {
+    return (
+      <CollectionErrorState
+        message={error?.message}
+        onRetry={() => void refetch()}
+      />
+    );
+  }
+
+  const subtitle = `${data.matchCount} items match “${data.query}” across ${data.collectionCount} collections`;
 
   const handleReset = () => {
     setFilterKey((key) => key + 1);
@@ -258,7 +274,7 @@ export function CollectionSearchFilterContent({
 
           <div className="flex flex-col gap-4">
             <FilterSection title="Category">
-              {searchCategoryFilters.map((filter) => (
+              {data.categoryFilters.map((filter) => (
                 <Checkbox
                   key={filter.id}
                   size="large"
@@ -271,7 +287,7 @@ export function CollectionSearchFilterContent({
             <Divider />
 
             <FilterSection title="Condition">
-              {searchConditionFilters.map((filter) => (
+              {data.conditionFilters.map((filter) => (
                 <Checkbox
                   key={filter.id}
                   size="large"
@@ -304,7 +320,7 @@ export function CollectionSearchFilterContent({
         <div className="min-w-0 flex-1">
           <div className="mb-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-small font-semibold text-fg-strong">
-              {searchFilterMeta.matchCount} items
+              {data.matchCount} items
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <div className="w-full min-w-[200px] sm:w-52">
@@ -323,13 +339,13 @@ export function CollectionSearchFilterContent({
             className={cn(viewMode === "list" ? "block" : "hidden")}
             aria-hidden={viewMode !== "list"}
           >
-            <SearchResultsTable />
+            <SearchResultsTable data={data} />
           </div>
           <div
             className={cn(viewMode === "grid" ? "block" : "hidden")}
             aria-hidden={viewMode !== "grid"}
           >
-            <SearchResultsGrid />
+            <SearchResultsGrid rows={data.rows} />
           </div>
         </div>
       </div>

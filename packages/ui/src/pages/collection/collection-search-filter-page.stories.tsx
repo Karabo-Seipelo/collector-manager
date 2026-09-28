@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { http, HttpResponse } from "msw";
 import * as React from "react";
 import { expect, fn, userEvent, within } from "storybook/test";
 
@@ -51,15 +52,15 @@ export const Desktop: Story = {
   play: async ({ args }) => {
     const body = within(document.body);
     await expect(
-      body.getByRole("heading", { level: 1, name: "Search results" }),
-    ).toBeVisible();
+      body.findByRole("heading", { level: 1, name: "Search results" }),
+    ).resolves.toBeVisible();
     await expect(
-      body.getByText('36 items match “blue” across 4 collections'),
-    ).toBeVisible();
+      body.findByText('36 items match “blue” across 4 collections'),
+    ).resolves.toBeVisible();
     await expect(body.getByRole("heading", { name: "Filters" })).toBeVisible();
     await expect(body.getByLabelText("Vinyl records")).toBeChecked();
     await expect(body.getByRole("table", { name: "Search results" })).toBeVisible();
-    await expect(body.getByText("Kind of Blue")).toBeVisible();
+    await expect(body.findByText("Kind of Blue")).resolves.toBeVisible();
     await expect(body.getByText("Showing 1 - 6 of 36")).toBeVisible();
 
     await userEvent.click(body.getByRole("link", { name: "Reset" }));
@@ -73,8 +74,22 @@ export const Mobile: Story = {
   play: async () => {
     const body = within(document.body);
     await expect(
-      body.getByRole("heading", { name: "Search results" }),
-    ).toBeVisible();
+      body.findByRole("heading", { name: "Search results" }),
+    ).resolves.toBeVisible();
     await expect(body.getByLabelText("Maximum estimated value")).toBeVisible();
+  },
+};
+
+export const SearchLoadError: Story = {
+  render: () => <Example />,
+  parameters: {
+    msw: [
+      http.get("/api/collection/search", () => HttpResponse.error()),
+    ] as never,
+  },
+  play: async () => {
+    await expect(
+      within(document.body).findByRole("heading", { name: "Could not load data" }),
+    ).resolves.toBeVisible();
   },
 };

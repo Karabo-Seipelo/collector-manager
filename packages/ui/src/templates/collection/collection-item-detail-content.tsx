@@ -11,10 +11,12 @@ import { ImagePlaceholder } from "../../atoms/image-placeholder/image-placeholde
 import { cn } from "../../lib/cn";
 import { TextLink } from "../../atoms/text-link/text-link";
 import { Breadcrumbs } from "../../molecules/breadcrumbs/breadcrumbs";
+import type { CollectionItemDetail } from "../../api/collection/types";
+import { useCollectionItem } from "../../api/collection/hooks/use-collection-item";
 import {
-  kindOfBlueItemDetail,
-  type CollectionItemDetail,
-} from "./collection-item-detail-data";
+  CollectionErrorState,
+  CollectionLoadingState,
+} from "./collection-fetch-state";
 
 function ItemGallery({
   gallery,
@@ -110,18 +112,33 @@ function SpecList({ specs }: { specs: CollectionItemDetail["specs"] }) {
 }
 
 export interface CollectionItemDetailContentProps {
-  item?: CollectionItemDetail;
+  itemId?: string;
   onEdit?: () => void;
   onMove?: () => void;
   onMoreActions?: () => void;
 }
 
 export function CollectionItemDetailContent({
-  item = kindOfBlueItemDetail,
+  itemId = "kind-of-blue",
   onEdit,
   onMove,
   onMoreActions,
 }: CollectionItemDetailContentProps) {
+  const { data: item, error, isLoading, refetch } = useCollectionItem(itemId);
+
+  if (isLoading) {
+    return <CollectionLoadingState label="Loading item…" />;
+  }
+
+  if (error || !item) {
+    return (
+      <CollectionErrorState
+        message={error?.message}
+        onRetry={() => void refetch()}
+      />
+    );
+  }
+
   return (
     <div className="mx-auto w-full px-4 py-6 md:px-8 md:py-7">
       <div className="mb-6 flex items-center gap-2">

@@ -2,8 +2,6 @@
 
 import { CollectionLayoutTemplate } from "../../templates/collection/collection-layout-template";
 import { CollectionSearchFilterContent } from "../../templates/collection/collection-search-filter-content";
-import { searchFilterMeta } from "../../templates/collection/collection-search-filter-data";
-
 export interface CollectionSearchFilterPageProps {
   sidebarOpen?: boolean;
   defaultSidebarOpen?: boolean;
@@ -18,7 +16,7 @@ export function CollectionSearchFilterPage({
   return (
     <CollectionLayoutTemplate
       activeNav="search"
-      searchDefaultValue={searchFilterMeta.query}
+      searchDefaultValue="blue"
       {...layoutProps}
     >
       <CollectionSearchFilterContent onResetFilters={onResetFilters} />

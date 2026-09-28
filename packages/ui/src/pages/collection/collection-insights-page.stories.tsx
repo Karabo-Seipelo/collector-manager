@@ -50,17 +50,17 @@ export const Desktop: Story = {
   play: async () => {
     const body = within(document.body);
     await expect(
-      body.getByRole("heading", { level: 1, name: "Insights" }),
-    ).toBeVisible();
+      body.findByRole("heading", { level: 1, name: "Insights" }),
+    ).resolves.toBeVisible();
     await expect(
-      body.getByText("Across 248 items in 6 collections"),
-    ).toBeVisible();
+      body.findByText("Across 248 items in 6 collections"),
+    ).resolves.toBeVisible();
     await expect(body.getByText("Estimated value")).toBeVisible();
     await expect(body.getByText("R 41 200")).toBeVisible();
     await expect(body.getByText("Collection value over time")).toBeVisible();
     await expect(body.getByText("Value by category")).toBeVisible();
     await expect(body.getByText("Recently added")).toBeVisible();
-    await expect(body.getByText("Omega Seamaster")).toBeVisible();
+    await expect(body.findByText("Omega Seamaster")).resolves.toBeVisible();
   },
 };
 

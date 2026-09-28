@@ -56,17 +56,17 @@ export const Desktop: Story = {
       within(nav).getByRole("link", { name: "Collection" }),
     ).toHaveAttribute("aria-current", "page");
     await expect(
-      within(document.body).getByRole("heading", { name: "My collection" }),
-    ).toBeVisible();
+      within(document.body).findByRole("heading", { name: "My collection" }),
+    ).resolves.toBeVisible();
     await expect(
-      within(document.body).getByText(/248 items · R 41 200 estimated value/),
-    ).toBeVisible();
+      within(document.body).findByText(/248 items · R 41 200 estimated value/),
+    ).resolves.toBeVisible();
     await expect(
       within(document.body).getByRole("button", { name: "Import" }),
     ).toBeVisible();
     await expect(
-      within(document.body).getByRole("heading", { name: "Kind of Blue" }),
-    ).toBeVisible();
+      within(document.body).findByRole("heading", { name: "Kind of Blue" }),
+    ).resolves.toBeVisible();
   },
 };
 
@@ -77,8 +77,8 @@ export const Mobile: Story = {
   render: () => <CollectionPageExample />,
   play: async () => {
     await expect(
-      within(document.body).getByRole("heading", { name: "My collection" }),
-    ).toBeVisible();
+      within(document.body).findByRole("heading", { name: "My collection" }),
+    ).resolves.toBeVisible();
     await expect(
       within(document.body).getByRole("button", { name: "Add item" }),
     ).toBeVisible();

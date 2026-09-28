@@ -15,7 +15,7 @@ import {
   NavigationSideSection,
   NavigationSideTop,
 } from "../../organisms/navigation-side/navigation-side";
-import { avatarPhotoSrc } from "./mock-collection-data";
+import { avatarPhotoSrc } from "../../api/collection/fixtures/home";
 import { CollectionTemplateLogo } from "./collection-template-logo";
 
 export type CollectionActiveNav = "collection" | "search" | "insights";

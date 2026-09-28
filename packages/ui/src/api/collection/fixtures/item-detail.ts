@@ -1,25 +1,8 @@
-import kindOfBlueSrc from "./assets/kind-of-blue.png";
+import type { CollectionItemDetail } from "../types";
 
-export type CollectionItemDetailSpec = {
-  label: string;
-  value: string;
-};
+import kindOfBlueSrc from "../../../templates/collection/assets/kind-of-blue.png";
 
-export type CollectionItemDetail = {
-  id: string;
-  title: string;
-  subtitle: string;
-  categoryLabel: string;
-  breadcrumbs: { label: string; href?: string }[];
-  paid: string;
-  estimatedValue: string;
-  change: string;
-  notes: string;
-  specs: CollectionItemDetailSpec[];
-  gallery: { id: string; src?: string; alt: string }[];
-};
-
-export const kindOfBlueItemDetail: CollectionItemDetail = {
+export const kindOfBlueItemDetailFixture: CollectionItemDetail = {
   id: "kind-of-blue",
   title: "Kind of Blue",
   subtitle: "Miles Davis · Columbia CL 1355 · six-eye pressing",
@@ -52,4 +35,8 @@ export const kindOfBlueItemDetail: CollectionItemDetail = {
     { id: "sleeve-back", alt: "Sleeve back" },
     { id: "label", alt: "Record label" },
   ],
+};
+
+export const itemDetailFixtures: Record<string, CollectionItemDetail> = {
+  "kind-of-blue": kindOfBlueItemDetailFixture,
 };
