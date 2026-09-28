@@ -40,7 +40,7 @@ packages/ui/src/atoms/button/
 └── button.stories.tsx
 ```
 
-Stories are grouped under `Atoms/` and `Molecules/` titles (e.g. `Atoms/Button`, `Molecules/Card`).
+Stories are grouped under `Atoms/`, `Molecules/`, `Organisms/`, and `Templates/` titles (e.g. `Atoms/Button`, `Molecules/Card`, `Templates/Collection`).
 
 ## Shared decorators
 

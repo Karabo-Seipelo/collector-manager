@@ -3,12 +3,17 @@ import { cn } from "../../lib/cn";
 export type HeroLayout =
   | "horizontal"
   | "horizontal-padded"
+  | "horizontal-compact"
   | "vertical"
   | "vertical-large"
   | "vertical-small";
 
 function isHorizontal(layout: HeroLayout) {
-  return layout === "horizontal" || layout === "horizontal-padded";
+  return (
+    layout === "horizontal" ||
+    layout === "horizontal-padded" ||
+    layout === "horizontal-compact"
+  );
 }
 
 function isVertical(layout: HeroLayout) {
@@ -23,10 +28,15 @@ export function getHeroClassName({
   className?: string;
 }) {
   return cn(
-    "w-full overflow-hidden border-b border-stroke-weak bg-fill-weaker font-body",
+    "w-full overflow-hidden bg-fill-weaker font-body",
+    layout === "horizontal-compact"
+      ? "border-t border-stroke-weak"
+      : "border-b border-stroke-weak",
     isHorizontal(layout) &&
       "flex flex-col gap-12 md:gap-16 lg:flex-row lg:items-center lg:gap-0",
     layout === "horizontal" && "lg:pl-[120px]",
+    layout === "horizontal-compact" &&
+      "gap-12 lg:gap-0 lg:pl-[120px]",
     layout === "horizontal-padded" &&
       "gap-12 px-8 py-16 md:gap-16 lg:gap-8 lg:px-[120px] lg:py-24",
     isVertical(layout) && "flex flex-col items-center gap-12 md:gap-0",
@@ -44,6 +54,8 @@ export function getHeroContentClassName(layout: HeroLayout) {
     layout === "horizontal" &&
       "px-8 pt-16 md:px-12 md:pt-20 lg:px-0 lg:pt-32 lg:pr-16",
     layout === "horizontal-padded" && "gap-10 lg:pr-8",
+    layout === "horizontal-compact" &&
+      "gap-8 px-8 py-16 lg:px-0 lg:py-32 lg:pr-16",
     isVertical(layout) &&
       "max-w-[790px] items-center px-8 pt-16 md:pt-24 pb-12 md:pb-16",
   );
@@ -66,8 +78,9 @@ export function getHeroTextBlockClassName(layout: HeroLayout) {
 export function getHeroTitleClassName(layout: HeroLayout) {
   return cn(
     "w-full font-semibold text-fg-strong",
-    "text-[36px] leading-[44px] tracking-[-0.5px]",
-    "md:text-[56px] md:leading-[64px] md:tracking-[-1px]",
+    layout === "horizontal-compact" && "text-heading-2",
+    layout !== "horizontal-compact" &&
+      "text-[36px] leading-[44px] tracking-[-0.5px] md:text-[56px] md:leading-[64px] md:tracking-[-1px]",
     isVertical(layout) && "text-center",
   );
 }
@@ -76,7 +89,7 @@ export function getHeroDescriptionClassName(layout: HeroLayout) {
   return cn(
     "w-full font-normal text-fg-weak",
     "text-small leading-6",
-    "md:text-heading-4 md:leading-7",
+    layout !== "horizontal-compact" && "md:text-heading-4 md:leading-7",
     isVertical(layout) && "text-center",
   );
 }
@@ -102,6 +115,8 @@ export function getHeroMediaWrapperClassName(layout: HeroLayout) {
       "h-[364px] md:h-[600px] lg:h-auto lg:min-h-[712px] lg:flex-1 lg:self-stretch",
     layout === "horizontal-padded" &&
       "h-[364px] md:min-h-[280px] lg:flex-1 lg:self-stretch",
+    layout === "horizontal-compact" &&
+      "h-[280px] md:h-[360px] lg:h-[488px] lg:flex-1 lg:self-stretch",
     isVertical(layout) && "w-full",
     layout === "vertical" && "h-[428px] md:h-[600px]",
     layout === "vertical-large" && "h-[428px] md:h-[600px]",

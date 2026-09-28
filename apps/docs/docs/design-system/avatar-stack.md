@@ -39,7 +39,7 @@ Size4 / Size5 in Figma are “how many faces”, not extra sizes — use `max` f
 
 ## Accessibility
 
-- Wrapper is `role="group"` named `{first person} and {n} others`
+- Wrapper is `role="group"` with an accessible name summarizing the first person and how many others are stacked
 - Individual avatars are `aria-hidden`; the group carries the name
 
 ## Related

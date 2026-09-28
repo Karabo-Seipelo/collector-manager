@@ -18,7 +18,7 @@ import { Rating } from "@repo/ui/molecules/rating";
 <Rating value={3.5} reviewCount={23} reviewsHref="#reviews" />
 ```
 
-Use `layout="vertical"` for stacked score and “From {count} reviews” copy.
+Use `layout="vertical"` for stacked score and review-count copy (for example, “From 23 reviews”).
 
 ## Props
 

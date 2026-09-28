@@ -6,13 +6,14 @@ sidebar_position: 4
 
 Guide for adding new components to `@repo/ui`.
 
-## 1. Choose atoms, molecules, or organisms
+## 1. Choose atoms, molecules, organisms, or templates
 
 | Layer     | Directory                       | Example |
 | --------- | ------------------------------- | ------- |
 | Atom      | `packages/ui/src/atoms/`        | Button, FeatherIcon, Input, Textarea, FieldHeader, FieldError, Avatar, Checkbox, LoadingBar |
 | Molecule  | `packages/ui/src/molecules/`    | TextField, TextArea, Select, ButtonGroup, SearchInput, Stepper, Breadcrumbs, Tabs, Rating, Pagination, ProgressIndicator, AvatarLabelled |
 | Organism  | `packages/ui/src/organisms/`    | Table, Footer, Hero, Modal, NavigationSide, NavigationHeader, DatePicker, Drawer, DropdownMenu, Testimonial, AvatarDropdown |
+| Template  | `packages/ui/src/templates/`    | Collection page wireframe (Storybook only; composes organisms) |
 
 See [Design system overview](../design-system/overview) for layer rules and dependency constraints.
 
@@ -61,12 +62,20 @@ Run `pnpm storybook` to preview. See [Storybook](./storybook).
 
 Add a page under `apps/docs/docs/design-system/` with props, usage, and accessibility notes.
 
+Docs pages are **MDX**. In prose (outside fenced code blocks):
+
+- Avoid raw `<768px` — MDX treats `<` as JSX; write “under 768px” instead.
+- Avoid bare `{propName}` — MDX treats `{…}` as JavaScript; describe props in words or keep examples in fenced `tsx` blocks.
+
+Run `pnpm --filter docs build` before merging doc changes.
+
 ## 6. Verify
 
 ```bash
 pnpm --filter @repo/ui check-types
 pnpm --filter @repo/ui lint
 pnpm storybook
+pnpm --filter docs build
 ```
 
 ## Turbo generator

@@ -77,6 +77,24 @@ describe("Hero", () => {
     expect(screen.getByTestId("hero")).toHaveClass("items-center");
   });
 
+  it("applies horizontal-compact layout and typography", () => {
+    render(
+      <Hero
+        data-testid="hero"
+        layout="horizontal-compact"
+        title={title}
+        description={description}
+        media={<HeroMedia />}
+      />,
+    );
+
+    const hero = screen.getByTestId("hero");
+    expect(hero).toHaveClass("border-t", "lg:pl-[120px]");
+    expect(hero).not.toHaveClass("border-b");
+    expect(screen.getByRole("heading", { level: 1 })).toHaveClass("text-heading-2");
+    expect(screen.getByText(description)).not.toHaveClass("md:text-heading-4");
+  });
+
   it("uses mobile typography scales on the title and description", () => {
     render(
       <Hero

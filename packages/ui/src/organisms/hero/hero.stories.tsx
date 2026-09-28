@@ -89,7 +89,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Marketing hero section with five layout variants. Compose optional email signup, CTAs, and social proof via slots.",
+          "Marketing hero section with six layout variants. Compose optional email signup, CTAs, and social proof via slots.",
       },
     },
   },
@@ -137,6 +137,25 @@ export const HorizontalPaddedMobile: Story = {
   decorators: [withWidth("375px")],
 };
 
+export const HorizontalCompact: Story = {
+  args: {
+    layout: "horizontal-compact",
+    title,
+    description,
+    media: <HeroMedia />,
+    actions: (
+      <Button variant="secondary" size="medium">
+        All features
+      </Button>
+    ),
+  },
+};
+
+export const HorizontalCompactMobile: Story = {
+  ...HorizontalCompact,
+  decorators: [withWidth("375px")],
+};
+
 export const Vertical: Story = {
   args: {
     ...sharedArgs,
@@ -173,6 +192,72 @@ export const WithEyebrowAndTag: Story = {
     eyebrow: "Label",
     tag: <Tag>Label</Tag>,
     emailSignup: undefined,
+  },
+};
+
+const landingPagePrimaryTitle = "Investing made easy for everyone";
+const landingPagePrimaryDescription =
+  "Start investing in minutes with as little or as much as you like. It's simple and affordable.";
+
+function LandingPagePrimaryActions() {
+  return (
+    <ButtonGroup layout="responsive" size="large" aria-label="Hero actions">
+      <Button>Sign up</Button>
+      <Button variant="secondary">Book a demo</Button>
+    </ButtonGroup>
+  );
+}
+
+function LandingPagePrimarySocialProof() {
+  return (
+    <div className="flex items-center gap-4">
+      <AvatarStack people={people} max={5} />
+      <Rating value={5} reviewCount={223} reviewsHref="#reviews" layout="vertical" />
+    </div>
+  );
+}
+
+const landingPageFeatureTitle =
+  "Everything you need to start investing in your future";
+const landingPageFeatureDescription =
+  "Track and manage all your investments in one place with intuitive tools, detailed analytics, and personalized insights to optimize your portfolio.";
+
+/** Matches Figma Practical UI landing page feature hero (8046:266340). */
+export const LandingPageFeature: Story = {
+  args: {
+    layout: "horizontal-compact",
+    title: landingPageFeatureTitle,
+    description: landingPageFeatureDescription,
+    media: (
+      <img
+        src="https://images.unsplash.com/photo-1556745750-682ef8718459?w=1200&h=800&fit=crop"
+        alt=""
+        className="block h-full w-full object-cover"
+      />
+    ),
+    actions: (
+      <Button variant="secondary" size="medium">
+        All features
+      </Button>
+    ),
+  },
+};
+
+/** Matches Figma Practical UI landing page hero (6861:312892). */
+export const LandingPagePrimary: Story = {
+  args: {
+    layout: "horizontal-padded",
+    title: landingPagePrimaryTitle,
+    description: landingPagePrimaryDescription,
+    media: (
+      <img
+        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&h=800&fit=crop"
+        alt=""
+        className="block h-full w-full object-cover"
+      />
+    ),
+    actions: <LandingPagePrimaryActions />,
+    socialProof: <LandingPagePrimarySocialProof />,
   },
 };
 

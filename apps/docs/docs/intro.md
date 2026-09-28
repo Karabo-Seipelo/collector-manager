@@ -18,7 +18,7 @@ This site documents the monorepo setup, shared packages, development workflows, 
 | `packages/eslint-config`      | Shared ESLint configurations                            |
 | `packages/typescript-config`  | Shared TypeScript configurations                        |
 
-The repo is a [Turborepo](https://turborepo.dev/) monorepo managed with [pnpm](https://pnpm.io/) workspaces. Shared UI components follow an **atoms / molecules** structure and are documented interactively in [Storybook](http://localhost:6006) (port 6006).
+The repo is a [Turborepo](https://turborepo.dev/) monorepo managed with [pnpm](https://pnpm.io/) workspaces. Shared UI components follow **atoms / molecules / organisms** (plus page **templates** in Storybook) and are documented interactively in [Storybook](http://localhost:6006) (port 6006).
 
 ## Documentation sections
 

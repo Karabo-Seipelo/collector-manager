@@ -35,6 +35,8 @@ packages/ui/src/
 │   ├── navigation-side/
 │   ├── navigation-header/
 │   └── …
+├── templates/       # Full-page layouts for Storybook (compose organisms)
+│   └── collection/
 ├── lib/             # Shared utilities (hooks, formatters, styles)
 │   ├── cn.ts
 │   ├── use-field-ids.ts
@@ -49,6 +51,7 @@ packages/ui/src/
 | **Atom** | One visual or interaction primitive | `lib` only | Button, FeatherIcon, FieldHeader, FieldError, Avatar |
 | **Molecule** | One UX pattern from atoms | atoms + `lib` | ButtonGroup, SearchInput, Stepper, Tabs, Rating, AvatarLabelled |
 | **Organism** | Section-scale UI or multi-pattern system | atoms + molecules + `lib` | Table, Footer, DatePicker, Drawer, DropdownMenu, Testimonial |
+| **Template** | Page-level wireframes in Storybook | atoms + molecules + organisms | Collection, ApplicationSidenav, Dashboard, LandingPage, Login1–4, and other `Templates/*` stories |
 
 **Dependency rules** (enforced by ESLint in `@repo/ui`):
 
@@ -68,7 +71,7 @@ Storybook is the **interactive catalog** for visual variants. Run it at http://l
 pnpm storybook
 ```
 
-Each component has a co-located `*.stories.tsx` file under `Atoms/`, `Molecules/`, or `Organisms/` in Storybook. Shared layout decorators (e.g. fixed-width wrappers) live in `.storybook/decorators.tsx`. Use Storybook to preview states; use these docs for API reference, import paths, and accessibility notes.
+Each component has a co-located `*.stories.tsx` file under `Atoms/`, `Molecules/`, `Organisms/`, or `Templates/` in Storybook. Shared layout decorators (e.g. fixed-width wrappers) live in `.storybook/decorators.tsx`. Use Storybook to preview states; use these docs for API reference, import paths, and accessibility notes.
 
 ## Styling
 

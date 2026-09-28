@@ -45,7 +45,7 @@ The component is responsive: it uses a single layout that adapts based on contai
 ## Layout
 
 - **Desktop (≥768px container or viewport):** Previous link, numbered pages with ellipsis, Next link, and optional `Showing X - Y of Z` summary
-- **Mobile (<768px):** Arrow icons (16px), `{currentPage} of {totalPages}` centered status, full-width row with 16px gaps — no page numbers or range summary
+- **Mobile (under 768px):** Arrow icons (16px), “current page of total pages” centered status, full-width row with 16px gaps — no page numbers or range summary
 - Selected page: 40×40 cell with `border-stroke-strong` and 8px radius
 - Unselected pages: no border until hover/focus
 - Control spacing: 8px between all desktop controls; 16px padding before Previous and after Next

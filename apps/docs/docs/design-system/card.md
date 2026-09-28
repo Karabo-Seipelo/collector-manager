@@ -87,7 +87,8 @@ mark swappable areas before real content is wired in.
 ## Storybook stories
 
 Stories cover vertical and horizontal layouts plus the Practical UI recipes:
-image, image + avatar, image + tags, image + text link, icon, and text only.
+image, image + avatar, image + tags, image + text link, icon, text only, and
+**CompactImage** (dense grid tile used on the Collection template).
 
 ## Related
 
