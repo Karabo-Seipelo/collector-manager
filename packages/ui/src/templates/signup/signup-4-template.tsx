@@ -2,10 +2,10 @@
 
 import { PracticalUiLogo } from "../shared/practical-ui-logo";
 import { AuthTestimonialPanel } from "../shared/auth-testimonial-panel";
-import { AuthPageGridDecoration } from "./shared/auth-page-grid";
-import { LoginAuthFormPanel } from "./shared/login-auth-form";
+import { AuthPageGridDecoration } from "../login/shared/auth-page-grid";
+import { SignupAuthFormPanel } from "./shared/signup-auth-form";
 
-export function Login4Template() {
+export function Signup4Template() {
   return (
     <div className="relative flex min-h-svh flex-col bg-fill-inverse md:flex-row">
       <div className="absolute left-8 top-8 z-20 hidden md:left-12 md:block">
@@ -17,7 +17,7 @@ export function Login4Template() {
           <PracticalUiLogo />
         </div>
 
-        <LoginAuthFormPanel className="relative z-10" />
+        <SignupAuthFormPanel className="relative z-10" legalVariant="split" />
       </section>
 
       <aside className="relative hidden min-h-[240px] flex-1 items-center justify-center overflow-hidden border-l border-stroke-weak bg-fill-weak px-8 md:flex md:px-32">
