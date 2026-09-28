@@ -1,0 +1,711 @@
+16:00:39.849 Chromatic CLI v18.9.5
+             https://www.chromatic.com/docs/cli 
+16:00:39.852 Authenticating with Chromatic 
+16:00:39.852     → Connecting to https://index.chromatic.com
+16:00:41.676 Authenticated with Chromatic
+16:00:41.677     → Using project token '****************c3b2'
+16:00:41.677 Retrieving git information
+16:00:41.678 execGitCommand: git --version
+16:00:41.710 execGitCommand result: 'git version 2.50.1 (Apple Git-155)'
+16:00:41.711 execGitCommand: git --no-pager log -n 1 --format="%H ## %ct ## %ae ## %an"
+16:00:41.732 execGitCommand result: '37ca59692fa464301333cd856abe25eda7a3da6f ## 1790603845 ## karabosouldier@gmail.com ## Karabo Seipelo'
+16:00:41.732 execGitCommand: git branch --show-current
+16:00:41.751 execGitCommand result: 'main'
+16:00:41.778 execGitCommand: git --no-pager log -n 1 --skip=1 --format="%H"
+16:00:41.793 execGitCommand result: 'd56dd30aedc148ca85c30c650cb8783bc4933ce3'
+16:00:41.793 git info: {"commit":{"commit":"37ca59692fa464301333cd856abe25eda7a3da6f","committedAt":1790603845000,"committerEmail":"karabosouldier@gmail.com","committerName":"Karabo Seipelo"},"branch":"main","fromCI":false}
+16:00:41.793 execGitCommand: git config user.email
+16:00:41.806 execGitCommand result: 'karabosouldier@gmail.com'
+16:00:41.806 execGitCommand: git diff --name-only --no-relative --diff-filter=d --cached
+16:00:41.807 execGitCommand: git diff --name-only --no-relative --diff-filter=d
+16:00:41.808 execGitCommand: git ls-files --others --exclude-standard
+16:00:41.822 execGitCommand result: ''
+16:00:41.824 execGitCommand result: 'apps/docs/docs/development/storybook.md
+             package.json
+             packages/ui/package.json
+             pnpm-lock.yaml'
+16:00:41.824 execGitCommand result: '.env.example
+             chromatic.log'
+16:00:41.825 execGitCommand: git hash-object --stdin-paths
+16:00:41.840 execGitCommand error: Command failed with exit code 128: git hash-object --stdin-paths
+             
+             67a5ae34895aac44f0c31e88f1a20a6ec327fd4a
+             d2aa469ecab3043e246b75b82ddf4605ce5b91ec
+             555343285e2906ad6dfaa1f98989af2debf3a147
+             3d5f4d204fba66d453a8f777907aa66cb60363c1
+             fatal: could not open '.env.example' for reading: No such file or directory
+16:00:41.840 Failed to retrieve uncommitted files hash {"shortMessage":"Command failed with exit code 128: git hash-object --stdin-paths","command":"git hash-object --stdin-paths","escapedCommand":"git hash-object --stdin-paths","cwd":"/Users/karabo/Documents/Personal/2026/collection-manager/packages/ui","durationMs":15.242875,"failed":true,"timedOut":false,"isCanceled":false,"isGracefullyCanceled":false,"isTerminated":false,"isMaxBuffer":false,"isForcefullyTerminated":false,"exitCode":128,"stdout":"67a5ae34895aac44f0c31e88f1a20a6ec327fd4a\nd2aa469ecab3043e246b75b82ddf4605ce5b91ec\n555343285e2906ad6dfaa1f98989af2debf3a147\n3d5f4d204fba66d453a8f777907aa66cb60363c1","stderr":"fatal: could not open '.env.example' for reading: No such file or directory","all":"67a5ae34895aac44f0c31e88f1a20a6ec327fd4a\nd2aa469ecab3043e246b75b82ddf4605ce5b91ec\n555343285e2906ad6dfaa1f98989af2debf3a147\n3d5f4d204fba66d453a8f777907aa66cb60363c1\nfatal: could not open '.env.example' for reading: No such file or directory","stdio":[null,"67a5ae34895aac44f0c31e88f1a20a6ec327fd4a\nd2aa469ecab3043e246b75b82ddf4605ce5b91ec\n555343285e2906ad6dfaa1f98989af2debf3a147\n3d5f4d204fba66d453a8f777907aa66cb60363c1","fatal: could not open '.env.example' for reading: No such file or directory"],"ipcOutput":[],"pipedFrom":[]}
+16:00:41.840 execGitCommand: git rev-parse --show-toplevel
+16:00:41.853 execGitCommand result: '/Users/karabo/Documents/Personal/2026/collection-manager'
+16:00:41.853 execGitCommandOneLine: git log --reverse --format=%cd --date=iso
+16:00:41.870 execGitCommandOneLine: git log --follow --reverse --format=%cd --date=iso -- .storybook
+16:00:41.889 execGitCommandCountLines: git shortlog -sn --all --since="6 months ago"
+16:00:41.906 execGitCommandCountLines: git ls-files -- "*page*.js" "*page*.jsx" "*page*.ts" "*page*.tsx" "*Page*.js" "*Page*.jsx" "*Page*.ts" "*Page*.tsx" "*screen*.js" "*screen*.jsx" "*screen*.ts" "*screen*.tsx" "*Screen*.js" "*Screen*.jsx" "*Screen*.ts" "*Screen*.tsx"
+16:00:41.920 execGitCommand: git config --get remote.origin.url
+16:00:41.933 execGitCommand result: 'https://github.com/Karabo-Seipelo/collector-manager.git'
+16:00:41.933 execGitCommandOneLine: git rev-parse --is-shallow-repository
+16:00:41.934 execGitCommandOneLine: git config remote.origin.partialclonefilter
+16:00:41.948 Git clone type: {"cloneDepth":"full","cloneFilter":"full","shallowBoundaryCommitCount":0,"firstShallowBoundaryCommits":[]}
+16:00:42.665 App firstBuild: %o, lastBuild: %o null null
+16:00:42.665 App has no builds, returning []
+16:00:42.666 Found parentCommits:
+16:00:43.452 Retrieved git information
+16:00:43.453     → Commit '37ca596' on branch 'main'; no ancestor found
+16:00:43.454 Collecting Storybook metadata
+16:00:43.458 {"storybookV6error":{"code":"MODULE_NOT_FOUND","requireStack":["/Users/karabo/Documents/Personal/2026/collection-manager/node_modules/.pnpm/chromatic@18.9.5/node_modules/chromatic/dist/projectFiles-BT9Q7utq.cjs","/Users/karabo/Documents/Personal/2026/collection-manager/node_modules/.pnpm/chromatic@18.9.5/node_modules/chromatic/dist/node-src-CwyfBNiI.cjs","/Users/karabo/Documents/Personal/2026/collection-manager/node_modules/.pnpm/chromatic@18.9.5/node_modules/chromatic/dist/main-CRUWOn_p.cjs","/Users/karabo/Documents/Personal/2026/collection-manager/node_modules/.pnpm/chromatic@18.9.5/node_modules/chromatic/dist/bin.cjs"]}}
+16:00:43.479 {"configDirectory":"/Users/karabo/Documents/Personal/2026/collection-manager/packages/ui/.storybook","mainConfig":{"code":"import type { StorybookConfig } from \"@storybook/react-vite\";\nimport tailwindcss from \"@tailwindcss/vite\";\n\nconst config: StorybookConfig = {\n  stories: [\"../src/**/*.stories.@(js|jsx|mjs|ts|tsx)\"],\n  staticDirs: [\"../public\"],\n  addons: [\n    \"msw-storybook-addon\",\n    \"@storybook/addon-a11y\",\n    \"@storybook/addon-docs\",\n    \"@storybook/addon-vitest\",\n  ],\n  framework: {\n    name: \"@storybook/react-vite\",\n    options: {},\n  },\n  async viteFinal(config) {\n    config.plugins = [...(config.plugins ?? []), tailwindcss()];\n    return config;\n  },\n};\n\nexport default config;\n"}}
+16:00:43.481 [{"status":"fulfilled","value":{"version":"10.5.9"}},{"status":"fulfilled","value":{"builder":{"name":"@storybook/react-vite","packageVersion":"10.5.9"}}},{"status":"fulfilled","value":{}}]
+16:00:43.482 Collected Storybook metadata
+16:00:43.482     → Build metadata gathered
+16:00:43.482 Initializing build
+16:00:43.483 Got environment:
+             {}
+16:00:44.299 [analytics] initializing Index analytics client
+16:00:44.300 Initialized build
+16:00:44.300     → Build 2 initialized
+16:00:44.302 Building your Storybook
+16:00:44.304 Build Storybook [skipped]
+16:00:44.304     → Using prebuilt Storybook at storybook-static
+16:00:44.305 Prepare your built Storybook
+16:00:44.305     → Validating Storybook files
+16:00:44.310 No stats file; skipping TurboSnap hash collection
+16:00:44.311     → Calculating file hashes
+16:00:44.323 Calculated file hashes in 12ms
+16:00:44.323 Preparation complete
+16:00:44.323     → Storybook files validated and prepared for upload
+16:00:44.324 Publishing your built Storybook
+16:00:44.324     → Starting publish
+16:00:44.325 Running uploadBuild batch 1 / 1
+16:00:45.692 Uploading assets/Color-6AOWCN3U-SeYr7kMJ.js (30.39 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.692 Uploading assets/DocsRenderer-JROSPFPF-CinTr2P-.js (192.51 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.692 Uploading assets/WithTooltip-7X4HQR7L-BMsbaij5.js (32.75 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.692 Uploading assets/a-love-supreme-CGCybqLm.png (191.33 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.692 Uploading assets/accordion-CPjvTa_b.js (2.83 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.692 Uploading assets/accordion.stories-ddDZuzkJ.js (3.38 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.692 Uploading assets/account-settings-page.stories-B9BNJ30Q.js (6.01 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.693 Uploading assets/air-jordan-BBzK2fQ0.png (79.29 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.693 Uploading assets/alert-DrA4zW4Z.js (5.69 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.693 Uploading assets/alert-global-CHxq1Jem.js (3.92 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.693 Uploading assets/alert-global.stories-DKAtalex.js (2.54 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.693 Uploading assets/alert.stories-Dpb31jC8.js (3.33 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.693 Uploading assets/applicants-table-Bmk2xaay.js (5.96 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.693 Uploading assets/application-shell-DQ46eyJ0.js (5.96 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.693 Uploading assets/application-shell.stories-CM7nQQTU.js (2.34 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.693 Uploading assets/application-sidenav-page.stories-_EXtRgVw.js (2.67 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.693 Uploading assets/application-table-page.stories-9Pxmt9Y4.js (4.33 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.693 Uploading assets/application-table-select-page.stories-CFGm2WDQ.js (5.41 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.693 Uploading assets/auth-card-template-AIfmT5AC.js (1.29 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.693 Uploading assets/auth-card-template.stories-DCJrQV0b.js (982 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/auth-centered-template-C8bszsC_.js (757 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/auth-centered-template.stories-DhRQ8wJy.js (849 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/auth-page-grid-CsHa7nNV.js (835 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/auth-split-hero-template-20Q3hGFA.js (1.69 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/auth-split-hero-template.stories-CM3XJCEE.js (937 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/auth-split-testimonial-template-DT7_TTrj.js (2.17 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/auth-split-testimonial-template.stories-nXY1u3T3.js (882 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/autocomplete.stories-WW4TU_a4.js (7.94 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/avatar-1-Bzi3Yeas.png (20.38 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/avatar-2-CZlEDy1q.png (9.48 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/avatar-3-XBnILvBN.png (10 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/avatar-4-DHWLaYQk.png (78.93 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/avatar-5-D0SpVhoT.png (63.87 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/avatar-6-CECRu_kr.png (81.62 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.694 Uploading assets/avatar-7-ChVlfikz.png (11.59 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/avatar-8-CEgkdjwn.png (67.78 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/avatar-YwB0qNPt.js (2.25 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/avatar-dropdown-C8nS0Btm.js (2.76 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/avatar-dropdown.stories-Dj6olwXz.js (4.97 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/avatar-labelled-Dz9RHHA8.js (1.76 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/avatar-labelled.stories-CGTJ3Twe.js (2.34 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/avatar-stack-C7u3WFGw.js (1.7 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/avatar-stack.stories-DkXEO6z_.js (2.35 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/avatar.stories-CfwKRzc_.js (3.09 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/axe-_9eNhXQJ.js (587.04 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/badge-DV3M2MVK.js (2.61 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/badge-count-CRDQob--.js (1.17 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/badge-count.stories-B9-ROCVZ.js (2.26 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/badge-dot-DgC_2HV8.js (2.39 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/badge-dot.stories-Fj85jqlr.js (2.96 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/badge.stories-Dx4xmDDP.js (4.34 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/blog-article-page.stories-DPR5hGHj.js (9.73 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.695 Uploading assets/blog-category-page.stories-BkVPRusg.js (4.21 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/blog-page.stories-BLg01qMf.js (5.02 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/blouse-B5T3V9rX.jpg (186.66 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/blue-train-BMbXsLse.png (178.89 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/breadcrumbs-yL_FCMxa.js (2.1 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/breadcrumbs.stories-FIZ-EWFF.js (3.75 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/browser-BV1lowAf.js (88.67 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/button-CdNPrNsv.js (4.05 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/button-group-CgCvw1ms.js (2.36 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/button-group.stories-BhpV01ml.js (3.93 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/button-icon-ZF8Jp9Lf.js (2.46 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/button-icon.stories-CgV2ivy-.js (5.47 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/button.stories-D9g91qVI.js (5.39 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/card-Dp3_I5lw.js (3.34 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/card.stories-D1Jr8dvj.js (6.99 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/charizard-Bx54jgbP.png (220.38 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/checkbox-BTUdqpkq.js (2.64 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/checkbox-group.stories-BKQNXKyh.js (4.49 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/checkbox.stories-Cj4JZZU-.js (4.39 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/chunk-242VQQM5-bHL6qIJq.js (241 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/chunk-5GYAEUAU-BGgO7bU4.js (5.14 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/chunk-DRQKCCAG-DvsmU7ha.js (3.39 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/chunk-IMSF75WX-CGYlPTyG.js (1.67 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/chunk-QQBDHPVZ-DC5n6Pix.js (325 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.696 Uploading assets/chunk-W22LQPXL-CrKRec6Q.js (22.75 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/cn-D-bRdWGo.js (27.67 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/code.stories-Cqd2f8W7.js (929 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/collection-add-item-page.stories-qS-QH_ra.js (9.79 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/collection-fetch-state-DR-T2HQC.js (2.73 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/collection-insights-page.stories-BGHm6Kyp.js (8.55 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/collection-item-detail-page.stories-BCCFCN17.js (10.07 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/collection-layout-template-lC0g6k0L.js (7.58 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/collection-layout-template.stories-DaVwi266.js (1.54 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/collection-page.stories-CNhFL19I.js (9.84 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/collection-search-filter-page.stories-BcwJL4M2.js (13.29 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/combobox.stories-D4z4AsCn.js (8.94 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/components-vmuJJlhF.js (567.02 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/cookieStore-D5mIPLC4.js (321.91 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/core-oe1uMHpy.jpg (80.3 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/dashboard-page.stories-CQfKHwxv.js (5.47 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/date-picker-BUXBD0A-.js (11.78 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/date-picker.stories-Dhmm9Dci.js (2.95 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/decorators-DRr0jOsX.js (253 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/destination-china-BR7r0aGj.jpg (206.38 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/destination-greece-DiUTxL87.jpg (172.78 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/destination-italy-DNI2UkQq.jpg (218.1 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/destination-japan-BN3sOVsa.jpg (117.61 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/destination-san-fran-CoaIHHoe.jpg (90.97 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/destination-utah-DplIG7Oq.jpg (229.23 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/destinations-data-DkLNzthY.js (2.93 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/divider-vcDcfPDk.js (707 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.697 Uploading assets/divider.stories-HxEuWOBz.js (1.67 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/drawer.stories-CCErrrrZ.js (10.13 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/dropdown-menu-BwtLq7r_.js (10.58 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/dropdown-menu.stories-CDM1mk8e.js (6.09 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/dune-CiWsJw6b.png (192.39 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/edit-personal-details-page.stories-6aDAA0U9.js (5.39 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/empty-state-C8nhGtEH.js (1.65 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/empty-state.stories-CEHvZuAI.js (2.94 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/evening-Brp59fI2.jpg (70.21 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/field-error-_fkmNo2g.js (799 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/file-upload-mdVwMFSX.js (6.4 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/file-upload.stories-B-SGatb6.js (5 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/flexibility-CKMg9hQI.jpg (50.45 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/footer-ZLxMQdl_.js (4.17 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/footer.stories-BrfDlX9o.js (3.88 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/forbidden-city-BgEPVsGC.jpg (316.41 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/formatter-L2YTDE3Q-CRGuSxAF.js (300 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/handbag-B_c8R9AF.jpg (81.56 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/header-background-SM9QR4UL.jpg (234.75 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/hero-1InR_wOD.jpg (238.46 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/hero-BUNARQ40.js (6.17 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/hero-DeEPrinp.jpg (123.19 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/hero.stories-BNfCzoJ5.js (10.26 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/home-Cxc3EBaG.js (3.66 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/http-DwSNQHmF.js (13.42 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/icon-DPd3pOJh.js (88.94 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/icon-container-DQMUfaLX.js (2.21 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.698 Uploading assets/icon-container.stories-89b3wVI0.js (2.87 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/icon.stories-hdce-HAM.js (2.54 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/iframe-DAirnOIo.css (65.62 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/iframe-DyhIVs66.js (45 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/iframe-fcejvGsm.js (1.16 MB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/image-placeholder-BzkOGWmm.js (784 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/image-placeholder.stories-BmFv6W2x.js (1.63 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/input-DyQPXUhJ.js (2.39 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/input.stories-Divu1ovv.js (1.19 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/isCommonAssetRequest-BUxo2oZX.js (470 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/jane-smith-avatar-vdcqc8nn.png (238.58 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/jsx-runtime-DeHZSEgm.js (435 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/kind-of-blue-iuf3toj-.png (138.26 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/landing-page-layout-template-Bd3kuWu8.js (717 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/landing-page-layout-template.stories-CGmUORHL.js (1.91 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/landing-page-page.stories-B5_lOrSZ.js (12.74 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/leica-m3-4hP3MSo8.png (113.11 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/loading-bar-BAlQGj2y.js (1.83 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/loading-bar.stories-XwiN5nLx.js (2.75 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/login-1-page.stories-BYHajm-f.js (1.65 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/login-2-page.stories-Cy9yOqzd.js (1.86 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/login-3-hero-C-_al0xh.png (880.25 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/login-3-page.stories-C0D5zqez.js (1.7 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/login-4-avatar-DETws-Aj.png (363.67 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/login-4-avatar-DpuZsrvZ.js (180 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/login-4-page.stories-BrG044r3.js (1.81 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/login-auth-form-DJdhW3gr.js (3.97 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/matchers-JIUQ3HVY-C789_MAK.js (28.79 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.699 Uploading assets/mock-photo-CNN51N04.js (633 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/modal.stories-B-f7_N3W.js (12.48 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/music-player-layout-template-xuPKhMuf.js (736 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/music-player-layout-template.stories-DsB5ukP-.js (1.75 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/music-player-page.stories-BPl746BE.js (14.01 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/navigation-header-BWHtRUeY.js (13.51 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/navigation-header.stories-CzOcPjGO.js (10.18 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/navigation-side-DYkVtr5U.js (10.03 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/navigation-side.stories-K6G9dfP0.js (6.34 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/neuromancer-BOinxvQ9.png (210.72 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/now-playing-cover-C24LPL1v.png (18 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/omega-seamaster-BhqZFGgb.png (147.11 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/pagination-D8QZwIDe.js (4.73 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/pagination.stories-DQQFDmxf.js (6.45 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/playlist-cover-_sOfli7h.png (185.93 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/polaroid-sx70-DxvGHAHx.png (137.43 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/practical-travel-template-DctinQ8w.js (7.13 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/practical-travel-template.stories-DQQmB8Jh.js (1.3 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/practical-ui-logo-B6jtUwf-.svg (8.39 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/practical-ui-logo-DMNFcAc1.js (478 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/preload-helper-wdlQj8DP.js (1.32 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/progress-indicator.stories-Dhw0u6vj.js (5.24 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/radio-B9ky6DCm.js (2.09 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/radio-group.stories-CBzjWEkn.js (4.84 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/radio.stories-B29_XmQ1.js (3.45 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.700 Uploading assets/rating-CjwfFnVs.js (6.41 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/rating.stories-DsgkvRxI.js (3.87 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/react-18-BKBGvTaf.js (179.1 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/react-dom-mI7bSfSt.js (3.59 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/react-y4kAdwTV.js (587 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/rolldown-runtime-DkW27tQK.js (1.2 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/search-input-LTVmsGZm.js (6.02 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/search-input.stories-CTkvq-yB.js (3.91 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/segmented-control-DMNg-kEF.js (4.18 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/segmented-control.stories-Cg6zSF0L.js (2.82 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/select-BvjEFjCd.js (2.38 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/select.stories-frT0LcwL.js (2.5 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/shop-layout-template-bx55k6x6.js (711 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/shop-layout-template.stories-BH0jPEP4.js (1.89 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/shop-page.stories-BBlU87Am.js (12.53 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/signup-1-page.stories-BA2vBm10.js (1.66 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/signup-2-page.stories-BFn7SA8g.js (1.76 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.701 Uploading assets/signup-3-page.stories-Dg_9Evzv.js (1.74 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/signup-4-page.stories-TnaB1AqF.js (1.67 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/signup-auth-form-CR_6Xxi3.js (3.54 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/slider-2Vz19qoM.js (3.87 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/slider.stories-CSH9JoaY.js (3.03 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/slot-BzjKhqWE.js (881 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/slot.stories-Cdet9seY.js (1.58 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/sneaker-DtWPQrBI.jpg (62.29 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/stepper.stories-BaU8mGbK.js (7.72 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/summary-list-CIVq0KJg.js (2.3 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/summary-list.stories-1qQFRATF.js (4.1 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/syntaxhighlighter-QEQV7K2Y-DG15jnGS.js (75.93 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/table-nVh1ik_2.js (8 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/table.stories-CoD1QnIU.js (6.02 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/tabs-DpSY0EwW.js (4.72 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/tabs.stories-B_el5Gas.js (6.15 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/tag-zQjiJOOv.js (1.79 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/tag.stories-BLvMkZGU.js (2.77 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/template-user-menu-zXgFOMJx.js (2.72 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.702 Uploading assets/testimonial-1pbgkwKR.js (1.8 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/testimonial.stories-DsUuAs4d.js (1.86 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/text-area-36skMK8W.js (2.22 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/text-area.stories-C55Fp4sX.js (4.05 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/text-field-BzBhVttS.js (1.35 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/text-field-styles-RALA_j2z.js (1.49 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/text-field.stories-9QF2urlr.js (5.99 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/text-link-srw0fLS-.js (2.92 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/text-link.stories-CS4v5c7Q.js (4.32 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/textarea-DKS1eS3S.js (1.83 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/textarea.stories-CwVZVP3b.js (913 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/theming-CELr1Y6p.js (55.42 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/toggle-D9ajHijj.js (2.35 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/toggle.stories-DeD6ee3B.js (3.25 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/tooltip.stories-CTewqnym.js (13.42 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/track-1-SdAOxYqS.png (36.85 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/track-10-Bt_SNLC3.png (205.87 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/track-2-CJeqGuSD.png (40 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/track-3-_XO9ynCk.png (29.02 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/track-4-CkO3XcyV.png (129.36 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.703 Uploading assets/track-5-B-Ceogdz.png (17.03 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading assets/track-6-CJ9o9XAX.png (255.4 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading assets/track-7-BgTSu4LT.png (39.56 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading assets/track-8-BGnEHJJt.png (47.49 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading assets/track-9-DPz_kyED.png (113.48 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading assets/typography.stories-CHCAkjSn.js (7.33 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading assets/use-controllable-boolean-BaMBHjbL.js (318 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading assets/use-controllable-number-BXJ3gWkG.js (317 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading assets/use-controllable-string-C1bubxuF.js (318 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading assets/use-field-ids-BTjUTXzq.js (1.78 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading assets/use-scroll-lock-CPCdlEcc.js (1.18 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading assets/watch-C3l6_pKR.jpg (92.44 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading assets/workout-layout-template-nv0UYKCU.js (944 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading assets/workout-layout-template.stories-6DO2mia1.js (2.61 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading assets/workout-page.stories-DS411Quo.js (18.67 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading favicon-wrapper.svg (5.8 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading favicon.svg (2.16 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading iframe.html (19.51 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading index.html (3.47 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading index.json (163.98 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading mockServiceWorker.js (9.67 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.704 Uploading nunito-sans-bold-italic.woff2 (49.46 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading nunito-sans-bold.woff2 (47.14 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading nunito-sans-italic.woff2 (49.62 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading nunito-sans-regular.woff2 (47.07 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading project.json (1.33 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading sb-addons/a11y-1/manager-bundle.js (66.57 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading sb-addons/docs-2/manager-bundle.js (66.06 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading sb-addons/storybook-core-server-presets-0/common-manager-bundle.js (473.03 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading sb-addons/vitest-3/manager-bundle.js (28.92 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading sb-common-assets/favicon-wrapper.svg (5.8 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading sb-common-assets/favicon.svg (2.16 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading sb-common-assets/nunito-sans-bold-italic.woff2 (49.46 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading sb-common-assets/nunito-sans-bold.woff2 (47.14 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading sb-common-assets/nunito-sans-italic.woff2 (49.62 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading sb-common-assets/nunito-sans-regular.woff2 (47.07 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading sb-manager/globals-runtime.js (3.29 MB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading sb-manager/globals.js (1.02 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading sb-manager/manager-stores.js (654 B) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading sb-manager/runtime.js (1.24 MB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.705 Uploading vite-inject-mocker-entry.js (27.85 kB) to https://chromatic-builds.s3.us-west-2.amazonaws.com/
+16:00:45.721     → 0%
+16:00:48.511 Uploaded assets/accordion-CPjvTa_b.js (2.83 kB)
+16:00:48.515 Uploaded assets/accordion.stories-ddDZuzkJ.js (3.38 kB)
+16:00:48.518 Uploaded assets/alert-DrA4zW4Z.js (5.69 kB)
+16:00:48.520     → 3%
+16:00:49.102 Uploaded assets/air-jordan-BBzK2fQ0.png (79.29 kB)
+16:00:50.901 Uploaded assets/WithTooltip-7X4HQR7L-BMsbaij5.js (32.75 kB)
+16:00:50.974 Uploaded assets/Color-6AOWCN3U-SeYr7kMJ.js (30.39 kB)
+16:00:50.978 Uploaded assets/account-settings-page.stories-B9BNJ30Q.js (6.01 kB)
+16:00:51.217 Uploaded assets/alert-global.stories-DKAtalex.js (2.54 kB)
+16:00:51.312 Uploaded assets/applicants-table-Bmk2xaay.js (5.96 kB)
+16:00:51.319 Uploaded assets/alert.stories-Dpb31jC8.js (3.33 kB)
+16:00:51.834 Uploaded assets/application-shell-DQ46eyJ0.js (5.96 kB)
+16:00:52.025 Uploaded assets/a-love-supreme-CGCybqLm.png (191.33 kB)
+16:00:53.214 Uploaded assets/alert-global-CHxq1Jem.js (3.92 kB)
+16:00:53.616 Uploaded assets/application-shell.stories-CM7nQQTU.js (2.34 kB)
+16:00:53.752 Uploaded assets/application-table-page.stories-9Pxmt9Y4.js (4.33 kB)
+16:00:53.756 Uploaded assets/application-sidenav-page.stories-_EXtRgVw.js (2.67 kB)
+16:00:54.343 Uploaded assets/auth-card-template-AIfmT5AC.js (1.29 kB)
+16:00:54.353 Uploaded assets/auth-card-template.stories-DCJrQV0b.js (982 B)
+16:00:54.358 Uploaded assets/DocsRenderer-JROSPFPF-CinTr2P-.js (192.51 kB)
+16:00:54.844 Uploaded assets/application-table-select-page.stories-CFGm2WDQ.js (5.41 kB)
+16:00:54.848     → 4%
+16:00:55.155 Uploaded assets/auth-centered-template-C8bszsC_.js (757 B)
+16:00:56.206 Uploaded assets/auth-page-grid-CsHa7nNV.js (835 B)
+16:00:56.389 Uploaded assets/auth-split-hero-template-20Q3hGFA.js (1.69 kB)
+16:00:56.393     → 5%
+16:00:56.553 Uploaded assets/auth-split-testimonial-template-DT7_TTrj.js (2.17 kB)
+16:00:56.727 Uploaded assets/auth-split-hero-template.stories-CM3XJCEE.js (937 B)
+16:00:57.080 Uploaded assets/autocomplete.stories-WW4TU_a4.js (7.94 kB)
+16:00:57.406 Uploaded assets/auth-split-testimonial-template.stories-nXY1u3T3.js (882 B)
+16:00:57.411 Uploaded assets/avatar-1-Bzi3Yeas.png (20.38 kB)
+16:00:57.602 Uploaded assets/avatar-2-CZlEDy1q.png (9.48 kB)
+16:00:57.609     → 6%
+16:00:57.930 Uploaded assets/avatar-3-XBnILvBN.png (10 kB)
+16:00:59.530 Uploaded assets/avatar-7-ChVlfikz.png (11.59 kB)
+16:00:59.580 Uploaded assets/avatar-4-DHWLaYQk.png (78.93 kB)
+16:00:59.714 Uploaded assets/avatar-5-D0SpVhoT.png (63.87 kB)
+16:00:59.816 Uploaded assets/auth-centered-template.stories-DhRQ8wJy.js (849 B)
+16:00:59.930 Uploaded assets/avatar-6-CECRu_kr.png (81.62 kB)
+16:01:00.115 Uploaded assets/avatar-dropdown-C8nS0Btm.js (2.76 kB)
+16:01:00.119     → 7%
+16:01:00.121 Uploaded assets/avatar-YwB0qNPt.js (2.25 kB)
+16:01:00.345 Uploaded assets/avatar-dropdown.stories-Dj6olwXz.js (4.97 kB)
+16:01:00.432 Uploaded assets/avatar-8-CEgkdjwn.png (67.78 kB)
+16:01:00.639 Uploaded assets/avatar-labelled-Dz9RHHA8.js (1.76 kB)
+16:01:02.220 Uploaded assets/avatar-labelled.stories-CGTJ3Twe.js (2.34 kB)
+16:01:02.320 Uploaded assets/avatar-stack-C7u3WFGw.js (1.7 kB)
+16:01:02.420 Uploaded assets/avatar-stack.stories-DkXEO6z_.js (2.35 kB)
+16:01:02.569 Uploaded assets/avatar.stories-CfwKRzc_.js (3.09 kB)
+16:01:02.844 Uploaded assets/badge-DV3M2MVK.js (2.61 kB)
+16:01:02.850     → 8%
+16:01:03.063 Uploaded assets/badge-count.stories-B9-ROCVZ.js (2.26 kB)
+16:01:03.068     → 9%
+16:01:03.162 Uploaded assets/badge-count-CRDQob--.js (1.17 kB)
+16:01:03.173 Uploaded assets/badge-dot-DgC_2HV8.js (2.39 kB)
+16:01:03.175     → 10%
+16:01:03.370 Uploaded assets/badge-dot.stories-Fj85jqlr.js (2.96 kB)
+16:01:03.374     → 11%
+16:01:04.189     → 12%
+16:01:04.941 Uploaded assets/badge.stories-Dx4xmDDP.js (4.34 kB)
+16:01:05.065 Uploaded assets/blog-article-page.stories-DPR5hGHj.js (9.73 kB)
+16:01:05.124 Uploaded assets/blog-category-page.stories-BkVPRusg.js (4.21 kB)
+16:01:05.375 Uploaded assets/blog-page.stories-BLg01qMf.js (5.02 kB)
+16:01:05.467 Uploaded assets/axe-_9eNhXQJ.js (587.04 kB)
+16:01:05.889 Uploaded assets/breadcrumbs-yL_FCMxa.js (2.1 kB)
+16:01:05.896 Uploaded assets/breadcrumbs.stories-FIZ-EWFF.js (3.75 kB)
+16:01:06.732 Uploaded assets/browser-BV1lowAf.js (88.67 kB)
+16:01:06.736 Uploaded assets/blue-train-BMbXsLse.png (178.89 kB)
+16:01:06.836 Uploaded assets/blouse-B5T3V9rX.jpg (186.66 kB)
+16:01:06.841     → 13%
+16:01:07.703 Uploaded assets/button-CdNPrNsv.js (4.05 kB)
+16:01:07.779 Uploaded assets/button-group-CgCvw1ms.js (2.36 kB)
+16:01:07.914 Uploaded assets/button-group.stories-BhpV01ml.js (3.93 kB)
+16:01:08.090 Uploaded assets/button-icon-ZF8Jp9Lf.js (2.46 kB)
+16:01:08.250 Uploaded assets/button-icon.stories-CgV2ivy-.js (5.47 kB)
+16:01:08.611 Uploaded assets/card-Dp3_I5lw.js (3.34 kB)
+16:01:08.626 Uploaded assets/button.stories-D9g91qVI.js (5.39 kB)
+16:01:09.141     → 14%
+16:01:09.474 Uploaded assets/card.stories-D1Jr8dvj.js (6.99 kB)
+16:01:09.545 Uploaded assets/checkbox-BTUdqpkq.js (2.64 kB)
+16:01:10.408 Uploaded assets/checkbox-group.stories-BKQNXKyh.js (4.49 kB)
+16:01:10.528 Uploaded assets/checkbox.stories-Cj4JZZU-.js (4.39 kB)
+16:01:10.713 Uploaded assets/charizard-Bx54jgbP.png (220.38 kB)
+16:01:10.834 Uploaded assets/chunk-5GYAEUAU-BGgO7bU4.js (5.14 kB)
+16:01:10.904 Uploaded assets/chunk-242VQQM5-bHL6qIJq.js (241 B)
+16:01:11.053 Uploaded assets/chunk-DRQKCCAG-DvsmU7ha.js (3.39 kB)
+16:01:11.374 Uploaded assets/chunk-IMSF75WX-CGYlPTyG.js (1.67 kB)
+16:01:11.649 Uploaded assets/chunk-QQBDHPVZ-DC5n6Pix.js (325 B)
+16:01:12.466 Uploaded assets/chunk-W22LQPXL-CrKRec6Q.js (22.75 kB)
+16:01:12.609 Uploaded assets/cn-D-bRdWGo.js (27.67 kB)
+16:01:13.240 Uploaded assets/collection-add-item-page.stories-qS-QH_ra.js (9.79 kB)
+16:01:13.246     → 15%
+16:01:13.436 Uploaded assets/code.stories-Cqd2f8W7.js (929 B)
+16:01:13.440     → 16%
+16:01:13.499 Uploaded assets/collection-fetch-state-DR-T2HQC.js (2.73 kB)
+16:01:13.566 Uploaded assets/collection-insights-page.stories-BGHm6Kyp.js (8.55 kB)
+16:01:13.567     → 17%
+16:01:13.668 Uploaded assets/collection-item-detail-page.stories-BCCFCN17.js (10.07 kB)
+16:01:13.859 Uploaded assets/collection-layout-template-lC0g6k0L.js (7.58 kB)
+16:01:14.098 Uploaded assets/collection-layout-template.stories-DaVwi266.js (1.54 kB)
+16:01:14.383 Uploaded assets/collection-page.stories-CNhFL19I.js (9.84 kB)
+16:01:15.327 Uploaded assets/combobox.stories-D4z4AsCn.js (8.94 kB)
+16:01:15.332     → 19%
+16:01:15.527 Uploaded assets/collection-search-filter-page.stories-BcwJL4M2.js (13.29 kB)
+16:01:15.531     → 20%
+16:01:15.806     → 21%
+16:01:15.957     → 22%
+16:01:16.305 Uploaded assets/dashboard-page.stories-CQfKHwxv.js (5.47 kB)
+16:01:16.477 Uploaded assets/date-picker-BUXBD0A-.js (11.78 kB)
+16:01:16.483     → 23%
+16:01:16.604 Uploaded assets/date-picker.stories-Dhmm9Dci.js (2.95 kB)
+16:01:16.608     → 24%
+16:01:16.792     → 25%
+16:01:16.890 Uploaded assets/core-oe1uMHpy.jpg (80.3 kB)
+16:01:16.894     → 26%
+16:01:17.190 Uploaded assets/decorators-DRr0jOsX.js (253 B)
+16:01:17.429 Uploaded assets/cookieStore-D5mIPLC4.js (321.91 kB)
+16:01:18.373 Uploaded assets/destination-china-BR7r0aGj.jpg (206.38 kB)
+16:01:19.278 Uploaded assets/destination-greece-DiUTxL87.jpg (172.78 kB)
+16:01:19.494 Uploaded assets/destination-italy-DNI2UkQq.jpg (218.1 kB)
+16:01:19.624 Uploaded assets/destinations-data-DkLNzthY.js (2.93 kB)
+16:01:19.627     → 27%
+16:01:19.810 Uploaded assets/destination-san-fran-CoaIHHoe.jpg (90.97 kB)
+16:01:19.949 Uploaded assets/destination-japan-BN3sOVsa.jpg (117.61 kB)
+16:01:20.149 Uploaded assets/divider.stories-HxEuWOBz.js (1.67 kB)
+16:01:20.251 Uploaded assets/divider-vcDcfPDk.js (707 B)
+16:01:20.257     → 28%
+16:01:20.552 Uploaded assets/destination-utah-DplIG7Oq.jpg (229.23 kB)
+16:01:21.096 Uploaded assets/drawer.stories-CCErrrrZ.js (10.13 kB)
+16:01:22.072 Uploaded assets/dropdown-menu-BwtLq7r_.js (10.58 kB)
+16:01:22.247 Uploaded assets/dropdown-menu.stories-CDM1mk8e.js (6.09 kB)
+16:01:22.572 Uploaded assets/edit-personal-details-page.stories-6aDAA0U9.js (5.39 kB)
+16:01:22.661 Uploaded assets/empty-state-C8nhGtEH.js (1.65 kB)
+16:01:22.890 Uploaded assets/empty-state.stories-CEHvZuAI.js (2.94 kB)
+16:01:22.894     → 29%
+16:01:23.607 Uploaded assets/field-error-_fkmNo2g.js (799 B)
+16:01:23.613 Uploaded assets/evening-Brp59fI2.jpg (70.21 kB)
+16:01:23.818 Uploaded assets/file-upload-mdVwMFSX.js (6.4 kB)
+16:01:23.824     → 30%
+16:01:24.769 Uploaded assets/file-upload.stories-B-SGatb6.js (5 kB)
+16:01:24.774     → 31%
+16:01:25.268     → 32%
+16:01:25.299 Uploaded assets/footer-ZLxMQdl_.js (4.17 kB)
+16:01:25.404 Uploaded assets/footer.stories-BrfDlX9o.js (3.88 kB)
+16:01:25.409     → 33%
+16:01:25.572     → 34%
+16:01:25.583 Uploaded assets/flexibility-CKMg9hQI.jpg (50.45 kB)
+16:01:26.633 Uploaded assets/formatter-L2YTDE3Q-CRGuSxAF.js (300 B)
+16:01:26.848 Uploaded assets/forbidden-city-BgEPVsGC.jpg (316.41 kB)
+16:01:26.972 Uploaded assets/handbag-B_c8R9AF.jpg (81.56 kB)
+16:01:27.149     → 35%
+16:01:27.827 Uploaded assets/header-background-SM9QR4UL.jpg (234.75 kB)
+16:01:28.016 Uploaded assets/hero-BUNARQ40.js (6.17 kB)
+16:01:28.376 Uploaded assets/hero.stories-BNfCzoJ5.js (10.26 kB)
+16:01:29.400 Uploaded assets/home-Cxc3EBaG.js (3.66 kB)
+16:01:29.403 Uploaded assets/hero-1InR_wOD.jpg (238.46 kB)
+16:01:29.903 Uploaded assets/http-DwSNQHmF.js (13.42 kB)
+16:01:30.307 Uploaded assets/icon-DPd3pOJh.js (88.94 kB)
+16:01:30.311     → 36%
+16:01:30.635 Uploaded assets/icon-container-DQMUfaLX.js (2.21 kB)
+16:01:30.752 Uploaded assets/icon-container.stories-89b3wVI0.js (2.87 kB)
+16:01:31.163 Uploaded assets/icon.stories-hdce-HAM.js (2.54 kB)
+16:01:31.686 Uploaded assets/hero-DeEPrinp.jpg (123.19 kB)
+16:01:32.288     → 37%
+16:01:32.400 Uploaded assets/iframe-DyhIVs66.js (45 B)
+16:01:32.590     → 38%
+16:01:32.730 Uploaded assets/iframe-DAirnOIo.css (65.62 kB)
+16:01:33.254     → 39%
+16:01:33.354 Uploaded assets/image-placeholder-BzkOGWmm.js (784 B)
+16:01:33.379 Uploaded assets/image-placeholder.stories-BmFv6W2x.js (1.63 kB)
+16:01:33.455 Uploaded assets/input-DyQPXUhJ.js (2.39 kB)
+16:01:33.561     → 40%
+16:01:33.867     → 42%
+16:01:34.302 Uploaded assets/input.stories-Divu1ovv.js (1.19 kB)
+16:01:34.306     → 44%
+16:01:34.574 Uploaded assets/iframe-fcejvGsm.js (1.16 MB)
+16:01:34.709 Uploaded assets/isCommonAssetRequest-BUxo2oZX.js (470 B)
+16:01:34.714     → 45%
+16:01:35.761 Uploaded assets/jsx-runtime-DeHZSEgm.js (435 B)
+16:01:36.208 Uploaded assets/landing-page-layout-template.stories-CGmUORHL.js (1.91 kB)
+16:01:37.043 Uploaded assets/kind-of-blue-iuf3toj-.png (138.26 kB)
+16:01:37.449 Uploaded assets/loading-bar-BAlQGj2y.js (1.83 kB)
+16:01:37.977 Uploaded assets/landing-page-layout-template-Bd3kuWu8.js (717 B)
+16:01:37.982     → 46%
+16:01:38.299 Uploaded assets/leica-m3-4hP3MSo8.png (113.11 kB)
+16:01:38.383 Uploaded assets/landing-page-page.stories-B5_lOrSZ.js (12.74 kB)
+16:01:38.497 Uploaded assets/loading-bar.stories-XwiN5nLx.js (2.75 kB)
+16:01:38.501     → 47%
+16:01:38.929 Uploaded assets/login-1-page.stories-BYHajm-f.js (1.65 kB)
+16:01:39.731 Uploaded assets/login-2-page.stories-Cy9yOqzd.js (1.86 kB)
+16:01:39.850     → 48%
+16:01:40.668     → 49%
+16:01:40.701 Uploaded assets/login-3-page.stories-C0D5zqez.js (1.7 kB)
+16:01:41.117     → 50%
+16:01:41.248 Uploaded assets/login-4-page.stories-BrG044r3.js (1.81 kB)
+16:01:41.437 Uploaded assets/login-4-avatar-DpuZsrvZ.js (180 B)
+16:01:41.642 Uploaded assets/login-auth-form-DJdhW3gr.js (3.97 kB)
+16:01:42.015     → 51%
+16:01:42.313     → 52%
+16:01:42.798 Uploaded assets/matchers-JIUQ3HVY-C789_MAK.js (28.79 kB)
+16:01:42.803     → 53%
+16:01:42.943 Uploaded assets/login-4-avatar-DETws-Aj.png (363.67 kB)
+16:01:43.364 Uploaded assets/login-3-hero-C-_al0xh.png (880.25 kB)
+16:01:43.743 Uploaded assets/mock-photo-CNN51N04.js (633 B)
+16:01:44.416 Uploaded assets/music-player-layout-template.stories-DsB5ukP-.js (1.75 kB)
+16:01:44.469 Uploaded assets/music-player-layout-template-xuPKhMuf.js (736 B)
+16:01:45.837 Uploaded assets/music-player-page.stories-BPl746BE.js (14.01 kB)
+16:01:45.843     → 54%
+16:01:45.987 Uploaded assets/navigation-header-BWHtRUeY.js (13.51 kB)
+16:01:46.057 Uploaded assets/navigation-header.stories-CzOcPjGO.js (10.18 kB)
+16:01:46.469 Uploaded assets/navigation-side-DYkVtr5U.js (10.03 kB)
+16:01:46.472     → 55%
+16:01:47.112 Uploaded assets/navigation-side.stories-K6G9dfP0.js (6.34 kB)
+16:01:48.600 Uploaded assets/pagination-D8QZwIDe.js (4.73 kB)
+16:01:48.604     → 56%
+16:01:48.632 Uploaded assets/now-playing-cover-C24LPL1v.png (18 kB)
+16:01:48.795 Uploaded assets/neuromancer-BOinxvQ9.png (210.72 kB)
+16:01:48.799     → 57%
+16:01:48.983 Uploaded assets/pagination.stories-DQQFDmxf.js (6.45 kB)
+16:01:49.387 Uploaded assets/omega-seamaster-BhqZFGgb.png (147.11 kB)
+16:01:51.098 Uploaded assets/practical-travel-template-DctinQ8w.js (7.13 kB)
+16:01:51.493 Uploaded assets/practical-ui-logo-B6jtUwf-.svg (8.39 kB)
+16:01:51.603 Uploaded assets/practical-travel-template.stories-DQQmB8Jh.js (1.3 kB)
+16:01:52.019 Uploaded assets/polaroid-sx70-DxvGHAHx.png (137.43 kB)
+16:01:52.129 Uploaded assets/practical-ui-logo-DMNFcAc1.js (478 B)
+16:01:52.311 Uploaded assets/playlist-cover-_sOfli7h.png (185.93 kB)
+16:01:53.872 Uploaded assets/preload-helper-wdlQj8DP.js (1.32 kB)
+16:01:54.031 Uploaded assets/progress-indicator.stories-Dhw0u6vj.js (5.24 kB)
+16:01:54.038     → 58%
+16:01:54.101 Uploaded assets/radio-B9ky6DCm.js (2.09 kB)
+16:01:54.601 Uploaded assets/radio-group.stories-CBzjWEkn.js (4.84 kB)
+16:01:54.628 Uploaded assets/radio.stories-B29_XmQ1.js (3.45 kB)
+16:01:54.768 Uploaded assets/rating-CjwfFnVs.js (6.41 kB)
+16:01:56.338 Uploaded assets/rating.stories-DsgkvRxI.js (3.87 kB)
+16:01:56.680 Uploaded assets/react-dom-mI7bSfSt.js (3.59 kB)
+16:01:57.373 Uploaded assets/search-input-LTVmsGZm.js (6.02 kB)
+16:01:57.378 Uploaded assets/react-y4kAdwTV.js (587 B)
+16:01:57.381 Uploaded assets/rolldown-runtime-DkW27tQK.js (1.2 kB)
+16:01:57.487 Uploaded assets/react-18-BKBGvTaf.js (179.1 kB)
+16:01:58.830 Uploaded assets/search-input.stories-CTkvq-yB.js (3.91 kB)
+16:01:59.151 Uploaded assets/segmented-control-DMNg-kEF.js (4.18 kB)
+16:01:59.876 Uploaded assets/select-BvjEFjCd.js (2.38 kB)
+16:01:59.881 Uploaded assets/segmented-control.stories-Cg6zSF0L.js (2.82 kB)
+16:01:59.886 Uploaded assets/select.stories-frT0LcwL.js (2.5 kB)
+16:02:00.309 Uploaded assets/shop-layout-template-bx55k6x6.js (711 B)
+16:02:01.377 Uploaded assets/shop-layout-template.stories-BH0jPEP4.js (1.89 kB)
+16:02:01.673 Uploaded assets/shop-page.stories-BBlU87Am.js (12.53 kB)
+16:02:01.677     → 59%
+16:02:02.420 Uploaded assets/signup-1-page.stories-BA2vBm10.js (1.66 kB)
+16:02:02.425 Uploaded assets/signup-3-page.stories-Dg_9Evzv.js (1.74 kB)
+16:02:02.437 Uploaded assets/signup-2-page.stories-BFn7SA8g.js (1.76 kB)
+16:02:02.767 Uploaded assets/signup-4-page.stories-TnaB1AqF.js (1.67 kB)
+16:02:04.094 Uploaded assets/signup-auth-form-CR_6Xxi3.js (3.54 kB)
+16:02:04.384 Uploaded assets/slider-2Vz19qoM.js (3.87 kB)
+16:02:05.126 Uploaded assets/slot.stories-Cdet9seY.js (1.58 kB)
+16:02:05.131 Uploaded assets/slider.stories-CSH9JoaY.js (3.03 kB)
+16:02:05.389 Uploaded assets/slot-BzjKhqWE.js (881 B)
+16:02:06.091 Uploaded assets/sneaker-DtWPQrBI.jpg (62.29 kB)
+16:02:06.095     → 60%
+16:02:06.812 Uploaded assets/stepper.stories-BaU8mGbK.js (7.72 kB)
+16:02:07.145 Uploaded assets/summary-list-CIVq0KJg.js (2.3 kB)
+16:02:07.866 Uploaded assets/summary-list.stories-1qQFRATF.js (4.1 kB)
+16:02:08.184 Uploaded assets/table-nVh1ik_2.js (8 kB)
+16:02:08.507 Uploaded assets/syntaxhighlighter-QEQV7K2Y-DG15jnGS.js (75.93 kB)
+16:02:08.804 Uploaded assets/table.stories-CoD1QnIU.js (6.02 kB)
+16:02:09.847 Uploaded assets/tabs-DpSY0EwW.js (4.72 kB)
+16:02:09.851 Uploaded assets/tabs.stories-B_el5Gas.js (6.15 kB)
+16:02:10.634 Uploaded assets/tag-zQjiJOOv.js (1.79 kB)
+16:02:10.881 Uploaded assets/tag.stories-BLvMkZGU.js (2.77 kB)
+16:02:11.209 Uploaded assets/template-user-menu-zXgFOMJx.js (2.72 kB)
+16:02:11.526 Uploaded assets/testimonial-1pbgkwKR.js (1.8 kB)
+16:02:12.577 Uploaded assets/text-area-36skMK8W.js (2.22 kB)
+16:02:12.581 Uploaded assets/testimonial.stories-DsUuAs4d.js (1.86 kB)
+16:02:13.438 Uploaded assets/text-area.stories-C55Fp4sX.js (4.05 kB)
+16:02:13.937 Uploaded assets/text-field-BzBhVttS.js (1.35 kB)
+16:02:13.955 Uploaded assets/text-field-styles-RALA_j2z.js (1.49 kB)
+16:02:14.250 Uploaded assets/text-field.stories-9QF2urlr.js (5.99 kB)
+16:02:15.308 Uploaded assets/text-link.stories-CS4v5c7Q.js (4.32 kB)
+16:02:15.318 Uploaded assets/text-link-srw0fLS-.js (2.92 kB)
+16:02:16.151 Uploaded assets/textarea-DKS1eS3S.js (1.83 kB)
+16:02:16.953 Uploaded assets/textarea.stories-CwVZVP3b.js (913 B)
+16:02:16.957     → 61%
+16:02:16.965 Uploaded assets/toggle-D9ajHijj.js (2.35 kB)
+16:02:17.294 Uploaded assets/theming-CELr1Y6p.js (55.42 kB)
+16:02:17.299     → 62%
+16:02:18.022 Uploaded assets/toggle.stories-DeD6ee3B.js (3.25 kB)
+16:02:18.342 Uploaded assets/tooltip.stories-CTewqnym.js (13.42 kB)
+16:02:18.346     → 63%
+16:02:19.201 Uploaded assets/track-1-SdAOxYqS.png (36.85 kB)
+16:02:19.396     → 64%
+16:02:20.320 Uploaded assets/track-2-CJeqGuSD.png (40 kB)
+16:02:20.335 Uploaded assets/track-3-_XO9ynCk.png (29.02 kB)
+16:02:20.963 Uploaded assets/track-10-Bt_SNLC3.png (205.87 kB)
+16:02:20.969     → 65%
+16:02:21.381 Uploaded assets/track-5-B-Ceogdz.png (17.03 kB)
+16:02:21.578     → 66%
+16:02:21.670 Uploaded assets/track-4-CkO3XcyV.png (129.36 kB)
+16:02:23.167 Uploaded assets/track-6-CJ9o9XAX.png (255.4 kB)
+16:02:23.686 Uploaded assets/track-7-BgTSu4LT.png (39.56 kB)
+16:02:23.692 Uploaded assets/track-8-BGnEHJJt.png (47.49 kB)
+16:02:24.121 Uploaded assets/typography.stories-CHCAkjSn.js (7.33 kB)
+16:02:24.739 Uploaded assets/use-controllable-boolean-BaMBHjbL.js (318 B)
+16:02:24.797 Uploaded assets/track-9-DPz_kyED.png (113.48 kB)
+16:02:26.206 Uploaded assets/use-controllable-number-BXJ3gWkG.js (317 B)
+16:02:26.403 Uploaded assets/use-field-ids-BTjUTXzq.js (1.78 kB)
+16:02:26.733 Uploaded assets/use-controllable-string-C1bubxuF.js (318 B)
+16:02:27.135 Uploaded assets/use-scroll-lock-CPCdlEcc.js (1.18 kB)
+16:02:27.879 Uploaded assets/workout-layout-template-nv0UYKCU.js (944 B)
+16:02:28.414 Uploaded assets/watch-C3l6_pKR.jpg (92.44 kB)
+16:02:28.947 Uploaded assets/workout-layout-template.stories-6DO2mia1.js (2.61 kB)
+16:02:28.951     → 67%
+16:02:29.476 Uploaded assets/workout-page.stories-DS411Quo.js (18.67 kB)
+16:02:29.879 Uploaded favicon-wrapper.svg (5.8 kB)
+16:02:29.881 Uploaded favicon.svg (2.16 kB)
+16:02:29.883     → 68%
+16:02:30.946 Uploaded iframe.html (19.51 kB)
+16:02:31.279 Uploaded index.html (3.47 kB)
+16:02:31.283     → 69%
+16:02:32.326 Uploaded mockServiceWorker.js (9.67 kB)
+16:02:32.708 Uploaded index.json (163.98 kB)
+16:02:33.238 Uploaded nunito-sans-bold-italic.woff2 (49.46 kB)
+16:02:33.248 Uploaded nunito-sans-bold.woff2 (47.14 kB)
+16:02:34.265 Uploaded nunito-sans-italic.woff2 (49.62 kB)
+16:02:34.269     → 71%
+16:02:34.621 Uploaded nunito-sans-regular.woff2 (47.07 kB)
+16:02:35.328 Uploaded project.json (1.33 kB)
+16:02:36.170 Uploaded sb-addons/a11y-1/manager-bundle.js (66.57 kB)
+16:02:36.176     → 72%
+16:02:36.570 Uploaded sb-addons/docs-2/manager-bundle.js (66.06 kB)
+16:02:36.858     → 73%
+16:02:37.332 Uploaded sb-addons/vitest-3/manager-bundle.js (28.92 kB)
+16:02:37.371 Uploaded sb-common-assets/favicon-wrapper.svg (5.8 kB)
+16:02:37.867 Uploaded sb-addons/storybook-core-server-presets-0/common-manager-bundle.js (473.03 kB)
+16:02:37.871     → 74%
+16:02:38.064 Uploaded sb-common-assets/favicon.svg (2.16 kB)
+16:02:38.068     → 75%
+16:02:39.510 Uploaded sb-common-assets/nunito-sans-bold-italic.woff2 (49.46 kB)
+16:02:39.935 Uploaded sb-common-assets/nunito-sans-bold.woff2 (47.14 kB)
+16:02:40.241     → 76%
+16:02:40.547     → 77%
+16:02:40.686 Uploaded sb-common-assets/nunito-sans-regular.woff2 (47.07 kB)
+16:02:40.691 Uploaded sb-common-assets/nunito-sans-italic.woff2 (49.62 kB)
+16:02:41.061 Uploaded sb-manager/globals.js (1.02 kB)
+16:02:41.795     → 80%
+16:02:42.100     → 84%
+16:02:42.306     → 92%
+16:02:42.559 Uploaded sb-manager/manager-stores.js (654 B)
+16:02:42.610     → 95%
+16:02:43.164 Uploaded sb-manager/globals-runtime.js (3.29 MB)
+16:02:43.692 Uploaded vite-inject-mocker-entry.js (27.85 kB)
+16:02:43.900     → 98%
+16:02:45.080 Uploaded sb-manager/runtime.js (1.24 MB)

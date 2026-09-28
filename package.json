@@ -6,7 +6,7 @@
     "dev": "turbo run dev",
     "storybook": "turbo run storybook",
     "build-storybook": "turbo run build-storybook",
-    "chromatic": "pnpm --filter @repo/ui chromatic",
+    "chromatic": "pnpm build-storybook && pnpm --filter @repo/ui chromatic",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "test:unit": "turbo run test:unit",

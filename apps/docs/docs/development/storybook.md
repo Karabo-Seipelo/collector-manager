@@ -36,11 +36,18 @@ Output is written to `packages/ui/storybook-static/`. Deploy this folder to any 
 
 ### Local publish
 
-Build static Storybook first, then publish:
+1. Copy [`packages/ui/.env.example`](../../../packages/ui/.env.example) to `packages/ui/.env.local` (gitignored) and set `CHROMATIC_PROJECT_TOKEN`.
+2. From the repo root, build and publish (uses the pinned `chromatic` CLI—no `npx` required):
+
+```bash
+pnpm chromatic
+```
+
+One-off without `.env.local`:
 
 ```bash
 pnpm build-storybook
-CHROMATIC_PROJECT_TOKEN=your-token pnpm chromatic
+CHROMATIC_PROJECT_TOKEN=your-token pnpm --filter @repo/ui chromatic
 ```
 
 ### Review workflow
