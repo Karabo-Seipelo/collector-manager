@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: pnpm
 
       - name: Install dependencies
@@ -47,7 +47,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: pnpm
 
       - name: Install dependencies
@@ -58,6 +58,8 @@ jobs:
 
   test-storybook:
     runs-on: ubuntu-latest
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
     container:
       image: mcr.microsoft.com/playwright:v1.63.0-noble
 
@@ -71,7 +73,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: pnpm
 
       - name: Install dependencies
@@ -95,7 +97,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: pnpm
 
       - name: Install dependencies
@@ -110,7 +112,7 @@ jobs:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
         run: |
           if [ "${{ github.event_name }}" = "push" ] && [ "${{ github.ref }}" = "refs/heads/main" ]; then
-            pnpm --filter @repo/ui chromatic --auto-accept-changes --only-changed
+            pnpm --filter @repo/ui chromatic:ci --auto-accept-changes --only-changed
           else
-            pnpm --filter @repo/ui chromatic --only-changed
+            pnpm --filter @repo/ui chromatic:ci --only-changed
           fi

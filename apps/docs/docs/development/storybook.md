@@ -36,7 +36,7 @@ Output is written to `packages/ui/storybook-static/`. Deploy this folder to any 
 
 ### Local publish
 
-1. Copy [`packages/ui/.env.example`](../../../packages/ui/.env.example) to `packages/ui/.env.local` (gitignored) and set `CHROMATIC_PROJECT_TOKEN`.
+1. Copy [`packages/ui/.env.example`](https://github.com/Karabo-Seipelo/collector-manager/blob/main/packages/ui/.env.example) to `packages/ui/.env.local` (gitignored) and set `CHROMATIC_PROJECT_TOKEN`.
 2. From the repo root, build and publish (uses the pinned `chromatic` CLI—no `npx` required):
 
 ```bash
@@ -130,8 +130,8 @@ export const Default: Story = {};
 
 Collection **Pages/** stories load data with `fetch` against `/api/collection/*`. In Storybook, [Mock Service Worker](https://mswjs.io/) intercepts those requests via the [msw-storybook-addon](https://storybook.js.org/addons/msw-storybook-addon).
 
-- **Handlers:** [`packages/ui/src/mocks/handlers/collection.ts`](../../../packages/ui/src/mocks/handlers/collection.ts) (fixture data in [`packages/ui/src/api/collection/fixtures/`](../../../packages/ui/src/api/collection/fixtures/))
-- **Global wiring:** [`packages/ui/.storybook/preview.ts`](../../../packages/ui/.storybook/preview.ts) registers `mswLoader()` and applies collection handlers in `beforeEach`
+- **Handlers:** [`packages/ui/src/mocks/handlers/collection.ts`](https://github.com/Karabo-Seipelo/collector-manager/blob/main/packages/ui/src/mocks/handlers/collection.ts) (fixture data in [`packages/ui/src/api/collection/fixtures/`](https://github.com/Karabo-Seipelo/collector-manager/tree/main/packages/ui/src/api/collection/fixtures))
+- **Global wiring:** [`packages/ui/.storybook/preview.ts`](https://github.com/Karabo-Seipelo/collector-manager/blob/main/packages/ui/.storybook/preview.ts) registers `mswLoader()` and applies collection handlers in `beforeEach`
 - **Per-story overrides:** set `parameters.msw.handlers` (see **Pages/CollectionSearchFilter → SearchLoadError**)
 
 Regenerate the worker after upgrading MSW:

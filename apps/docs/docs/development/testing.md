@@ -48,7 +48,7 @@ pnpm --filter @repo/ui exec playwright install chromium
 
 Configuration:
 
-- `packages/ui/vitest.config.ts` — `unit` and `storybook` Vitest projects
+- `packages/ui/vitest.config.mts` — `unit` and `storybook` Vitest projects
 - `packages/ui/vitest.setup.ts` — unit test setup
 - `packages/ui/.storybook/vitest.setup.ts` — imports design tokens for browser tests
 

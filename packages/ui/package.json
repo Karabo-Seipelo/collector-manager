@@ -72,6 +72,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "dotenv -c -- chromatic --storybook-build-dir storybook-static",
+    "chromatic:ci": "chromatic --storybook-build-dir storybook-static",
     "lint": "eslint . --max-warnings 0",
     "test": "vitest run",
     "test:unit": "vitest run --project unit",
