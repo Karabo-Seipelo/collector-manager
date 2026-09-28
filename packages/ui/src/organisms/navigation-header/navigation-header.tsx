@@ -146,7 +146,9 @@ export function NavigationHeader({
                   className,
                 })}
               >
-                <div className={getNavigationHeaderMobileDrawerContentClassName()}>
+                <div
+                  className={getNavigationHeaderMobileDrawerContentClassName()}
+                >
                   {mobileDrawerContent}
                 </div>
               </div>
@@ -158,8 +160,7 @@ export function NavigationHeader({
   );
 }
 
-export interface NavigationHeaderBarProps
-  extends React.HTMLAttributes<HTMLElement> {
+export interface NavigationHeaderBarProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
 }
 
@@ -179,8 +180,7 @@ export function NavigationHeaderBar({
   );
 }
 
-export interface NavigationHeaderLeftProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavigationHeaderLeftProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
@@ -208,20 +208,24 @@ export function NavigationHeaderMenuButton({
 }: NavigationHeaderMenuButtonProps) {
   const { setOpen } = useNavigationHeaderContext();
 
+  // ButtonIcon renders a positioning wrapper around the button. Hide the
+  // wrapper on desktop, otherwise its zero-width box still takes part in the
+  // header's flex gap and pushes the logo off the content edge.
   return (
-    <ButtonIcon
-      aria-label={label}
-      icon={<FeatherIcon name="menu" size={24} />}
-      variant="tertiary"
-      tone="neutral"
-      className={cn("shrink-0 md:hidden", className)}
-      onClick={() => setOpen(true)}
-    />
+    <span className={cn("contents md:hidden", className)}>
+      <ButtonIcon
+        aria-label={label}
+        icon={<FeatherIcon name="menu" size={24} />}
+        variant="tertiary"
+        tone="neutral"
+        className="shrink-0"
+        onClick={() => setOpen(true)}
+      />
+    </span>
   );
 }
 
-export interface NavigationHeaderLogoProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavigationHeaderLogoProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
@@ -237,8 +241,7 @@ export function NavigationHeaderLogo({
   );
 }
 
-export interface NavigationHeaderNavProps
-  extends React.HTMLAttributes<HTMLElement> {
+export interface NavigationHeaderNavProps extends React.HTMLAttributes<HTMLElement> {
   "aria-label"?: string;
   children: React.ReactNode;
 }
@@ -260,8 +263,7 @@ export function NavigationHeaderNav({
   );
 }
 
-export interface NavigationHeaderRightProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavigationHeaderRightProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
@@ -277,8 +279,7 @@ export function NavigationHeaderRight({
   );
 }
 
-export interface NavigationHeaderActionsProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavigationHeaderActionsProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
@@ -297,8 +298,7 @@ export function NavigationHeaderActions({
   );
 }
 
-export interface NavigationHeaderSearchProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavigationHeaderSearchProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
@@ -308,14 +308,16 @@ export function NavigationHeaderSearch({
   ...rest
 }: NavigationHeaderSearchProps) {
   return (
-    <div className={cn("hidden w-[200px] shrink-0 md:block", className)} {...rest}>
+    <div
+      className={cn("hidden w-[200px] shrink-0 md:block", className)}
+      {...rest}
+    >
       {children}
     </div>
   );
 }
 
-export interface NavigationHeaderButtonsProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavigationHeaderButtonsProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
@@ -331,8 +333,7 @@ export function NavigationHeaderButtons({
   );
 }
 
-export interface NavigationHeaderUserProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavigationHeaderUserProps extends React.HTMLAttributes<HTMLDivElement> {
   desktop: React.ReactNode;
   mobile?: React.ReactNode;
 }
@@ -368,8 +369,7 @@ export function NavigationHeaderMobileDrawer({
   return null;
 }
 
-export interface NavigationHeaderMobileHeaderProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavigationHeaderMobileHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   closeLabel?: string;
 }
@@ -395,8 +395,7 @@ export function NavigationHeaderMobileHeader({
   );
 }
 
-export interface NavigationHeaderMobileSearchProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavigationHeaderMobileSearchProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
@@ -412,8 +411,7 @@ export function NavigationHeaderMobileSearch({
   );
 }
 
-export interface NavigationHeaderMobileNavProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavigationHeaderMobileNavProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
@@ -423,7 +421,10 @@ export function NavigationHeaderMobileNav({
   ...rest
 }: NavigationHeaderMobileNavProps) {
   return (
-    <div className={getNavigationHeaderMobileContentClassName(className)} {...rest}>
+    <div
+      className={getNavigationHeaderMobileContentClassName(className)}
+      {...rest}
+    >
       {children}
     </div>
   );
@@ -437,18 +438,13 @@ export function NavigationHeaderMobileDivider({
   ...rest
 }: NavigationHeaderMobileDividerProps) {
   return (
-    <div
-      role="separator"
-      className={cn("px-6 py-6", className)}
-      {...rest}
-    >
+    <div role="separator" className={cn("px-6 py-6", className)} {...rest}>
       <Divider />
     </div>
   );
 }
 
-export interface NavigationHeaderMobileFooterProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavigationHeaderMobileFooterProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
@@ -458,14 +454,16 @@ export function NavigationHeaderMobileFooter({
   ...rest
 }: NavigationHeaderMobileFooterProps) {
   return (
-    <div className={getNavigationHeaderMobileFooterClassName(className)} {...rest}>
+    <div
+      className={getNavigationHeaderMobileFooterClassName(className)}
+      {...rest}
+    >
       {children}
     </div>
   );
 }
 
-export interface NavigationHeaderMobileProfileProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavigationHeaderMobileProfileProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
@@ -475,7 +473,10 @@ export function NavigationHeaderMobileProfile({
   ...rest
 }: NavigationHeaderMobileProfileProps) {
   return (
-    <div className={getNavigationHeaderMobileProfileClassName(className)} {...rest}>
+    <div
+      className={getNavigationHeaderMobileProfileClassName(className)}
+      {...rest}
+    >
       <div className="py-6">
         <Divider />
       </div>

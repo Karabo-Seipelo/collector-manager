@@ -1,36 +1,71 @@
 "use client";
 
-import { Tag } from "../../atoms/tag/tag";
-import { Breadcrumbs } from "../../molecules/breadcrumbs/breadcrumbs";
-import { BlogCardGrid } from "../shared/blog-card-grid";
-import { MarketingFooter } from "../shared/marketing-footer";
-import { PracticalUiLogo } from "../shared/practical-ui-logo";
+import * as React from "react";
 
-export function BlogCategoryTemplate() {
+import { Tabs, TabsList, TabsTrigger } from "../../molecules/tabs/tabs";
+import { destinations } from "../shared/practical-travel/destinations-data";
+import {
+  DestinationCardGrid,
+  PracticalTravelFooter,
+  PracticalTravelNavigation,
+  PracticalTravelSubscribeSection,
+} from "../shared/practical-travel/practical-travel";
+
+export interface BlogCategoryTemplateProps {
+  /** Called with the entered email when the subscribe form is submitted. */
+  onSubscribe?: (email: string) => void;
+}
+
+const categoryTabs = [
+  { value: "top-rated", label: "Top rated" },
+  { value: "adventure", label: "Adventure" },
+  { value: "budget", label: "Budget" },
+  { value: "romantic", label: "Romantic" },
+  { value: "tropical", label: "Tropical" },
+];
+
+const pageTitle = "Destinations";
+const pageDescription =
+  "Discover the most captivating travel destinations around the globe and get inspired for your next adventure.";
+
+export function BlogCategoryTemplate({
+  onSubscribe,
+}: BlogCategoryTemplateProps) {
+  const [category, setCategory] = React.useState("top-rated");
+
   return (
-    <div className="flex min-h-svh flex-col bg-fill-weaker">
-      <header className="border-b border-stroke-weak bg-fill-inverse px-4 py-4 md:px-8">
-        <PracticalUiLogo />
-      </header>
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 md:px-8">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "#home" },
-            { label: "Blog", href: "#blog" },
-            { label: "Design systems" },
-          ]}
-        />
-        <div className="mt-6 flex flex-wrap items-center gap-3">
-          <h1 className="text-heading-2 font-semibold text-fg-strong">Design systems</h1>
-          <Tag size="small" selected>
-            12 articles
-          </Tag>
+    <div className="flex min-h-svh flex-col bg-fill-inverse">
+      <PracticalTravelNavigation activeHref="#destinations" />
+
+      <main className="flex flex-1 flex-col gap-12 px-8 py-16 md:gap-16 md:px-[120px] md:py-24">
+        <div className="flex max-w-[687px] flex-col gap-4">
+          <h1 className="text-[36px] leading-[44px] font-semibold tracking-[-0.5px] text-fg-strong md:text-[56px] md:leading-[64px] md:tracking-[-1px]">
+            {pageTitle}
+          </h1>
+          <p className="text-small text-fg-weak md:text-heading-4 md:font-normal">
+            {pageDescription}
+          </p>
         </div>
-        <div className="mt-10">
-          <BlogCardGrid count={9} />
-        </div>
+
+        <Tabs
+          value={category}
+          onValueChange={setCategory}
+          className="overflow-x-auto"
+        >
+          <TabsList aria-label="Destination categories">
+            {categoryTabs.map((tab) => (
+              <TabsTrigger key={tab.value} value={tab.value}>
+                {tab.label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </Tabs>
+
+        <DestinationCardGrid destinations={destinations} />
       </main>
-      <MarketingFooter />
+
+      <PracticalTravelSubscribeSection onSubscribe={onSubscribe} />
+      <PracticalTravelFooter />
     </div>
   );
 }
