@@ -27,9 +27,29 @@ function Example() {
 export const Desktop: Story = {
   render: () => <Example />,
   play: async () => {
+    const body = within(document.body);
     await expect(
-      within(document.body).getByRole("heading", { name: "Personal details" }),
+      body.getByRole("heading", { level: 1, name: "Edit personal details" }),
     ).toBeVisible();
+    await expect(
+      body.getByRole("link", { name: "Account settings" }),
+    ).toBeVisible();
+    await expect(body.getByRole("textbox", { name: "First name" })).toHaveValue(
+      "John",
+    );
+    await expect(body.getByRole("textbox", { name: "Last name" })).toHaveValue(
+      "Smith",
+    );
+    await expect(
+      body.getByRole("textbox", { name: /Date of birth/ }),
+    ).toHaveValue("08/09/1990");
+    await expect(body.getByRole("combobox", { name: "Language" })).toHaveValue(
+      "en",
+    );
+    await expect(
+      body.getByRole("button", { name: "Save personal details" }),
+    ).toBeVisible();
+    await expect(body.getByRole("link", { name: "Cancel" })).toBeVisible();
   },
 };
 
