@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "storybook/test";
+import { expect, within } from "storybook/test";
 
 import { SummaryList } from "./summary-list";
 
@@ -102,6 +102,9 @@ export const Interactive: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    await userEvent.click(canvas.getByRole("link", { name: "Change" }));
+    await expect(canvas.getByRole("link", { name: "Change" })).toHaveAttribute(
+      "href",
+      "#change-email",
+    );
   },
 };
