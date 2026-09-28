@@ -194,13 +194,18 @@ export function PracticalTravelSubscribeForm({
 
 export function PracticalTravelSubscribeSection({
   onSubscribe,
+  className,
 }: {
   onSubscribe?: (email: string) => void;
+  className?: string;
 }) {
   return (
     <section
       aria-labelledby="subscribe-heading"
-      className="flex flex-col gap-12 border-t border-stroke-weak bg-fill-weaker px-8 py-16 md:px-[120px] md:py-24 lg:flex-row lg:items-center lg:justify-between"
+      className={cn(
+        "flex flex-col gap-12 border-t border-stroke-weak bg-fill-weaker px-8 py-16 md:px-[120px] md:py-24 lg:flex-row lg:items-center lg:justify-between",
+        className,
+      )}
     >
       <div className="flex max-w-[600px] flex-col gap-4">
         <h2
