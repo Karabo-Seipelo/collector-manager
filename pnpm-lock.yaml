@@ -242,7 +242,7 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3(msw@2.15.0(@types/node@22.15.3)(typescript@5.9.2))(storybook@10.5.9(@types/react@19.2.2)(prettier@3.7.4)(react@19.2.0))
       playwright:
-        specifier: ^1.63.0
+        specifier: 1.63.0
         version: 1.63.0
       storybook:
         specifier: ^10.5.9
