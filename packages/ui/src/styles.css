@@ -66,8 +66,11 @@
   --color-text-information: #1a74a8;
   --color-icon-error: rgba(199, 58, 58, 0.8);
 
-  /* Typography */
+  /* Typography — Practical UI Foundations (Figma 3405:126418) */
   --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --text-display: 56px;
+  --text-display--line-height: 64px;
+  --text-display--letter-spacing: -1px;
   --text-small: 16px;
   --text-small--line-height: 24px;
   --text-tiny: 14px;

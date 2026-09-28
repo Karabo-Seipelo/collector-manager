@@ -8,7 +8,7 @@ Renders icons from the [Feather Icons](https://feathericons.com/) set as inline 
 
 **Import:** `@repo/ui/atoms/icon`
 
-**Storybook:** UI/Icon
+**Storybook:** Atoms/Icon
 
 ## Usage
 

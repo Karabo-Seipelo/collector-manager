@@ -15,6 +15,19 @@ const meta = {
     name: {
       control: "select",
       options: iconNames,
+      description:
+        "Kebab-case name from the Feather set. Same names as on feathericons.com.",
+    },
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: [
+          "`FeatherIcon` renders inline SVG from the open-source [Feather Icons](https://feathericons.com/) library (loaded via the `feather-icons` npm package).",
+          "Pick any glyph from the catalog at [feathericons.com](https://feathericons.com/) and pass its name to the `name` prop. TypeScript autocomplete uses the `FeatherIconName` union.",
+          "Icons use `currentColor`, so parent text color utilities apply.",
+        ].join("\n\n"),
+      },
     },
   },
 } satisfies Meta<typeof FeatherIcon>;
@@ -25,6 +38,13 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 
 export const CommonIcons: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: `Sample of names used often in Practical UI. The **name** control on Default lists all ${iconNames.length} icons shipped with Feather.`,
+      },
+    },
+  },
   render: () => {
     const names: FeatherIconName[] = [
       "home",

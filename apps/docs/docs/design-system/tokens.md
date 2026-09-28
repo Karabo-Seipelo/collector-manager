@@ -66,8 +66,17 @@ The `@theme` block registers Tailwind utilities:
   --color-text-information: #1a74a8;
   --color-icon-error: rgba(199, 58, 58, 0.8);
 
-  /* Typography */
+  /* Typography (desktop scale — see Storybook Foundations/Typography) */
   --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --text-display: 56px;
+  --text-display--line-height: 64px;
+  --text-display--letter-spacing: -1px;
+  --text-heading-1: 40px;
+  --text-heading-1--line-height: 48px;
+  --text-heading-1--letter-spacing: -0.5px;
+  --text-heading-2: 32px;
+  --text-heading-2--line-height: 40px;
+  --text-heading-2--letter-spacing: -0.5px;
   --text-small: 16px;
   --text-small--line-height: 24px;
   --text-tiny: 14px;
@@ -82,7 +91,7 @@ The `@theme` block registers Tailwind utilities:
 }
 ```
 
-Components use these via Tailwind classes such as `bg-primary`, `text-fg-strong`, `bg-fill-weak`, `rounded-card`, `text-small`, `text-tiny`, `text-heading-3`, and `text-heading-4`.
+Components use these via Tailwind classes such as `bg-primary`, `text-fg-strong`, `bg-fill-weak`, `rounded-card`, `text-display`, `text-heading-1` through `text-heading-4`, `text-small`, and `text-tiny`. The full desktop and mobile scales are documented in Storybook under **Foundations/Typography** (Figma node `3405:126418`).
 
 ### Semantic tokens
 
