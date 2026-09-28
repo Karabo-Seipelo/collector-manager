@@ -4,8 +4,8 @@ import * as React from "react";
 
 import { Button } from "../../atoms/button/button";
 import { ButtonIcon } from "../../atoms/button-icon/button-icon";
-import { ImagePlaceholder } from "../../atoms/image-placeholder/image-placeholder";
 import { FeatherIcon } from "../../atoms/icon/icon";
+import { IconContainer } from "../../atoms/icon-container/icon-container";
 import { Tag } from "../../atoms/tag/tag";
 import { cn } from "../../lib/cn";
 import { Card, CardContent, CardImage } from "../../molecules/card/card";
@@ -20,23 +20,30 @@ import {
 
 function CollectionItemCard({ item }: { item: CollectionItem }) {
   return (
-    <Card className="rounded-xl shadow-none hover:shadow-raised active:shadow-raised focus-within:outline-offset-0">
-      <CardImage className="flex aspect-[173/150] h-auto items-center justify-center border-b-0 md:aspect-[204/190]">
-        <ImagePlaceholder size={28} className="md:hidden" />
-        <ImagePlaceholder size={30} className="hidden md:block" />
+    <Card className="rounded-2xl shadow-raised hover:shadow-overlay active:shadow-sunken">
+      <CardImage className="h-[204px] rounded-t-2xl border-b border-stroke-weak">
+        <img src={item.imageSrc} alt={item.imageAlt} />
       </CardImage>
-      <CardContent className="gap-0.5 p-0 pt-2 md:gap-1 md:pt-2.5">
-        <h3 className="truncate text-small font-semibold leading-6 text-fg-strong">
-          {item.title}
-        </h3>
-        <p className="truncate text-tiny leading-5 text-fg-weak">
-          {item.category} · {item.detail}
-        </p>
-        {item.price ? (
-          <p className="hidden truncate text-tiny leading-5 text-fg-strong md:block">
-            {item.price}
-          </p>
-        ) : null}
+      <CardContent className="gap-4 p-8 pt-8">
+        <div className="flex w-full flex-col gap-4">
+          <IconContainer
+            tone="brand"
+            variant="filled"
+            icon={<FeatherIcon name={item.icon} size={24} />}
+            aria-hidden
+          />
+          <div className="flex w-full min-w-0 flex-col gap-1">
+            <p className="text-small font-semibold leading-6 text-fg-strong">
+              {item.price}
+            </p>
+            <h3 className="text-heading-4 font-semibold leading-7 text-fg-strong">
+              {item.title}
+            </h3>
+            <p className="text-small leading-6 text-fg-weak">
+              {item.category} · {item.detail}
+            </p>
+          </div>
+        </div>
       </CardContent>
     </Card>
   );
@@ -88,8 +95,10 @@ export function CollectionTemplateContent() {
   const [activeFilter, setActiveFilter] = React.useState("all");
   const [viewMode, setViewMode] = React.useState<ViewMode>("grid");
 
+  const summaryLine = `${collectionSummary.itemCount} items · ${collectionSummary.estimatedValue} estimated value · last added ${collectionSummary.lastAdded}`;
+
   return (
-    <div className="relative mx-auto w-full max-w-[1180px] px-4 py-4 md:px-8 md:py-8">
+    <div className="relative mx-auto w-full px-4 py-6 md:px-8 md:py-8">
       <header className="mb-4 flex items-center gap-3 md:hidden">
         <h1 className="min-w-0 flex-1 truncate text-heading-4 font-semibold text-fg-strong">
           My collection
@@ -109,51 +118,53 @@ export function CollectionTemplateContent() {
       </header>
 
       <div className="mb-4 md:hidden">
-        <SearchInput aria-label="Search collection" placeholder="Search items…" />
+        <SearchInput
+          aria-label="Search collection"
+          placeholder="Search collection, tags, years…"
+        />
       </div>
 
       <header className="mb-6 hidden md:block">
-        <h1 className="text-heading-2 font-semibold text-fg-strong">My collection</h1>
-        <p className="mt-1 text-small text-fg-weak">
-          {collectionSummary.itemCount} items · {collectionSummary.estimatedValue} est. · Last
-          added {collectionSummary.lastAdded}
-        </p>
+        <h1 className="text-heading-2 font-semibold text-fg-strong">
+          My collection
+        </h1>
+        <p className="mt-1 text-small text-fg-weak">{summaryLine}</p>
       </header>
 
-      <div className="mb-4 flex flex-col gap-4 md:mb-6 md:flex-row md:items-end md:justify-between">
-        <div className="hidden md:block md:w-56">
-          <Select label="Sort by" defaultValue="recent">
-            <option value="recent">Recently added</option>
-            <option value="title">Title A–Z</option>
-            <option value="value">Estimated value</option>
-            <option value="category">Category</option>
-          </Select>
+      <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div className="flex min-w-0 flex-1 items-center gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] md:flex-wrap md:overflow-visible [&::-webkit-scrollbar]:hidden">
+          {collectionFilters.map((filter) => {
+            const selected = activeFilter === filter.id;
+            return (
+              <Tag
+                key={filter.id}
+                size="medium"
+                selected={selected}
+                icon={
+                  selected ? (
+                    <FeatherIcon name="check" size={16} />
+                  ) : undefined
+                }
+                onClick={() => setActiveFilter(filter.id)}
+                className="shrink-0"
+              >
+                {filter.label}
+              </Tag>
+            );
+          })}
         </div>
 
-        <div className="flex items-center justify-between gap-4 md:justify-end">
-          <p className="text-tiny text-fg-weak md:hidden">
-            {collectionSummary.itemCount} items · {collectionSummary.estimatedValue} est.
-          </p>
+        <div className="flex shrink-0 items-center justify-between gap-4 md:justify-end">
+          <p className="text-tiny text-fg-weak md:hidden">{summaryLine}</p>
+          <div className="hidden w-56 md:block">
+            <Select label="Sort by" defaultValue="value-desc">
+              <option value="value-desc">Value: High to Low</option>
+              <option value="value-asc">Value: Low to High</option>
+              <option value="recent">Recently added</option>
+              <option value="title">Title A–Z</option>
+            </Select>
+          </div>
           <ViewToggle value={viewMode} onChange={setViewMode} />
-        </div>
-      </div>
-
-      <div className="mb-4 md:mb-6">
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] md:flex-wrap md:overflow-visible [&::-webkit-scrollbar]:hidden">
-          <span className="hidden shrink-0 text-tiny font-semibold text-fg-weak md:inline">
-            Tags:
-          </span>
-          {collectionFilters.map((filter) => (
-            <Tag
-              key={filter.id}
-              size="small"
-              selected={activeFilter === filter.id}
-              onClick={() => setActiveFilter(filter.id)}
-              className="shrink-0"
-            >
-              {filter.label}
-            </Tag>
-          ))}
         </div>
       </div>
 
@@ -161,7 +172,7 @@ export function CollectionTemplateContent() {
         aria-label="Collection items"
         className={cn(
           viewMode === "grid"
-            ? "grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:grid-cols-5"
+            ? "grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 md:gap-5 lg:grid-cols-5"
             : "flex flex-col gap-3",
         )}
       >

@@ -4,11 +4,19 @@ import { expect, fn, within } from "storybook/test";
 
 import { CollectionPage } from "./collection-page";
 
+const FIGMA_COLLECTION_HOME_URL =
+  "https://www.figma.com/design/oTMqXOCl6Ah7HONbWWUyvZ/Practical-UI-design-system?node-id=9469-124236";
+
 const meta = {
   title: "Pages/Collection",
   component: CollectionPage,
   parameters: {
     layout: "fullscreen",
+    docs: {
+      description: {
+        component: `Collections home (desktop 1280). [Figma](${FIGMA_COLLECTION_HOME_URL})`,
+      },
+    },
   },
   args: {
     onSidebarOpenChange: fn(),
@@ -49,6 +57,15 @@ export const Desktop: Story = {
     ).toHaveAttribute("aria-current", "page");
     await expect(
       within(document.body).getByRole("heading", { name: "My collection" }),
+    ).toBeVisible();
+    await expect(
+      within(document.body).getByText(/248 items · R 41 200 estimated value/),
+    ).toBeVisible();
+    await expect(
+      within(document.body).getByRole("button", { name: "Import" }),
+    ).toBeVisible();
+    await expect(
+      within(document.body).getByRole("heading", { name: "Kind of Blue" }),
     ).toBeVisible();
   },
 };

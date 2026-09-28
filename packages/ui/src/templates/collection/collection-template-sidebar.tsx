@@ -18,9 +18,12 @@ import {
 import { avatarPhotoSrc } from "./mock-collection-data";
 import { CollectionTemplateLogo } from "./collection-template-logo";
 
+export type CollectionActiveNav = "collection" | "search" | "insights";
+
 export interface CollectionTemplateSidebarProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  activeNav?: CollectionActiveNav;
 }
 
 function navIcon(name: FeatherIconName) {
@@ -30,6 +33,7 @@ function navIcon(name: FeatherIconName) {
 export function CollectionTemplateSidebar({
   open,
   onOpenChange,
+  activeNav = "collection",
 }: CollectionTemplateSidebarProps) {
   return (
     <NavigationSide
@@ -46,10 +50,18 @@ export function CollectionTemplateSidebar({
       </NavigationSideTop>
 
       <NavigationSideContent>
-        <NavigationSideItem href="#collection" icon={navIcon("grid")} selected>
+        <NavigationSideItem
+          href="#collection"
+          icon={navIcon("grid")}
+          selected={activeNav === "collection"}
+        >
           Collection
         </NavigationSideItem>
-        <NavigationSideItem href="#search" icon={navIcon("search")}>
+        <NavigationSideItem
+          href="#search"
+          icon={navIcon("search")}
+          selected={activeNav === "search"}
+        >
           Search
         </NavigationSideItem>
         <NavigationSideItem
@@ -59,7 +71,11 @@ export function CollectionTemplateSidebar({
         >
           Wishlist
         </NavigationSideItem>
-        <NavigationSideItem href="#insights" icon={navIcon("bar-chart-2")}>
+        <NavigationSideItem
+          href="#insights"
+          icon={navIcon("bar-chart-2")}
+          selected={activeNav === "insights"}
+        >
           Insights
         </NavigationSideItem>
         <NavigationSideItem href="#archive" icon={navIcon("archive")}>

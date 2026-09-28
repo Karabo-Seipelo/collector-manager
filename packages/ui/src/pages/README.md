@@ -5,6 +5,10 @@ Full **Made with Practical UI** screens from Figma (`3432:65411`). Each page com
 | Storybook title | Figma desktop | Figma mobile | Status |
 | --- | --- | --- | --- |
 | Pages/Collection | (Collector wireframes) | — | done |
+| Pages/CollectionItemDetail | `9424:81` | — | done |
+| Pages/CollectionAddItem | `9424:82` | — | done |
+| Pages/CollectionSearchFilter | `9424:83` | — | done |
+| Pages/CollectionInsights | `9424:84` (Profile & stats) | — | done |
 | Pages/ApplicationSidenav | `8042:233006` | `8129:109721` | done |
 | Pages/ApplicationTable | `6501:114811` | `8124:90657` | done |
 | Pages/ApplicationTableSelect | `5954:4332` | `8124:84301` | done |

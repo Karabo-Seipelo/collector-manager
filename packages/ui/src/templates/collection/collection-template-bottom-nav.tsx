@@ -2,6 +2,7 @@
 
 import { FeatherIcon, type FeatherIconName } from "../../atoms/icon/icon";
 import { cn } from "../../lib/cn";
+import type { CollectionActiveNav } from "./collection-template-sidebar";
 
 type BottomNavItem = {
   id: string;
@@ -14,16 +15,44 @@ type BottomNavItem = {
 
 export interface CollectionTemplateBottomNavProps {
   onProfileClick?: () => void;
+  activeNav?: CollectionActiveNav;
+}
+
+function bottomNavSelectedId(activeNav: CollectionActiveNav) {
+  if (activeNav === "search") return "search";
+  if (activeNav === "insights") return "stats";
+  return "collection";
 }
 
 export function CollectionTemplateBottomNav({
   onProfileClick,
+  activeNav = "collection",
 }: CollectionTemplateBottomNavProps) {
+  const selectedId = bottomNavSelectedId(activeNav);
+
   const items: BottomNavItem[] = [
-    { id: "collection", label: "Collection", icon: "grid", href: "#collection", selected: true },
-    { id: "search", label: "Search", icon: "search", href: "#search" },
+    {
+      id: "collection",
+      label: "Collection",
+      icon: "grid",
+      href: "#collection",
+      selected: selectedId === "collection",
+    },
+    {
+      id: "search",
+      label: "Search",
+      icon: "search",
+      href: "#search",
+      selected: selectedId === "search",
+    },
     { id: "add", label: "Add", icon: "plus", href: "#add" },
-    { id: "stats", label: "Stats", icon: "pie-chart", href: "#insights" },
+    {
+      id: "stats",
+      label: "Stats",
+      icon: "pie-chart",
+      href: "#insights",
+      selected: selectedId === "stats",
+    },
     {
       id: "profile",
       label: "Profile",
