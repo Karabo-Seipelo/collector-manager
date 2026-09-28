@@ -5,6 +5,6 @@
     "strictNullChecks": true,
     "types": ["msw-storybook-addon/csf3"]
   },
-  "include": ["src", ".storybook", "vitest-env.d.ts"],
+  "include": ["src", ".storybook", "storybook-parameters.d.ts", "vitest-env.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

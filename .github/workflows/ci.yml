@@ -62,6 +62,7 @@ jobs:
       PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
     container:
       image: mcr.microsoft.com/playwright:v1.63.0-noble
+      options: --ipc=host --init
 
     steps:
       - name: Checkout

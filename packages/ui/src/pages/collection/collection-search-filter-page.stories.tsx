@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { http, HttpResponse } from "msw";
 import * as React from "react";
 import { expect, fn, userEvent, waitFor, within } from "storybook/test";
 
@@ -91,11 +90,7 @@ export const Mobile: Story = {
 export const SearchLoadError: Story = {
   render: (args) => <Example {...args} />,
   parameters: {
-    msw: {
-      handlers: [
-        http.get("/api/collection/search", () => HttpResponse.error()),
-      ],
-    },
+    collectionSearchLoadError: true,
   },
   play: async () => {
     await waitFor(async () => {

@@ -40,3 +40,8 @@ export const collectionHandlers = [
     return HttpResponse.json(collectionInsightsFixture);
   }),
 ];
+
+export const collectionSearchLoadErrorHandler = http.get(
+  "/api/collection/search",
+  () => HttpResponse.error(),
+);

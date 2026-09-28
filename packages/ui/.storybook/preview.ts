@@ -1,7 +1,10 @@
 import type { Preview } from "@storybook/react-vite";
 import { mswLoader } from "msw-storybook-addon/csf3";
 
-import { collectionHandlers } from "../src/mocks/handlers/collection";
+import {
+  collectionHandlers,
+  collectionSearchLoadErrorHandler,
+} from "../src/mocks/handlers/collection";
 import "../src/styles.css";
 
 const preview: Preview = {
@@ -12,6 +15,9 @@ const preview: Preview = {
     const storyHandlers = parameters.msw?.handlers;
     if (storyHandlers) {
       msw.use(...(Array.isArray(storyHandlers) ? storyHandlers : [storyHandlers]));
+    }
+    if (parameters.collectionSearchLoadError) {
+      msw.use(collectionSearchLoadErrorHandler);
     }
   },
   parameters: {
