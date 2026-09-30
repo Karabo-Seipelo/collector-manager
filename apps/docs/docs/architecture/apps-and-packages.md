@@ -22,6 +22,14 @@ The **Docusaurus 3** documentation site (this site).
 - **Content:** Markdown files under `apps/docs/docs/`
 - **Guide:** [Docs site](../apps/docs-site)
 
+### `apps/api`
+
+**NestJS 11** HTTP API (health check today; collection routes planned).
+
+- **Dev port:** 3002 (override with `PORT`)
+- **Health:** `GET /api/health`
+- **Guide:** [API app](../apps/api)
+
 ## Packages
 
 ### `@repo/ui`

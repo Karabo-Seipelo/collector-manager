@@ -13,6 +13,7 @@ This site documents the monorepo setup, shared packages, development workflows, 
 | Path                          | Description                                             |
 | ----------------------------- | ------------------------------------------------------- |
 | [Web app](./apps/web)         | Next.js 16 application (port 3000)                      |
+| [API app](./apps/api)         | NestJS HTTP service (port 3002, `GET /api/health`)      |
 | [Docs site](./apps/docs-site) | This Docusaurus documentation site (port 3001)          |
 | `packages/ui`                 | Shared React components, Tailwind styles, and Storybook |
 | `packages/eslint-config`      | Shared ESLint configurations                            |

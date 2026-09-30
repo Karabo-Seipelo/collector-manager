@@ -1,6 +1,6 @@
 # Using this repository as a template
 
-This monorepo is a **design-system + Turborepo starter**: shared UI in `packages/ui`, a Next.js app in `apps/web`, docs in `apps/docs`, and Storybook-driven development with tests and optional Chromatic.
+This monorepo is a **design-system + Turborepo starter**: shared UI in `packages/ui`, a Next.js app in `apps/web`, a NestJS API shell in `apps/api`, docs in `apps/docs`, and Storybook-driven development with tests and optional Chromatic.
 
 ## After you fork or “Use this template”
 
@@ -16,6 +16,7 @@ Packages to update:
 
 - [package.json](package.json) (root)
 - [apps/web/package.json](apps/web/package.json)
+- [apps/api/package.json](apps/api/package.json)
 - [apps/docs/package.json](apps/docs/package.json)
 - [packages/ui/package.json](packages/ui/package.json)
 - [packages/eslint-config/package.json](packages/eslint-config/package.json)
@@ -35,6 +36,7 @@ pnpm dev
 |-----|-----|
 | Web (Next.js) | http://localhost:3000 |
 | Docs (Docusaurus) | http://localhost:3001 |
+| API (NestJS) | http://localhost:3002 |
 | Storybook | http://localhost:6006 |
 
 ### 3. Chromatic (optional)

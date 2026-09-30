@@ -16,11 +16,12 @@ pnpm install
 pnpm dev
 ```
 
-| App               | URL                   |
-| ----------------- | --------------------- |
-| Web (Next.js)     | http://localhost:3000 |
-| Docs (Docusaurus) | http://localhost:3001 |
-| Storybook         | http://localhost:6006 |
+| App               | URL                                      |
+| ----------------- | ---------------------------------------- |
+| Web (Next.js)     | http://localhost:3000                    |
+| Docs (Docusaurus) | http://localhost:3001                    |
+| API (NestJS)      | http://localhost:3002 (`GET /api/health`) |
+| Storybook         | http://localhost:6006                    |
 
 ## Common commands
 
@@ -40,6 +41,7 @@ Run a single app with filters:
 ```bash
 pnpm --filter web dev
 pnpm --filter docs dev
+pnpm --filter api dev
 pnpm --filter @repo/ui storybook
 ```
 
@@ -56,6 +58,7 @@ pnpm --filter docs dev
 ```
 apps/
   web/          Next.js application (consumes @repo/ui)
+  api/          NestJS HTTP API (health check; collection routes later)
   docs/         Documentation site
 packages/
   ui/           Shared React components + Storybook

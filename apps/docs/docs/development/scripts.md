@@ -10,7 +10,7 @@ All commands run from the **repository root** unless noted.
 
 | Command                | Description                                              |
 | ---------------------- | -------------------------------------------------------- |
-| `pnpm dev`             | Start web, docs, and Storybook dev servers               |
+| `pnpm dev`             | Start web, api, docs, and Storybook dev servers          |
 | `pnpm build`           | Production build for all apps/packages                   |
 | `pnpm storybook`       | Start Storybook on port 6006                             |
 | `pnpm build-storybook` | Build static Storybook to `packages/ui/storybook-static` |
@@ -36,6 +36,11 @@ pnpm --filter web check-types
 # Docs site only
 pnpm --filter docs dev
 pnpm --filter docs build
+
+# API (NestJS)
+pnpm --filter api dev
+pnpm --filter api build
+pnpm --filter api test
 
 # UI package / Storybook
 pnpm --filter @repo/ui storybook

@@ -56,6 +56,9 @@ jobs:
       - name: Test unit
         run: pnpm test:unit
 
+      - name: Test API (e2e)
+        run: pnpm --filter api test
+
   test-storybook:
     runs-on: ubuntu-latest
     env:
