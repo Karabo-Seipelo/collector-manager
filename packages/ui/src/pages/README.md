@@ -2,6 +2,8 @@
 
 Full **Made with Practical UI** screens from Figma (`3432:65411`). Each page composes a layout **template** (shell) plus product copy, images, and callbacks. Stories use the `Pages/*` title; play tests live on these stories.
 
+**Reference only:** these modules are for Storybook demos and MSW-backed interaction tests. They are not imported by `apps/web` unless you deliberately adopt a screen in your product.
+
 | Storybook title | Figma desktop | Figma mobile | Status |
 | --- | --- | --- | --- |
 | Pages/Collection | (Collector wireframes) | — | done |

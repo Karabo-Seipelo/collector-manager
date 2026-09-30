@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## Prerequisites
 
-- Node.js 18+
+- Node.js 22+ (see `.nvmrc` at the repository root)
 - [pnpm](https://pnpm.io/) 9
 
 ## Install dependencies

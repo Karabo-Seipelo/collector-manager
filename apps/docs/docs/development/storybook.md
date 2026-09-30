@@ -26,7 +26,7 @@ Output is written to `packages/ui/storybook-static/`. Deploy this folder to any 
 
 ## Chromatic (visual regression)
 
-[Chromatic](https://www.chromatic.com/) captures Storybook snapshots on every push and pull request. CI uses a **strict gate**: the Chromatic job fails when there are unreviewed visual changes until you accept them in the Chromatic UI.
+[Chromatic](https://www.chromatic.com/) captures Storybook snapshots on every push and pull request. When **`CHROMATIC_PROJECT_TOKEN`** is set in GitHub Actions, CI uses a **strict gate**: the Chromatic job fails when there are unreviewed visual changes until you accept them in the Chromatic UI. If the secret is not set (typical for a fresh fork), the job skips publish and exits successfully—see **`TEMPLATE.md`** at the repository root.
 
 ### Setup (once per repo)
 

@@ -2,9 +2,11 @@
 
 Turborepo monorepo for a collection-management app. The repository foundation and shared design system are in place; product features (CRUD, APIs, data models) are not started yet.
 
+**Using this as a template?** See [TEMPLATE.md](TEMPLATE.md) for fork steps, optional Chromatic, and how reference Storybook pages relate to the core design system.
+
 ## Prerequisites
 
-- Node.js 18+
+- Node.js 22+ (see [.nvmrc](.nvmrc))
 - [pnpm](https://pnpm.io/) 9
 
 ## Quick start
@@ -53,12 +55,19 @@ pnpm --filter docs dev
 
 ```
 apps/
-  web/          Next.js application
+  web/          Next.js application (consumes @repo/ui)
   docs/         Documentation site
 packages/
   ui/           Shared React components + Storybook
   eslint-config/
   typescript-config/
 ```
+
+### Core vs reference in `packages/ui`
+
+| Layer | Paths | Purpose |
+|-------|--------|---------|
+| **Core** | `src/atoms`, `molecules`, `organisms`, `foundations`, `styles.css` | Design system you ship in apps |
+| **Reference** | `src/pages`, `templates`, `src/api/collection`, MSW mocks | Storybook demos and copy-paste examples—not dependencies of `apps/web` |
 
 See the docs site for architecture, design system, and development guides.

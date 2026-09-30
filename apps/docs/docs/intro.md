@@ -18,7 +18,16 @@ This site documents the monorepo setup, shared packages, development workflows, 
 | `packages/eslint-config`      | Shared ESLint configurations                            |
 | `packages/typescript-config`  | Shared TypeScript configurations                        |
 
-The repo is a [Turborepo](https://turborepo.dev/) monorepo managed with [pnpm](https://pnpm.io/) workspaces. Shared UI components follow **atoms / molecules / organisms** (plus page **templates** in Storybook) and are documented interactively in [Storybook](http://localhost:6006) (port 6006).
+The repo is a [Turborepo](https://turborepo.dev/) monorepo managed with [pnpm](https://pnpm.io/) workspaces. Shared UI components follow **atoms / molecules / organisms** and are documented interactively in [Storybook](http://localhost:6006) (port 6006).
+
+### Core design system vs reference screens
+
+| Layer | Location | Role |
+|-------|----------|------|
+| **Core** | `packages/ui/src/atoms`, `molecules`, `organisms`, `foundations` | Import from `@repo/ui/...` in apps |
+| **Reference** | `packages/ui/src/pages`, `templates`, collection API mocks (MSW) | Storybook-only demos; not wired into the Next.js app unless you choose to |
+
+Forking this repo as a template? See **`TEMPLATE.md`** at the repository root (rename scope and product name after fork).
 
 ## Documentation sections
 
@@ -30,4 +39,4 @@ The repo is a [Turborepo](https://turborepo.dev/) monorepo managed with [pnpm](h
 
 ## Product scope
 
-The web app is still a starter shell — there is no collection-manager product logic (CRUD, APIs, data models) yet. These docs focus on **how the repository works** and **how to use the design system**. Product feature docs will be added as the application grows.
+The [web app](./apps/web) is a **design-system shell** (navigation and sample content from `@repo/ui`). There is no collection-manager product logic (CRUD, APIs, data models) yet. These docs focus on **how the repository works** and **how to use the design system**. Product feature docs will be added as the application grows.
