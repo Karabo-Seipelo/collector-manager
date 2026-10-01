@@ -1,0 +1,22 @@
+name: Restrict main sources
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  allowed-source:
+    name: Allowed source branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Allow only develop and hotfix/*
+        env:
+          HEAD: ${{ github.head_ref }}
+        run: |
+          case "$HEAD" in
+            develop|hotfix/*) echo "Allowed: $HEAD -> main" ;;
+            *)
+              echo "::error::Only develop and hotfix/* can merge into main (got '$HEAD')."
+              exit 1
+              ;;
+          esac
