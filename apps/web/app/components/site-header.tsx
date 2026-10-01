@@ -20,7 +20,7 @@ export function SiteHeader() {
         <NavigationHeaderLeft>
           <NavigationHeaderLogo>
             <span className="text-heading-4 font-semibold text-fg-strong">
-              Collection Manager
+              Template
             </span>
           </NavigationHeaderLogo>
         </NavigationHeaderLeft>

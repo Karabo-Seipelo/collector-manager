@@ -1,6 +1,6 @@
-# Collection Manager
+# Template
 
-Turborepo monorepo for a collection-management app. The repository foundation and shared design system are in place; product features (CRUD, APIs, data models) are not started yet.
+Turborepo monorepo starter with a shared design system. The repository foundation is in place; product features (CRUD, APIs, data models) are not included—fork and rename for your app.
 
 **Using this as a template?** See [TEMPLATE.md](TEMPLATE.md) for fork steps, optional Chromatic, and how reference Storybook pages relate to the core design system.
 
@@ -60,7 +60,7 @@ pnpm --filter docs dev
 ```
 apps/
   web/          Next.js application (consumes @repo/ui)
-  api/          NestJS HTTP API (health check; collection routes later)
+  api/          NestJS HTTP API (health check shell)
   docs/         Documentation site
 packages/
   ui/           Shared React components + Storybook

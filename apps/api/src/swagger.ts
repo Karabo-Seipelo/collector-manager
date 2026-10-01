@@ -7,8 +7,8 @@ export function setupSwagger(app: INestApplication): void {
   }
 
   const config = new DocumentBuilder()
-    .setTitle("Collection Manager API")
-    .setDescription("HTTP API for Collection Manager")
+    .setTitle("Template API")
+    .setDescription("HTTP API for Template")
     .setVersion("0.1.0")
     .build();
 

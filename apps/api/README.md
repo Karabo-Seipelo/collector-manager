@@ -1,6 +1,6 @@
 # API app
 
-NestJS HTTP service for Collection Manager.
+NestJS HTTP service for Template.
 
 ## Run
 
