@@ -12,6 +12,15 @@ pnpm --filter api dev
 
 Default URL: http://localhost:3002
 
+## Swagger (non-production)
+
+When `NODE_ENV` is not `production`:
+
+| Resource | URL |
+| -------- | --- |
+| Swagger UI | http://localhost:3002/api/docs |
+| OpenAPI JSON | http://localhost:3002/api/docs-json |
+
 ## Health check
 
 ```bash

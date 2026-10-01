@@ -20,7 +20,7 @@ pnpm dev
 | ----------------- | ---------------------------------------- |
 | Web (Next.js)     | http://localhost:3000                    |
 | Docs (Docusaurus) | http://localhost:3001                    |
-| API (NestJS)      | http://localhost:3002 (`GET /api/health`) |
+| API (NestJS)      | http://localhost:3002 (`GET /api/health`; Swagger at `/api/docs` in non-prod) |
 | Storybook         | http://localhost:6006                    |
 
 ## Common commands

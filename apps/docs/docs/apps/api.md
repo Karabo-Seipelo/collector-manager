@@ -14,7 +14,12 @@ The API app is a **NestJS 11** HTTP service. It currently exposes a health check
 
 - NestJS 11 with Express
 - TypeScript (shared `@repo/typescript-config/nest.json`)
+- OpenAPI / Swagger (`@nestjs/swagger`)
 - Jest + Supertest for e2e smoke tests
+
+## Swagger (non-production)
+
+When `NODE_ENV` is not `production`, interactive docs are available at [http://localhost:3002/api/docs](http://localhost:3002/api/docs). The OpenAPI document is at `GET /api/docs-json`. Swagger is not mounted in production.
 
 ## Health check
 
