@@ -69,6 +69,10 @@ pnpm build
 pnpm build-storybook
 ```
 
-### 6. Enable GitHub template (maintainers)
+### 6. Cursor agent setup (optional)
+
+Forks inherit [`.cursor/rules/agent-core-behaviors.mdc`](.cursor/rules/agent-core-behaviors.mdc) (always-on agent behaviors) and [`.cursor/skills/`](.cursor/skills/) (phase-specific workflows). Adjust or remove them if your team uses different agent guidance.
+
+### 7. Enable GitHub template (maintainers)
 
 Repository Settings → General → **Template repository** (checkbox). New repos can then use **Use this template**.

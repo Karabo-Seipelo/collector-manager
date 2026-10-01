@@ -9,7 +9,7 @@
     "start": "node dist/main.js",
     "lint": "eslint . --max-warnings 0",
     "check-types": "tsc --noEmit -p tsconfig.json",
-    "test": "jest --config ./test/jest-e2e.json --runInBand"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --config ./test/jest-e2e.json --runInBand"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.12",
