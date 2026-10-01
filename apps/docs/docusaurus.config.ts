@@ -3,16 +3,16 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Collection Manager",
-  tagline: "Documentation for the collection-manager monorepo",
+  title: "Template",
+  tagline: "Documentation for the template monorepo",
   favicon: "img/logo.svg",
   future: {
     v4: true,
   },
   url: "https://example.com",
   baseUrl: "/",
-  organizationName: "collection-manager",
-  projectName: "collection-manager",
+  organizationName: "template",
+  projectName: "template",
   onBrokenLinks: "throw",
   i18n: {
     defaultLocale: "en",
@@ -38,9 +38,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "Collection Manager",
+      title: "Template",
       logo: {
-        alt: "Collection Manager logo",
+        alt: "Template logo",
         src: "img/logo.svg",
       },
       items: [
@@ -92,7 +92,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Collection Manager. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Template. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

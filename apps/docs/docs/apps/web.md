@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Web App
 
-The web app is a **Next.js 16** application using the App Router. It serves as the main Collection Manager UI (currently a starter shell).
+The web app is a **Next.js 16** application using the App Router. It serves as the main Template UI (currently a starter shell).
 
 - **Path:** `apps/web`
 - **Dev URL:** http://localhost:3000

@@ -4,12 +4,12 @@ sidebar_position: 1
 
 # Monorepo Overview
 
-Collection Manager is a [Turborepo](https://turborepo.dev/) monorepo using [pnpm workspaces](https://pnpm.io/workspaces). All apps and packages live under `apps/` and `packages/`, declared in `pnpm-workspace.yaml` at the repo root.
+Template is a [Turborepo](https://turborepo.dev/) monorepo using [pnpm workspaces](https://pnpm.io/workspaces). All apps and packages live under `apps/` and `packages/`, declared in `pnpm-workspace.yaml` at the repo root.
 
 ## Workspace layout
 
 ```
-collection-manager/
+template/
 ├── apps/
 │   ├── web/          # Next.js application
 │   └── docs/         # Docusaurus documentation

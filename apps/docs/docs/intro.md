@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introduction
 
-Welcome to the **Collection Manager** documentation.
+Welcome to the **Template** documentation.
 
 This site documents the monorepo setup, shared packages, development workflows, and the UI design system used across the project.
 
@@ -40,4 +40,4 @@ Forking this repo as a template? See **`TEMPLATE.md`** at the repository root (r
 
 ## Product scope
 
-The [web app](./apps/web) is a **design-system shell** (navigation and sample content from `@repo/ui`). There is no collection-manager product logic (CRUD, APIs, data models) yet. These docs focus on **how the repository works** and **how to use the design system**. Product feature docs will be added as the application grows.
+The [web app](./apps/web) is a **design-system shell** (navigation and sample content from `@repo/ui`). This starter has no product logic (CRUD, APIs, data models) yet. These docs focus on **how the repository works** and **how to use the design system**. Product feature docs will be added when you build on this template.

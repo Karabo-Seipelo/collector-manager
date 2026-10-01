@@ -1,6 +1,6 @@
 # Docs
 
-This app is the [Docusaurus](https://docusaurus.io/) documentation site for the collection-manager monorepo.
+This app is the [Docusaurus](https://docusaurus.io/) documentation site for the template monorepo.
 
 ## Development
 
