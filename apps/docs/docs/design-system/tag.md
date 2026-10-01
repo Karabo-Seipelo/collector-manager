@@ -4,7 +4,7 @@ sidebar_position: 5.5
 
 # Tag
 
-Filter and category chip. Selected and unselected states match the Collection Manager wireframes.
+Filter and category chip. Selected and unselected states match the Template wireframes.
 
 **Import:** `@repo/ui/atoms/tag`
 

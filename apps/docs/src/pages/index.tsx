@@ -36,7 +36,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={siteConfig.title}
-      description="Documentation for the collection-manager monorepo"
+      description="Documentation for the template monorepo"
     >
       <HomepageHeader />
       <main className="container margin-vert--lg">
