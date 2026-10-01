@@ -4,6 +4,8 @@ Turborepo monorepo for a collection-management app. The repository foundation an
 
 **Using this as a template?** See [TEMPLATE.md](TEMPLATE.md) for fork steps, optional Chromatic, and how reference Storybook pages relate to the core design system.
 
+Template release snapshots are tagged in Git with a `template-v` prefix and semver (for example **`template-v1.0.0`** for this baseline). That tag names the template version for forks and maintainers; it is not the npm or app release version.
+
 ## Prerequisites
 
 - Node.js 22+ (see [.nvmrc](.nvmrc))
@@ -16,12 +18,12 @@ pnpm install
 pnpm dev
 ```
 
-| App               | URL                                      |
-| ----------------- | ---------------------------------------- |
-| Web (Next.js)     | http://localhost:3000                    |
-| Docs (Docusaurus) | http://localhost:3001                    |
+| App               | URL                                                                           |
+| ----------------- | ----------------------------------------------------------------------------- |
+| Web (Next.js)     | http://localhost:3000                                                         |
+| Docs (Docusaurus) | http://localhost:3001                                                         |
 | API (NestJS)      | http://localhost:3002 (`GET /api/health`; Swagger at `/api/docs` in non-prod) |
-| Storybook         | http://localhost:6006                    |
+| Storybook         | http://localhost:6006                                                         |
 
 ## Common commands
 
@@ -68,9 +70,9 @@ packages/
 
 ### Core vs reference in `packages/ui`
 
-| Layer | Paths | Purpose |
-|-------|--------|---------|
-| **Core** | `src/atoms`, `molecules`, `organisms`, `foundations`, `styles.css` | Design system you ship in apps |
-| **Reference** | `src/pages`, `templates`, `src/api/collection`, MSW mocks | Storybook demos and copy-paste examples—not dependencies of `apps/web` |
+| Layer         | Paths                                                              | Purpose                                                                |
+| ------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| **Core**      | `src/atoms`, `molecules`, `organisms`, `foundations`, `styles.css` | Design system you ship in apps                                         |
+| **Reference** | `src/pages`, `templates`, `src/api/collection`, MSW mocks          | Storybook demos and copy-paste examples—not dependencies of `apps/web` |
 
 See the docs site for architecture, design system, and development guides.
